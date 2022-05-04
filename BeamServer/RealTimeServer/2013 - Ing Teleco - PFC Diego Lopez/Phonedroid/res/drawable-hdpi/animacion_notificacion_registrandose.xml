@@ -1,0 +1,6 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    
+    <item android:drawable="@drawable/ic_notificacion_registrandose_a" android:duration="650" />
+    <item android:drawable="@drawable/ic_notificacion_registrandose_b" android:duration="650" />
+</animation-list>

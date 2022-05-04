@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:padding="12dp"
+        android:id="@+id/layout_completo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/grisFondo"
+        
+        >
+        
+        <RelativeLayout
+        android:id="@+id/cuadro_informacion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#A5A3AC"
+        >
+        
+        <TextView
+            style="@style/MedMarfil"
+            android:id="@+id/notificacion_eventos"
+            android:paddingLeft="4dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textStyle="italic"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_local_es"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notificacion_eventos"
+            android:text="@string/Informacion_SIP_usuario_local_es"
+            android:textStyle="bold"
+            android:visibility="visible"
+            
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_local"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/usuario_local_es"
+            android:layout_alignBaseline="@id/usuario_local_es"            
+            android:textStyle="italic"
+            android:text="@string/Informacion_SIP_usuario_local"
+            android:visibility="visible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_remoto_es"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario_local_es"
+            android:text="@string/Informacion_SIP_usuario_remoto_es"
+            android:textStyle="bold"
+            android:visibility="visible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_remoto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/usuario_remoto_es"
+            android:layout_alignBaseline="@id/usuario_remoto_es"            
+            android:textStyle="italic"
+            android:text="@string/Informacion_SIP_usuario_remoto"
+            android:visibility="visible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/error_es"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario_remoto_es"
+            android:text="@string/Informacion_SIP_error_es"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/error_es"
+            android:layout_alignBaseline="@id/error_es"            
+            android:textStyle="italic"
+            android:text="@string/Informacion_SIP_error"
+            android:visibility="invisible"
+            />
+        </RelativeLayout>
+        
+        
+        <RelativeLayout
+        android:paddingTop="8dp"
+        android:id="@+id/cuadro_interaccion_en_espera"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/cuadro_informacion"
+        android:layout_centerHorizontal="true"
+        >
+         
+            <Button
+                
+		    	android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+	            android:layout_centerHorizontal="true"
+	            
+	            android:background="@drawable/boton_verde"
+                
+	            android:id="@+id/boton_llamar"
+	            android:layout_width="fill_parent"
+	            android:layout_height="65dp"
+	            
+	            android:paddingTop="12dp"
+	            android:text=""
+	            
+	            
+	            android:drawableTop="@drawable/ic_llamar"
+	            android:onClick="clickSIPLlamar"
+	            />
+            
+            <EditText 
+              style="@style/MedGris.Centrado.Cursiva"
+              android:id="@+id/edittext_cuentaSIP"
+              android:layout_marginTop="5dp"
+              android:layout_below="@id/boton_llamar"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:hint="@string/hint_cuenta_SIP_destino"
+              />
+           
+        
+            <Button
+                
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/edittext_cuentaSIP"
+                android:layout_centerHorizontal="true"
+                
+                android:background="@drawable/boton_azul"
+	            android:id="@+id/boton_seleccionar_contacto"
+	            android:layout_width="105dp"
+	            android:layout_height="55dp"
+	            android:paddingTop="16dp"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:text=""
+	            android:onClick="clickSIPSelecContacto"
+	            android:drawableTop="@drawable/ic_elegir_contacto"
+	            
+	            />
+            
+                    
+        <Spinner
+            
+            android:textColor="@color/grisOscuro"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            
+            
+        	android:id="@+id/spinner_opc_codec"
+	        android:layout_marginTop="5dp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/boton_seleccionar_contacto"
+	       	android:entries="@array/codecs_array"
+	       	
+       	 />
+        
+        
+        
+        
+        <Spinner
+        	android:id="@+id/spinner_modo_ilbc"
+            
+            android:textColor="@color/grisOscuro"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            
+        
+        	android:layout_below="@id/boton_seleccionar_contacto"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        
+       		android:entries="@array/mode_ilbc_array"
+       	
+       	 />
+        
+        <TextView 
+            android:id="@+id/elegir_modo_ilbc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+              
+              
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/spinner_modo_ilbc"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:textColor="@color/grisOscuro"
+            android:text="@string/elegir_modo_ilbc" />
+        
+        
+        </RelativeLayout>
+        
+        
+        
+        <RelativeLayout
+        android:id="@+id/cuadro_interaccion_llamada_recibida"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cuadro_informacion"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        >
+        
+        <Button
+            android:background="@drawable/boton_verde"
+		    android:textColor="@color/marfil"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+            android:id="@+id/boton_contestar"
+            android:layout_width="95dp"
+	        android:layout_height="90dp"
+	        android:layout_marginRight="50dp"
+			
+			android:paddingTop="25dp"
+
+            android:onClick="clickSIPContestar"
+            
+            android:drawableTop="@drawable/ic_llamar"
+            />
+
+
+
+        <Button
+            
+            android:background="@drawable/boton_rojo"
+		    android:textColor="@color/marfil"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+            
+            android:id="@+id/boton_rechazar"
+            android:layout_width="95dp"
+	        android:layout_height="90dp"
+	        android:paddingTop="25dp"
+	        android:layout_toRightOf="@id/boton_contestar"
+            android:layout_alignBottom="@id/boton_contestar"  
+            
+            android:onClick="clickSIPRechazar"
+            android:drawableTop="@drawable/ic_colgar"
+            />
+        
+		
+		</RelativeLayout>
+        
+        <Button
+            android:background="@drawable/boton_gris"
+		    android:textColor="@color/marfil"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:gravity="center"
+	        android:layout_centerHorizontal="true"
+	            
+            
+            android:id="@+id/editar_configuracion_sip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/titulo_actividad_configuracion_sip"
+            android:onClick="clickSIPEditarConf"
+            android:drawableLeft="@drawable/ic_configuracion_sip_2"
+            />
+		<Button
+		    	android:background="@drawable/boton_gris"
+		    	android:textColor="@color/marfil"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:gravity="center"
+	            android:layout_centerHorizontal="true"
+	            
+	            
+	            android:id="@+id/gestionar_contactos"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="10dp"
+            	android:paddingBottom="10dp"
+            	android:layout_marginBottom="5dp"
+                android:layout_above="@id/editar_configuracion_sip"
+	    		android:text="@string/titulo_actividad_gestion_contactos"
+	            android:onClick="clickSIPGestContactos"
+	            android:drawableLeft="@drawable/ic_gestionar_contactos_2"
+                />
+        
+        
+        
+        
+        <RelativeLayout
+            android:id="@+id/cuadro_interaccion_llamada_establecida"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:visibility="invisible"
+        	
+        	>
+        	
+        	<RelativeLayout
+            android:id="@+id/opciones_durante_llamada"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            >
+	        
+	        
+	        
+	        <ToggleButton
+	            android:id="@+id/opcion_poner_en_espera"
+	            
+	            style="@android:style/Widget.Button.Toggle"
+	            android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            
+	            
+	            android:layout_width="95dp"
+	            android:layout_height="80dp"
+	            android:layout_marginRight="5dp"
+	            android:textOff="@string/mantener_llamada"
+	            android:textOn="@string/continuar_llamada"
+	            android:onClick="clickSIPEnEspera"
+	            android:drawableTop="@drawable/btn_en_espera"
+	            />
+	        
+	        <ToggleButton
+	            android:id="@+id/opcion_altavoz"
+	            
+	            style="@android:style/Widget.Button.Toggle"
+	            android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            
+	            
+	            android:layout_width="95dp"
+	            android:layout_height="80dp"
+	            android:layout_marginRight="5dp"
+	            android:layout_toRightOf="@id/opcion_poner_en_espera"
+	            android:textOff="@string/altavoz_OFF"
+	            android:textOn="@string/altavoz_ON"
+	            android:onClick="clickSIPAltavoz"
+	            android:drawableTop="@drawable/btn_altavoz"
+	            />
+	        
+	        <ToggleButton
+	            android:id="@+id/opcion_silenciar"
+	            
+	            style="@android:style/Widget.Button.Toggle"
+	            android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            
+	            
+	            android:layout_width="95dp"
+	            android:layout_height="80dp"
+	            android:layout_toRightOf="@id/opcion_altavoz"
+	            android:textOff="@string/silenciar_llamada"
+	            android:textOn="@string/eliminar_silenciar_llamada"
+	            android:onClick="clickSIPSilenciar"
+	            android:drawableTop="@drawable/btn_microfono"
+	            />
+	        </RelativeLayout>
+	        
+	        <RelativeLayout
+        	android:id="@+id/layout_colgar"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/opciones_durante_llamada"
+            android:layout_centerHorizontal="true"
+            
+            >
+	        <Button
+	            android:id="@+id/boton_colgar"
+	            
+	            android:background="@drawable/boton_rojo"
+		    	android:textColor="@color/marfil"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:gravity="center"
+	            android:layout_centerHorizontal="true"
+	            	            
+	            android:layout_width="fill_parent"
+	            android:layout_height="75dp"
+	            
+	            android:paddingTop="15dp"
+	            android:drawableTop="@drawable/ic_colgar"
+	            android:onClick="clickSIPColgar"
+	            />
+	        </RelativeLayout>
+	        
+	        <RelativeLayout
+        	android:id="@+id/layout_cancelar_llamada"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/opciones_durante_llamada"
+            android:layout_centerHorizontal="true"
+            >
+	        
+	        <Button
+	            android:id="@+id/boton_cancelar_llamada"
+	            
+	            android:background="@drawable/boton_rojo"
+		    	android:textColor="@color/marfil"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:gravity="center"
+	            android:layout_centerHorizontal="true"
+	            
+	            android:paddingTop="15dp"
+	            
+	            
+	            
+	            android:layout_width="fill_parent"
+	            android:layout_height="75dp"
+	            
+	            android:drawableTop="@drawable/ic_colgar"
+	            android:onClick="clickSIPCancelarLlamada"
+	            />
+	        
+	        </RelativeLayout>
+        </RelativeLayout>
+     			
+    </RelativeLayout>

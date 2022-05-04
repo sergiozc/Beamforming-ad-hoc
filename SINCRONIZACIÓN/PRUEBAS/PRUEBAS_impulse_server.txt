@@ -1,0 +1,102 @@
+
+
+Hemos reiniciado la hora en los ajustes del teléfono para que el reloj de sincronía
+esté lo más sincronizado posible con los demás móviles y se conecte de nuevo
+al protocolo de fecha y hora (que ahora no sé muy bien cómo se llama).
+
+Hemos activado una zona con cobertura inalámbrica móvil en el ordenador (donde
+ va a correr el servidor) para que así evitemos tráfico de red y sea más fiable.
+
+Conectamos al ordenador (por bluetooth) un altavoz monofónico inalámbrico
+que actuará como fuente sonora.
+
+Colocamos los dos móviles en paralelo y pegados, teniendo en cuenta la 
+posición de los micrófonos en cada caso, para que el recorrido de la señal
+sea lo más parecido posible. El altavoz lo colocamos a una distancia de 1,20 m
+en línea recta, como se muestra en la imagen. Hemos colocado el altavoz relativamente
+lejos para que el tiempo de propagación de la señal no afecte más a un móvil que
+a otro.
+
+- EN LA PRUEBA 3 VOLVEMOS A RESETEAR LA HORA.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Hacemos ahora las mismas pruebas pero con 2 marcas de tiempo, una al empezar a grabar y otra al terminar.
+
+-----------------------------------------------------------------------------------------------------------------
+
+- Hago nuevas pruebas en una mesa de madera con los móviles apoyados en un libro fino. Se encuentran a una distancia 
+aproximada de 1.25 metros
+
+- Comprobé la localización de los micrófonos predeterminados en cada móvil con diversas pruebas.
+
+- He desactivado el control de ganancia automático desde el código de la aplicación y el compensador de eco.
+
+- Efectivamente, viendo los ficheros hexadecimales, el .raw y el .wav son lo mismo excepto una cabecera
+
+- Probé a hacerlo sin punto wifi inalámbrico, algunas pruebas salía un retardo de 20 ms, sin emabrgo otras
+pruebas llegaba hasta un retardo de red de 1.2 segundos, por lo que he decidido hacer las pruebas con un punto
+de acceso inalámbrico, ya que sale un retardo más o menos igual (aunque no sea bueno).
+
+- En la prueba 4 se han reiniciado los relojes.
+
+- La Prueba 5 está realizada con 3 dispositivos
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+BEEP SERVER
+------------------------------------------------------------------------------------------------------------------------------------------
+- El Huawei p30 pro tiene EL MICRÓFONO PREDETERMINADO ABAJO
+- El Huawei P Smart Z tiene EL MICRÓFONO PREDETERMINADO ARRIBA
+
+Tenemos que lograr que la onda sea plana (que el frente de onda llegue a los micrófonos a la vez)
+Para ello cogemos la ecuación de onda plana y tenemos que despejar la distancia.
+
+- El pitido dura exactamente 0.3s (13230 muestras)
+- Separamos los móviles del altavoz unos 3.5 metros.
+- PRUEBA 1 BEEP SOLO
+- PRUEBA 2 BEEP Y PALMADA
+- PRUEBA 3 BEEP Y PALMADA
+- PRUEBA 4 BEEP + 'YA!'
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Hemos generado un beep de 0.1 segundos (4410 muestras) exactos. Al final lo he tenido
+que modificar para que se reprodujera en el altavoz JBL
+- PRUEBA 1: 12segundos de grabación. Sin mover los móviles. Después del pitido suena
+una canción.
+- PRUEBA 2: 12segundos de grabación. Una vez sonado el pitido, se mueve el device1
+a unos 0.5 metros aproximadamente de la fuente sonora, dejando al otro móvil donde
+estaba (a unos 3.5m). Después suena una canción.
+- PRUEBA 3: Similar a la prueba 2 pero moviendo el Device0
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Se ha generado una señal impulsiva (documentada en el archivo impulse_generation.py). Con esta se logra sincronizar las dos señales.
+- Se ha realizado una prueba, con los dos móviles pegados, a una distancia aproximada de 2 metros. Se ha reproducido la señal impulsva y al poco 
+tiempo después se ha reproducido una canción.
+SE HA LOGRADO CONSEGUIR UN RETARDO AL SINCRONIZAR DE 125 MUESTRAS.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Se han realizado 3 pruebas:
+- 1: Con dos móviles, grabación de 8 segundos, con impulso para sincronizar
+- 2: Similar a la primera
+- 3: Con 3 móviles
+
+RESULTADOS:
+- Para la prueba 1 obtenemos un delay final de 0 muestras!!!!
+- Para la prueba 2 obtenemos también un delay final de 0 muestras!!!
+- Para la prueba 3 obtengo un delay de 0 también y otro de -226 (en el tercer móvil).
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Cambiamos el impulso por un chirp y el modo de acortar las señales mediante TOA (correlación)
+
+Hacemos 2 pruebas, con los móviles juntos y sin parar de grabar suena después del chirp 
+una canción.
+
+NO SALE BIEN LA CORRELACIÓN
+
+Hacemos 3 pruebas, esta vez con el impulso y sí sale bien la autocorrelación.
+dos con 2 móviles y la tercera con 3 móviles
+

@@ -1,0 +1,49 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CCCCCC"
+    >
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true"
+	    android:orientation="vertical"
+	    >
+    
+       
+    	<CheckBox
+         	  android:id="@+id/checkbox_espaniol"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:textColor="@color/grisOscuro"
+	          android:textAppearance="?android:attr/textAppearanceLarge"
+		      android:drawableLeft="@drawable/btn_espaniol"
+		      android:drawablePadding="15dp"
+		      android:checked="false"
+		      android:text="Español"
+		      
+		      android:onClick="clickSpanish"
+		      />
+    
+    	<CheckBox
+         	  android:id="@+id/checkbox_ingles"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:textColor="@color/grisOscuro"
+	          android:textAppearance="?android:attr/textAppearanceLarge"
+		      android:drawableLeft="@drawable/btn_ingles"
+		      android:drawablePadding="15dp"
+		      android:checked="false"
+		      android:text="English"
+		      
+		      android:layout_marginTop="20dp"
+		      android:layout_marginBottom="20dp"
+		      
+		      android:onClick="clickEnglish"
+		      />
+    
+    
+	</LinearLayout>
+</RelativeLayout>

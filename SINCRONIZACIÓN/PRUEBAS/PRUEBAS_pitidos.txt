@@ -1,0 +1,5 @@
+
+Primero hemos realizado 2 pruebas. Con tres móviles. La separación temporal
+entre chirps es de 1 segundo aprox.
+Después de que suenen los 3 chirps, se reproduce una canción.
+Los 3 móviles están juntos y a una misma separación de la fuente sonora.

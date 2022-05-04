@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+     
+     >
+	
+  
+    <EditTextPreference 
+        android:id="@+id/SIP_nombre_usuario"
+        android:title="@string/Configuracion_SIP_nombre_usuario" 
+        android:key="nombrePref"
+        android:defaultValue=""
+        android:summary="@string/Configuracion_SIP_nombre_usuario_ejemplos"
+        android:name="Nombre de Usuario SIP" />
+    <EditTextPreference 
+        android:id="@+id/SIP_dominio"
+        android:title="@string/Configuracion_SIP_dominio" 
+        android:key="dominioPref"
+        android:defaultValue=""
+        android:summary="@string/Configuracion_SIP_dominio_ejemplos"
+        android:name="Dominio SIP" />
+    <EditTextPreference 
+        android:title="@string/Configuracion_SIP_contrasenia" 
+        android:key="contraseniaPref"
+        android:defaultValue=""
+        android:name="Contraseña SIP"
+        android:password="true" />
+    
+    
+    <Preference
+        android:key="language"
+       	android:selectable="false"
+       	android:defaultValue="en"
+       />
+
+</PreferenceScreen>
+

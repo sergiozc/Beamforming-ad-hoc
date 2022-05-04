@@ -1,0 +1,186 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.phonedroid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+
+<!--     <uses-feature android:name="android.software.sip" android:required="true" /> -->
+<!--     <uses-feature android:name="android.hardware.wifi" android:required="true" /> -->
+<!--     <uses-feature android:name="android.hardware.microphone" android:required="true" /> -->
+    
+    
+    <application
+        android:icon="@drawable/ic_aplicacion"
+        android:label="@string/nombre_aplicacion"
+        android:theme="@style/AppTheme"
+         
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:allowBackup="true"
+        >
+        
+        
+        <provider
+            android:name=".ContactosSIPProvider"
+            android:authorities="com.example.phonedroid.provider.ContactosSIPProvider"
+            android:exported="false"
+            />
+        
+        <provider
+            android:name=".LlamadasPerdidasProvider"
+            android:authorities="com.example.phonedroid.provider.LlamadasPerdidasProvider"
+            android:exported="false"
+            />
+        
+       
+        <activity
+                        
+            android:name=".ActividadInicio"
+            
+            android:label="@string/titulo_actividad_inicio"
+            android:screenOrientation="portrait" >
+            
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+                        
+            android:name=".MainActivity"
+            android:label="@string/titulo_actividad_inicio" >
+
+        </activity>
+        
+        
+        <activity 
+            android:name=".ActividadLlamadaRapida" 
+            android:label="@string/titulo_actividad_llamada_rapida_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" 
+            />
+        
+        <activity 
+            android:name=".ActividadRecepcionLlamadaRapida" 
+            android:label="@string/titulo_actividad_llamada_rapida_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" 
+            />
+        
+        
+        
+        <activity 
+            android:name=".ActividadEleccionContacto" 
+            android:label="@string/titulo_actividad_eleccion_contacto"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".LlamadasSIPActivity"
+            />
+        
+        <activity 
+            android:name=".ActividadGestionContactos" 
+            android:label="@string/titulo_actividad_gestion_contactos_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        
+        <activity 
+            android:name=".ActividadLlamadasPerdidas" 
+            android:label="@string/titulo_actividad_llamadas_perdidas_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        
+        <activity 
+            android:name=".ActividadNuevoContactoSIP" 
+            android:label="@string/titulo_actividad_gestion_contactos_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+      
+        
+        <activity 
+            android:name=".ActividadLlamadaLAN" 
+            android:label="@string/titulo_actividad_llamada_lan_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        <activity 
+            android:name=".ActividadRecepcionLlamadaLAN" 
+            android:label="@string/titulo_actividad_llamada_lan_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        
+        <activity 
+            android:name=".ActividadLlamadaEligiendoCodec" 
+            android:label="@string/titulo_actividad_llamada_eligiendo_codec_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        
+        
+        
+        
+        <activity 
+            android:name=".ActividadLlamadaILBC" 
+            android:label="@string/titulo_actividad_llamada_ilbc_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            
+            />
+        
+        <activity 
+            android:name=".ActividadRecepcionLlamadaILBC" 
+            android:label="@string/titulo_actividad_llamada_ilbc_2"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        
+        
+        
+        
+        
+        <activity 
+            android:name=".ActividadCambiarIdioma" 
+            android:label="@string/titulo_actividad_cambiar_idioma"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        
+        
+        <activity 
+            android:name=".ActividadConfiguracionSIP" 
+            android:label="@string/titulo_actividad_configuracion_sip_2"
+            
+             />
+        
+
+        <service 
+            android:name=".ServicioSIP" 
+            android:exported="false"
+            />
+        
+       
+        
+        
+    </application>
+        
+</manifest>

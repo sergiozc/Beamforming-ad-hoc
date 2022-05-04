@@ -1,0 +1,106 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fourier}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Sergy}
+\title{Mi primera Prueba de LaTeX }
+\begin{document}
+\maketitle
+\section{Introducción}
+Hola que carajo pasa aquí, espero que se ejecute correctamente y se visualice de una manera apropiada. QUIERO OIAUSCVHQWUVYCBQOWUVBHQWUOBVYOQWUBHVOWUVBH.
+hOLA esto es punto y aparte.
+
+Pongo sangría?
+\subsection{Hola}
+A ver esto cómo sale
+\section{Parte 1}
+\[(a + b)^2\]
+Hola que tal.
+
+\textbf{Ahora voy a poner una ecuación numeradaaaaa}
+\begin{equation}
+a + b / 2
+\end{equation}
+Voy a escribir un a fracción con el comando $\dfrac{345}{a + b^2}$
+\bigskip
+Ahora voy a darle a la sumatoria lokooo:
+
+\[\Sigma_{n_1 = 2}^{\infty} \arccos(0.76)\]
+\bigskip
+\begin{itemize}
+\item ¿Ahora cómo lo pone?
+\item lista 2
+\item lista 3
+\item enga otro
+\bigskip 
+\end{itemize}
+
+Voy a hacer un sistema de ecuaciones (ALINEADO CON EL ''=''). Le hemos puesto el ''*'' para que no se numeren.
+\begin{align*}
+a + b + y &= 78.54 \\
+a - y &= 0
+\end{align*}
+\bigskip
+\textbf{Las comillas se tienen que poner como: ''comillas''}
+
+Esto \\ son saltos \\ de \\ línea
+
+Voy a probar ahora con el comando ''sum'':
+\begin{equation}
+\sum_{n = 2}^{\infty}3^n
+\end{equation}
+
+\textbf{Vemos que es mejor con el comando ''sum''.}
+
+\textit{Esto va a estar en cursiva (o eso espero).}
+\underline{Esto tendría que estar subrayado.}
+
+\pagebreak
+Ahora procedemos a insertar una imagen, a ver cómo salen:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 7cm]{../../../../../Downloads/fondoapp.jpg}
+\caption{Fondo App}
+\end{figure}
+
+\section{Tablas}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+56 & • & • & • \\ 
+\hline 
+• & hola & • & 89 \\ 
+\hline 
+• & • & • & • \\ 
+\hline 
+• & esto se supone que es largo & • & 56 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\hline 
+• & • & • & • \\ 
+\hline 
+• & • & • & • \\ 
+\hline 
+• & • & • & • \\ 
+\hline 
+• & • & • & • \\ 
+\hline 
+• & • & • & • \\ 
+\hline 
+\end{tabular}\bigskip
+
+Tabla 1: Datos
+\end{center}
+
+
+
+\end{document}

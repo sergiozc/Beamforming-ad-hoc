@@ -1,0 +1,2 @@
+CHANGED,C:\Users\Titan\Desktop\Recorder\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\tosh\recorder\WS$override.class
+CHANGED,C:\Users\Titan\Desktop\Recorder\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class

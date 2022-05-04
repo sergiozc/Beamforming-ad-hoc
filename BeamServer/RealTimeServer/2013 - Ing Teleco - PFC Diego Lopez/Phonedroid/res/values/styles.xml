@@ -1,0 +1,74 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+	
+    <style name="PeqGris"  parent="android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/grisOscuro</item>
+    </style>
+    <style name="PeqGris.Centrado">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="PeqGris.Centrado.Cursiva">
+        <item name="android:textStyle">italic</item>
+    </style>
+    
+    <style name="MedGris"  parent="android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/grisOscuro</item>
+    </style>
+    <style name="MedGris.Centrado">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="MedGris.Centrado.Cursiva">
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="GranGris"  parent="android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/grisOscuro</item>
+    </style>
+    <style name="GranGris.Centrado">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="GranGris.Centrado.Cursiva">
+        <item name="android:textStyle">italic</item>
+    </style>
+    
+    <style name="PeqMarfil"  parent="android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/marfil</item>
+    </style>
+    <style name="PeqMarfil.Centrado">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="PeqMarfil.Centrado.Cursiva">
+        <item name="android:textStyle">italic</item>
+    </style>
+    
+    <style name="MedMarfil"  parent="android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/marfil</item>
+    </style>
+    <style name="MedMarfil.Centrado">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="MedMarfil.Centrado.Cursiva">
+        <item name="android:textStyle">italic</item>
+    </style>
+    <style name="GranMarfil"  parent="android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/marfil</item>
+    </style>
+    <style name="GranMarfil.Centrado">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="GranMarfil.Centrado.Cursiva">
+        <item name="android:textStyle">italic</item>
+    </style>
+    
+    <style name="PreferencesTheme">
+        
+    	<item name="android:background">@color/hola</item>
+    </style>
+    
+</resources>

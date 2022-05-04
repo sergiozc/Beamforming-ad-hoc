@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SuperRecorder</string>
+    <string name="record">Grabar</string>
+    <string name="stop">Parar</string>
+    <string name="play">Original</string>
+    <string name="play2">Realzada</string>
+    <string name="grabando">Grabando</string>
+    <string name="preparado">Preparado</string>
+    <string name="procesando">Procesando...</string>
+    <string name="reproduciendo">Reproduciendo...</string>
+    <string name="filtrando">Filtrando</string>
+
+</resources>

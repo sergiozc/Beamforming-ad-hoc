@@ -1,0 +1,135 @@
+<resources>
+    
+	<string name="titulo_actividad_llamada_rapida">Llamada Rápida</string>
+    <string name="titulo_actividad_llamada_eligiendo_codec">Eligiendo Códec</string>
+    <string name="titulo_actividad_llamada_ilbc">Codificación iLBC</string>
+    <string name="titulo_actividad_llamada_lan">Llamada en LAN</string>
+    <string name="titulo_actividad_llamadas_perdidas">Registro de Llamadas Perdidas</string>
+    <string name="titulo_actividad_configuracion_sip">Editar Configuración SIP</string>
+    <string name="titulo_actividad_gestion_contactos">Gestionar Contactos</string>
+    <string name="titulo_actividad_cambiar_idioma">Cambiar Idioma</string>
+    <string name="mantener_aplicacion_abierta">Mantener Phonedroid abierto al salir</string>
+    
+    <string name="titulo_actividad_llamada_rapida_2">SIP - Llamada Rápida</string>
+    <string name="titulo_actividad_llamada_eligiendo_codec_2">SIP - Llamada eligiendo códec</string>
+    <string name="titulo_actividad_llamada_ilbc_2">SIP - Llamada con Códec iLBC</string>
+    <string name="titulo_actividad_llamada_lan_2">Llamadas en Red Local</string>
+    <string name="titulo_actividad_llamadas_perdidas_2">Registro de Llamadas Perdidas</string>
+    <string name="titulo_actividad_configuracion_sip_2">SIP - Editar Configuración</string>
+    <string name="titulo_actividad_gestion_contactos_2">SIP - Gestión de Contactos</string>
+    
+    
+    <string name="titulo_actividad_eleccion_contacto">SIP - Contactos</string>
+    
+    
+    <string name="Registro_SIP_Registrado">Registrado en Servidor SIP</string>
+	<string name="Registro_SIP_Registrandose">Registrándose en Servidor SIP...</string>
+	<string name="Registro_SIP_FalloRegistro">No se pudo registrar en Servidor SIP</string>
+	
+	<string name="Informacion_SIP_ErrorConexion">Error de Conexión</string>
+	<string name="Informacion_SIP_LlamadaSalienteTerminada">Llamada Saliente Terminada</string>
+	<string name="Informacion_SIP_LlamadaRechazada">Llamada Rechazada</string>
+	<string name="Informacion_SIP_LlamadaEntranteTerminada">Llamada Recibida Terminada</string>
+	<string name="Informacion_SIP_IniciandoLlamada">Iniciando Llamada...</string>
+	<string name="Informacion_SIP_LlamadaEntrante">Llamada Entrante...</string>
+	<string name="Informacion_SIP_LlamadaEstablecida">Llamada Establecida</string>
+	<string name="Informacion_SIP_NotificacionError">Se ha producido un error</string>
+    
+    
+    
+    <string name="Configuracion_SIP_nombre_usuario">Nombre de Usuario</string>
+    <string name="Configuracion_SIP_nombre_usuario_ejemplos">Ejemplos: \"juan1980\",\"peter-smith\"</string>
+    <string name="Configuracion_SIP_dominio">Dominio SIP</string>
+    <string name="Configuracion_SIP_dominio_ejemplos">Ejemplos: \"iptel.org\",\"ekiga.net\"</string>
+    <string name="Configuracion_SIP_contrasenia">Contraseña</string>
+    
+    
+    <string name="Informacion_SIP_usuario_local_es">Usuario Local:\t\t</string>
+	<string name="Informacion_SIP_usuario_local">[No disponible]</string>
+    <string name="Informacion_SIP_usuario_remoto_es">Usuario Remoto:\t\t</string>
+	<string name="Informacion_SIP_usuario_remoto">[No disponible]</string>
+    <string name="Informacion_SIP_error_es">Error:\t</string>
+    <string name="Informacion_SIP_error">[No disponible]</string>
+    
+    
+    
+     
+     <string name="mantener_llamada">Mantener</string>
+     <string name="continuar_llamada">Continuar</string>
+     <string name="altavoz_ON">Altavoz</string>
+     <string name="altavoz_OFF">Altavoz</string>
+     <string name="silenciar_llamada">Silenciar</string>
+     <string name="eliminar_silenciar_llamada">Activar Mic.</string>
+     
+
+     
+     <string name="hint_cuenta_SIP_destino">Introduzca cuenta SIP destino</string>
+     <string name="elegir_modo_ilbc">Modo de iLBC</string>
+     
+     <string name="nombre_contacto_es">Nombre</string>
+     <string name="hint_nombre_contacto">Introduzca Nombre del Contacto</string>
+     <string name="cuenta_sip_es">Cuenta SIP</string>
+     <string name="hint_cuenta_sip">Introduzca Cuenta SIP del Contacto</string>
+     <string name="aceptar_contacto">Aceptar</string>
+     
+     
+     
+     <string name="aniadir_contacto">Añadir</string>
+     <string name="editar_contacto">Editar</string>
+     <string name="eliminar_contacto">Eliminar</string>
+     
+     
+    
+     <string-array name="mode_ilbc_array">
+         <item>Tramas 20ms</item>
+         <item>Tramas 30ms</item>
+     </string-array>
+    
+        
+
+      <string name="LAN_direccion_puerto_locales_son">Información Local\t</string>
+      <string name="LAN_direccion_puerto_locales">[No disponibles]</string>
+      <string name="modo_supresion_eco">Modo Supresión de Eco</string>
+      <string name="LAN_direccion_puerto_destino_son">Dirección y Puerto Destino</string>
+      <string name="LAN_hint_direccion_destino">Dirección</string>
+      <string name="LAN_hint_puerto_destino">Puerto</string>
+      <string name="modo_completo">Modo Completo</string>
+      <string name="LAN_titulo_seccion_intercambio">Intercambio Dirección-Puerto vía SIP</string>
+      <string name="LAN_comenzar_intercambio">Comenzar Intercambio</string>
+      
+     
+            
+	 <string name="Informacion_SIP_PeticionRechazada">Petición Rechazada</string>
+	 <string name="Informacion_SIP_PeticionEntranteTerminada">Petición Entrante Terminada</string>
+	 <string name="Informacion_SIP_IniciandoPeticion">Iniciando Petición de Intercambio...</string>
+	 <string name="Informacion_SIP_PeticionEntrante">Petición Entrante de Intercambio...</string>
+	 <string name="Informacion_SIP_ProcesandoIntercambio">Procesando Intercambio...</string>
+	 <string name="Informacion_SIP_PeticionSalienteTerminada">Petición Saliente Terminada</string>
+	 <string name="Informacion_SIP_PeticionSalienteTerminada_Problema">No se pudo realizar el intercambio</string>
+	<string name="Informacion_SIP_PeticionSalienteTerminada_ProblemaDirPuerto">Problema al obtener dirección y/o puerto</string>
+    <string name="Informacion_SIP_PeticionSalienteTerminada_SSID_Diferentes">SSID local y remoto diferentes</string>
+    <string name="Informacion_SIP_PeticionSalienteTerminada_OK">Intercambio Satisfactorio</string> 
+     
+	
+    <string name="aviso_no_contactos_en_lista">No hay contactos en la lista</string>
+    <string name="aviso_no_cuenta_sip">No hay ninguna cuenta SIP asociada</string>
+	<string name="aviso_no_internet">No se dispone de conexión a Internet</string>
+	<string name="aceptar">OK</string>
+	 <string name="cancelar">Cancelar</string>
+    <string name="aviso_configurar_SIP">Por favor, introduzca los datos de su cuenta SIP</string>
+	<string name="aviso_campo_cuenta_sip_nulo">Introduzca una cuenta SIP</string>
+     <string name="aviso_ninguna_opcion_elegida">Escoja una opción: Editar o Eliminar</string>
+     <string name="aviso_campo_nulo_nuevo_contacto">Rellene Nombre y Cuenta SIP</string>
+     <string name="aviso_campo_nulo_llamadas_lan">Rellene Dirección y Puerto</string>
+     <string name="aviso_opcion_no_dispoible_ilbc">Opción no disponible con iLBC</string>	
+     
+     <string name="notificacion_phonedroid_iniciado">Phonedroid Iniciado</string>
+     
+     <string name="limpiar_lista_llamadas">Limpiar Registro</string>
+     <string name="aviso_no_llamadas_perdidas">La lista de llamadas perdidas está vacía</string>
+     <string name="notificacion_llamada_entrante">Phonedroid-Llamada Entrante </string>
+     <string name="notificacion_llamadas_perdidas">Llamadas Perdidas</string>
+     
+     <string name="valor_no_disponible">[No disponible]</string>
+     
+</resources>

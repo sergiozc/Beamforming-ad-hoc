@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    
+    android:background="@color/grisFondo"
+    android:paddingTop="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp" >
+    
+    
+    <RelativeLayout 
+        android:id="@+id/dialogo_principal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        >
+    <TextView android:id="@+id/direccion_puerto_locales_son"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:paddingTop="0dp"
+              android:paddingBottom="0dp"
+              android:textSize="12sp"
+              android:textStyle="bold"
+              android:textColor="@color/grisOscuro"
+              android:text="@string/LAN_direccion_puerto_locales_son" />
+    
+    <TextView android:id="@+id/direccion_puerto_locales"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@id/direccion_puerto_locales_son"
+              android:layout_alignBaseline="@id/direccion_puerto_locales_son"
+              android:textSize="12sp"
+              android:textColor="@color/grisOscuro"
+              android:gravity="center"
+              android:text="@string/LAN_direccion_puerto_locales"
+               />
+    
+
+    
+    <Spinner	
+        android:id="@+id/spinner_opc_codec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/direccion_puerto_locales_son"
+        android:textSize="15sp"
+        android:entries="@array/codecs_array_lan" 
+         />
+    
+    <CheckBox
+         	  android:id="@+id/checkbox_supresion_eco"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:layout_centerHorizontal="true"
+		      android:layout_marginLeft="20dp"
+		      android:layout_toRightOf="@id/spinner_opc_codec"
+              android:layout_alignBaseline="@id/spinner_opc_codec"
+              android:textSize="12sp"
+              android:textColor="@color/grisOscuro"
+		      android:checked="false"
+		      android:text="@string/modo_supresion_eco"
+		      android:onClick="clickCheckboxSupresionEco"
+		        />
+    
+    <TextView android:id="@+id/direccion_puerto_destino_son"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/spinner_opc_codec"
+              android:paddingTop="5dp"
+              android:paddingBottom="10dp"
+              android:textSize="12sp"
+              android:textColor="@color/grisOscuro"
+              android:textStyle="bold"
+              android:text="@string/LAN_direccion_puerto_destino_son" />
+    
+    <EditText android:id="@+id/direccion_destino"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@id/direccion_puerto_destino_son"
+              android:layout_alignBaseline="@id/direccion_puerto_destino_son"
+              android:textSize="13sp"
+              android:textColor="@color/grisOscuro"
+              android:gravity="center"
+              android:hint="@string/LAN_hint_direccion_destino"
+              android:maxLength="16"
+              android:inputType="phone"
+               />
+    
+    <EditText android:id="@+id/puerto_destino"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@id/direccion_destino"
+              android:layout_alignBaseline="@id/direccion_destino"
+              android:textSize="13sp"
+              android:textColor="@color/grisOscuro"
+              android:gravity="center"
+              android:hint="@string/LAN_hint_puerto_destino"
+              android:maxLength="5"
+              android:inputType="phone"
+               />
+    
+    
+    
+    
+    <Button
+                android:id="@+id/boton_llamar_lan"
+                android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+	            android:layout_below="@id/direccion_puerto_destino_son"
+	            
+	            android:layout_centerHorizontal="true"
+	            android:background="@drawable/boton_verde"
+                
+	            android:layout_width="fill_parent"
+	            android:layout_height="65dp"
+	            
+	            android:layout_marginTop="5dp"
+	            android:layout_marginBottom="5dp"
+	            android:paddingTop="12dp"
+	            android:text=""
+	            
+	            android:drawableTop="@drawable/ic_llamar"
+	            android:onClick="clickLANLlamar"
+	            />
+    
+    
+    
+    </RelativeLayout>
+    
+    
+    <RelativeLayout 
+        android:id="@+id/dialogo_intercambio_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        
+        android:layout_below="@id/dialogo_principal"
+        android:layout_marginTop="5dp"
+        
+        android:paddingBottom="0dp"
+        
+        android:background="#525252"
+        >
+        
+    <TextView android:id="@+id/titulo_intercambio"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="2dp"
+              android:textSize="15sp"
+              android:textStyle="bold"
+              android:textColor="@color/marfil"
+              android:text="@string/LAN_titulo_seccion_intercambio" />
+    <CheckBox
+         	  android:id="@+id/checkbox_modo_completo"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:layout_centerHorizontal="true"
+		      
+		      android:layout_below="@id/titulo_intercambio"
+              
+              android:textSize="13sp"
+              android:textColor="@color/marfil"
+		      android:checked="true"
+		      android:text="@string/modo_completo"
+		      
+		        />
+        
+    <RelativeLayout
+        android:id="@+id/cuadro_informacion_sip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/checkbox_modo_completo"
+        android:background="#A5A3AC"
+        >
+        
+        <TextView
+            style="@style/MedMarfil"
+            android:id="@+id/notificacion_eventos"
+            android:paddingLeft="4dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textStyle="italic"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_local_es"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notificacion_eventos"
+            android:text="@string/Informacion_SIP_usuario_local_es"
+            android:textStyle="bold"
+            android:visibility="visible"
+            
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_local"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/usuario_local_es"
+            android:layout_alignBaseline="@id/usuario_local_es"            
+            android:textStyle="italic"
+            android:text="@string/Informacion_SIP_usuario_local"
+            android:visibility="visible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_remoto_es"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario_local_es"
+            android:text="@string/Informacion_SIP_usuario_remoto_es"
+            android:textStyle="bold"
+            android:visibility="visible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/usuario_remoto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/usuario_remoto_es"
+            android:layout_alignBaseline="@id/usuario_remoto_es"            
+            android:textStyle="italic"
+            android:text="@string/Informacion_SIP_usuario_remoto"
+            android:visibility="visible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/error_es"
+            android:paddingLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usuario_remoto_es"
+            android:text="@string/Informacion_SIP_error_es"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            />
+        <TextView
+            style="@style/PeqMarfil"
+            android:id="@+id/error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/error_es"
+            android:layout_alignBaseline="@id/error_es"            
+            android:textStyle="italic"
+            android:text="@string/Informacion_SIP_error"
+            android:visibility="invisible"
+            />
+        </RelativeLayout>
+    
+    
+    
+    <Button
+		    	android:id="@+id/boton_comenzar_intercambio"
+		    	
+		    	android:background="@drawable/boton_amarillo"
+		    	android:textColor="@color/marfil"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:gravity="center"
+	            android:layout_centerHorizontal="true"
+	            
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="10dp"
+            	android:paddingBottom="10dp"
+            	android:layout_marginTop="5dp"
+                android:layout_below="@id/cuadro_informacion_sip"
+	    		android:text="@string/LAN_comenzar_intercambio"
+	            android:onClick="clickSIPStartInterchange"
+	            android:drawableLeft="@drawable/ic_intercambiar"
+                />
+    
+    
+    <EditText 
+              android:id="@+id/edittext_cuentaSIP"
+              
+              style="@style/MedGris.Centrado.Cursiva"
+              android:textColor="@color/marfil"
+              android:textColorHint="#B2B2B2"
+              android:layout_marginTop="5dp"
+              android:layout_below="@id/boton_comenzar_intercambio"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:hint="@string/hint_cuenta_SIP_destino"
+              />
+    
+    <Button
+                android:id="@+id/boton_seleccionar_contacto"
+                
+                android:background="@drawable/boton_azul"
+	          
+	          	android:layout_centerHorizontal="true"
+	          
+	            android:layout_below="@id/edittext_cuentaSIP"
+	            android:layout_width="105dp"
+	            android:layout_height="55dp"
+	            android:paddingTop="16dp"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:text=""
+	            android:onClick="clickSIPSelecContacto"
+	            
+	            android:drawableTop="@drawable/ic_elegir_contacto"
+	            
+	            
+	            />
+    
+    <RelativeLayout
+        android:id="@+id/cuadro_interaccion_llamada_recibida"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cuadro_informacion_sip"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        >
+        
+        <Button
+           android:id="@+id/boton_aceptar_intercambio"
+           
+           android:background="@drawable/boton_verde"
+		   android:textColor="@color/marfil"
+	       android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+           
+           android:layout_width="95dp"
+	       android:layout_height="90dp"
+	       android:paddingTop="25dp"
+	        
+	       android:layout_marginRight="50dp"
+           
+           android:onClick="clickSIPContestar"
+           android:drawableTop="@drawable/ic_llamar"
+           />
+
+        <Button
+            android:background="@drawable/boton_rojo"
+		    android:textColor="@color/marfil"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+            
+            android:id="@+id/boton_rechazar_intercambio"
+			android:layout_width="95dp"
+	        android:layout_height="90dp"
+	        android:paddingTop="25dp"
+            android:layout_toRightOf="@id/boton_aceptar_intercambio"
+            android:layout_alignBottom="@id/boton_aceptar_intercambio"  
+            
+            android:onClick="clickSIPRechazar"
+            android:drawableTop="@drawable/ic_colgar"
+            />
+        
+        
+		</RelativeLayout>
+    
+    <Button
+                android:id="@+id/boton_cancelar_intercambio"
+                android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            
+	            
+	           android:layout_alignParentBottom="true"
+	            
+	            
+	            android:background="@drawable/boton_rojo"
+                
+	            android:layout_width="fill_parent"
+	            android:layout_height="65dp"
+	            
+	            
+	            
+	            android:paddingTop="12dp"
+	            android:text=""
+	            
+	            android:drawableTop="@drawable/ic_colgar"
+	            android:onClick="clickSIPCancelarLlamada"
+	            
+	            android:visibility="invisible"
+	            />
+    
+    
+ 			   </RelativeLayout>
+    			
+    
+				
+    
+    		<RelativeLayout
+            	android:id="@+id/opciones_llamada_LAN_establecida"
+				android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_centerHorizontal="true"
+            	android:layout_alignParentBottom="true"
+            	android:layout_marginBottom="15dp"
+            	android:visibility="invisible"
+            >
+	        
+	        
+	        
+	        
+	        
+	        <ToggleButton
+	            android:id="@+id/opcion_altavoz"
+	            
+	            style="@android:style/Widget.Button.Toggle"
+	            android:textColor="@color/grisOscuro"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            
+	            android:layout_centerHorizontal="true"
+	            android:layout_marginBottom="15dp"
+	            
+	            android:layout_width="95dp"
+	            android:layout_height="80dp"
+	            android:layout_marginRight="5dp"
+	        
+	            android:textOff="@string/altavoz_OFF"
+	            android:textOn="@string/altavoz_ON"
+	            android:onClick="clickLANAltavoz"
+	            android:drawableTop="@drawable/btn_altavoz"
+	            />
+	        
+	        	<Button
+                android:id="@+id/boton_colgar_lan"
+                
+                android:layout_centerHorizontal="true"
+	            android:layout_below="@id/opcion_altavoz"
+	            
+	            android:background="@drawable/boton_rojo"
+		    	android:textColor="@color/marfil"
+	            android:textAppearance="?android:attr/textAppearanceSmall"
+	            android:gravity="center"
+	            
+	            android:layout_width="fill_parent"
+	            android:layout_height="75dp"
+	            
+	            android:paddingTop="15dp"
+	            android:drawableTop="@drawable/ic_colgar"
+	            android:onClick="clickLANTerminar"
+	            
+	            android:visibility="invisible"
+	            
+	            
+	            
+	            
+	            />
+	        
+	        
+	        </RelativeLayout>
+    
+    
+    
+
+
+</RelativeLayout>

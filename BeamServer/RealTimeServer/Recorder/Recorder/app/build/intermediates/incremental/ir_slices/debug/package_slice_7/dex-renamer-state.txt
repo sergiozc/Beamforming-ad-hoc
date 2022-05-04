@@ -1,0 +1,4 @@
+#Fri Sep 07 11:45:47 CEST 2018
+base.0=C\:\\Users\\Titan\\Desktop\\Recorder\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
+path.0=classes.dex
+renamed.0=classes.dex

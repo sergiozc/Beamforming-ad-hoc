@@ -1,0 +1,338 @@
+\documentclass[a4paper,11pt]{book}
+%\documentclass[a4paper,twoside,11pt,titlepage]{book}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% \usepackage[style=list, number=none]{glossary} %
+%\usepackage{titlesec}
+%\usepackage{pailatino}
+
+\decimalpoint
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{\esperiod}{-1}}
+\makeatletter
+\addto\shorthandsspanish{\let\esperiod\es@period@code}
+\makeatother
+
+
+%\usepackage[chapter]{algorithm}
+\RequirePackage{verbatim}
+%\RequirePackage[Glenn]{fncychap}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{afterpage}
+
+\usepackage{longtable}
+
+\usepackage[pdfborder={000}]{hyperref} %referencia
+
+
+
+% ********************************************************************
+% Re-usable information
+% ********************************************************************
+\newcommand{\myTitle}{Beamformer acústico}
+\newcommand{\myDegree}{Grado en Ingeniería de Tecnologías de Telecomunicación\xspace}
+\newcommand{\myName}{Sergio Zapata Caparrós\xspace}
+\newcommand{\myProf}{Antonio Miguel Peinado Herreros\xspace}
+\newcommand{\myOtherProf}{Ángel Manuel Gómez García\xspace}
+%\newcommand{\mySupervisor}{\xspace}
+\newcommand{\myFaculty}{\xspace}
+\newcommand{\myFacultyShort}{E.T.S. de Ingenierías Informática y de
+Telecomunicación\xspace}
+\newcommand{\myDepartment}{Departamento de ...\xspace}
+\newcommand{\myUni}{\protect{Universidad de Granada}\xspace}
+\newcommand{\myLocation}{Granada\xspace}
+\newcommand{\myTime}{Granada, Julio de 2022\today\xspace}
+\newcommand{\myVersion}{Version 0.1\xspace}
+
+
+\hypersetup{
+pdfauthor = {\myName (email (en) ugr (punto) es)},
+pdftitle = {\myTitle},
+pdfsubject = {},
+pdfkeywords = {palabra_clave1, palabra_clave2, palabra_clave3, ...},
+pdfcreator = {LaTeX con el paquete ....},
+pdfproducer = {pdflatex}
+}
+
+%\hyphenation{}
+
+
+%\usepackage{doxygen/doxygen}
+%\usepackage{pdfpages}
+\usepackage{url}
+\usepackage{colortbl,longtable}
+\usepackage[stable]{footmisc}
+%\usepackage{index}
+
+%\makeindex
+%\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
+% \makeglossary
+
+% Definición de comandos que me son tiles:
+%\renewcommand{\indexname}{Índice alfabético}
+%\renewcommand{\glossaryname}{Glosario}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
+
+\setlength{\headheight}{1.5\headheight}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
+%simplemente poniendo \begin{teorema} \end{teorema} ...
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\newtheorem{definicion}{Definición}[chapter]
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{gray30}{gray}{.94}
+
+\lstset{ frame=Ltb,
+     framerule=0.5pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0.1cm,
+     framesep=0pt,
+     rulesep=.4pt,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+     basicstyle=\scriptsize\ttfamily,
+     commentstyle=\color{gray45},
+     keywordstyle=\bfseries,
+     %
+     numbers=left,
+     numbersep=6pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+   }
+ 
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{CodigoC}
+   {
+	basicstyle=\scriptsize,
+	frame=single,
+	language=C,
+	numbers=left
+   }
+\lstdefinestyle{CodigoC++}
+   {
+	basicstyle=\small,
+	frame=single,
+	backgroundcolor=\color{gray30},
+	language=C++,
+	numbers=left
+   }
+
+ 
+\lstdefinestyle{Consola}
+   {basicstyle=\scriptsize\bf\ttfamily,
+    backgroundcolor=\color{gray30},
+    frame=single,
+    numbers=none
+   }
+
+
+\newcommand{\bigrule}{\titlerule[0.5mm]}
+
+
+%Para conseguir que en las páginas en blanco no ponga cabecerass
+\makeatletter
+\def\clearpage{%
+  \ifvmode
+    \ifnum \@dbltopnum =\m@ne
+      \ifdim \pagetotal <\topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+\usepackage{pdfpages}
+\begin{document}
+\input{portada/portada}
+\input{prefacios/prefacio}
+\frontmatter
+\tableofcontents
+%\listoffigures
+%\listoftables
+%
+\mainmatter
+\setlength{\parskip}{5pt}
+
+\chapter{Introducción}
+En este capítulo se realizará un fundamento teórico del concepto de ''Array Signal Processing'' y del método de ''Beamforming'', además de la utilidad en la realidad de estos términos. A parte, se argumentará la elección del proyecto en concreto y se explicará la distribución del mismo.
+	\section{Procesamiento de señales multicanal}
+	El procesamiento de señales multicanal, también conocido como ''Array Signal Processing'' se interpreta como un procesamiento de las señales en el espacio y en el tiempo.
+	
+	Conforme se va incrementando en frecuencia, las antenas necesitan unas dimensiones eléctricas mayores y se empiezan a alejar de las geometrías lineales. Para conformar la radiación y llegar a conseguir frentes de onda que puedan generar directividades elevadas y diagramas de radiación concretos, se presenta las llamadas 'Aperturas'. La respuesta procedente de una apertura es direccional, es decir, la señal recibida en la apertura depende de la dirección de llegada (DOA). El diagrama de radiación de una apertura lineal uniforme de longitud 'L' se muestra en la \textit{Figura 1.1}.
+	\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width = 8cm]{FIGURAS/directividad_apertura.JPG}
+	\caption{Directividad apertura}
+	\end{figure}
+	
+	 Se puede apreciar que actúa como un filtro espacial (fenómeno clave para hacer beamforming), diferenciándose claramente el lóbulo principal de los demás, menos directivos.
+	 
+	 Un array de sensores es, básicamente, una apertura conformada por un número de aperturas lineales, simulando de esta manera el comportamiento de una apertura lineal de longitud la suma de las longitudes de los elementos del array más la separación entre ellos. Por así decirlo, un array de sensores es una apertura muestreada en ciertas localizaciones. Un array lineal uniforme simula el comportamiento de una apertura lineal uniforme con una longitud $L = dN$ donde $d$ se corresponde a la distancia entre elementos y $N$ la longitud de estos. En la Figura 1.2 se puede observar un array lineal uniforme orientado sobre el eje $z$. Variando la longitud del array con una longitud de onda fija, se pueden lograr diferentes patrones de directividad, como son el ''endfire'' (con el máximo de directividad en 90º) y el ''broadside'' (con el máximo de directividad en 0º ó 180º.
+	 \begin{figure}[hbtp]
+	 \centering
+	 \includegraphics[width = 5cm]{FIGURAS/array_elementos.JPG}
+	 \caption{Agrupación de elementos}
+	 \end{figure}
+	 
+	 El tipo de array que se va a tratar en el pryecto será un array Ad-Hoc de smartphones. Las agrupaciones de micrófonos consisten en un número de micrófonos los cuales se combinan para filtrar espacialmente las ondas acústicas. La configuración geométrica del array permitirá filtrar las señales deseadas para diversas aplicaciones. Este filtrado espacial sigue normalmente algoritmos de beamforming, los cuales se detallan en la siguiente sección. Sin embargo, para llegar al filtrado espacial, las señales captadas por los smartphones deben estar sincronizadas. Esto puede ser un problema, ya que el retardo producido desde que el primer móvil recibe la orden de grabar hasta que el último móvil recibe esta orden puede ser determinante. Además, las relojes de los móviles no se encuentran perfectamente sincronizados, por lo que se tendrá que implementar algún algoritmo de sincronización para mitigar estos efectos y llegar a realizar los filtros espaciales adecuadamente.
+	 
+	\section{Concepto de Beamforming}
+	El concepto de ''Beamforming'' agrupa las técnicas necesarias para la determinación de filtros específicos, los cuales tienen el fin de obtener un patrón de directividad con una forma y dirección determinadas.
+	
+	Un ''beamformer'' se interpreta como un procesador, utilizado conjuntamente con una serie de sensores, para proporcionar una forma versátil de filtrado espacial. El objetivo es estimar la señal procedente de una dirección deseada, en un entorno ruidoso y en presencia de señales de interferencia. El ''beamformer'' actúa de forma similar a un filtro espacial, separando las señales que han sufrido una superposición en frecuencia, pero que se han originado en diferentes localizaciones espaciales.
+	
+	El caso que se planteará en este proyecto corresponde a un beamforming acústico. Dentro de este caso, existen dos ramas principales: una relacionada con la extracción de la señal y otra relacionada con la localización de las fuentes sonoras.
+		\subsection{Tipos de Beamformers}
+	\section{Impacto en la actualidad}
+	El procesamiento de señales multicanal tiene múltiples aplicaciones. Algunas de ellas son: radioastronomía, radar, sismología, tomografía, comunicaciones inalámbricas, sonar y tratamiento de audio. Se explicará brevemente la actuación de este tipo de procesamiento para las comunicaciones celulares y para un punto de vista acústico.
+		\subsection{Comunicaciones Inalámbricas}
+		Las comunicaciones celulares en la actualidad emplean sectorización por células para proporcionar más frecuencias por área de cobertura.
+		\begin{figure}[hbtp]
+		\centering
+		\includegraphics[width = 8cm]{FIGURAS/sectorización.JPG}
+		\caption{Sectorización celular}
+		\end{figure}
+		
+	
+	Sin embargo, esta sectorización no fue suficiente para abarcar el creciente número de usuarios que solicitan recursos de frecuencia, por lo que, en la última generación estandarizada de comunicaciones móviles (4G), se emplearon técnicas ''MIMO'' y ''Smart Antennas. MIMO es un acrónimo que se refiere a ''Multiple Input Multiple Output'', por lo que se podrá utilizar una agrupación de antenas tanto en el emisor como en el receptor. Se puede entender mejor el concepto observando el canal del sistema correspondiente a la \textit{Figura 1.2}. En concreto, es un canal MIMO 4x4.
+		
+		Debido al uso de múltiples antenas, se pueden emplear las técnicas de multiplexado espacial y diversidad espacial. La primera de ellas consigue mejorar la ganancia mediante la transmisión de distintos flujos de información independientes a través de las múltiples antenas. Esto implica un aumento considerable de la tasa de bits respecto a los sistemas con una única antena. Con la diversidad espacial se incrementa la ganancia en codificación mediante la transmisión de secuencias redundantes por varias antenas.
+		
+		\begin{figure}[hbtp]
+		\centering
+		\includegraphics[width = 10cm]{FIGURAS/sistema_MIMO.JPG}
+		\caption{Sistema MIMO}
+		\end{figure}
+
+		En referencia a la introducción de las llamadas ''Smart Antennas'', son capaces de adaptar el patrón del haz de radiación con el propósito de mejorar la calidad de la señal deseada y minimizar el impacto de la señal interferencia. Esta adaptación implica el uso de beamforming. El beamformer puede ser adaptativo, el cual dirige el haz principal hacia la señal de interés, o conmutado, el cual posee una serie de patrones de radiación fijos. Este fenómeto es levemente ilustrado en la \textit{Figura 1.3}.
+		\begin{figure}[hbtp]
+		\centering
+		\includegraphics[width = 8cm]{FIGURAS/beamformer_adaptativo.JPG}
+		\caption{Beamforming en comunicaciones inalámbricas}
+		\end{figure}
+		
+		\subsection{Procesamiento acústico}
+		En referencia un punto de vista acústico y manipulación de audio, se van a exponer dos técnicas distintas. La primera será diarización de locutores y la segunda será la localización de fuentes sonoras.
+			\subsubsection{Diarización}
+			La diarización entre locutores consiste en determinar los instantes de tiempo en los que cada locutor interviene, dada una señal de audio captada con array de micrófonos, como va a ser el caso. Se expone el ejemplo real de una sala de reunión con múltiples locutores y múltiples micrófonos distribuidos en la sala. Para aprovechar la capacidad de un array de múltiples micrófonos, se pueden utilizar técnicas de beamforming, ya explicadas en una sección anterior para realzar la señal de interés.
+			
+			Antes de ningún proceso que abarque a todos los micrófonos, se debe aplicar un filtro de Wiener a cada canal individual para eliminar el ruido aditivo. Teniendo en cuenta el tiempo de llegada de cada señal y el número total de micrófonos, se implementa un algoritmo que implica correlación cruzada entre señales, obteniendo de esta manera el canal que proporciona una mejor calidad de señal. Tras aplicar beamforming, computando los retrasos entre cada canal, se propone usar el algoritmo de Viterbi, el cual se encarga de hallar el camino o secuencia con mayor probabilidad. El objetivo de este último paso es proporcionar una continuidad a la señal del locutor que está en ese momento hablando, estableciendo el retardo de la señal y filtrando la dirección del haz no deseada.	
+			\begin{figure}[hbtp]
+			\centering
+			\includegraphics[width = 13cm]{FIGURAS/diarizacion.JPG}
+			\caption{Decodificación de Viterbi}
+			\end{figure}	
+			
+			En la \textit{Figura 1.4} se esquematiza el algoritmo de Viterbi para un ejemplo de dos locutores, dos fuentes de ruido y micrófonos distribuidos. En el primer paso (b) para cada canal individual, se obtiene los dos mejores caminos en función del tiempo. En el segundo paso (c) se seleccionan los retardos apropiados, considerando todas las posibles combinaciones de todos los canales. Se acaba eligiendo el mejor camino según los datos de distancias y correlación.\linebreak 
+			\textit{Nota: Las columnas de la representación trellis del algoritmo de Viterbi corresponden a la diferencia de tiempos de llegada obtenidos anteriormente.
+}
+			\subsubsection{Localización de fuentes}
+			Técnicas de beamforming acústico son usadas para el propósito de localizar fuentes sonoras. Hay que destacar que, las condiciones ambientales pueden afectar considerablemente a la fiabilidad del beamforming. La reflexión y difracción del las ondas sonoras dan lugar a las llamadas ''fuentes fantasma'' o \textit{ghost sources}. Estas \textit{ghost sources} aparecen cuando el proceso de beamforming no está perfectamente adecuado para los fenómenos de propagaciones reales del entorno.
+			
+			
+			\begin{itemize}
+				\item[-] Una aplicación interesante de beamforming es la relacionada con la identificación de fuentes en movimiento. En este caso, se debe considerar el efecto Doppler, por lo que se tendrá que compensar este fenómeno. El beamforming aplicado a objetos en movimiento se suele aplicar en el dominio del tiempo, ya que es más rápido para un número grande de micrófonos. Con las coordenadas del móvil estimadas y la frecuencia Doppler compensada, se procede con un beamforming ''delay and sum'', visto en secciones anteriores.
+				\item[-] Un campo en el que el beamforming ha supuesto una herramienta de mejora importante es en los experimentos llamados ''Túneles de viento'' o \textit{Wind tunnels}. Estos experimentos se realizan con el propósito de analizar el efecto del aire incidente en objetos. Se simula una situación real, enfocando una estructura como puede ser un avión, una aeronave o incluso edificaciones. 
+			\begin{figure}[hbtp]
+			\centering
+			\includegraphics[width = 12cm]{FIGURAS/wind_tunnel.JPG}
+			\caption{Configuración del array para un túnel de viento}
+			\end{figure}
+			
+			Las ondas de sonido radiadas por las fuentes aero-acústicas ubicadas en la superficie del modelo, sufren refracción y scattering debido a entorno del experimento, por lo que deberá existir un algoritmo para compensar este fenómeno. La técnica de beamforming juega un papel importante al estimar las repercusiones acústicas que sufre el modelo y evitar posibles averías o incluso conseguir una mejoría en el comportamiento del modelo. En la \textit{Figura 1.5} se muestra el experimento real (parte de la izquierda) y la disposición de los micrófonos (parte de la derecha).
+				\item[-] Por último, mencionar la aplicación de beamforming en interiores. Micrófonos empotrados son normalmente utilizados en entornos de interios, así como cabinas de avión o interiores de automóviles. De esta manera, se consigue identificar la ubicación de las fuentes sonoras y actuar frente a estas.
+			\end{itemize}
+			
+	
+	\section{Justificación del proyecto}
+	\section{Distribución del proyecto}
+		\subsection{Requisitos de realización}
+		\subsection{Procedimiento}
+		Aquí va una lista de lo que he hecho: servidor, app y algoritmo.
+		\subsection{Entornos de trabajo}
+		Java, AndroidStudio, Python...
+\chapter{Planteamiento del problema}
+
+\chapter{Desarrollo del servidor externo}
+
+\chapter{Desarrollo de la aplicación }
+
+\chapter{Implementación del algoritmo de Beamforming}
+
+\chapter{Análisis del modelo}
+
+\chapter{Perspectiva de futuro}
+Aquí poner lo del 5G, massive MIMO etc Y ALGUNA COSA MÁS.
+\chapter{Conclusiones}
+
+\chapter{Bibliografía}
+
+\chapter{Apéndice}
+
+
+
+
+
+%\input{capitulos/01_Introduccion}
+%
+%\input{capitulos/02_EspecificacionRequisitos}
+%
+%\input{capitulos/03_Planificacion}
+%
+%\input{capitulos/04_Analisis}
+%
+%\input{capitulos/05_Diseno}
+%
+%\input{capitulos/06_Implementacion}
+%
+%\input{capitulos/07_Pruebas}
+%
+%\input{capitulos/08_Conclusiones}
+%
+%%\chapter{Conclusiones y Trabajos Futuros}
+%
+%
+%%\nocite{*}
+%\bibliography{bibliografia/bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
+%\bibliographystyle{miunsrturl}
+%
+%\appendix
+%\input{apendices/manual_usuario/manual_usuario}
+%%\input{apendices/paper/paper}
+%\input{glosario/entradas_glosario}
+% \addcontentsline{toc}{chapter}{Glosario}
+% \printglossary
+\chapter*{}
+\thispagestyle{empty}
+
+\end{document}

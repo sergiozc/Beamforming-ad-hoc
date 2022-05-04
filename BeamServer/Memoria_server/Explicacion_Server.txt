@@ -1,0 +1,43 @@
+
+TEORÍA
+- El número de puertos disponibles abarca desde el 0 hasta el 6535 (el 0 está reservado).
+- Para la comunicación cliente/servidor, el cliente necesita saber la dirección IP y el
+puerto del servidor inicialmente.
+- Con los sockets, el servidor es capaz de determinar la dirección del cliente, únicamente
+recibiendo la conexión inicial del cliente, si fuera necesario.
+- Un socket es un concepto abstracto. Permite la comunicación entre aplicaciones en la red.
+En el protocolo TCP/IP permite transmitir flujos de datos. A través de un socket,
+la aplicación es capaz de alcanzar un puerto de la red (figura Explica_Sockets).
+- Una vez conocido el puerto y la dirección IP del servidor, el cliente envía una 'request'
+mediante el ServerSocket y el servidor crear un nuevo socket (tipo 'Socket) para manejar
+ese cliente. El cliente solo usa el socket asignado, mientras que el servidor maneja tanto
+el ServerSocket como los Sockets de los clientes.
+- La comunicación se realizará mediante flujos de entrada y salida (InputStream y OutputStream).
+El 'DataOutputStream' va del servidor al cliente y el 'DataInputStream' del cliente al servidor. Son dos flujos unidireccionales.
+El canal del servidor al cliente se llama 'conexion'. Mediante este canal le pasamos el valor del puerto fijo al 
+cliente.
+- Cuando el servidor está preparado para operar al cliente entrante, introducimos la línea
+'server.accept()'.
+
+
+
+
+SOBRE EL CÓDIGO
+- ServerSocket es la conexión del servidor, está llamado como 'server'.
+Socket es la conexión del cliente y está llamado como 'puertoComun'. Los sockets se pueden entender como los canales.
+
+- En la línea 'server.accept()', se queda esperando hasta que llegue la conexión DEL CLIENTE (puertoComun).
+
+- Cuando se realiza la conexión al puerto fijo, se cierra el canal del servidor al cliente ('conexion.close()') y se
+cierra el socket del cliente ('puertoComun.close()'). Se incrementa  también el número de conexiones (10 máximo).
+Fuera del 'while' se cierra el servidor.
+
+- Al construir una instancia de BufferedInputStream, debe proporcionar una instancia del tipo InputStream.
+ Cuando implementa un BufferedInputStream, en realidad implementa una instancia de InputStream. De manera similar,
+ al construir BufferedOutputStream, también debe proporcionar una instancia de OutputStream.
+
+RESULTADO
+- El audio del dispositivo 1 resulta un poco retardado respecto al audio del
+dispositivo 0. Siempre el Device1 es que se adelanta al Device0.
+
+

@@ -1,0 +1,81 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\299937023a59295667d4a36f3dd00770\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\176fd1cc8c15a3382707fc2b2b14f443\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+	package
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:3:5-40
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:1-22:12
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:5:5-18:19
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\299937023a59295667d4a36f3dd00770\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\299937023a59295667d4a36f3dd00770\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\176fd1cc8c15a3382707fc2b2b14f443\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\176fd1cc8c15a3382707fc2b2b14f443\AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:8:9-41
+	android:icon
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:10:9-40
+activity#com.example.tosh.recorder.MainActivity
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:11:9-17:20
+	android:name
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:11:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:12:13-16:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:13:17-69
+	android:name
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:13:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:15:17-77
+	android:name
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:15:27-74
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:19:5-70
+	android:name
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:19:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:20:5-80
+	android:name
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml:20:22-78
+uses-sdk
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\299937023a59295667d4a36f3dd00770\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\299937023a59295667d4a36f3dd00770\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\176fd1cc8c15a3382707fc2b2b14f443\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Titan\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\176fd1cc8c15a3382707fc2b2b14f443\AndroidManifest.xml:20:5-43
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Titan\Desktop\Recorder\app\src\main\AndroidManifest.xml

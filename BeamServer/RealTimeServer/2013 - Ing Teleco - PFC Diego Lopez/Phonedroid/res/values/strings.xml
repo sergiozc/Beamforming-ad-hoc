@@ -1,0 +1,158 @@
+<resources>
+
+    <string name="nombre_aplicacion">Phonedroid</string>
+    <string name="titulo_actividad_inicio">Phonedroid</string>
+    
+    <string name="titulo_actividad_llamada_rapida">Quick Call</string>
+    <string name="titulo_actividad_llamada_eligiendo_codec">Choosing Codec</string>
+    <string name="titulo_actividad_llamada_ilbc">iLBC Coding</string>
+    <string name="titulo_actividad_llamada_lan">Call via LAN</string>
+    <string name="titulo_actividad_llamadas_perdidas">Missed Calls Log</string>
+    <string name="titulo_actividad_configuracion_sip">Edit SIP Configuration</string>
+    <string name="titulo_actividad_gestion_contactos">Manage Contacts</string>
+    <string name="titulo_actividad_cambiar_idioma">Change Language</string>
+    <string name="mantener_aplicacion_abierta">Keep Phonedroid open when leaving</string>
+    
+    
+    <string name="titulo_actividad_llamada_rapida_2">SIP - Quick Call</string>
+    <string name="titulo_actividad_llamada_eligiendo_codec_2">SIP - Call Choosing Codec</string>
+    <string name="titulo_actividad_llamada_ilbc_2">SIP - Call using iLBC Codec</string>
+    <string name="titulo_actividad_llamada_lan_2">Local Network Call</string>
+    <string name="titulo_actividad_llamadas_perdidas_2">Missed Calls Log</string>
+    <string name="titulo_actividad_configuracion_sip_2">SIP - Edit Configuration</string>
+    <string name="titulo_actividad_gestion_contactos_2">SIP - Contacts Management</string>
+    
+    
+    <string name="titulo_actividad_eleccion_contacto">SIP - Contacts</string>
+    
+    <string name="Registro_SIP_Registrado">Registered with SIP Server</string>
+	<string name="Registro_SIP_Registrandose">Registering with SIP Server...</string>
+	<string name="Registro_SIP_FalloRegistro">Registration failed</string>
+
+	<string name="Informacion_SIP_ErrorConexion">Connection Error</string>
+	<string name="Informacion_SIP_LlamadaSalienteTerminada">Outgoing Call Ended</string>
+	<string name="Informacion_SIP_LlamadaRechazada">Call Rejected</string>
+	<string name="Informacion_SIP_LlamadaEntranteTerminada">Incoming Call Ended</string>
+	<string name="Informacion_SIP_IniciandoLlamada">Initiating Call...</string>
+	<string name="Informacion_SIP_LlamadaEntrante">Incoming Call...</string>
+	<string name="Informacion_SIP_LlamadaEstablecida">Call Established</string>
+	<string name="Informacion_SIP_NotificacionError">An error has occurred</string>
+    
+    
+    <string name="Configuracion_SIP_nombre_usuario">Username</string>
+    <string name="Configuracion_SIP_nombre_usuario_ejemplos">Examples: \"juan1980\",\"peter-smith\"</string>
+    <string name="Configuracion_SIP_dominio">SIP Domain</string>
+    <string name="Configuracion_SIP_dominio_ejemplos">Examples: \"iptel.org\",\"ekiga.net\"</string>
+    <string name="Configuracion_SIP_contrasenia">Password</string>
+    
+    
+    <string name="Informacion_SIP_usuario_local_es">Local User:\t\t</string>
+	<string name="Informacion_SIP_usuario_local">[Unavailable]</string>
+    <string name="Informacion_SIP_usuario_remoto_es">Remote User:\t\t</string>
+	<string name="Informacion_SIP_usuario_remoto">[Unavailable]</string>
+    <string name="Informacion_SIP_error_es">Error:\t</string>
+    <string name="Informacion_SIP_error">[Unavailable]</string>
+    
+     
+     
+     <string name="mantener_llamada">Hold</string>
+     <string name="continuar_llamada">Continue</string>
+     <string name="altavoz_ON">Speaker</string>
+     <string name="altavoz_OFF">Speaker</string>
+     <string name="silenciar_llamada">Mute</string>
+     <string name="eliminar_silenciar_llamada">Unmute</string>
+
+
+     
+     <string name="hint_cuenta_SIP_destino">Enter the destination SIP account</string>
+     <string name="elegir_modo_ilbc">iLBC Mode</string>
+     
+     
+     <string name="nombre_contacto_es">Name</string>
+     <string name="hint_nombre_contacto">Please, enter the contact name</string>
+     <string name="cuenta_sip_es">SIP Account</string>
+     <string name="hint_cuenta_sip">Please, enter the contact SIP account</string>
+     <string name="aceptar_contacto">Accept</string>
+     
+     
+     
+     <string name="aniadir_contacto">Add</string>
+     <string name="editar_contacto">Edit</string>
+     <string name="eliminar_contacto">Delete</string>
+     
+    
+    
+    <string-array name="codecs_array">
+        <item>AMR</item>
+        <item>GSM</item>
+        <item>GSM_EFR</item>
+        <item>PCMA</item>
+        <item>PCMU</item>
+    </string-array>
+    
+    <string-array name="codecs_array_lan">
+        <item>AMR</item>
+        <item>GSM</item>
+        <item>GSM_EFR</item>
+        <item>PCMA</item>
+        <item>PCMU</item>
+        <item>iLBC_20ms</item>
+        <item>iLBC_30ms</item>
+    </string-array>
+    
+    <string-array name="mode_ilbc_array">
+        <item>20ms Frames</item>
+        <item>30ms Frames</item>
+    </string-array>
+    
+    
+
+    
+    
+
+	 <string name="LAN_direccion_puerto_locales_son">Local Information\t</string>
+     <string name="LAN_direccion_puerto_locales">[Unavailable]</string>
+	 <string name="modo_supresion_eco">Echo Suppression Mode</string>
+	 <string name="LAN_direccion_puerto_destino_son">Remote Address and Port</string>
+     <string name="LAN_hint_direccion_destino">Address</string>
+     <string name="LAN_hint_puerto_destino">Port</string>
+     <string name="modo_completo">Complete Mode</string>
+     <string name="LAN_titulo_seccion_intercambio">Interchange of Address-Port via SIP</string>
+	 <string name="LAN_comenzar_intercambio">Start Interchange</string>
+	 
+	
+	<string name="Informacion_SIP_PeticionRechazada">Request Rejected</string>
+	<string name="Informacion_SIP_PeticionEntranteTerminada">Incoming Request Ended</string>
+	<string name="Informacion_SIP_IniciandoPeticion">Initiating Request of Interchange...</string>
+	<string name="Informacion_SIP_PeticionEntrante">Incoming Request of Interchange...</string>
+	<string name="Informacion_SIP_ProcesandoIntercambio">Processing Interchange...</string>
+	<string name="Informacion_SIP_PeticionSalienteTerminada">Outgoing Request Ended</string>
+	<string name="Informacion_SIP_PeticionSalienteTerminada_ProblemaIntercambio">Interchange has not been done</string>
+	<string name="Informacion_SIP_PeticionSalienteTerminada_ProblemaDirPuerto">Failure obtaining address and/or port</string>
+    <string name="Informacion_SIP_PeticionSalienteTerminada_SSID_Diferentes">Different local and remote SSID</string>
+    <string name="Informacion_SIP_PeticionSalienteTerminada_OK">Satisfactory Interchange</string>
+	 
+	 
+     <string name="aviso_no_contactos_en_lista">There are no contacts in the list</string>
+     <string name="aviso_no_cuenta_sip">There is no SIP account associated</string>
+	 <string name="aviso_no_internet">There is no Internet connection</string>
+	 <string name="aviso_configurar_SIP">Please, enter your SIP account credentials</string>
+	 <string name="aceptar">OK</string>
+	 <string name="cancelar">Cancel</string>
+	 <string name="aviso_campo_cuenta_sip_nulo">Please, enter a SIP account</string>
+	 <string name="aviso_ninguna_opcion_elegida">Choose an option: Edit o Delete</string>
+	 <string name="aviso_campo_nulo_nuevo_contacto">Fill Name and SIP Account</string>
+	 <string name="aviso_campo_nulo_llamadas_lan">Fill Address and Port</string>
+	 <string name="aviso_opcion_no_dispoible_ilbc">Unavailable option with iLBC</string>	
+	 
+	 <string name="notificacion_phonedroid_iniciado">Phonedroid Started</string>
+
+	 <string name="limpiar_lista_llamadas">Clear Missed Calls Log</string>
+	 <string name="aviso_no_llamadas_perdidas">The missed calls log is empty</string>
+	 <string name="notificacion_llamada_entrante">Phonedroid-Incoming Call </string>
+	 <string name="notificacion_llamadas_perdidas">Missed Calls</string>
+	 
+	 <string name="valor_no_disponible">[Unavailable]</string>
+	 
+	 
+</resources>

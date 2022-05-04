@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/grisFondo"
+     >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" 
+         >
+
+
+        
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            
+             >
+
+            <Button
+                android:id="@+id/acceso_llamada_rapida"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/ic_llamada_rapida"
+                android:onClick="clickAccesoLlamadaRapida"
+                android:padding="10dp"
+                android:text="@string/titulo_actividad_llamada_rapida"
+                android:background="@drawable/boton_gris"
+                 />
+
+            <Button
+                android:id="@+id/acceso_elegir_codec"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/acceso_llamada_rapida"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/acceso_llamada_rapida"
+                
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/ic_elegir_codec"
+                android:onClick="clickAccesoElegirCodec"
+                android:padding="10dp"
+                android:text="@string/titulo_actividad_llamada_eligiendo_codec"
+                android:background="@drawable/boton_gris" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opciones_aplicacion_fila1"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+             >
+
+            <Button
+                android:id="@+id/acceso_llamada_ilbc"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/ic_ilbc"
+                android:onClick="clickAccesoLlamadaILBC"
+                android:padding="10dp"
+                android:text="@string/titulo_actividad_llamada_ilbc"
+                android:background="@drawable/boton_gris"
+                 />
+
+            <Button
+                android:id="@+id/acceso_llamada_red_local"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/acceso_llamada_ilbc"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/acceso_llamada_ilbc"
+                
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/ic_lan"
+                android:onClick="clickAccesoLlamadasRedLocal"
+                android:padding="10dp"
+                android:text="@string/titulo_actividad_llamada_lan"
+                android:background="@drawable/boton_gris" />
+        </RelativeLayout>
+        
+        
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opciones_aplicacion_fila2"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+             >
+
+            <Button
+                android:id="@+id/acceso_llamadas_perdidas"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_registro_llamadas_perdidas"
+                android:onClick="clickAccesoLlamadasPerdidas"
+                android:padding="5dp"
+                android:text="@string/titulo_actividad_llamadas_perdidas"
+                android:background="@drawable/boton_gris"
+                 />
+
+            </RelativeLayout>
+    
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opciones_aplicacion_fila3"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+             >
+
+            <Button
+                android:id="@+id/acceso_configuracion_sip"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_configuracion_sip"
+                android:onClick="clickAccesoSIPConf"
+                android:padding="5dp"
+                android:text="@string/titulo_actividad_configuracion_sip"
+                android:background="@drawable/boton_gris"
+                 />
+
+            </RelativeLayout>
+            
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opciones_aplicacion_fila4"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+             >
+
+            <Button
+                android:id="@+id/acceso_gestion_contactos"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_gestionar_contactos"
+                android:onClick="clickAdministrarContactos"
+                android:padding="5dp"
+                android:text="@string/titulo_actividad_gestion_contactos"
+                android:background="@drawable/boton_gris"
+                 />
+
+            </RelativeLayout>
+            
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opciones_aplicacion_fila5"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+             >
+
+            <Button
+                android:id="@+id/acceso_cambiar_idioma"
+                style="@style/PeqMarfil"
+                
+                android:textColor="#A1DDFF"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_cambiar_idioma"
+                android:onClick="clickAccesoCambiarLenguaje"
+                android:padding="5dp"
+                android:text="@string/titulo_actividad_cambiar_idioma"
+                android:background="@drawable/boton_gris"
+                 />
+
+            </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/opciones_aplicacion_fila7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/opciones_aplicacion_fila6"
+            android:layout_marginTop="0dp"
+            android:layout_centerHorizontal="true"
+             >
+        
+        <CheckBox
+         	  android:id="@+id/mantener_registro_sip"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:layout_centerHorizontal="true"
+		      android:textSize="12sp"
+              android:textColor="@color/grisOscuro"
+		      android:checked="true"
+		      android:text="@string/mantener_aplicacion_abierta"
+		      android:onClick="clickKeepApp"
+		        />
+        </RelativeLayout>
+        
+        
+    
+    
+               
+    </RelativeLayout>
+	
+    
+
+    
+</RelativeLayout>
+
+<!--     <Button -->
+<!--             android:id="@+id/pruebas_varias" -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_alignParentBottom="true" -->
+<!--             android:layout_centerHorizontal="true" -->
+<!--             android:layout_marginTop="50dp" -->
+<!--             android:onClick="clickBotonPruebasVarias" -->
+<!--             android:text="Pruebas" -->
+<!--             android:textSize="20sp" -->
+<!--             android:visibility="gone" -->
+<!--              /> -->

@@ -1,0 +1,81 @@
+
+ 
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:paddingTop="5dp"
+         android:paddingLeft="5dp"
+         android:paddingRight="5dp"
+         
+         >
+
+     <RelativeLayout 
+        android:id="@+id/layout_list_gestion_contactos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D7DE"
+         >
+         <Button 
+            android:id="@+id/boton_agregar_contacto"
+            
+            style="@android:style/Widget.Button"
+		    android:textColor="@color/grisOscuro"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	         
+            
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            
+            android:text="@string/aniadir_contacto"
+            android:drawableTop="@drawable/ic_aniadir_contacto"
+            android:onClick="clickSIPAgregarContacto"
+             />
+         
+         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_marginLeft="10dp"
+    		android:layout_centerVertical="true"
+    		android:layout_centerHorizontal="true"
+    		
+    		android:layout_toRightOf="@id/boton_agregar_contacto"
+    		
+    		android:orientation="horizontal"
+    		>
+    		<RadioButton 
+    		    android:id="@+id/radiobutton_editar_contacto"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textAppearance="?android:attr/textAppearanceSmall"
+        		android:text="@string/editar_contacto"
+        		android:textColor="#545260"
+        		android:drawableTop="@drawable/ic_editar_contacto"
+        		/>
+    		<RadioButton android:id="@+id/radiobutton_eliminar_contacto"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_marginLeft="25dp"
+        		android:textAppearance="?android:attr/textAppearanceSmall"
+        		android:textColor="#545260"
+        		android:text="@string/eliminar_contacto"
+        		android:drawableTop="@drawable/ic_eliminar_contacto"
+        		/>
+		</RadioGroup>
+         
+     </RelativeLayout>
+     
+     <ListView android:id="@android:id/list"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               
+               android:drawSelectorOnTop="false"/>
+
+     <TextView 
+         	   style="@style/MedGris.Centrado"
+         	   android:id="@android:id/empty"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:textStyle="italic"
+               android:text="@string/aviso_no_contactos_en_lista"/>
+ </LinearLayout>

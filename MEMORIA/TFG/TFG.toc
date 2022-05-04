@@ -1,0 +1,24 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Procesamiento de señales multicanal}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Concepto de Beamforming}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Tipos de Beamformers}{3}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Impacto en la actualidad}{3}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Comunicaciones Inalámbricas}{3}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Procesamiento acústico}{5}{subsection.1.3.2}%
+\contentsline {subsubsection}{Diarización}{5}{section*.6}%
+\contentsline {subsubsection}{Localización de fuentes}{6}{section*.7}%
+\contentsline {section}{\numberline {1.4}Justificación del proyecto}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Distribución del proyecto}{7}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Requisitos de realización}{7}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Procedimiento}{7}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Entornos de trabajo}{8}{subsection.1.5.3}%
+\contentsline {chapter}{\numberline {2}Planteamiento del problema}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Desarrollo del servidor externo}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Implementación del algoritmo de Beamforming}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Análisis del modelo}{17}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Perspectiva de futuro}{19}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{21}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Bibliografía}{23}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Apéndice}{25}{chapter.10}%

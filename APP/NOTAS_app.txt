@@ -1,0 +1,56 @@
+
+CICLO DE VIDA DE UN ACTIVITY
+- onCreate(): Crea el activity.
+- onStart(): Iniciar el activity que previamente se creó.
+- onResume(): Visualizar el activity que previamente se creó y se inició.
+- onPause(): Se ejecuta cuando el usuario minimiza la app. Lo que hace es
+ pausar momentáneamente el activity, para que esté funcionando la app en 
+ segundo plano.
+- onStop(): Se ejecuta acto seguido de 'OnPause()', lo que hace es ocultar
+ la aplicación. Hace que no sea visible el activity.
+- onRestart(): Cuando el usuario vuelve a la aplicaión (la cual estaba
+ minimizada y en segundo plano). Se vuelve a ejecutar 'onStart()' y 'onResume()'
+- onDestroy(): Cuando el usuario cierra la aplicación. Se destruye el activity.
+
+TOAST
+Son mensajes emergentes en pantalla y no bloquean la actividad de la aplicación.
+Toast.makeText(Context contexto, String texto, Int duracion).show()
+El contexto es la activity en la que aparece el mensaje, en texto ponemos
+el mensaje que queremos enviar y en duración el tiempo que está visible.
+Toast.makeText(this, "Hola", Int Toast.LENGTH_SHORT).show()
+Si queremos que dure más => Toast.LENGTH_LONG
+
+THIS ==> Hace referencia al activity actual.
+
+CONSTRAITS LAYOUT
+Las añadimos en la pantalla azul (blue print). Todos los componentes conectados
+y al menos que tengan una separación determinada con un borde de la pantalla.
+
+DEFINICIÓN DE COMPONENTES
+Para definir los componentes del diseño en el Activity, creamos un objeto del
+tipo que corresponda (ej: private EditText et1) y dentro del onCreate() lo 
+definimos de la siguiente manera (et1 = (EditText)findViewById(R.ID)). 
+Los 'Views' en android se corresponden a los elementos gráficos, el primer
+término '(EditText)' es para pasarlo a tipo EditText si por ejemplo era numérico.
+La clase 'R' está proporcionada por android para la comunicación entre elementos
+gráficos y el código. El ID es el correspondiente del elemento en el layout.
+
+BOTÓN
+Primero crearemos un método ó función tipo 'public void' que tenga como entrada
+un objeto de la clase View (lo llamaremos view). Dentro de la función pondremos
+lo que queremos que pase cuando pulsemos el botón. En la vista diseño, le asignamos
+en la parte 'onClick' el nombre de la función o método creado.
+
+PASAR A ENTERO
+Únicamente tenemos que escribir int x = Integer.parseInt(lo_que_queremos_convertir).
+Utilizamos el método Integer implementado en java.
+
+CAMBIAR DE ACTIVITY
+Es necesario crear un objeto de tipo 'Intent'. La estructura para pasar a otra
+activitty es: 
+	Intent i = new Intent(this, Activity2.class);
+	startActivity(i);
+Se le pasa la activity en la que actualmente estamos y a la que queremos cambiar.
+
+
+HAY QUE EXPLICAR LO DE LA MARCA DE TIEMPO Y EL EXPERIMENTO

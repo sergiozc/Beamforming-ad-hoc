@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:paddingTop="5dp"
+         android:paddingLeft="5dp"
+         android:paddingRight="5dp"
+         
+         >
+
+         <Button 
+             	android:id="@+id/limpiar_registro"
+             	
+             	android:background="@drawable/boton_gris"
+		    	android:textColor="@color/marfil"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:gravity="center"
+	            android:layout_centerHorizontal="true"
+	            
+	            
+	            
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="10dp"
+            	android:paddingBottom="10dp"
+            	android:text="@string/limpiar_lista_llamadas"
+	            android:onClick="clickLimpiarLista"
+	            android:drawableLeft="@drawable/ic_eliminar_registro"
+             />
+ 
+     
+     <ListView android:id="@android:id/list"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               
+               android:drawSelectorOnTop="false"/>
+
+     <TextView 
+         	   style="@style/MedGris.Centrado"
+         	   android:id="@android:id/empty"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:textStyle="italic"
+               android:text="@string/aviso_no_llamadas_perdidas"/>
+ </LinearLayout>
