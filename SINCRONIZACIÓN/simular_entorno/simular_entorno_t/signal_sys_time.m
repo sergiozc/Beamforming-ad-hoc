@@ -62,7 +62,7 @@ n=0:Nsamp;
 excit=sin(2*pi*Fsw(1)*Nsamp*(exp(Inclog*n/Nsamp)-1)/Inclog);
 Lexcit=length(excit);
 %excit=sin(2*pi*Fsw(1)*(Fsw(2)/Fsw(1)).^(n/Nsamp).*n);
-%plot(excit)
+plot(excit)
 
 % Simulacion de la transmision de los chirps
 % Generacion de canal de transmision altavoz-micro generico

@@ -1,4 +1,4 @@
-function grd=grad_tf(tdoaest,tdoamed,tf_est,c)
+function grd=grad_tf(tdoaest,tdoamed,tf_est)
 
 dim=size(tf_est);
 N=dim(1);

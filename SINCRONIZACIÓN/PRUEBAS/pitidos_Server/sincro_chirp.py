@@ -11,9 +11,9 @@ import scipy.io
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 from scipy import signal
-from scipy.optimize import fsolve
-from scipy.optimize import least_squares
+from scipy.optimize import minimize
 import wave
+
 
 def correlaMax(rx, N):
     
@@ -40,9 +40,80 @@ def RawToWav(file_raw):
         
         with wave.open(file_raw + ".wav", "rb") as in_f:
             print(repr(in_f.getparams()))
-            
-    
 
+
+def excitacion(Fs, Tchirp):
+    
+    'Función que genera una excitación en forma de chirp'
+    'desde 5kHz hasta 16kHz'
+    
+    Nsamp = int(Tchirp * Fs)
+    Fsw = np.array([5000, 16000]) / Fs
+    Inclog = np.log(Fsw[1] / Fsw[0])
+    n = np.arange(0, Nsamp+1, 1)
+    excit = np.sin(2 * np.pi * Fsw[0] * Nsamp * (np.exp(Inclog * n / Nsamp) - 1) / Inclog)
+    
+    excit = excit * np.iinfo(np.int16).max
+    #plt.figure(10)
+    #plt.plot(excit)
+    
+    file_name1 = 'chirp_creado'
+    wavfile.write('chirp/' + file_name1 + '.wav', Fs, excit.astype('int16'))
+    
+    return excit
+
+
+
+def grad_tf(tdoaest, tdoamed, tf_est):
+    
+    'Derivadas correspondientes al tiempo de vuelo'
+    
+    N = len(tf_est)
+    
+    grd = np.zeros((N, N))
+    
+    for m in range(N):
+        for n in range(N):
+            for i in range(N):
+                tau_dif = tdoaest[m, n, i] - tdoamed[m, n, i]
+                grd[m, n] = grd[m, n] + tau_dif
+                
+    grd = grd * 4
+    
+    return grd
+
+def grad_Tc(tdoaest, tdoamed):
+    
+    'Derivadas correspondientes a los instantes de comienzo'
+    
+    N = len(tdoaest)
+    grd = np.zeros(N)
+    
+    for n in range(N):
+        for k in range(N):
+            for i in range(N):
+                tau_dif = tdoaest[k, i, n] - tdoamed[k, i, n]
+                grd[n] = grd[i] = tau_dif
+    
+    grd = grd * 4
+    
+    return grd
+
+
+def fcriterion(tdoamed, tf_est, tcest):
+    
+    'Función de referencia la cual se debe minimizar'
+    
+    N = len(tcest)
+    F = 0
+    
+    for k in range(N):
+        for i in range(N):
+            for j in range(N):
+                tdoaest[k, i, j] = tf_est[i, k] - tf_est[j, k] - tcest[i] + tcest[j]
+                F = F + (tdoaest[k, i, j] - tdoamed[k, i, j]) ** 2
+            
+    return F, tdoaest
 
 
 
@@ -56,16 +127,17 @@ plt.close('all')
             
 #def sincro_chirp(Ndevices):
 Ndevices = 3
+Fs = 44100
 record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones    
 tam = np.arange(Ndevices) #Tamaño de cada grabación
 tam_postdelay = np.arange(Ndevices) #Tamaño después de acortar con el delay inicial
 correla = np.arange(Ndevices)
 lim_exc = 44100 * 4 #Acortamos a 3 segundos para captar el impulso
-Lexc = 4410 #Longitud en muestras del chirp
 exc = np.zeros((lim_exc, Ndevices)) #Matriz donde guardamos el impulso de cada señal
 ntoa = np.zeros((Ndevices, Ndevices)) #Tiempo de llegada de los chirp para cada móvil (en muestras)
 toamed = np.zeros((Ndevices, Ndevices))
 tdoamed = np.zeros((Ndevices, Ndevices, Ndevices))
+tdoaest = np.zeros((Ndevices, Ndevices, Ndevices))
 tf_est = np.zeros((Ndevices, Ndevices)) #Tiempos de vuelo
 tcest = np.zeros((Ndevices)) #Tiempos de comienzo
 delay_final = np.arange(Ndevices)
@@ -73,8 +145,10 @@ mu = 0.001    # Factor de convergencia
 RelInc = 0.01 # Criterio de convergencia
 
 #Chirp original de 0.1s de duración    
-Fs, chirp = wavfile.read('chirp' + '.wav')
-    
+chirp = excitacion(Fs, 0.1)
+Lexc = len(chirp)
+
+
 for i in range(Ndevices):
     #Guardamos en volatil el contenido de la grabación i
     Fs, volatil = wavfile.read('Device'+ str(i) + '.wav')
@@ -143,11 +217,29 @@ for i in range(1, Ndevices):
     tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2 + tcest[i-1]
     
 
-# %%
+# %% DESCENSO EN GRADIENTE
 
-#x = fsolve(sys, tcest, options)
-   
+tf_est = tf_est + 10 * np.random.randn(Ndevices, Ndevices) / Fs
+tcest = tcest + 10 * np.random.randn(Ndevices) / Fs
+tcest[0] = 0
+#Estimas iniciales y tdoaest
+Func_ant, tdoaest = fcriterion(tdoamed, tf_est, tcest)
+
+RelInc = 10**20
+niter = 0
+while RelInc > 0.0001:
+    muc = mu * np.exp(-0.01 * niter) #Velocidad de aprendizaje
+    tf_est = tf_est - muc * grad_tf(tdoaest, tdoamed, tf_est)
+    tcest = tcest - muc * grad_Tc(tdoaest, tdoamed)
+    tcest = tcest - tcest[0]
+    Func, tdoaest = fcriterion(tdoamed, tf_est, tcest)
+    niter = niter + 1
+    RelInc = (Func_ant - Func) / Func_ant #Evalúa la cercanía
+    Func_ant = Func
+    cadena = 'Niter=' + str(niter) + ' F=' + str(Func) + ' RelInc=' + str(RelInc)
+    print(cadena)
     
+
 # #Ordenamos de menor a mayor las señales según su instante de comienzo (el primer elemento cpmienza antes)
 # toaRef = np.argsort(toamed[:, 0]) #Hace referencia a las señales ordenadas por instante de comienzo
 # #Determinamos las muestras de comienzo de cada señal
