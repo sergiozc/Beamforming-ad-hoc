@@ -77,7 +77,7 @@ def sincro(Ndevices):
     delay_final = np.arange(Ndevices)
     
     #Fs, chirp_orig = wavfile.read('chirp2.wav')
-    Fs, chirp_orig = wavfile.read('impulso.wav')
+    #Fs, chirp_orig = wavfile.read('impulso.wav')
     Lexc = len(chirp_orig)
     
     for i in range(Ndevices):

@@ -284,8 +284,123 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 \chapter{Planteamiento del problema}
 
 \chapter{Desarrollo del servidor externo}
+	Tal y como se ha comentado, para crear la comunicación con los móviles y manejar las distintas órdenes correspondientes al objetivo de grabar de forma coherente en cada dispositivo, es necesaria la incorporación de un servidor externo.
+	
+	
+		\section{Propósito principal}
+			Lo primero, es aclarar la función que el servidor externo va a desempeñar. Su función será dar órdenes a la aplicación así como las de comienzo y finalización de la grabación. Además, será el encargado de, una vez recibidas las grabaciones procedentes de la aplicación, guardar los ficheros correspondientes. Por supuesto, será el encargado de habilitar un puerto disponible para cada dispositivo que se conecte.
+			
+			
+			\subsection{Requisitos funcionales}
+				A continuación se van a enumerar los parámetros funcionales a nivel de software que posee el servidor externo creado.
+				
+				\begin{itemize}
+				\item Capacidad para manejar un número máximo de 10 clientes.
+				\item La primera conexión de cada cliente se realiza en un mismo puerto común.
+				\item Una vez realizada la primera conexión, el servidor maneja los puertos de conexión fija de los clientes, buscando puertos libres, de manera que tengan una asignación consecutiva (ej: nº puerto 5001, 5002, 5003...)
+				\item Una vez conectados el número de clientes especificado, esperará la confirmación de la aplicación para enviar la orden de ''comenzar a grabar''
+				\item Se le podrá especificar la duración de la grabación en milisegundos.
+				\item Una vez acabada la grabación por cada uno de los clientes, se guarda cada fichero de audio en formato de datos brutos (.raw) con la nomenclatura: ''Device'' + ''nº cliente''
+				\item El servidor muestra por pantalla las marcas de tiempo correspondientes al inicio y al final de la grabación de cada dispositivo o cliente.
+				\item Posee una función la cual reproduce una señal de sincronización una vez hayan comenzado a grabar todos los dispositivos.
+				\end{itemize}
+			
+			\subsection{Requisitos no funcionales}
+			En esta parte se va a exponer la calidad del software en sí mismo, con motivo de evaluar su funcionamiento.
+			\begin{itemize}
+			\item Es necesario especificar el número de conexiones o número de dispositivos que se van a conectar antes de iniciar el servidor.
+			\item Una vez iniciado el servidor, espera indefinidamente (timeout) hasta que se realicen el número de conexiones especificadas.
+			\item Los tiempos correspondientes a la comunicación entre los diversos dispositivos y el servidor son variables.
+			\item Si a la hora de grabar se produce algún problema en uno de los dispositivos, los ficheros correspondientes a los demás dispositivos se guardarán correctamente, mientras que el fichero correspondiente al dispositivo erróneo, no se almacenará de forma correcta.
+			\item Los tiempos de respuesta del servidor dentro de una zona de cobertura local rondan los 100 milisegundos.
+			\item La comunicación del servidor con los distintos clientes, no se produce de una forma simultánea, sino que genera y recibe información de los dispositivos de uno en uno.
+			\item Las marcas temporales devueltas por el servidor son relativas, ya que dependen de la sincronización de los relojes de cada dispositivo en concreto.
+			\item Si se desea un tiempo de grabación alto, se deberá aumentar el ''buffer'' correspondiente al amacenamiento de bytes de los archivos de grabación.
+			\end{itemize}
+		
+		\section{Construcción del servidor}
+		
+			Como ya se ha comentado anteriormente, para la implementación del servidor se ha utilizado el entorno de ''NeatBeans'' debido a la facilidad que proporciona el lenguaje de programación ''java'' con los \textit{sockets} para la comunicación cliente-servidor.
+			
+			Se va a proporcionar una noción respecto al concepto de \textit{socket} y la típica comunicación cliente-servidor. Acto seguido se verá en detalle cada funcionalidad implementada en el servidor	.
+			
+			\subsection{Noción general y noción de \textit{socket}}
+				Para entender el manejo de los sockets, es necesario conocer la comunicación estándar cliente-servidor.
+				
+				En una comunicación vía red, la información se desglosa en paquetes. La forma en la que están estructurados estos paquetes, la define el protocolo de transporte utilizado. En el caso que nos concierne, debido a que tenemos el propósito de entablar una comunicación orientada a conexión, se va a utilizar el protocolo TCP (Transfer Control Protocol), complementado con IP (Internet Protocol), formando TCP/IP. Este protocolo utiliza dos piezas claves de identificación: la dirección IP y un número de puerto.
+				
+				Los términos que hacen referencia a los conceptos de \textit{cliente} y de \textit{servidor} son que el cliente debe iniciar la comunicación, mientras que el servidor espera pasivamente a este primer mensaje por parte del cliente; una vez recibe el servidor el mensaje del cliente, el servidor responde de forma coherente a la petición.
 
+				\begin{figure}[hbtp]
+				\centering
+				\includegraphics[width = 7cm]{FIGURAS/cliente-servidor.JPG}
+				\caption{cliente-servidor}
+				\end{figure}
+				
+				 La distinción \textit{cliente-servidor} es importante porque el cliente necesita conocer la dirección IP y el puerto del servidor, pero no viceversa.
+				 
+				 En concepto de socket es abstracto. Se puede entender como un método el cual permite la comunicación de aplicaciones en una misma red, pudiendo enviar y recibir datos a través del socket. El protocolo TCP/IP permite transmitir flujos de datos y a través de un socket, una aplicación es capaz de alcanzar un puerto disponible de la red. En la Figura 3.2 se esquematiza la posición de los sockets en el entorno de comunicación.
+				 \begin{figure}[hbtp]
+				 \centering
+				 \includegraphics[width = 10cm]{FIGURAS/Explica_Sockets.JPG}
+				 \caption{TCP sockets}
+				 \end{figure}	
+		El manejo de los sockets en Java lo podemos encontrar en su propia API. 
+		\begin{description}
+				 \item[Server Socket y Socket:] Se deben inicializar tanto los sockets correspondientes al cliente como los correspondientes al servidor. El socket del servidor o ''Server Socket''  hace referencia al puerto al que debe conectar el cliente para mantener la comunicación con el servidor. El socket perteneciente al cliente o ''Socket'' es el cual se le asigna al cliente por el servidor una vez el cliente haya enviado una request ó petición  mediante el Server Socket. El socket del cliente es de utilidad al propio servidor para manejar al cliente correspondiente y para inicializar este último se necesita además del número de puerto, la dirección IP del servidor.
+				 
+				 En java, el socket procedente al servidor se inicializa de la siguiente manera:
+				 \begin{center}
+				 \textit{ServerSocket server = new ServerSocket(Port)}
+				 \end{center}
+				 El socket correspondiente al cliente:
+				 \begin{center}
+				 \textit{Socket client = new Socket(IP, Port)}
+				 \end{center}
+				 
+				 \item[InputStream y OutputStream:] La comunicación se realizará mediante flujos de entrada y de salida o también llamados \textit{InputStream} y \textit{OutputStream}. Para transmitir datos en forma de byte, más en específico, se utilizan los flujos \textit{DataOutputStream} y \textit{DataInputStream}. Se corresponden al flujo de salida y al flujo de salida respectivamente. Desde el punto de vista del servidor, el \textit{DataInputStream} va del cliente al servidor y el \textit{DataOutputStream} va del servidor al cliente.
+				 
+				 La sintaxis en java para inicializar estos puentes es la siguiente:
+				 \begin{center}
+				 \textit{DataOutputStream  output = new DataOutputStream(client.getOutputStream())}
+				 
+				 \textit{DataInputStream  input = new DataOutputStream(client.getInputStream())}
+				 \end{center}
+				 En la salida (\textit{output}) se escribirán bytes para ser enviados y en la entrada (\textit{input}) se leerán los bytes entrantes, valga la redundancia.
+				 \end{description}	
+				 
+				 Teniendo una idea general de los que es un socket y cómo se utiliza, es trivial que en la aplicación a cual se comunica con el servidor poseerá sockets relacionados con el dispositivo en cuestión, para comunicarse correctamente con el servidor y su correspondiente puerto.
+				 
+				 \subsection{Implementación del servidor}
+				 Llegados a este punto, se procede a explicar la arquitectura del propio servidor creado para el proyecto.
+				 
+				 Lo esperado es manejar 10 clientes, por lo que el servidor podrá crear y dirigir 10 sockets de clientes distintos. Aún así, se han determinado dos conexiones. La primera conexión será común para todos los dispositivos, es decir, debido a esta primera conexión se ha creado un socket de servidor y otro socket de cliente adicionales, los cuales serán estáticos a todos los clientes. Esto significa que cada dispositivo, por primera vez, se conectará a un mismo puerto. Una vez conectado el cliente a este puerto inicial, el servidor le proporcionará al cliente un nuevo puerto de conexión fija, en el cual se llevará a cabo el intercambio final de datos.
+				 
+				 Para la selección de los números de puertos, hay que tener en cuenta cuáles están en uso y cuáles no, para que no haya ningún tipo de problema. Los puertos del 0 hasta el 1023 están reservados para el sistema operativo y los utilizan protocolos como FTP, DNS, SSH... Por lo que, para asegurar una correcta elección de número de puerto, se establece el puerto fijo de la primera conexión en el número de puerto 5000 y los puertos finales serán el 5001, 5002, 5003, ... 5010. 
+				 
+				 El servidor creado posee varias funciones, las cuales se enumeran y se explican a continuación:	 	 
+				\begin{itemize}
+				\item \textbf{Search4port}: Función encargada de devolver una lista de puertos disponibles para iniciar nuevas conexiones. Toma de argumentos de entrada un vector del tipo ''booleano'' donde se indica los puertos ocupados.
+				\item \textbf{Recording}: Función encargada de enviar la orden de grabar a cada cliente. Una vez el servidor se encuentre en esta función, deberá recibir el ''ACK'' de todos los clientes para lanzar la orden de grabar. Toma de argumentos de entrada los sockets correspondientes al número de clientes.
+				\item \textbf{Delay}: Esta función es la manejadora del tiempo de grabación. Simplemente manda a reposar el hilo principal durante un tiempo determinado, introducido en milisegundos.
+				\item \textbf{stopRecording}: Como su propio nombre indica, es la función relacionada con el envío de la orden de parar la grabación. Similar a \textit{Recording} con la diferencia de que se envía la orden opuesta y que el servidor no espera ningún ''ACK'' por parte de los clientes para emitir la orden correspondiente.
+				\item \textbf{getTimeStamp}: Función que lee la marca de tiempo devuelta por cada móvil. Como argumento de entrada toma el socket de cada cliente, ya que la marca temporal de cada móvil proviene de la aplicación.
+				\item \textbf{Time}: Si fuese necesario devolver una marca temporal ''absoluta'', tomada con el reloj del servidor, se puede llamar a esta función cuando se desee sin argumentos de entrada. Puede ser útil para comparar las demás marcas de tiempo ''relativas'' obtenidas para cada dispositivo.
+				\item \textbf{serverImpulse}: Esta función se encarga de emitir un chirp inicial, justo cuando todos los dispositivos están grabando. De esta manera, con la señal inicial captada, se podrá llegar a un algoritmo de sincronización entre las grabaciones efectivo.
+				\item \textbf{playChirp}: Para realizar un método de sincronización distinto al comentado en la función anterior, se puede llamar a esta función para emitir una orden de reproducir una señal ''chirp'' en cada uno de los móviles o clientes mientras se encuentran en estado activo de grabación, con el propósito obtener las señales grabadas sincronizadas.
+				\item \textbf{saveFiles}: Por último, se llama a esta función. Su principal cometido es recibir los bytes procedentes de cada una de las grabaciones, almacenarlos en un buffer temporal, y guardarlos en la memoria de la máquina en la que se está ejecutando el servidor. Se debe ser coherente con el tiempo de la grabación y el tamaño del buffer temporal. Guarda las grabaciones como archivos de datos en bruto (.raw). Toma de argumentos de entrada el socket de cada cliente.
+				\end{itemize}
+
+				
+				
+		\section{Comunicación}
+		
+			
+			
+			
 \chapter{Desarrollo de la aplicación }
+
+\chapter{Sincronización}
 
 \chapter{Implementación del algoritmo de Beamforming}
 

@@ -246,8 +246,8 @@ public class BeamServer {
     
     static public void serverImpulse(){
         try{
-            //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("chirp2.wav").getAbsoluteFile());
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("impulso.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("chirp_creado.wav").getAbsoluteFile());
+            //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("impulso.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();

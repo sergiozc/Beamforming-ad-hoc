@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  21 MAR 2022 13:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  15 MAY 2022 19:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -484,7 +484,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (portada/portada.tex
 \centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=87, 329.73187pt x 112.16907pt>
+<imagenes/logo_ugr.jpg, id=119, 329.73187pt x 112.16907pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -500,7 +500,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=88, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=120, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -520,7 +520,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 26--40
 ] (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=113, 123.46124pt x 45.92157pt>
+<imagenes/logo.png, id=145, 123.46124pt x 45.92157pt>
 File: imagenes/logo.png Graphic file (type png)
 <use imagenes/logo.png>
 Package pdftex.def Info: imagenes/logo.png  used on input line 18.
@@ -604,23 +604,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 ] (TFG.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+ [1
+
+])
 \tf@toc=\write4
 \openout4 = `TFG.toc'.
 
- [1
 
-] [2
 
-]
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 183.
+
+
+Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
+(spanish)                faked small caps on input line 183.
+
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+[2]
 Cap\'{\i }tulo 1.
-<FIGURAS/directividad_apertura.JPG, id=194, 241.50224pt x 118.64325pt>
+<FIGURAS/directividad_apertura.JPG, id=236, 241.50224pt x 118.64325pt>
 File: FIGURAS/directividad_apertura.JPG Graphic file (type jpg)
 <use FIGURAS/directividad_apertura.JPG>
 Package pdftex.def Info: FIGURAS/directividad_apertura.JPG  used on input line 
 194.
 (pdftex.def)             Requested size: 227.62204pt x 111.82336pt.
-<FIGURAS/array_elementos.JPG, id=195, 157.7895pt x 230.66174pt>
+<FIGURAS/array_elementos.JPG, id=237, 157.7895pt x 230.66174pt>
 File: FIGURAS/array_elementos.JPG Graphic file (type jpg)
 <use FIGURAS/array_elementos.JPG>
 Package pdftex.def Info: FIGURAS/array_elementos.JPG  used on input line 203.
@@ -633,6 +642,7 @@ been already used, duplicate ignored
 l.206 	
         [1
 
+
 ]
 LaTeX Info: Redefining \. on input line 208.
 LaTeX Info: Redefining \% on input line 208.
@@ -644,7 +654,7 @@ been already used, duplicate ignored
 l.208 	
         [2 <./FIGURAS/directividad_apertura.JPG> <./FIGURAS/array_elementos.JPG
 >]
-<FIGURAS/sectorización.JPG, id=208, 375.20175pt x 238.491pt>
+<FIGURAS/sectorización.JPG, id=249, 375.20175pt x 238.491pt>
 File: FIGURAS/sectorización.JPG Graphic file (type jpg)
 <use FIGURAS/sectorización.JPG>
 Package pdftex.def Info: FIGURAS/sectorización.JPG  used on input line 222.
@@ -658,12 +668,12 @@ been already used, duplicate ignored
                    \relax 
 l.228 		
          [3]
-<FIGURAS/sistema_MIMO.JPG, id=212, 556.479pt x 213.1965pt>
+<FIGURAS/sistema_MIMO.JPG, id=253, 556.479pt x 213.1965pt>
 File: FIGURAS/sistema_MIMO.JPG Graphic file (type jpg)
 <use FIGURAS/sistema_MIMO.JPG>
 Package pdftex.def Info: FIGURAS/sistema_MIMO.JPG  used on input line 233.
 (pdftex.def)             Requested size: 284.52756pt x 109.00853pt.
-<FIGURAS/beamformer_adaptativo.JPG, id=213, 433.01775pt x 228.25275pt>
+<FIGURAS/beamformer_adaptativo.JPG, id=254, 433.01775pt x 228.25275pt>
 File: FIGURAS/beamformer_adaptativo.JPG Graphic file (type jpg)
 <use FIGURAS/beamformer_adaptativo.JPG>
 Package pdftex.def Info: FIGURAS/beamformer_adaptativo.JPG  used on input line 
@@ -678,7 +688,7 @@ been already used, duplicate ignored
                    \relax 
 l.243 		
          [4 <./FIGURAS/sectorización.JPG> <./FIGURAS/sistema_MIMO.JPG>]
-<FIGURAS/diarizacion.JPG, id=219, 975.04276pt x 340.27126pt>
+<FIGURAS/diarizacion.JPG, id=260, 975.04276pt x 340.27126pt>
 File: FIGURAS/diarizacion.JPG Graphic file (type jpg)
 <use FIGURAS/diarizacion.JPG>
 Package pdftex.def Info: FIGURAS/diarizacion.JPG  used on input line 252.
@@ -703,7 +713,7 @@ been already used, duplicate ignored
 l.259 			\subsubsection
                        {Localización de fuentes} [5 <./FIGURAS/beamformer_adap
 tativo.JPG>]
-<FIGURAS/wind_tunnel.JPG, id=225, 471.56175pt x 168.02776pt>
+<FIGURAS/wind_tunnel.JPG, id=266, 471.56175pt x 168.02776pt>
 File: FIGURAS/wind_tunnel.JPG Graphic file (type jpg)
 <use FIGURAS/wind_tunnel.JPG>
 Package pdftex.def Info: FIGURAS/wind_tunnel.JPG  used on input line 268.
@@ -759,71 +769,108 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 \chapter
-              {Desarrollo de la aplicación } [11]
+l.302 				\item S
+                 e le podrá especificar la duración de la grabación en mi...
+[11]
+LaTeX Info: Redefining \. on input line 324.
+LaTeX Info: Redefining \% on input line 324.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 \chapter
-              {Desarrollo de la aplicación } [12
+l.324 			
+          [12]
+<FIGURAS/cliente-servidor.JPG, id=292, 322.806pt x 193.32225pt>
+File: FIGURAS/cliente-servidor.JPG Graphic file (type jpg)
+<use FIGURAS/cliente-servidor.JPG>
+Package pdftex.def Info: FIGURAS/cliente-servidor.JPG  used on input line 336.
+(pdftex.def)             Requested size: 199.16928pt x 119.28038pt.
+<FIGURAS/Explica_Sockets.JPG, id=293, 426.393pt x 207.77625pt>
+File: FIGURAS/Explica_Sockets.JPG Graphic file (type jpg)
+<use FIGURAS/Explica_Sockets.JPG>
+Package pdftex.def Info: FIGURAS/Explica_Sockets.JPG  used on input line 345.
+(pdftex.def)             Requested size: 284.52756pt x 138.65135pt.
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
+ [13 <./FIGURAS/cliente-servidor.JPG>]
+LaTeX Info: Redefining \. on input line 363.
+LaTeX Info: Redefining \% on input line 363.
+ [14 <./FIGURAS/Explica_Sockets.JPG>]
+LaTeX Info: Redefining \. on input line 384.
+LaTeX Info: Redefining \% on input line 384.
+ [15]
+LaTeX Info: Redefining \. on input line 392.
+LaTeX Info: Redefining \% on input line 392.
+ [16]
+LaTeX Info: Redefining \. on input line 403.
+LaTeX Info: Redefining \% on input line 403.
+ [17] [18
 
 ]
 Cap\'{\i }tulo 4.
-[13] [14
-
-]
-Cap\'{\i }tulo 5.
-[15] [16
-
-]
-Cap\'{\i }tulo 6.
-[17] [18
-
-]
-Cap\'{\i }tulo 7.
 [19] [20
 
 ]
-Cap\'{\i }tulo 8.
+Cap\'{\i }tulo 5.
 [21] [22
 
 ]
-Cap\'{\i }tulo 9.
+Cap\'{\i }tulo 6.
 [23] [24
 
 ]
-Cap\'{\i }tulo 10.
+Cap\'{\i }tulo 7.
 [25] [26
 
-] [27] (TFG.aux
+]
+Cap\'{\i }tulo 8.
+[27] [28
+
+]
+Cap\'{\i }tulo 9.
+[29] [30
+
+]
+Cap\'{\i }tulo 10.
+[31] [32
+
+]
+Cap\'{\i }tulo 11.
+[33] [34
+
+] [35] (TFG.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: ACDFA7AC1A10932C3FB58F8CD2891F11;3581.
+(rerunfilecheck)             Checksum: 7DD79E0CA2929EA6930DF2E99F7EC992;4984.
  ) 
 Here is how much of TeX's memory you used:
- 12661 strings out of 478659
- 204399 string characters out of 2844972
- 516774 words of memory out of 3000000
- 30506 multiletter control sequences out of 15000+600000
- 410547 words of font info for 50 fonts, out of 8000000 for 9000
+ 12707 strings out of 478659
+ 205437 string characters out of 2844972
+ 518783 words of memory out of 3000000
+ 30531 multiletter control sequences out of 15000+600000
+ 411215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,63p,1026b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,1026b,704s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Usuario\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 rm1095.pk><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Usuario/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Usuario/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/U
-suario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Usuario/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Usuario/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Us
+uario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mti10.pfb>
-Output written on TFG.pdf (45 pages, 510833 bytes).
+mr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmti10.pfb>
+Output written on TFG.pdf (53 pages, 609943 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 66 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 453 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 293 words of extra memory for PDF output out of 10000 (max. 10000000)
 

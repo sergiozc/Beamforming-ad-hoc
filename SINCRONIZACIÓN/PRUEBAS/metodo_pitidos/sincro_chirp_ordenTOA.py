@@ -93,7 +93,7 @@ def grad_Tc(tdoaest, tdoamed):
         for k in range(N):
             for i in range(N):
                 tau_dif = tdoaest[k, i, n] - tdoamed[k, i, n]
-                grd[n] = grd[i] = tau_dif
+                grd[n] = grd[i] + tau_dif
     
     grd = grd * 4
     
@@ -137,6 +137,7 @@ exc = np.zeros((lim_exc, Ndevices)) #Matriz donde guardamos el impulso de cada s
 ntoa = np.zeros((Ndevices, Ndevices)) #Tiempo de llegada de los chirp para cada móvil (en muestras)
 toamed = np.zeros((Ndevices, Ndevices))
 tdoamed = np.zeros((Ndevices, Ndevices, Ndevices))
+tdoamed_ord = np.zeros((Ndevices, Ndevices, Ndevices))
 tdoaest = np.zeros((Ndevices, Ndevices, Ndevices))
 tf_est = np.zeros((Ndevices, Ndevices)) #Tiempos de vuelo
 tcest = np.zeros((Ndevices)) #Tiempos de comienzo
@@ -197,12 +198,16 @@ for i in range(Ndevices):
             nsearch = nsearch + 1
     
     ntoa[i, :] = np.sort(ntoa[i, :])
-    #Expresado en tiempo
-    toamed = (ntoa - 1) / Fs 
+
+#Expresado en tiempo
+toamed = (ntoa - 1) / Fs 
     
 ##################Fin del primer bucle#####################################
 
 toaRef = np.argsort(toamed[:, 0]) #Hace referencia a las señales ordenadas por instante de comienzo
+#Ordenamos los tiempos de llegada de menor a mayor
+#ya que el algoritmo de Hennecke supone la señal primera
+#como la señal que empieza antes
 toamed = np.sort(toamed, axis = 0)
 
 
@@ -219,19 +224,22 @@ for i in range (Ndevices):
         
 #INSTANTES DE COMIENZO (tcest[0] = 0)
 for i in range(1, Ndevices):
-    tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2 + tcest[i-1]
+    tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2.0 + tcest[i-1]
     
 tcest = np.abs(tcest)
+print(tcest)
     
 # %% DESCENSO EN GRADIENTE
-
+mu = 0.001 #Factor de convergencia
+#Perturbamos las estimas iniciales para evital mínimos locales
 tf_est = tf_est + 10 * np.random.randn(Ndevices, Ndevices) / Fs
 tcest = tcest + 10 * np.random.randn(Ndevices) / Fs
 tcest[0] = 0
+
 #Estimas iniciales y tdoaest
 Func_ant, tdoaest = fcriterion(tdoamed, tf_est, tcest)
 
-RelInc = 10**20
+RelInc = 10**20 #Criterio de convergencia
 niter = 0
 while RelInc > 0.0001:
     muc = mu * np.exp(-0.01 * niter) #Velocidad de aprendizaje
@@ -247,11 +255,15 @@ while RelInc > 0.0001:
     
 #--------------------------------------------------------------------------------------------------------------
 
-#Ordenamos de menor a mayor las señales según su instante de comienzo (el primer elemento cpmienza antes)
 #Determinamos las muestras de comienzo de cada señal
 mcest = np.ceil(tcest * Fs)
 
+#Llegados a este punto, utilizaremos toaRef como puntero, es decir, hace referencia a qué señal inicial estamos
+#tratando. Es decir, sin haber sido ordenadas respecto al toa. Esto es necesario, ya que al principio se guardaron
+#las señales en record sin tener en cuenta el toa
+
 #Determinamos el nuevo tamaño de cada señal aplicando el corte del tiempo de comienzo en cada caso
+
 for i in range(Ndevices):
     tam_postdelay[i] = tam[toaRef[i]] - mcest[i]
 
