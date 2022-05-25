@@ -102,4 +102,13 @@ dos con 2 móviles y la tercera con 3 móviles
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Se cambia el impulso por el chirp creado en python y se hacen las mismas pruebas.
-EL CHIRP ES DE 0.5 segundos, obtenemos un delay final de unas 60-70 muestras
+EL CHIRP ES DE 0.5 segundos, obtenemos un delay final de unas 60-70 muestras.
+Debido, probablemente a efectos no lineales del altavoz, no se obtiene una buena sincronización
+con la señal chirp, ya que esta necesita que la señal se reproduzca en cada instante correspondiente,
+ya que al perderse algún intervalo temporal (ya sea al principio o en medio) la información
+proporcionada con el cambio de frecuencia gradual que muestran este tipo de señales, se pierde.
+(INVESTIGAR SOBRE EFECTOS NO LINEALES)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Se prueba con una nueva señal. Un TREN DE IMPULSOS como señal de sincronización.
+El tren de impulsos se compone de 3 impulsos internamente.

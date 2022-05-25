@@ -163,7 +163,7 @@ public class BeamServer {
     {
         try
         {
-            Thread.sleep(12000);
+            Thread.sleep(5000);
         }catch(InterruptedException e){}
     }
     
@@ -246,7 +246,7 @@ public class BeamServer {
     
     static public void serverImpulse(){
         try{
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("chirp_creado.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("tren_impulsos.wav").getAbsoluteFile());
             //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("impulso.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);

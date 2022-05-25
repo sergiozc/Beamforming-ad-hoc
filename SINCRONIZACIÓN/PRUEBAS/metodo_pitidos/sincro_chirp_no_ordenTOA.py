@@ -205,11 +205,6 @@ toamed = (ntoa - 1) / Fs
 ##################Fin del primer bucle#####################################
 
 toaRef = np.argsort(toamed[:, 0]) #Hace referencia a las señales ordenadas por instante de comienzo
-#Ordenamos los tiempos de llegada de menor a mayor
-#ya que el algoritmo de Hennecke supone la señal primera
-#como la señal que empieza antes
-#toamed = np.sort(toamed, axis = 0)
-
 
 #DIFERENCIA DE LOS TIEMPOS DE LLEGADA
 for k in range (Ndevices):
@@ -226,7 +221,7 @@ for i in range (Ndevices):
 for i in range(1, Ndevices):
     tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2.0 + tcest[i-1]
     
-tcest = np.abs(tcest)
+#tcest = np.abs(tcest)
 print(tcest)
     
 # %% DESCENSO EN GRADIENTE

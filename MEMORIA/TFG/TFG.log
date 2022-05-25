@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  15 MAY 2022 19:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  25 MAY 2022 19:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -82,37 +82,48 @@ Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 ))
-(C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\dcolumn.sty
+(C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box52
+\beforetitleunit=\skip49
+\aftertitleunit=\skip50
+\ttl@plus=\dimen144
+\ttl@minus=\dimen145
+\ttl@toksa=\toks21
+\titlewidth=\dimen146
+\titlewidthlast=\dimen147
+\titlewidthfirst=\dimen148
+) (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen144
-\ar@mcellbox=\box52
-\extrarowheight=\dimen145
-\NC@list=\toks21
-\extratabsurround=\skip49
-\backup@length=\skip50
-\ar@cellbox=\box53
+\col@sep=\dimen149
+\ar@mcellbox=\box53
+\extrarowheight=\dimen150
+\NC@list=\toks22
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box54
 ))
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks22
-\verbatim@line=\toks23
+\every@verbatim=\toks23
+\verbatim@line=\toks24
 \verbatim@in@stream=\read3
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip51
-\f@nch@O@elh=\skip52
-\f@nch@O@erh=\skip53
-\f@nch@O@olh=\skip54
-\f@nch@O@orh=\skip55
-\f@nch@O@elf=\skip56
-\f@nch@O@erf=\skip57
-\f@nch@O@olf=\skip58
-\f@nch@O@orf=\skip59
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -132,33 +143,33 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 ef
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen146
-\Gin@req@width=\dimen147
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks24
-\AP@partial=\box54
-\AP@footins=\box55
+\AP@output=\toks25
+\AP@partial=\box55
+\AP@footins=\box56
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip60
-\LTright=\skip61
-\LTpre=\skip62
-\LTpost=\skip63
+\LTleft=\skip62
+\LTright=\skip63
+\LTpre=\skip64
+\LTpost=\skip65
 \LTchunksize=\count269
-\LTcapwidth=\dimen148
-\LT@head=\box56
-\LT@firsthead=\box57
-\LT@foot=\box58
-\LT@lastfoot=\box59
-\LT@gbox=\box60
+\LTcapwidth=\dimen153
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
 \LT@cols=\count270
 \LT@rows=\count271
 \c@LT@tables=\count272
 \c@LT@chunks=\count273
-\LT@p@ftn=\toks25
+\LT@p@ftn=\toks26
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
@@ -207,7 +218,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen149
+\@linkdim=\dimen154
 \Hy@linkcounter=\count274
 \Hy@pagecounter=\count275
 
@@ -253,7 +264,7 @@ Package hyperref Info: Bookmarks ON on input line 4445.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen150
+\XeTeXLinkMargin=\dimen155
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -264,8 +275,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count278
-\Field@Width=\dimen151
-\Fld@charsize=\dimen152
+\Field@Width=\dimen156
+\Fld@charsize=\dimen157
 Package hyperref Info: Hyper figures OFF on input line 6076.
 Package hyperref Info: Link nesting OFF on input line 6081.
 Package hyperref Info: Hyper index ON on input line 6084.
@@ -309,7 +320,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip64
+\Hy@SectionHShift=\skip66
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -335,13 +346,13 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
 )
-\everycr=\toks26
-\minrowclearance=\skip65
+\everycr=\toks27
+\minrowclearance=\skip67
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks27
-\footnotemargin=\dimen153
+\FN@temptoken=\toks28
+\footnotemargin=\dimen158
 \c@pp@next@reset=\count284
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
@@ -365,40 +376,40 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count288
 \calc@Bcount=\count289
-\calc@Adimen=\dimen154
-\calc@Bdimen=\dimen155
-\calc@Askip=\skip66
-\calc@Bskip=\skip67
+\calc@Adimen=\dimen159
+\calc@Bdimen=\dimen160
+\calc@Askip=\skip68
+\calc@Bskip=\skip69
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count290
-\calc@Cskip=\skip68
+\calc@Cskip=\skip70
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen156
-\ESO@tempdimb=\dimen157
+\ESO@tempdima=\dimen161
+\ESO@tempdimb=\dimen162
 )
-\AM@pagewidth=\dimen158
-\AM@pageheight=\dimen159
-\AM@fboxrule=\dimen160
+\AM@pagewidth=\dimen163
+\AM@pageheight=\dimen164
+\AM@fboxrule=\dimen165
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count291
-\AM@pagebox=\box61
-\AM@global@opts=\toks28
+\AM@pagebox=\box62
+\AM@global@opts=\toks29
 \AM@pagecnt=\count292
-\AM@toc@title=\toks29
+\AM@toc@title=\toks30
 \c@AM@survey=\count293
-\AM@templatesizebox=\box62
+\AM@templatesizebox=\box63
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count294
-\l__pdf_internal_box=\box63
+\l__pdf_internal_box=\box64
 ) (TFG.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
@@ -431,16 +442,16 @@ LaTeX Info: Redefining \% on input line 175.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count296
-\scratchdimen=\dimen161
-\scratchbox=\box64
+\scratchdimen=\dimen166
+\scratchbox=\box65
 \nofMPsegments=\count297
 \nofMParguments=\count298
-\everyMPshowfont=\toks30
+\everyMPshowfont=\toks31
 \MPscratchCnt=\count299
-\MPscratchDim=\dimen162
+\MPscratchDim=\dimen167
 \MPnumerator=\count300
 \makeMPintoPDFobject=\count301
-\everyMPtoPDFconversion=\toks31
+\everyMPtoPDFconversion=\toks32
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -483,8 +494,8 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (portada/portada.tex
-\centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=119, 329.73187pt x 112.16907pt>
+\centeroffset=\skip71
+<imagenes/logo_ugr.jpg, id=127, 329.73187pt x 112.16907pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -500,7 +511,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=120, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=128, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -520,7 +531,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 26--40
 ] (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=145, 123.46124pt x 45.92157pt>
+<imagenes/logo.png, id=153, 123.46124pt x 45.92157pt>
 File: imagenes/logo.png Graphic file (type png)
 <use imagenes/logo.png>
 Package pdftex.def Info: imagenes/logo.png  used on input line 18.
@@ -623,13 +634,13 @@ LaTeX Info: Redefining \. on input line 183.
 LaTeX Info: Redefining \% on input line 183.
 [2]
 Cap\'{\i }tulo 1.
-<FIGURAS/directividad_apertura.JPG, id=236, 241.50224pt x 118.64325pt>
+<FIGURAS/directividad_apertura.JPG, id=246, 241.50224pt x 118.64325pt>
 File: FIGURAS/directividad_apertura.JPG Graphic file (type jpg)
 <use FIGURAS/directividad_apertura.JPG>
 Package pdftex.def Info: FIGURAS/directividad_apertura.JPG  used on input line 
 194.
 (pdftex.def)             Requested size: 227.62204pt x 111.82336pt.
-<FIGURAS/array_elementos.JPG, id=237, 157.7895pt x 230.66174pt>
+<FIGURAS/array_elementos.JPG, id=247, 157.7895pt x 230.66174pt>
 File: FIGURAS/array_elementos.JPG Graphic file (type jpg)
 <use FIGURAS/array_elementos.JPG>
 Package pdftex.def Info: FIGURAS/array_elementos.JPG  used on input line 203.
@@ -654,7 +665,7 @@ been already used, duplicate ignored
 l.208 	
         [2 <./FIGURAS/directividad_apertura.JPG> <./FIGURAS/array_elementos.JPG
 >]
-<FIGURAS/sectorización.JPG, id=249, 375.20175pt x 238.491pt>
+<FIGURAS/sectorización.JPG, id=259, 375.20175pt x 238.491pt>
 File: FIGURAS/sectorización.JPG Graphic file (type jpg)
 <use FIGURAS/sectorización.JPG>
 Package pdftex.def Info: FIGURAS/sectorización.JPG  used on input line 222.
@@ -668,12 +679,12 @@ been already used, duplicate ignored
                    \relax 
 l.228 		
          [3]
-<FIGURAS/sistema_MIMO.JPG, id=253, 556.479pt x 213.1965pt>
+<FIGURAS/sistema_MIMO.JPG, id=263, 556.479pt x 213.1965pt>
 File: FIGURAS/sistema_MIMO.JPG Graphic file (type jpg)
 <use FIGURAS/sistema_MIMO.JPG>
 Package pdftex.def Info: FIGURAS/sistema_MIMO.JPG  used on input line 233.
 (pdftex.def)             Requested size: 284.52756pt x 109.00853pt.
-<FIGURAS/beamformer_adaptativo.JPG, id=254, 433.01775pt x 228.25275pt>
+<FIGURAS/beamformer_adaptativo.JPG, id=264, 433.01775pt x 228.25275pt>
 File: FIGURAS/beamformer_adaptativo.JPG Graphic file (type jpg)
 <use FIGURAS/beamformer_adaptativo.JPG>
 Package pdftex.def Info: FIGURAS/beamformer_adaptativo.JPG  used on input line 
@@ -688,7 +699,7 @@ been already used, duplicate ignored
                    \relax 
 l.243 		
          [4 <./FIGURAS/sectorización.JPG> <./FIGURAS/sistema_MIMO.JPG>]
-<FIGURAS/diarizacion.JPG, id=260, 975.04276pt x 340.27126pt>
+<FIGURAS/diarizacion.JPG, id=270, 975.04276pt x 340.27126pt>
 File: FIGURAS/diarizacion.JPG Graphic file (type jpg)
 <use FIGURAS/diarizacion.JPG>
 Package pdftex.def Info: FIGURAS/diarizacion.JPG  used on input line 252.
@@ -710,10 +721,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.259 			\subsubsection
-                       {Localización de fuentes} [5 <./FIGURAS/beamformer_adap
+l.259 			\subsubsection{Localización de fuentes}
+                                                  [5 <./FIGURAS/beamformer_adap
 tativo.JPG>]
-<FIGURAS/wind_tunnel.JPG, id=266, 471.56175pt x 168.02776pt>
+<FIGURAS/wind_tunnel.JPG, id=276, 471.56175pt x 168.02776pt>
 File: FIGURAS/wind_tunnel.JPG Graphic file (type jpg)
 <use FIGURAS/wind_tunnel.JPG>
 Package pdftex.def Info: FIGURAS/wind_tunnel.JPG  used on input line 268.
@@ -781,12 +792,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
                    \relax 
 l.324 			
           [12]
-<FIGURAS/cliente-servidor.JPG, id=292, 322.806pt x 193.32225pt>
+<FIGURAS/cliente-servidor.JPG, id=302, 322.806pt x 193.32225pt>
 File: FIGURAS/cliente-servidor.JPG Graphic file (type jpg)
 <use FIGURAS/cliente-servidor.JPG>
 Package pdftex.def Info: FIGURAS/cliente-servidor.JPG  used on input line 336.
 (pdftex.def)             Requested size: 199.16928pt x 119.28038pt.
-<FIGURAS/Explica_Sockets.JPG, id=293, 426.393pt x 207.77625pt>
+<FIGURAS/Explica_Sockets.JPG, id=303, 426.393pt x 207.77625pt>
 File: FIGURAS/Explica_Sockets.JPG Graphic file (type jpg)
 <use FIGURAS/Explica_Sockets.JPG>
 Package pdftex.def Info: FIGURAS/Explica_Sockets.JPG  used on input line 345.
@@ -797,49 +808,71 @@ LaTeX Info: Redefining \% on input line 349.
 LaTeX Info: Redefining \. on input line 363.
 LaTeX Info: Redefining \% on input line 363.
  [14 <./FIGURAS/Explica_Sockets.JPG>]
-LaTeX Info: Redefining \. on input line 384.
-LaTeX Info: Redefining \% on input line 384.
+LaTeX Info: Redefining \. on input line 382.
+LaTeX Info: Redefining \% on input line 382.
  [15]
-LaTeX Info: Redefining \. on input line 392.
-LaTeX Info: Redefining \% on input line 392.
+LaTeX Info: Redefining \. on input line 397.
+LaTeX Info: Redefining \% on input line 397.
  [16]
-LaTeX Info: Redefining \. on input line 403.
-LaTeX Info: Redefining \% on input line 403.
- [17] [18
-
-]
+LaTeX Info: Redefining \. on input line 414.
+LaTeX Info: Redefining \% on input line 414.
+ [17]
+LaTeX Info: Redefining \. on input line 432.
+LaTeX Info: Redefining \% on input line 432.
+ [18]
 Cap\'{\i }tulo 4.
-[19] [20
+<FIGURAS/interfaz1.JPG, id=338, 247.52475pt x 451.6875pt>
+File: FIGURAS/interfaz1.JPG Graphic file (type jpg)
+<use FIGURAS/interfaz1.JPG>
+Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 444.
+(pdftex.def)             Requested size: 142.26378pt x 259.60802pt.
+<FIGURAS/interfaz2.JPG, id=339, 255.354pt x 411.33675pt>
+File: FIGURAS/interfaz2.JPG Graphic file (type jpg)
+<use FIGURAS/interfaz2.JPG>
+Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 453.
+(pdftex.def)             Requested size: 142.26378pt x 229.1733pt.
+[19
 
 ]
+LaTeX Info: Redefining \. on input line 457.
+LaTeX Info: Redefining \% on input line 457.
+ [20 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>]
+LaTeX Info: Redefining \. on input line 471.
+LaTeX Info: Redefining \% on input line 471.
+ [21]
+LaTeX Info: Redefining \. on input line 481.
+LaTeX Info: Redefining \% on input line 481.
+ [22]
 Cap\'{\i }tulo 5.
-[21] [22
+[23
+
+] [24
 
 ]
 Cap\'{\i }tulo 6.
-[23] [24
-
-]
-Cap\'{\i }tulo 7.
 [25] [26
 
 ]
-Cap\'{\i }tulo 8.
+Cap\'{\i }tulo 7.
 [27] [28
 
 ]
-Cap\'{\i }tulo 9.
+Cap\'{\i }tulo 8.
 [29] [30
 
 ]
-Cap\'{\i }tulo 10.
+Cap\'{\i }tulo 9.
 [31] [32
 
 ]
-Cap\'{\i }tulo 11.
+Cap\'{\i }tulo 10.
 [33] [34
 
-] [35] (TFG.aux
+]
+Cap\'{\i }tulo 11.
+[35] [36
+
+] [37] (TFG.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -847,13 +880,13 @@ LaTeX Info: Redefining \% on input line 25.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 7DD79E0CA2929EA6930DF2E99F7EC992;4984.
+(rerunfilecheck)             Checksum: 329C1FF6FA7EF78A3F799B07F64FA329;5324.
  ) 
 Here is how much of TeX's memory you used:
- 12707 strings out of 478659
- 205437 string characters out of 2844972
- 518783 words of memory out of 3000000
- 30531 multiletter control sequences out of 15000+600000
+ 13031 strings out of 478659
+ 210019 string characters out of 2844972
+ 526078 words of memory out of 3000000
+ 30836 multiletter control sequences out of 15000+600000
  411215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,1026b,704s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -868,9 +901,9 @@ uario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmti10.pfb>
-Output written on TFG.pdf (53 pages, 609943 bytes).
+Output written on TFG.pdf (55 pages, 677088 bytes).
 PDF statistics:
- 453 PDF objects out of 1000 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
- 293 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 486 PDF objects out of 1000 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
+ 319 words of extra memory for PDF output out of 10000 (max. 10000000)
 

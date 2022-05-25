@@ -64,7 +64,7 @@ def sincro(Ndevices):
     
     RawToWav('Device0')
     RawToWav('Device1')
-    #RawToWav('Device2')
+    RawToWav('Device2')
 
     
     record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones
@@ -72,12 +72,13 @@ def sincro(Ndevices):
     tam_postdelay = np.arange(Ndevices) #Tamaño después de acortar con el delay inicial
     lim_chirp = 44100 * 3 #Acortamos a 3 segundos para captar el chirp
     toa = np.arange(Ndevices) #Tiempo de llegada (en muestras)
+    toamed = np.arange(Ndevices) #Tiempo de llegada (en muestras)
     chirp = np.zeros((lim_chirp, Ndevices)) #Matriz donde guardamos el impulso de cada señal
     delay = np.arange(Ndevices) #Vector de restraso de una señal respecto a la primera en comenzar
     delay_final = np.arange(Ndevices)
     
     #Fs, chirp_orig = wavfile.read('chirp2.wav')
-    #Fs, chirp_orig = wavfile.read('impulso.wav')
+    Fs, chirp_orig = wavfile.read('impulso.wav')
     Lexc = len(chirp_orig)
     
     for i in range(Ndevices):
@@ -117,27 +118,33 @@ def sincro(Ndevices):
     #Cuál es la grabación que comienza antes
     primera = np.argmin(toa)
     
-    for j in range(Ndevices):
-        #Calculamos el delay inicial para todas las señales
-        delay[j] = toa[j] - toa[primera]
-        print('El delay inicial es de:', delay[j], 'muestras')
-        #Tamaño de las señales después de compensar el delay
-        tam_postdelay[j] = tam[j] - delay[j]
     
+    
+    for i in range(Ndevices):
+    
+        rx2 = scipy.signal.correlate(chirp[:, i], chirp[:,primera], mode = 'full', method='fft')
+        N = len(rx2)
+        k = np.linspace(-(N/2) +1, (N/2)-1, N)
+        plt.figure(i+4)
+        plt.plot(k,rx2)
+        
+        toamed[i] = correlaMax(rx2, len(rx2))
+        tam_postdelay[i] = tam[i] - toamed[i]
+
     #Tamaño de las señales después de aplicar el delay y ajustándose a la señal con menos muestras
     tam_final = min(tam_postdelay)
     #En esta matriz se guardarán las señales sincronizadas
     sincronizadas = np.zeros((tam_final, Ndevices))
     
-    plt.figure(4)
+    plt.figure(7)
     plt.title('Señales sincronizadas')
     plt.xlabel('Muestras')
     plt.ylabel('Amplitud')
     
     #Guardamos las señales en la nueva matriz
     for z in range(Ndevices):
-        lim_final = tam_final + delay[z]
-        sincronizadas[:, z] = record[delay[z]:lim_final, z]
+        lim_final = tam_final + toamed[z]
+        sincronizadas[:, z] = record[toamed[z]:lim_final, z]
         plt.plot(sincronizadas[:,z])
      
     #Hacemos la correlación de las señales
@@ -146,7 +153,7 @@ def sincro(Ndevices):
         N = len(rx_sincro)
         k = np.linspace(-(N/2) +1, (N/2)-1, N)
     
-        plt.figure(z+5)
+        plt.figure(z+8)
         plt.plot(k, rx_sincro)
         plt.title('Correlación cruzada señales ajustadas')
         # Calculamos el delay final para todas las señales

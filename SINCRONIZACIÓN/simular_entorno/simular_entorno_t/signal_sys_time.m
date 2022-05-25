@@ -1,4 +1,4 @@
-% signal_sys.m: simulacion de generación de senales en array ad-hoc
+%% signal_sys.m: simulacion de generación de senales en array ad-hoc
 
 % Parametros generales
 c=343;      % vel. propagacion sonido (m/s)
@@ -88,7 +88,6 @@ for i=1:N
     end
 end
 
-
 %%%%%%%%%% Medicion de los TOAs y TDOAs correspondientes
 % Detectar instantes de comienzo del chirp en cada señal
 for i=1:N
@@ -127,6 +126,10 @@ end
 %ntoamed
 toa
 toamed=(ntoamed-1)/Fs
+
+
+
+
 % Tablas de TDOAs medidos
 for k=1:N
     tdoamed{k}=[];

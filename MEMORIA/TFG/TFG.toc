@@ -6,8 +6,8 @@
 \contentsline {section}{\numberline {1.3}Impacto en la actualidad}{3}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Comunicaciones Inalámbricas}{3}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Procesamiento acústico}{5}{subsection.1.3.2}%
-\contentsline {subsubsection}{Diarización}{5}{section*.6}%
-\contentsline {subsubsection}{Localización de fuentes}{6}{section*.7}%
+\contentsline {subsubsection}{Diarización}{5}{subsubsection*.6}%
+\contentsline {subsubsection}{Localización de fuentes}{6}{subsubsection*.7}%
 \contentsline {section}{\numberline {1.4}Justificación del proyecto}{7}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Distribución del proyecto}{7}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Requisitos de realización}{7}{subsection.1.5.1}%
@@ -23,10 +23,12 @@
 \contentsline {subsection}{\numberline {3.2.2}Implementación del servidor}{15}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Comunicación}{17}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{19}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Sincronización}{21}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Implementación del algoritmo de Beamforming}{23}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Análisis del modelo}{25}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Perspectiva de futuro}{27}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{29}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Bibliografía}{31}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Apéndice}{33}{chapter.11}%
+\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Funcionalidades}{21}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Sincronización}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Implementación del algoritmo de Beamforming}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Análisis del modelo}{27}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Perspectiva de futuro}{29}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{31}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Bibliografía}{33}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Apéndice}{35}{chapter.11}%

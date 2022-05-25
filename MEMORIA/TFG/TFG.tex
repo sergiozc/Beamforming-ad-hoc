@@ -5,7 +5,7 @@
 \usepackage[spanish]{babel}
 
 % \usepackage[style=list, number=none]{glossary} %
-%\usepackage{titlesec}
+\usepackage{titlesec}
 %\usepackage{pailatino}
 
 \decimalpoint
@@ -378,6 +378,12 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 				 
 				 Para la selección de los números de puertos, hay que tener en cuenta cuáles están en uso y cuáles no, para que no haya ningún tipo de problema. Los puertos del 0 hasta el 1023 están reservados para el sistema operativo y los utilizan protocolos como FTP, DNS, SSH... Por lo que, para asegurar una correcta elección de número de puerto, se establece el puerto fijo de la primera conexión en el número de puerto 5000 y los puertos finales serán el 5001, 5002, 5003, ... 5010. 
 				 
+				 Además, para comprobar la disponibilidad del servidor y el número de puertos abiertos se ha hecho uso del comando \textit{telnet} desde la terminal de Windows. Con este comando se comprueba fácilmente la conexión a un puerto determinado conociendo la dirección IP de destino. La sintaxis del comando es la siguiente:
+				 \begin{center}
+				 \textit{telnet[dominio ó dirección IP][puerto]}
+				 \end{center}
+				 Si se llega a entablar la conexión, aparecerá una sección de pantalla vacía indicando que el puerto se encuentra disponible y si la conexión no se establece, se emitirá un mensaje de error lo cual indica que el puerto al que se referencia no está disponible o que, simplemente el servidor no se mantiene en escucha en ese puerto específico.
+				 
 				 El servidor creado posee varias funciones, las cuales se enumeran y se explican a continuación:	 	 
 				\begin{itemize}
 				\item \textbf{Search4port}: Función encargada de devolver una lista de puertos disponibles para iniciar nuevas conexiones. Toma de argumentos de entrada un vector del tipo ''booleano'' donde se indica los puertos ocupados.
@@ -394,12 +400,84 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 				
 				
 		\section{Comunicación}
+		En esta sección se va a documentar en profundidad la comunicación producida entre el servidor y cada uno de los dispositivos.
 		
+		Antes de nada, se debe tener claro el orden de procedimiento del servidor. Una vez iniciado el servidor, se presentan los siguientes flujos comunicativos:
+		\begin{enumerate}
+		\item El servidor se queda esperando hasta que recibe una petición de conexión de un cliente al puerto 5000.
+		\item Una vez aceptada esta primera conexión, el servidor busca un puerto libre, mediante la función \textit{Search4port} y se lo devuelve al cliente para que realice una nueva conexión.
+		\item El cliente envía una nueva \textit{request} al puerto indicado por el servidor. Al aceptar el servidor esta nueva conexión, el cliente finalmente se encuentra en el puerto adecuado para realizar la comunicación completa.
+		\item Ya conectados el número de clientes especificado, el dispositivo deberá enviar un mensaje de ''READY'', para dar a entender al servidor que está listo para grabar.
+		\item El servidor emite la orden de grabar (''START'') y espera a que cada uno de los móviles le hagan llegar un ''ACK'' de confirmación por empezar a grabar. Adicionalmente, los móviles transmiten al servidor la marca temporal correspondiente al inicio de la grabación.
+		\item Pasados los segundos de grabación establecidos, el servidor emite la orden de parar la grabación (''STOP'') y cada dispositivo devuelve de nuevo una marca temporal, relacionada con el final de la grabación.
+		\item Por último, cada smartphone envía al servidor el fichero de grabación resultante.
+		\end{enumerate}
+			
+			Con propósito a comprobar este flujo de transporte enumerado, se hará uso de la herramienta \textit{WireShark}. El principal objetivo de esta herramienta es analizar el tráfico de una red. A parte, es ideal para estudiar cualquier tipo de comunicaciones y problemas de red.
+			
+			Cabe anotar que, tras diversas pruebas, se ha obtenido un resultado más constante respecto a los tiempos de la red si se crea un punto de acceso inalámbrico en la máquina en la que corre el servidor y que todos los smartphones que deseen interactuar con el servidor, deberán conectarse a este punto de acceso creado. La comunicación mediante la Wi-Fi local presentaba muchos retardos inesperados, debido a que diversos dispositivos están conectados a la red, por lo que el tráfico de paquetes será mayor y, lo más desfavorable, con más rango de aleatoriedad.
+			Además, disponiendo de un punto de acceso privado, el tráfico de la red se reducirá considerablemente a la hora de visualizar el flujo de transporte.
+			
+			Mencionado esto, se presenta una captura del tráfico correspondiente al punto de acceso inalámbrico en la \textit{Figura 3.3}. Se ha filtrado el tráfico de manera que solo se visualice el protocolo TCP.
+			
+			
+			
+			
+		
+			Con los datos proporcionados por el tráfico de red, se traza un diagrama UML para una mejor visualización de la comunicación entre el servidor y un cliente.
+			
 			
 			
 			
 \chapter{Desarrollo de la aplicación }
 
+Tal y como se ha comentado anteriormente, para la comunicación entre el servidor y los respectivos smartphones y para que cada uno ejecute la grabación correctamente, es necesario la introducción de una aplicación Android en cada uno de los dispositivos. De esta manera se consigue la interconexión que se desea.
+
+	\section{Introducción a la aplicación}
+	La aplicación ha sido desarrollada en \textit{Android Studio}. Se le ha especificado el nombre de \textit{BeamRec}.
+	
+	El propósito de la aplicación es cumplir los requisitos necesarios, esto es la conexión con el servidor, la correcta grabación y la debida transmisión del fichero de grabación. La interfaz de la aplicación está pensada para que sea lo más intuitiva posible, para conseguir únicamente la meta del proyecto que se está tratando.
+	
+	Nada más abrir la aplicación, la interfaz resultante se muestra en la \textit{Figura 4.1.}
+	\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width = 5 cm]{FIGURAS/interfaz1.JPG}
+	\caption{Interfaz de conexión}
+	\end{figure}
+Como se puede apreciar, directamente proporciona la opción al usuario de conectar el dispositivo con el servidor externo. Una vez se pulse el botón de ''CONNECT'', el cliente enviará una petición de conexión al servidor especificado.
+	
+	Al pulsar el botón de ''CONNECT'' y habiéndose conectado el dispositivo exitosamente al servidor, la siguiente interfaz o \textit{activity} que el usuario visualiza se observa en la \textit{Figura 4.2}.
+
+	\begin{figure}[hbtp]
+	\centering
+	\includegraphics[width = 5cm]{FIGURAS/interfaz2.JPG}
+	\caption{Interfaz de grabación}
+	\end{figure}
+	En este caso, la aplicación únicamente proporciona la opción de grabar. Este botón se deberá pulsar una vez todos los móviles que se desean conectar al servidor hayan conseguido una conexión exitosa. Cuando se desee comenzar a grabar, una vez pulsado el botón, el cliente envía el correspondiente mensaje de que está listo para grabar hacia el servidor. Este último recibe el mensaje y emite la orden de grabar. Si se desea repetir la grabación, se deberá realizar desde el principio el proceso de conexión con el servidor externo. Será necesario que cada uno de los móviles estén conectados a la misma red a la que está conectado el servidor.
+
+	\section{Funcionalidades}
+	En esta parte se va a explicar las distintas funciones internas de la propia aplicación.
+	
+	En total, se han creado 3 clases java en Android Studio:
+	\begin{itemize}
+	\item \textbf{ManActivity}: Es la clase principal. En ella se encuentra el diseño de la primera interfaz mostrada en la \textit{Figura 4.1}. Al pulsar el usuario el botón, se hará una llamada a la siguiente clase con su nueva interfaz.
+	\item \textbf{RecordClient}: Contiene el diseño de la segunda interfaz de la aplicación (\textit{Figura 4.2}). Esta clase es la encargada de mantener la conexión con el servidor dada una dirección IP específica y el puerto común, el cual se ha determinado como el puerto número 5000 en la sección del servidor. Realiza todo el proceso de doble conexión al servidor en segundo plano y, una vez conectado el dispositivo al servidor, se cargará la interfaz correspondiente a la acción de grabar.
+	
+	Al pulsar el usuario el botón de ''RECORD'', se mandará el mensaje de ''READY'' al servidor y se esperará a la orden de empezar la grabación emitida por el servidor. La comunicación con el servidor desde la aplicación se realiza de manera similar que en el servidor: con el uso de \textit{Sockets} y flujos de datos \textit{DataInputStream} y \textit{DataOutputStream}. Cuando la aplicación recibe la orden de grabar por el servidor, se hace la llamada a la clase \textit{Recorder} y empieza la grabación en un nuevo hilo. En el hilo principal se procede al envío del ''ACK'' y de la marca de tiempo correspondiente al comienzo de la grabación por parte del dispositivo al servidor y se mantiene en espera hasta recibir la orden correspondiente a parar la grabación.
+	
+	Una vez recibida la orden de ''STOP'' procedente del servidor para parar la grabación, se hace la llamada correspondiente a la clase Recorder para dejar de grabar y se envía la marca de tiempo de finalización. Acto seguido, se procede a la manipulación del archivo. Mediante las clases \textit{BufferedInputStream} y \textit{BufferedInputStream} se almacenará la grabación en un buffer momentáneo que será enviado directamente al servidor.
+	
+	Cabe destacar que, en esta clase también se definen los permisos necesarios para la correcta ejecución de la aplicación en el dispositivo Android. Estos son los permisos de utilización del micrófono y de la grabadora del smartphone.
+	
+	\item \textbf{Recorder}: Esta clase, como se ha mencionado en \textit{RecordClient}, es la responsable de la propia acción de grabar. Se ejecuta en segundo plano y es capaz de ejecutar una grabación con una frecuencia de muestreo de 44100 Hz, la cual es la que soporta la mayoría de dispositivos actualmente, en un canal monofónico y una codificación del tipo PCM (Modulación de Pulsos Codificados) de 16 bits para que, de esta manera, no exista compresión alguna en el audio.
+	
+	Además, se implementa la desactivación del control de ganancia automático ó \textit{AGC} y la cancelación de eco ó \textit{AEC}, lo cual podrían ser factores perjudiciales para el propósito del proyecto, ya que se modificaría la señal automáticamente complicando procesos posteriores como es el de sincronización o beamforming.
+	
+	La clase \textit{Recorder} proporciona dos métodos, uno de comienzo de la grabación, en el cual se irán almacenando paquetes de bytes en un buffer temporal, y el método relacionado con terminar la grabación.
+	\end{itemize}
+	
+	
+	
 \chapter{Sincronización}
 
 \chapter{Implementación del algoritmo de Beamforming}

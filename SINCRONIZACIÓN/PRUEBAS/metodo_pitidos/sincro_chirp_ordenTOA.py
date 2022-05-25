@@ -227,7 +227,7 @@ for i in range(1, Ndevices):
     tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2.0 + tcest[i-1]
     
 tcest = np.abs(tcest)
-print(tcest)
+#print(tcest)
     
 # %% DESCENSO EN GRADIENTE
 mu = 0.001 #Factor de convergencia
