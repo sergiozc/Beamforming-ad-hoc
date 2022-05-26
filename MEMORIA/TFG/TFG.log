@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  26 MAY 2022 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  21 MAR 2022 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -800,18 +800,12 @@ Cap\'{\i }tulo 10.
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-
-Package rerunfilecheck Warning: File `TFG.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TFG.out':
-(rerunfilecheck)             Before: 6966EE248B496C6B944C568226C49A39;3602
-(rerunfilecheck)             After:  ACDFA7AC1A10932C3FB58F8CD2891F11;3581.
+Package rerunfilecheck Info: File `TFG.out' has not changed.
+(rerunfilecheck)             Checksum: ACDFA7AC1A10932C3FB58F8CD2891F11;3581.
  ) 
 Here is how much of TeX's memory you used:
  12661 strings out of 478659
- 204627 string characters out of 2844972
+ 204399 string characters out of 2844972
  516774 words of memory out of 3000000
  30506 multiletter control sequences out of 15000+600000
  410547 words of font info for 50 fonts, out of 8000000 for 9000
@@ -827,7 +821,7 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/U
 suario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mti10.pfb>
-Output written on TFG.pdf (45 pages, 510829 bytes).
+Output written on TFG.pdf (45 pages, 510833 bytes).
 PDF statistics:
  367 PDF objects out of 1000 (max. 8388607)
  66 named destinations out of 1000 (max. 500000)
