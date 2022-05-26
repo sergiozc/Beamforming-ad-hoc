@@ -418,7 +418,30 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 			Cabe anotar que, tras diversas pruebas, se ha obtenido un resultado más constante respecto a los tiempos de la red si se crea un punto de acceso inalámbrico en la máquina en la que corre el servidor y que todos los smartphones que deseen interactuar con el servidor, deberán conectarse a este punto de acceso creado. La comunicación mediante la Wi-Fi local presentaba muchos retardos inesperados, debido a que diversos dispositivos están conectados a la red, por lo que el tráfico de paquetes será mayor y, lo más desfavorable, con más rango de aleatoriedad.
 			Además, disponiendo de un punto de acceso privado, el tráfico de la red se reducirá considerablemente a la hora de visualizar el flujo de transporte.
 			
-			Mencionado esto, se presenta una captura del tráfico correspondiente al punto de acceso inalámbrico en la \textit{Figura 3.3}. Se ha filtrado el tráfico de manera que solo se visualice el protocolo TCP.
+			Se ha filtrado el tráfico de manera que solo se visualice el protocolo TCP en el puerto 5000 y en el puerto 5001, ya que se va a mostrar el flujo de un único dispositivo  para simplificar el intercambio de mensajes. Mencionado esto, se presenta la captura del tráfico correspondiente al punto de acceso inalámbrico. 
+			
+			El tráfico resultante únicamente del conexionado con el servidor es presentado en la \textit{Figura 3.3}.
+			
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 15cm]{FIGURAS/trafico_connect.png}
+\caption{Tráfico ''connect''}
+\end{figure}
+
+Se puede apreciar la dirección IP de la máquina donde corre el servidor (192.168.019) y la dirección IP del smartphone (192.168.137.184). Además, se observa enmarcado en rojo dos envíos de paquetes interesantes, ya que es el momento en el cual el servidor le ha enviado ya el siguiente puerto de conexión fija y realiza de nuevo el dispositivo una \textit{request} al nuevo puerto (50001).
+
+ Para entender mejor todos los envíos de paquetes, se ejemplifica en el diagrama UML de la \textit{Figura 3.4} el típico esquema de un flujo TCP. El protocolo TCP utiliza el llamado ''\textit{three-way handshake}'' con el propósito de establecer una conexión fiable. Este método de conexión se basa en el envío y recepción de señales de sincronización y señales de acuse y recibo, o también llamadas \textit{SYNC} y \textit{ACK}. Concretamente, se distribuyen en su envío de la manera:
+ \begin{enumerate}
+ \item SYN
+ \item SYN/ACK
+ \item ACK
+ \end{enumerate}
+Una vez se haya completado el envío y recepción de esos tres mensajes, se podrá confirmar que existe una conexión fiable. El cliente juega un papel activo, el cual empieza enviando un segmento SYN, portador de su número de secuencia. El servidor, por su parte, juega un papel más pasivo. Al recibir el servidor el segmento SYN, este último responde otro segmento SYN con su número de secuencia inicial y con un acuse y recibo (ACK). De esta manera, conociendo los números de secuencia de cada parte y con el ACK, ayuda a reconocer mensajes erróneos o perdidos. Cuando el cliente recibe el paquete SYN/ACK del servidor, sabe que se ha establecido exitosamente la conexión y devuelve un ACK al servidor para terminar.
+
+En cada fase del proceso, es posible que se produzca una pérdida de paquetes o que no lleguen al destino correctamente, por lo que existe un tiempo límite o \textit{timeout} con el cual se comprueba si se debe enviar de nuevo el segmento de sincronización. Todo este flujo de establecimiento de la conexión, lo podemos apreciar claramente en la \textit{Figura 3.3}. El proceso de conexionado, en este caso, se realiza dos veces (una vez al puerto común 5000 y otra vez al puerto fijo 5001).
+			
+			
+			
 			
 			
 			

@@ -22,13 +22,13 @@
 \contentsline {subsection}{\numberline {3.2.1}Noción general y noción de \textit {socket}}{13}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Implementación del servidor}{15}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Comunicación}{17}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Funcionalidades}{21}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Sincronización}{23}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Implementación del algoritmo de Beamforming}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Análisis del modelo}{27}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Perspectiva de futuro}{29}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{31}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Bibliografía}{33}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Apéndice}{35}{chapter.11}%
+\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Funcionalidades}{23}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Sincronización}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Implementación del algoritmo de Beamforming}{27}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Análisis del modelo}{29}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Perspectiva de futuro}{31}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{33}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Bibliografía}{35}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Apéndice}{37}{chapter.11}%

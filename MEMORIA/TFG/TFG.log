@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  25 MAY 2022 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  26 MAY 2022 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,62 +817,75 @@ LaTeX Info: Redefining \% on input line 397.
 LaTeX Info: Redefining \. on input line 414.
 LaTeX Info: Redefining \% on input line 414.
  [17]
-LaTeX Info: Redefining \. on input line 432.
-LaTeX Info: Redefining \% on input line 432.
- [18]
-Cap\'{\i }tulo 4.
-<FIGURAS/interfaz1.JPG, id=338, 247.52475pt x 451.6875pt>
-File: FIGURAS/interfaz1.JPG Graphic file (type jpg)
-<use FIGURAS/interfaz1.JPG>
-Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 444.
-(pdftex.def)             Requested size: 142.26378pt x 259.60802pt.
-<FIGURAS/interfaz2.JPG, id=339, 255.354pt x 411.33675pt>
-File: FIGURAS/interfaz2.JPG Graphic file (type jpg)
-<use FIGURAS/interfaz2.JPG>
-Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 453.
-(pdftex.def)             Requested size: 142.26378pt x 229.1733pt.
-[19
+<FIGURAS/trafico_connect.png, id=333, 696.35156pt x 240.14719pt>
+File: FIGURAS/trafico_connect.png Graphic file (type png)
+<use FIGURAS/trafico_connect.png>
+Package pdftex.def Info: FIGURAS/trafico_connect.png  used on input line 427.
+(pdftex.def)             Requested size: 426.79134pt x 147.18578pt.
+
+Overfull \hbox (66.79134pt too wide) in paragraph at lines 427--428
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 433.
+LaTeX Info: Redefining \% on input line 433.
+[18 <./FIGURAS/trafico_connect.png>]
+LaTeX Info: Redefining \. on input line 455.
+LaTeX Info: Redefining \% on input line 455.
+ [19] [20
 
 ]
-LaTeX Info: Redefining \. on input line 457.
-LaTeX Info: Redefining \% on input line 457.
- [20 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>]
-LaTeX Info: Redefining \. on input line 471.
-LaTeX Info: Redefining \% on input line 471.
- [21]
-LaTeX Info: Redefining \. on input line 481.
-LaTeX Info: Redefining \% on input line 481.
- [22]
+Cap\'{\i }tulo 4.
+<FIGURAS/interfaz1.JPG, id=352, 247.52475pt x 451.6875pt>
+File: FIGURAS/interfaz1.JPG Graphic file (type jpg)
+<use FIGURAS/interfaz1.JPG>
+Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 467.
+(pdftex.def)             Requested size: 142.26378pt x 259.60802pt.
+<FIGURAS/interfaz2.JPG, id=353, 255.354pt x 411.33675pt>
+File: FIGURAS/interfaz2.JPG Graphic file (type jpg)
+<use FIGURAS/interfaz2.JPG>
+Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 476.
+(pdftex.def)             Requested size: 142.26378pt x 229.1733pt.
+[21]
+LaTeX Info: Redefining \. on input line 480.
+LaTeX Info: Redefining \% on input line 480.
+ [22 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>]
+LaTeX Info: Redefining \. on input line 494.
+LaTeX Info: Redefining \% on input line 494.
+ [23]
+LaTeX Info: Redefining \. on input line 504.
+LaTeX Info: Redefining \% on input line 504.
+ [24]
 Cap\'{\i }tulo 5.
-[23
+[25
 
-] [24
+] [26
 
 ]
 Cap\'{\i }tulo 6.
-[25] [26
-
-]
-Cap\'{\i }tulo 7.
 [27] [28
 
 ]
-Cap\'{\i }tulo 8.
+Cap\'{\i }tulo 7.
 [29] [30
 
 ]
-Cap\'{\i }tulo 9.
+Cap\'{\i }tulo 8.
 [31] [32
 
 ]
-Cap\'{\i }tulo 10.
+Cap\'{\i }tulo 9.
 [33] [34
 
 ]
-Cap\'{\i }tulo 11.
+Cap\'{\i }tulo 10.
 [35] [36
 
-] [37] (TFG.aux
+]
+Cap\'{\i }tulo 11.
+[37] [38
+
+] [39] (TFG.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -883,10 +896,10 @@ Package rerunfilecheck Info: File `TFG.out' has not changed.
 (rerunfilecheck)             Checksum: 329C1FF6FA7EF78A3F799B07F64FA329;5324.
  ) 
 Here is how much of TeX's memory you used:
- 13031 strings out of 478659
- 210019 string characters out of 2844972
+ 13044 strings out of 478659
+ 210274 string characters out of 2844972
  526078 words of memory out of 3000000
- 30836 multiletter control sequences out of 15000+600000
+ 30842 multiletter control sequences out of 15000+600000
  411215 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,1026b,704s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -901,9 +914,9 @@ uario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmti10.pfb>
-Output written on TFG.pdf (55 pages, 677088 bytes).
+Output written on TFG.pdf (57 pages, 1049553 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 324 words of extra memory for PDF output out of 10000 (max. 10000000)
 
