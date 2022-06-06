@@ -44,12 +44,15 @@ public class BeamServer {
      
      public static ServerSocket finalServer; //Socket del servidor correspondiente al PUERTO FIJO del cliente
      
+     public static String[] timeStamp; //Marcas de tiempo del servidor cuando recibe cada ACK
+     
      
     
     public static void main(String[] args) throws InterruptedException, IOException { //Los parámetros los determinamos en Rum->Set Project Configuration
         
         nDevices = Integer.parseInt(args[0]); //Pasamos el número de dispositivos de 'string' a entero.
         iniClients = new Socket[nDevices]; //Clientes de la primera conexión, que se corresponde con el número de dispositivos.
+        timeStamp = new String[nDevices];
         PORT = 5000;
         
         //ESTO SE PUEDE PONER COMO UNA FUNCIÓN
@@ -88,8 +91,10 @@ public class BeamServer {
         }
         
         Recording(iniClients);
+        
         getTimeStamp(iniClients);
-        //playChirp(iniClients);
+        timeView(timeStamp);
+        playChirp(iniClients);
         delay();
         stopRecording(iniClients);
         getTimeStamp(iniClients);
@@ -152,9 +157,11 @@ public class BeamServer {
                 output.writeUTF("START"); //Se envía la 'keyword' correspondiente a la aplicación para que comience la grabación.
                 while(!ACK.readUTF().equals("OK")){}
             }catch(IOException e){};
+            
+            timeStamp[i] = Time();
         
         }
-        serverImpulse();
+        //serverImpulse();
         
     }
     
@@ -163,7 +170,7 @@ public class BeamServer {
     {
         try
         {
-            Thread.sleep(5000);
+            Thread.sleep(12000);
         }catch(InterruptedException e){}
     }
     
@@ -192,7 +199,7 @@ public class BeamServer {
             
             FileOutputStream fos = new FileOutputStream(filename); //Se crea el archivo con el nombre correspondiente. Se destruye cualquier archivo con el mismo nombre.
             BufferedInputStream bis = new BufferedInputStream(cliente[i].getInputStream()); //Almacena el stream de datos procedente del cliente (grabación).
-            BufferedOutputStream bos = new BufferedOutputStream(fos, buf); //Flujo de salida almacenado en un buffer (de 70000 bytes en este caso)
+            BufferedOutputStream bos = new BufferedOutputStream(fos, buf); //Flujo de salida almacenado en un buffer
            
             int inputByte;
             boolean out = false;
@@ -267,6 +274,13 @@ public class BeamServer {
             }
         
             catch(IOException e){};
+        }
+    }
+    
+    static public void timeView(String timeStamp[]){
+        for (int i = 0; i < nDevices; i++){
+            System.out.println("ACK " + i + " en " + timeStamp[i]);
+            
         }
     }
     

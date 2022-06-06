@@ -1,0 +1,25 @@
+@startuml
+Device -> Server : SYN :5000
+Device <-- Server : SYN/ACK
+Device -> Server : ACK
+Device <-- Server : static port
+Device -> Server : SYN :static port
+Device <-- Server : SYN/ACK
+Device -> Server : ACK
+== Connection Established ==
+Device -> Server: READY
+Device <-- Server: ACK
+Device <-- Server: START
+== Recording ==
+Device -> Server: OK
+Device -> Server: Time Stamp
+...Finish record...
+Device <-- Server: STOP
+Device -> Server : ACK
+Device -> Server: Time Stamp
+== Save files ==
+Device <-- Server: ACK
+Device -> Server: Data Seq x
+Device <-- Server : ACK x
+...Complete File...
+Device <-- Server: Close connection

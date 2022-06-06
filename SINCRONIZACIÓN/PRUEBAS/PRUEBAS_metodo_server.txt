@@ -112,3 +112,17 @@ proporcionada con el cambio de frecuencia gradual que muestran este tipo de señ
 
 Se prueba con una nueva señal. Un TREN DE IMPULSOS como señal de sincronización.
 El tren de impulsos se compone de 3 impulsos internamente.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Se hace la prueba con el tren de impulsos y en vez de una canción con otro tren de 
+impulsos más largo, de unos 15 impulsos, para observar en la matriz de delay si algún
+móvil da problemas o, si por el contrario sale bien.
+
+RESULTADO: VEMOS QUE EL MÓVIL CORRESPONDIENTE AL DEVICE 2 ERA EL PROBLEMÁTICO, POR LO QUE
+CAMBIAMOS DE MÓVIL Y EN EL MÓVIL NUEVO MODIFICAMOS LA CONFIGURACIÓN DEL AUDIO A MONO Y QUE
+CAPTE LA TOTALIDAD DEL AUDIO EN EL CANAL DERECHO (micrófono de la parte de abajo).
+Ahora obtengo siempre un retardo de 0 muestras o de 1 o -1 (sincronización perfecta).
+El ÚNICO PROBLEMA es que a veces (1 vez de cada 3) el máximo de la correlación entre el tren 
+de impulsos original y el tren de impulsos grabado, no sale en el pico de enmedio (donde tendría que ser)
+siendo errónea la simulación y teniéndola que repetir de nuevo.

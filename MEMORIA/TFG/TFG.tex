@@ -16,7 +16,7 @@
 \makeatother
 
 
-%\usepackage[chapter]{algorithm}
+\usepackage[chapter]{algorithm}
 \RequirePackage{verbatim}
 %\RequirePackage[Glenn]{fncychap}
 \usepackage{fancyhdr}
@@ -65,7 +65,7 @@ pdfproducer = {pdflatex}
 \usepackage{url}
 \usepackage{colortbl,longtable}
 \usepackage[stable]{footmisc}
-%\usepackage{index}
+\usepackage{index}
 
 %\makeindex
 %\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
@@ -189,6 +189,24 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 	El procesamiento de señales multicanal, también conocido como ''Array Signal Processing'' se interpreta como un procesamiento de las señales en el espacio y en el tiempo.
 	
 	Conforme se va incrementando en frecuencia, las antenas necesitan unas dimensiones eléctricas mayores y se empiezan a alejar de las geometrías lineales. Para conformar la radiación y llegar a conseguir frentes de onda que puedan generar directividades elevadas y diagramas de radiación concretos, se presenta las llamadas 'Aperturas'. La respuesta procedente de una apertura es direccional, es decir, la señal recibida en la apertura depende de la dirección de llegada (DOA). El diagrama de radiación de una apertura lineal uniforme de longitud 'L' se muestra en la \textit{Figura 1.1}.
+	
+	El patrón de directividad correspondiente a una apertura muestreada en ciertas localizaciones a lo largo del eje x, suponiendo que todos los elementos del array son iguales e isotrópicos es el siguiente:
+	\begin{equation}
+	 D(f, \alpha) = \sum_{n = 0}^{N-1}w^{*}_{n}(f)e^{-2j \pi \alpha r_{n}}
+	\end{equation}
+	Donde $w^{*}_{n}(f)$ se corresponde con el peso o contribución de cada elemento de la apertura general, $r_{n}$ la posición de cada elemento y $\alpha$ el ángulo de radiación. Si todos los elementos del array radian de una forma uniforme, convirtiéndose la apertura general en una agrupación lineal uniforme, se simplifica la \textit{ecuación 1.1}, de la manera:
+	\begin{equation}
+		 D(f, \alpha) =\frac{1}{N}\frac{sin(\pi \alpha_{x} N d)}{sin(\pi \alpha_{x} d)} e^{-2j \pi \alpha_{x} \frac{N-1}{2} d}
+	\end{equation}
+	
+Siendo N el número de elementos. Al calcular el módulo del patrón de directividad resultante:
+
+	\begin{equation}
+|D(f, u_x)| =\frac{1}{N}\frac{sin(\pi u_{x} N d / \lambda)}{sin(\pi u_{x} d / \lambda)}
+	\end{equation}
+	
+Donde $u_x$ se corresponde al vector unitario en una dirección determinada. Esta ecuación justifica el diagrama de radiación de la \textit{Figura 1.1}, con lo cual, se puede afirmar que un array lineal uniforme de N elementos, simula el comportamiento de una apertura lineal uniforme de longitud $L = Nd$
+	
 	\begin{figure}[hbtp]
 	\centering
 	\includegraphics[width = 8cm]{FIGURAS/directividad_apertura.JPG}
@@ -197,22 +215,116 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 	
 	 Se puede apreciar que actúa como un filtro espacial (fenómeno clave para hacer beamforming), diferenciándose claramente el lóbulo principal de los demás, menos directivos.
 	 
-	 Un array de sensores es, básicamente, una apertura conformada por un número de aperturas lineales, simulando de esta manera el comportamiento de una apertura lineal de longitud la suma de las longitudes de los elementos del array más la separación entre ellos. Por así decirlo, un array de sensores es una apertura muestreada en ciertas localizaciones. Un array lineal uniforme simula el comportamiento de una apertura lineal uniforme con una longitud $L = dN$ donde $d$ se corresponde a la distancia entre elementos y $N$ la longitud de estos. En la Figura 1.2 se puede observar un array lineal uniforme orientado sobre el eje $z$. Variando la longitud del array con una longitud de onda fija, se pueden lograr diferentes patrones de directividad, como son el ''endfire'' (con el máximo de directividad en 90º) y el ''broadside'' (con el máximo de directividad en 0º ó 180º.
+	 Un array de sensores es, básicamente, una apertura conformada por un número de aperturas lineales, simulando de esta manera el comportamiento de una apertura lineal de longitud la suma de las longitudes de los elementos del array más la separación entre ellos. En la Figura 1.2 se puede observar un array lineal uniforme orientado sobre el eje $z$. Variando la longitud del array con una longitud de onda fija, se pueden lograr diferentes patrones de directividad, como son el ''endfire'' (con el máximo de directividad en 0º y 180º) y el ''broadside'' (con el máximo de directividad en 90º)
 	 \begin{figure}[hbtp]
 	 \centering
 	 \includegraphics[width = 5cm]{FIGURAS/array_elementos.JPG}
 	 \caption{Agrupación de elementos}
 	 \end{figure}
 	 
-	 El tipo de array que se va a tratar en el pryecto será un array Ad-Hoc de smartphones. Las agrupaciones de micrófonos consisten en un número de micrófonos los cuales se combinan para filtrar espacialmente las ondas acústicas. La configuración geométrica del array permitirá filtrar las señales deseadas para diversas aplicaciones. Este filtrado espacial sigue normalmente algoritmos de beamforming, los cuales se detallan en la siguiente sección. Sin embargo, para llegar al filtrado espacial, las señales captadas por los smartphones deben estar sincronizadas. Esto puede ser un problema, ya que el retardo producido desde que el primer móvil recibe la orden de grabar hasta que el último móvil recibe esta orden puede ser determinante. Además, las relojes de los móviles no se encuentran perfectamente sincronizados, por lo que se tendrá que implementar algún algoritmo de sincronización para mitigar estos efectos y llegar a realizar los filtros espaciales adecuadamente.
+A continuación, se ha hecho una pequeña simulación en el programa \textit{FEKO} para un array uniforme lineal de 6 elementos orientado en el eje z, así como la \textit{Figura 1.2}. Cada elemento se ha supuesto un dipolo infinitesimal y con una distancia entre elementos de $\lambda / 2$ para evitar máximos adicionales en el diagrama de radiación y que sea lo más ideal posible.
+
+Si fuese necesario obtener el máximo de radiación de forma perpendicular, lo que se ajusta a los requisitos conforma una agrupación de tipo ''broadside'' ya que, como se ha mencionado, el máximo de directividad se alcanza en $3 \pi / 2$ o en 90º. Mencionado esto, se procede a mostrar los resultados de la simulación a niveles de campo lejano:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 12cm]{FIGURAS/broadside.JPG}
+\caption{Diagrama de radiación broadside}
+\end{figure}
+
+Se aprecia que los máximos de radiación se encuentran en 270º y 90º. Cabe destacar que el ángulo en el que se ha hecho el barrido es $\theta$, ya que el array está orientado en el eje z y que el diagrama de la izquierda está expresado el campo en electrón-voltios y el campo de la derecha está expresado en dBV.
+
+Para finalizar la simulación, se adjunta también una representación 3D en la\textit{ Figura 1.4} de la ganancia, sabiendo que la ganancia de una antena está estrechamente relacionada con la directividad de la forma:
+\begin{equation}
+G = D * \eta_{r}
+\end{equation}
+Donde $\eta_{r}$ define las pérdidas entre potencia incidente y potencia radiada. Para el caso que interesa, se han impuesto condiciones ideales, por lo que no habrá pérdida alguna y la directividad se corresponde con la ganancia. 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 12cm]{FIGURAS/ganancia_broadside.jpg}
+\caption{Ganancia en broadside}
+\end{figure}
+
+Se comprueba en este diagrama también el patrón de radiación perpendicular de la agrupación de dipolos infinitesimales desde el punto de vista de la ganancia.
+
+	 
+	 El tipo de array que se va a tratar en el proyecto será un array Ad-Hoc de smartphones. No van a realizar una radiación activa como lo simulado con los dipolos infinitesimales, sino que conformarán un array de sensores, los cuales captarán señales acústicas entrantes. Sin ambargo, ha sido de interés incluir esta introducción de antenas activas, ya que el comportamiento será bastante similar y ayuda a entender mejor los diagramas directivos próximos.
+	 
+	  Las agrupaciones de micrófonos consisten en un número de micrófonos los cuales se combinan para filtrar espacialmente las ondas acústicas. La configuración geométrica del array permitirá filtrar las señales deseadas para diversas aplicaciones. Este filtrado espacial sigue normalmente algoritmos de beamforming, los cuales se detallan en la siguiente sección. Sin embargo, para llegar al filtrado espacial, las señales captadas por los smartphones deben estar sincronizadas. Esto puede ser un problema, ya que el retardo producido desde que el primer móvil recibe la orden de grabar hasta que el último móvil recibe esta orden puede ser determinante. Además, las relojes de los móviles no se encuentran perfectamente sincronizados, por lo que se tendrá que implementar algún algoritmo de sincronización para mitigar estos efectos y llegar a realizar los filtros espaciales adecuadamente.
 	 
 	\section{Concepto de Beamforming}
 	El concepto de ''Beamforming'' agrupa las técnicas necesarias para la determinación de filtros específicos, los cuales tienen el fin de obtener un patrón de directividad con una forma y dirección determinadas.
 	
-	Un ''beamformer'' se interpreta como un procesador, utilizado conjuntamente con una serie de sensores, para proporcionar una forma versátil de filtrado espacial. El objetivo es estimar la señal procedente de una dirección deseada, en un entorno ruidoso y en presencia de señales de interferencia. El ''beamformer'' actúa de forma similar a un filtro espacial, separando las señales que han sufrido una superposición en frecuencia, pero que se han originado en diferentes localizaciones espaciales.
+	Un ''beamformer'' se interpreta como un procesador, utilizado conjuntamente con una serie de sensores, para proporcionar una forma versátil de filtrado espacial. El objetivo es estimar la señal procedente de una dirección deseada, en un entorno ruidoso y en presencia de señales de interferencia. El ''beamformer'' actúa de forma similar a un filtro espacial, separando las señales que han sufrido una superposición en frecuencia, pero que se han originado en diferentes localizaciones espaciales. Para determinar el patrón de directividad deseado se hace uso de filtros o, siguiendo la nomenclatura de la sección de procesamiento de señales multicanal, pesos. Estos filtros o pesos se componen de una parte real y de una parte imaginaria.
+	\begin{equation}
+	w_{n}(f) = a_{n} e^{j\varphi_{n}(f)}
+	\end{equation}
+	La \textit{ecuación 1.5} se corresponde con un esquema típico de amplitud ($a_{n}$) y fase ($e^{j\varphi_{n}(f)}$). La amplitud determina la forma del patrón de directividad, mientras que la fase interviene en la orientación del lóbulo principal en un determinado ángulo.
 	
 	El caso que se planteará en este proyecto corresponde a un beamforming acústico. Dentro de este caso, existen dos ramas principales: una relacionada con la extracción de la señal y otra relacionada con la localización de las fuentes sonoras.
 		\subsection{Tipos de Beamformers}
+		
+		Antes de entrar en detalle en los distintos modelos, cabe diferenciar tres tipos de campos de ruido existentes para los cuales sería más adecuado el uso de un tipo de beamformer u otro y el criterio que se va a seguir para evaluarlos:
+		\begin{itemize}
+		\item Campo de ruido coherente: El ruido se propaga en una determinada dirección con la misma energía.
+		\item Campo de ruido incoherente: La correlación de las contribuciones ruidosas es aleatoria.
+		\item Campo de ruido difuso: La propagación del ruido es en todas las direcciones con una misma energía.
+		\end{itemize}
+		
+		Se define la ganancia del array como el cociente de la SNR a la salida y la SNR a la entrada del beamformer.
+		
+		\begin{equation}
+		G(f) = \frac{SNR_{o}(f)}{SNR_{i}(f)}
+		\end{equation}
+				Se va a explicar tres clases distintas de beamforming: Beamforming Delay \& Sum, Beamforming MVDR y Beamforming superdirectivo.
+		\subsubsection{Delay \& Sum}
+		Este primer beamformer es el más comúnmente utilizado en procesos de beamforming debido a simplicidad y a su robustez. El beamformer Delay \& Sum o \textit{DAS} ha sido utilizado en muchos estudios de localización de ruido en aeronáutica, como se verá posteriormente.
+		
+		En el beamformer DAS, los pesos son representados mediante \textbf{retardos}. Siguiendo la estructura de la \textit{ecuación 1.5} resultaría:
+		\begin{equation}
+		w_{n}(f) = e^{j \omega t_{n}} / N
+		\end{equation}
+		Con una contribución uniforme para cada elemento de $1/N$ y siendo $t_{n} = \varphi_{n}(f) / \omega$. Se desea modificar el patrón de directividad de la \textit{ecuación 1.1} hacia una dirección deseada $u_{s}$. Introduciendo el peso obtenido en la \textit{ecuación 1.7} operando con las exponenciales y sacando factor común, el patrón de directividad queda de la forma:
+\begin{equation}
+		D(f, u-u_{s}) = \frac{1}{N} \sum_{n = 0}^{N-1} e^{2\pi f j (\frac{u r_{n}}{c} - t_{n})}
+		\end{equation}		
+		Donde $r_{n}$ es el vector de posición del elemento $n$. El objetivo es obtener el patrón de directividad en la dirección deseada $u_{s}$, por lo que fijando $t_{n} = \frac{u_{s} r_{n}}{c}$ conseguimos el direccionamiento comentado. Definimos instante de llegada de la señal justo en la dirección deseada ($u = u_{s}$) como $\tau_{n,s} = -t_{n}$. 		
+		
+		Los pesos o filtros correspondientes a los $N$ elementos del array del beamformer DAS son:
+		\begin{equation}
+		\textbf{w}(f) = \frac{1}{N} (e^{j \omega t_{0}},...,e^{j \omega t_{N-1}})^{T} = \frac{1}{N} \textbf{d}(f,u_{s})
+		\end{equation}
+		Siendo $\textbf{d}(f,u_{s})$ el llamado \textit{steering vector.}
+
+		Básicamente, el beamformer DAS hace la sumatoria de todas las versiones retardadas y de sus correspondientes pesos para cada elemento o micrófono, consiguiendo una superposición destructiva para aquellas señales que no lleguen en la dirección deseada y se conseguirá una superposición constructiva para las señales procedentes de la dirección deseada. Se logra de esta manera un realzamiento de la señal procedente de la fuente de interés, mientras que se suprime la contribución de otras fuentes desde una dirección diferente a la determinada. Además de atenuar las señales procedentes de direcciones distintas a la de interés, este beamformer tiene la capacidad de suprimir la contaminación producida por ruido desde la señal de interés.
+		
+\textbf{		El beamformer DAS maximiza la \textit{ecuación 1.6} en un campo de ruido incoherente.} Por otra parte, aunque el beamformer DAS mantiene un buen comportamiento ante ruido blanco, el factor de directividad que posee no es muy alto.
+		
+		\subsubsection{MVDR}
+		El principal objetivo del beamformer MVDR (\textit{Minimum Variance Distortionless Response}) es hacer mínima la contribución del ruido, como su nombre indica.
+		
+		Considerando una señal deseada y el ruido capturado, en el dominio de la frecuencia se obtiene la señal:
+		\begin{equation}
+		\textbf{X}(f) = S(f)\textbf{d}_{s}(f) + \textbf{V}(f)
+		\end{equation}
+	Se conoce que, la respuesta del array, apoyándose en la definición de patrón de directividad de la \textit{ecuación 1.1} es el siguiente:
+	\begin{equation}
+	Y(f) = D(f,u) S(f) = \textbf{w}^{H}(f) \textbf{X}(f) = \textbf{w}^{H}(f)(\textbf{d}_{s}(f) S(f) + \textbf{V}(f))
+	\end{equation}
+	Donde $\textbf{V}(f)$ es la contribución del ruido.
+	
+	El beamformer MVDR consta en minimizar la contribución del ruido, por lo que se debe resolver un problema de optimización, imponiendo $w^{H} d_{s}(f) S(f) = S(f)$. Se debe minimizar el error cuadrático medio estimando la correlación del ruido entre canales y la matriz de correlación espacial del ruido.
+	
+	En canales multitrayectoria, el beamformer MVDR se emplea como un ecualizador, el cual filtra espacialmente las señales deseadas e intenta eliminar lo máximo posible las fuentes de ruido.
+	
+	Teóricamente, el beamformer MVDR es capaz de mejorar siempre la SNR de una señal de interés captada por el sensor de referencia.
+	
+	\textbf{		El beamformer MVDR maximiza la \textit{ecuación 1.6} en un campo de ruido coherente.}
+	
+	\subsection{Superdirectivo}
+	Este tipo de beamformer es conocido por alcanzar un valor alto en el factor de directividad. Sin embargo, es extremadamente sensible ante patrones de ruido no correlados, como puede ser el ruido blanco y ante pequeños errores en los elementos del array. Frente a ruido blanco, el beamformer superdirectivo además de realzar la señal de interés, amplificaría también el ruido blanco. Se puede entender como un filtro lineal.
+	
+	\textbf{		El beamformer superdirectivo maximiza la \textit{ecuación 1.6} en un campo de ruido difuso.}
+	
 	\section{Impacto en la actualidad}
 	El procesamiento de señales multicanal tiene múltiples aplicaciones. Algunas de ellas son: radioastronomía, radar, sismología, tomografía, comunicaciones inalámbricas, sonar y tratamiento de audio. Se explicará brevemente la actuación de este tipo de procesamiento para las comunicaciones celulares y para un punto de vista acústico.
 		\subsection{Comunicaciones Inalámbricas}
@@ -392,6 +504,7 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 				\item \textbf{stopRecording}: Como su propio nombre indica, es la función relacionada con el envío de la orden de parar la grabación. Similar a \textit{Recording} con la diferencia de que se envía la orden opuesta y que el servidor no espera ningún ''ACK'' por parte de los clientes para emitir la orden correspondiente.
 				\item \textbf{getTimeStamp}: Función que lee la marca de tiempo devuelta por cada móvil. Como argumento de entrada toma el socket de cada cliente, ya que la marca temporal de cada móvil proviene de la aplicación.
 				\item \textbf{Time}: Si fuese necesario devolver una marca temporal ''absoluta'', tomada con el reloj del servidor, se puede llamar a esta función cuando se desee sin argumentos de entrada. Puede ser útil para comparar las demás marcas de tiempo ''relativas'' obtenidas para cada dispositivo.
+				\item \textbf{timeView}: Se apoya en la función \textit{Time()}. Únicamente muestra la marca de tiempo definida con el servidor por pantalla, para tener constancia del tiempo absoluto en que empieza cada grabación.
 				\item \textbf{serverImpulse}: Esta función se encarga de emitir un chirp inicial, justo cuando todos los dispositivos están grabando. De esta manera, con la señal inicial captada, se podrá llegar a un algoritmo de sincronización entre las grabaciones efectivo.
 				\item \textbf{playChirp}: Para realizar un método de sincronización distinto al comentado en la función anterior, se puede llamar a esta función para emitir una orden de reproducir una señal ''chirp'' en cada uno de los móviles o clientes mientras se encuentran en estado activo de grabación, con el propósito obtener las señales grabadas sincronizadas.
 				\item \textbf{saveFiles}: Por último, se llama a esta función. Su principal cometido es recibir los bytes procedentes de cada una de las grabaciones, almacenarlos en un buffer temporal, y guardarlos en la memoria de la máquina en la que se está ejecutando el servidor. Se debe ser coherente con el tiempo de la grabación y el tamaño del buffer temporal. Guarda las grabaciones como archivos de datos en bruto (.raw). Toma de argumentos de entrada el socket de cada cliente.
@@ -408,7 +521,7 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 		\item Una vez aceptada esta primera conexión, el servidor busca un puerto libre, mediante la función \textit{Search4port} y se lo devuelve al cliente para que realice una nueva conexión.
 		\item El cliente envía una nueva \textit{request} al puerto indicado por el servidor. Al aceptar el servidor esta nueva conexión, el cliente finalmente se encuentra en el puerto adecuado para realizar la comunicación completa.
 		\item Ya conectados el número de clientes especificado, el dispositivo deberá enviar un mensaje de ''READY'', para dar a entender al servidor que está listo para grabar.
-		\item El servidor emite la orden de grabar (''START'') y espera a que cada uno de los móviles le hagan llegar un ''ACK'' de confirmación por empezar a grabar. Adicionalmente, los móviles transmiten al servidor la marca temporal correspondiente al inicio de la grabación.
+		\item El servidor emite la orden de grabar (''START'') y espera a que cada uno de los móviles le hagan llegar un ''ACK'' de confirmación por empezar a grabar. Adicionalmente, los móviles transmiten al servidor la marca temporal correspondiente al inicio de la grabación y el servidor, por su parte, emite una marca temporal absoluta para cada confirmación recibida, la cual se utilizará más adelante para ayudar a sincronizar las señales.
 		\item Pasados los segundos de grabación establecidos, el servidor emite la orden de parar la grabación (''STOP'') y cada dispositivo devuelve de nuevo una marca temporal, relacionada con el final de la grabación.
 		\item Por último, cada smartphone envía al servidor el fichero de grabación resultante.
 		\end{enumerate}
@@ -436,18 +549,55 @@ Se puede apreciar la dirección IP de la máquina donde corre el servidor (192.1
  \item SYN/ACK
  \item ACK
  \end{enumerate}
-Una vez se haya completado el envío y recepción de esos tres mensajes, se podrá confirmar que existe una conexión fiable. El cliente juega un papel activo, el cual empieza enviando un segmento SYN, portador de su número de secuencia. El servidor, por su parte, juega un papel más pasivo. Al recibir el servidor el segmento SYN, este último responde otro segmento SYN con su número de secuencia inicial y con un acuse y recibo (ACK). De esta manera, conociendo los números de secuencia de cada parte y con el ACK, ayuda a reconocer mensajes erróneos o perdidos. Cuando el cliente recibe el paquete SYN/ACK del servidor, sabe que se ha establecido exitosamente la conexión y devuelve un ACK al servidor para terminar.
+Una vez se haya completado el envío y recepción de esos tres mensajes, se podrá confirmar que existe una conexión fiable. El cliente juega un papel activo, el cual empieza enviando un segmento SYN, portador de su número de secuencia. El servidor, por su parte, juega un papel más pasivo.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 8cm]{FIGURAS/TCP_flow.png}
+\caption{Conexión TCP}
+\end{figure}
+
+
+Al recibir el servidor el segmento SYN, este último responde otro segmento SYN con su número de secuencia inicial y con un acuse y recibo (ACK). De esta manera, conociendo los números de secuencia de cada parte y con el ACK, ayuda a reconocer mensajes erróneos o perdidos. Cuando el cliente recibe el paquete SYN/ACK del servidor, sabe que se ha establecido exitosamente la conexión y devuelve un ACK al servidor para terminar.
 
 En cada fase del proceso, es posible que se produzca una pérdida de paquetes o que no lleguen al destino correctamente, por lo que existe un tiempo límite o \textit{timeout} con el cual se comprueba si se debe enviar de nuevo el segmento de sincronización. Todo este flujo de establecimiento de la conexión, lo podemos apreciar claramente en la \textit{Figura 3.3}. El proceso de conexionado, en este caso, se realiza dos veces (una vez al puerto común 5000 y otra vez al puerto fijo 5001).
+
+Una vez hecho el conexionado, el cliente hace saber al servidor que está listo para grabar. Cuando todos los dispositivos le hayan dado la confirmación para empezar a grabar, el servidor enviará la orden para empezar. Este flujo lo podemos ver en la \textit{Figura 3.5}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 15 cm]{FIGURAS/trafico_record.JPG}
+\caption{Tráfico ''record''}
+\end{figure}
+
+Si observamos el contenido del primer paquete y del último paquete del flujo presentado, se pueden apreciar los correspondientes mensajes de ''READY'' por parte del dispositivo y de ''START'' por parte del servidor en la \textit{Figura 3.6}. Los bytes anteriores a las palabras clave comentadas son correspondientes a la cabecera del paquete.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 8 cm]{FIGURAS/startready.JPG}
+\caption{Palabras clave comienzo}
+\end{figure}
+
+Una vez emitida la orden de grabar por el servidor, cada dispositivo envía un ''ACK'' adicional y empieza la grabación. En el período de tiempo de grabación no se intercambian paquetes, ya que el servidor se encuentra en reposo y los móviles se encuentran grabando.
+
+Cuando la grabación finaliza, llega el momento de intercambiar el archivo de datos brutos almacenado. Este proceso se puede apreciar en la \textit{Figura 3.7}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 16 cm]{FIGURAS/intercambio_grabacion.png}
+\caption{Transferencia archivo}
+\end{figure}
+
+En la que se puede observar que el envío se divide en tramas de 1460 bytes y que llegados una serie de paquetes, el servidor responde con un ACK referenciando al número de secuencia del paquete el cual se está confirmando su correcta llegada.	
+				
+			Con los datos proporcionados por el tráfico de red, se traza un diagrama UML en la \textit{Figura 3.8} para una mejor visualización de la comunicación entre el servidor y un cliente.
 			
-			
-			
-			
-			
-			
-			
-		
-			Con los datos proporcionados por el tráfico de red, se traza un diagrama UML para una mejor visualización de la comunicación entre el servidor y un cliente.
+	\begin{figure}[hbtp]
+			\centering
+			\includegraphics[width = 5cm]{FIGURAS/uml.png}
+			\caption{Tráfico completo.}
+			\end{figure}
+					
 			
 			
 			
@@ -483,7 +633,7 @@ Como se puede apreciar, directamente proporciona la opción al usuario de conect
 	
 	En total, se han creado 3 clases java en Android Studio:
 	\begin{itemize}
-	\item \textbf{ManActivity}: Es la clase principal. En ella se encuentra el diseño de la primera interfaz mostrada en la \textit{Figura 4.1}. Al pulsar el usuario el botón, se hará una llamada a la siguiente clase con su nueva interfaz.
+	\item \textbf{MainActivity}: Es la clase principal. En ella se encuentra el diseño de la primera interfaz mostrada en la \textit{Figura 4.1}. Al pulsar el usuario el botón, se hará una llamada a la siguiente clase con su nueva interfaz.
 	\item \textbf{RecordClient}: Contiene el diseño de la segunda interfaz de la aplicación (\textit{Figura 4.2}). Esta clase es la encargada de mantener la conexión con el servidor dada una dirección IP específica y el puerto común, el cual se ha determinado como el puerto número 5000 en la sección del servidor. Realiza todo el proceso de doble conexión al servidor en segundo plano y, una vez conectado el dispositivo al servidor, se cargará la interfaz correspondiente a la acción de grabar.
 	
 	Al pulsar el usuario el botón de ''RECORD'', se mandará el mensaje de ''READY'' al servidor y se esperará a la orden de empezar la grabación emitida por el servidor. La comunicación con el servidor desde la aplicación se realiza de manera similar que en el servidor: con el uso de \textit{Sockets} y flujos de datos \textit{DataInputStream} y \textit{DataOutputStream}. Cuando la aplicación recibe la orden de grabar por el servidor, se hace la llamada a la clase \textit{Recorder} y empieza la grabación en un nuevo hilo. En el hilo principal se procede al envío del ''ACK'' y de la marca de tiempo correspondiente al comienzo de la grabación por parte del dispositivo al servidor y se mantiene en espera hasta recibir la orden correspondiente a parar la grabación.
@@ -502,6 +652,12 @@ Como se puede apreciar, directamente proporciona la opción al usuario de conect
 	
 	
 \chapter{Sincronización}
+\section{Correlación cruzada}
+\section{Señales de sincronización}
+\section{Sincronización mediante ''auto-chirps''}
+\section{Sincronización mediante el servidor}
+\section{Análisis comparativo}
+
 
 \chapter{Implementación del algoritmo de Beamforming}
 

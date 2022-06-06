@@ -2,7 +2,7 @@
 """
 Created on Wed Apr  6 17:05:12 2022
 
-@author: Usuario
+@author: Sergio
 """
 
 
@@ -76,6 +76,37 @@ def correlaMax(rx, N):
     
     return delay
 
+def correlaPeaks(correla, Npeaks, Lexc):
+    
+    ntoa = np.zeros(Npeaks)
+    #Nos quedamos con los índices de los valores de la correlación ordenados
+    #de mayor a menor, es decir, el primer índice o instante se corresponde con el índice
+    #del máximo valor de la correlación
+    indices = np.argsort(correla) #Se ordena de menor a mayor
+    indices = indices[::-1] #Ordenado de mayor a menor
+    ntoa[0] = indices[0] #El valor máximo de la correlación se corresponde con un TOA
+    nfound = 1 #Número de TOAs encontrados
+    nsearch = 1 #Por donde empieza la búsqueda
+    
+    #Iremos comparando valor por valor, en los máximos.
+    #Si la distancia es mayor que Lexc, se cumple la condición y se incrementa el contador.
+    #Al incrementarse el contador, se incorpora el valor a los toas.
+    #Por último se ordenan por orden de llegada
+    while nfound < Npeaks:
+        cont = 0
+        for n in range(nfound):
+            cond = np.abs(indices[nsearch] - ntoa[n]) >= Lexc #Booleana
+            cont = cont + cond
+        if cont == (nfound):
+            nfound = nfound + 1
+            ntoa[nfound-1] = indices[nsearch]
+        else:
+            nsearch = nsearch + 1
+    
+    ntoa = np.sort(ntoa)
+    
+    return ntoa
+
 ##################################################################################
 
 def sincro(Ndevices):
@@ -88,6 +119,7 @@ def sincro(Ndevices):
 
     
     record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones
+    Lexc = 10000 #Longitud en muestras aprox de un impulso
     tam = np.arange(Ndevices)
     tam_postdelay = np.arange(Ndevices) #Tamaño después de acortar con el delay inicial
     lim_tren = 44100 * 3 #Acortamos a 3 segundos para captar la señal de sincronización
@@ -102,7 +134,6 @@ def sincro(Ndevices):
     Fs, tren_orig = wavfile.read('tren_impulsos.wav')
     #Fs, tren_orig = wavfile.read('impulso.wav')
     #Fs, tren_orig = wavfile.read('chirp_creado.wav')
-    Lexc = len(tren_orig)
     
     for i in range(Ndevices):
         #Guardamos en volatil el contenido de la grabación i
@@ -116,8 +147,10 @@ def sincro(Ndevices):
         tren[:, i] = volatil[:lim_tren]
         
         rx_tren = scipy.signal.correlate(tren[:, i], tren_orig, mode = 'full', method='fft')
-        toa[i] = correlaMax(rx_tren, len(rx_tren))
-        #rx_tren = rx_tren[Lexc:]
+        N = len(rx_tren)
+        #Se calcula el pico de correlación central (máximo)
+        ntoa = correlaPeaks(rx_tren, 5, Lexc)
+        toa[i] = int(np.median(ntoa))
         N = len(rx_tren)
         k = np.linspace(-(N/2) +1, (N/2)-1, N)
         
@@ -133,25 +166,25 @@ def sincro(Ndevices):
         # plt.xlabel('Muestras')
         # plt.ylabel('Amplitud')
         
-        plt.figure(i+10)
-        plt.subplot(211)
-        plt.plot(tren[:, i])
-        plt.subplot(212)
-        plt.plot(k,rx_tren)
+        # plt.figure(i+10)
+        # plt.subplot(211)
+        # plt.plot(tren[:, i])
+        # plt.subplot(212)
+        # plt.plot(k,rx_tren)
         
-    plt.figure(9)
-    plt.plot(tren_orig)
+    # plt.figure(9)
+    # plt.plot(tren_orig)
         
     #Cuál es la grabación que comienza antes
     primera = np.argmin(toa)
-
+    print('Comienza Device ' + str(primera))
     for i in range(Ndevices):
     
         rx_tren2 = scipy.signal.correlate(tren[:, i], tren[:,primera], mode = 'full', method='fft')
         N = len(rx_tren2)
         k = np.linspace(-(N/2) +1, (N/2)-1, N)
-        plt.figure(i+1)
-        plt.plot(k,rx_tren2)
+        # plt.figure(i+1)
+        # plt.plot(k,rx_tren2)
         
         toamed[i] = correlaMax(rx_tren2, len(rx_tren2))
         tam_postdelay[i] = tam[i] - toamed[i]
@@ -182,10 +215,18 @@ def sincro(Ndevices):
         plt.figure(z+5)
         plt.plot(k, rx_sincro)
         plt.title('Correlación cruzada señales ajustadas')
-        # Calculamos el delay final para todas las señales
-        delay_final[z] = correlaMax(rx_sincro, N)
-        print('El delay final es de:', delay_final[z], 'muestras')
         
+    #MATRIZ DE TODOS LOS RETARDOS FINALES
+    delay_matriz = np.zeros((Ndevices, Ndevices))
+    
+    for i in range(Ndevices):
+        for j in range(Ndevices):
+            rx_matriz = scipy.signal.correlate(sincronizadas[:,i], sincronizadas[:,j], mode = 'full')
+            N = len(rx_matriz)
+            delay_matriz[i, j] = correlaMax(rx_matriz, N)
+            
+    print('Matriz de retardos finales:' )
+    print(delay_matriz)
 
 ##############################################################################################
 

@@ -2,7 +2,7 @@
 """
 Created on Sun Apr 24 09:05:35 2022
 
-@author: Usuario
+@author: Sergio
 """
 
 import numpy as np
@@ -115,7 +115,19 @@ def fcriterion(tdoamed, tf_est, tcest):
             
     return F, tdoaest
 
-
+def diffNet(Ndevices, timeStamp):
+    
+    'Función que calcula el retardo en muestras producido por server-app dada una'
+    'marca de tiempo absolutan para cada dispositivo'
+    
+    serverDelay = np.zeros(Ndevices)
+    
+    for i in range(Ndevices):
+        serverDelay[i] = timeStamp[Ndevices-1] - timeStamp[i]
+    
+    serverDelay = np.floor(serverDelay * 44100)
+    
+    return serverDelay
 
 
             
@@ -125,10 +137,11 @@ RawToWav('Device2')
 
 plt.close('all')
             
-#def sincro_chirp(Ndevices):
 Ndevices = 3
 Fs = 44100
-record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones    
+#record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones
+record = np.zeros((700000, Ndevices))
+serverDelay = np.zeros(Ndevices)
 tam = np.arange(Ndevices) #Tamaño de cada grabación
 tam_postdelay = np.arange(Ndevices) #Tamaño después de acortar con el delay inicial
 correla = np.arange(Ndevices)
@@ -148,10 +161,26 @@ RelInc = 0.01 # Criterio de convergencia
 chirp = excitacion(Fs, 0.1)
 Lexc = len(chirp)
 
+#Parámetros eje de tiempos absoluto
+#PRUEBA 1
+timeStamp = np.array([11.245, 11.363, 11.473])
+#PRUEBA 3
+#timeStamp = np.array([7.826, 7.929, 8.039])
+#PRUEBA 4
+#timeStamp = np.array([12.126, 12.242, 12.355])
+
+#SEPARADOS 2
+#timeStamp = np.array([56.303, 56.390, 56.490])
+
+
+serverDelay = diffNet(Ndevices, timeStamp)
+
 
 for i in range(Ndevices):
     #Guardamos en volatil el contenido de la grabación i
     Fs, volatil = wavfile.read('Device'+ str(i) + '.wav')
+    #Se implementa un eje de tiempos absoluto, eliminando los retardos de red
+    volatil = volatil[int(serverDelay[i]):]
     #Guardamos el número de muestras de la grabación i
     tam[i] = len(volatil)
     #Guardamos la parte de la excitación (los 3 pitidos únicamente)
@@ -203,7 +232,6 @@ for i in range(Ndevices):
 ##################Fin del primer bucle#####################################
 
 toaRef = np.argsort(toamed[:, 0]) #Hace referencia a las señales ordenadas por instante de comienzo
-toamed = np.sort(toamed, axis = 0)
 
 
 #DIFERENCIA DE LOS TIEMPOS DE LLEGADA
@@ -221,8 +249,7 @@ for i in range (Ndevices):
 for i in range(1, Ndevices):
     tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2 + tcest[i-1]
     
-tcest = np.abs(tcest)
-    
+
 # %% DESCENSO EN GRADIENTE
 
 tf_est = tf_est + 10 * np.random.randn(Ndevices, Ndevices) / Fs
@@ -247,13 +274,13 @@ while RelInc > 0.0001:
     
 #--------------------------------------------------------------------------------------------------------------
 
-#Ordenamos de menor a mayor las señales según su instante de comienzo (el primer elemento cpmienza antes)
+#Ordenamos de menor a mayor las señales según su instante de comienzo (el primer elemento comienza antes)
 #Determinamos las muestras de comienzo de cada señal
 mcest = np.ceil(tcest * Fs)
 
 #Determinamos el nuevo tamaño de cada señal aplicando el corte del tiempo de comienzo en cada caso
 for i in range(Ndevices):
-    tam_postdelay[i] = tam[toaRef[i]] - mcest[i]
+    tam_postdelay[i] = tam[i] - mcest[toaRef[i]]
 
 #Adaptamos el tamaño de las señales con la señal de menos muestras (acortamos por abajo)
 tam_final = min(tam_postdelay)
@@ -268,8 +295,8 @@ plt.ylabel('Amplitud')
 
 #Recortamos las señales
 for i in range(Ndevices):
-    limite = tam_final + int(mcest[i])
-    sincronizadas[:, i] = record[int(mcest[i]):limite, toaRef[i]] #Acortamos por arriba
+    limite = tam_final + int(mcest[toaRef[i]])
+    sincronizadas[:, i] = record[int(mcest[toaRef[i]]):limite, i] #Acortamos por arriba
     plt.plot(sincronizadas[:,i])
 
 

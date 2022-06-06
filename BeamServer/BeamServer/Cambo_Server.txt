@@ -1,9 +1,11 @@
 Para cambiar de configuración de la configuración servidor de los pitidos
-a la configuración del servidor chirp, hay que:
+a la configuración del servidor , hay que:
 
 - Eliminar a la llamada 'playChirp(iniClients)'
+- Eliminar la llamada 'timeView(Ndevices)'
 - Descomentar la llamada 'serverImpulse()' en la función 'Recording'
 - Añadir más segundos a la grabación (modificar delay) a unos 12 (delay(12000))
+- 
 
 EN LA APP
 
