@@ -66,6 +66,7 @@ pdfproducer = {pdflatex}
 \usepackage{colortbl,longtable}
 \usepackage[stable]{footmisc}
 \usepackage{index}
+\usepackage{subfig}
 
 %\makeindex
 %\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
@@ -275,6 +276,13 @@ Se comprueba en este diagrama también el patrón de radiación perpendicular de
 		\begin{equation}
 		G(f) = \frac{SNR_{o}(f)}{SNR_{i}(f)}
 		\end{equation}
+		
+El factor de directividad (\textit{ecuación 1.7}) se entiende como el cociente del patrón de directividad en la dirección deseada y el patrón de directividad de todas las direcciones en general.
+
+\begin{equation}
+F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}{4 \pi} \int_{0}^{2\pi}\int_{0}^{\pi}|D(f, \phi, \theta|^{2} sin(\theta) d\theta d\phi}
+\end{equation}
+		
 				Se va a explicar tres clases distintas de beamforming: Beamforming Delay \& Sum, Beamforming MVDR y Beamforming superdirectivo.
 		\subsubsection{Delay \& Sum}
 		Este primer beamformer es el más comúnmente utilizado en procesos de beamforming debido a simplicidad y a su robustez. El beamformer Delay \& Sum o \textit{DAS} ha sido utilizado en muchos estudios de localización de ruido en aeronáutica, como se verá posteriormente.
@@ -283,7 +291,7 @@ Se comprueba en este diagrama también el patrón de radiación perpendicular de
 		\begin{equation}
 		w_{n}(f) = e^{j \omega t_{n}} / N
 		\end{equation}
-		Con una contribución uniforme para cada elemento de $1/N$ y siendo $t_{n} = \varphi_{n}(f) / \omega$. Se desea modificar el patrón de directividad de la \textit{ecuación 1.1} hacia una dirección deseada $u_{s}$. Introduciendo el peso obtenido en la \textit{ecuación 1.7} operando con las exponenciales y sacando factor común, el patrón de directividad queda de la forma:
+		Con una contribución uniforme para cada elemento de $1/N$ y siendo $t_{n} = \varphi_{n}(f) / \omega$. Se desea modificar el patrón de directividad de la \textit{ecuación 1.1} hacia una dirección deseada $u_{s}$. Introduciendo el peso obtenido en la \textit{ecuación 1.8} operando con las exponenciales y sacando factor común, el patrón de directividad queda de la forma:
 \begin{equation}
 		D(f, u-u_{s}) = \frac{1}{N} \sum_{n = 0}^{N-1} e^{2\pi f j (\frac{u r_{n}}{c} - t_{n})}
 		\end{equation}		
@@ -320,7 +328,7 @@ Se comprueba en este diagrama también el patrón de radiación perpendicular de
 	
 	\textbf{		El beamformer MVDR maximiza la \textit{ecuación 1.6} en un campo de ruido coherente.}
 	
-	\subsection{Superdirectivo}
+	\subsubsection{Superdirectivo}
 	Este tipo de beamformer es conocido por alcanzar un valor alto en el factor de directividad. Sin embargo, es extremadamente sensible ante patrones de ruido no correlados, como puede ser el ruido blanco y ante pequeños errores en los elementos del array. Frente a ruido blanco, el beamformer superdirectivo además de realzar la señal de interés, amplificaría también el ruido blanco. Se puede entender como un filtro lineal.
 	
 	\textbf{		El beamformer superdirectivo maximiza la \textit{ecuación 1.6} en un campo de ruido difuso.}
@@ -389,7 +397,7 @@ Se comprueba en este diagrama también el patrón de radiación perpendicular de
 	\section{Justificación del proyecto}
 	\section{Distribución del proyecto}
 		\subsection{Requisitos de realización}
-		\subsection{Procedimiento}
+		\subsection{Seguimiento del proyecto}
 		Aquí va una lista de lo que he hecho: servidor, app y algoritmo.
 		\subsection{Entornos de trabajo}
 		Java, AndroidStudio, Python...
@@ -611,21 +619,23 @@ Tal y como se ha comentado anteriormente, para la comunicación entre el servido
 	
 	El propósito de la aplicación es cumplir los requisitos necesarios, esto es la conexión con el servidor, la correcta grabación y la debida transmisión del fichero de grabación. La interfaz de la aplicación está pensada para que sea lo más intuitiva posible, para conseguir únicamente la meta del proyecto que se está tratando.
 	
-	Nada más abrir la aplicación, la interfaz resultante se muestra en la \textit{Figura 4.1.}
-	\begin{figure}[hbtp]
-	\centering
-	\includegraphics[width = 5 cm]{FIGURAS/interfaz1.JPG}
-	\caption{Interfaz de conexión}
-	\end{figure}
-Como se puede apreciar, directamente proporciona la opción al usuario de conectar el dispositivo con el servidor externo. Una vez se pulse el botón de ''CONNECT'', el cliente enviará una petición de conexión al servidor especificado.
-	
-	Al pulsar el botón de ''CONNECT'' y habiéndose conectado el dispositivo exitosamente al servidor, la siguiente interfaz o \textit{activity} que el usuario visualiza se observa en la \textit{Figura 4.2}.
+	Nada más abrir la aplicación, la interfaz resultante se muestra en la \textit{Figura \ref{interfaz1}}. Como se puede apreciar, directamente proporciona la opción al usuario de conectar el dispositivo con el servidor externo. Una vez se pulse el botón de ''CONNECT'', el cliente enviará una petición de conexión al servidor especificado.
 
-	\begin{figure}[hbtp]
-	\centering
-	\includegraphics[width = 5cm]{FIGURAS/interfaz2.JPG}
-	\caption{Interfaz de grabación}
-	\end{figure}
+\begin{figure}
+ \centering
+  \subfloat[]{
+   \label{interfaz1}
+    \includegraphics[width = 5 cm]{FIGURAS/interfaz1.JPG}}
+  \subfloat[]{
+   \label{interfaz2}
+    \includegraphics[width=5cm]{FIGURAS/interfaz2.JPG}}
+ \caption{Interfaces de la aplicación}
+\end{figure}
+
+
+	
+	Al pulsar el botón de ''CONNECT'' y habiéndose conectado el dispositivo exitosamente al servidor, la siguiente interfaz o \textit{activity} que el usuario visualiza se observa en la \textit{Figura \ref{interfaz2}}.
+	
 	En este caso, la aplicación únicamente proporciona la opción de grabar. Este botón se deberá pulsar una vez todos los móviles que se desean conectar al servidor hayan conseguido una conexión exitosa. Cuando se desee comenzar a grabar, una vez pulsado el botón, el cliente envía el correspondiente mensaje de que está listo para grabar hacia el servidor. Este último recibe el mensaje y emite la orden de grabar. Si se desea repetir la grabación, se deberá realizar desde el principio el proceso de conexión con el servidor externo. Será necesario que cada uno de los móviles estén conectados a la misma red a la que está conectado el servidor.
 
 	\section{Funcionalidades}
@@ -652,10 +662,175 @@ Como se puede apreciar, directamente proporciona la opción al usuario de conect
 	
 	
 \chapter{Sincronización}
+
+Para el correcto funcionamiento del algoritmo de beamforming, es necesario que las señales de entrada en el beamformer únicamente posean el retardo debido al tiempo de propagación y las posiciones de los móviles. Es decir, se debe eliminar cualquier retardo producido por la red de servidor-app creada. La comunicación entre el servidor y la aplicación genera retardo de red. Este retardo será mayor a menor dependiendo del ancho de banda de la red disponible y del tráfico o utilización de la misma. Mediante las marcas de tiempo proporcionadas por el servidor, se midió el retardo de la red Wi-Fi local, obteniendo unos retardos desde 10 a 900 ms aproximadamente. Sin embargo, debido a la aleatoriedad de los retardos en la Wi-Fi local por los distintos paquetes en cola, se ha optado por realizar el experimento en un punto de acceso inalámbrico, ganando de esta manera un retardo más constante, de unos 100 ms aproximadamente.
+
+
+Además, se debe mitigar el retardo producido por el manejo del servidor. Las órdenes que el servidor transmite a cada dispositivo las transmite de forma secuencial, por lo que la orden determinada llegará antes al primer cliente que al último. Anotar que, las marcas de tiempo producidas por los móviles no se encuentran sobre un eje temporal común. Esto es debido a que existe un cierto retardo entre los relojes de los propios smartphones el cual habría que compensar.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 12cm]{FIGURAS/ejes_temporales.JPG}
+\caption{Retardos de red y reloj}
+\end{figure}
+
+
+Los retardos mencionados se ilustran en la \textit{Figura 5.1}, donde se ha ejemplificado el retardo correspondiente a los relojes y el retardo correspondiente a la red, para dos dispositivos. También, en el tercer eje temporal de la figura, se muestra el resultado que se busca, es decir, un eje de tiempos absoluto, donde solo existe el retardo correspondiente al tiempo de propagación.
+
+Conociendo el retardo que hay que eliminar, se logrará una serie de señales con un eje temporal absoluto y únicamente con el retardo físico producido por la propia transmisión de las señales desde el altavoz hasta los micrófonos de los dispositivos. El propósito de este capítulo es hallar de la forma más exacta posible este retardo comentado. Se propondrá dos alternativas de sincronización distintas.
+
+
 \section{Correlación cruzada}
+En procesado de señales, la correlación cruzada es de gran utilidad, ya que es una herramienta matemática que proporciona la relación entre dos señales, pudiendo llegar a medir el grado de similitud entre señales. Su procedimiento se basa en la convolución de una de las señales con la otra invertida.
+
+\begin{equation}
+R_{x,y}[k] = \sum_{k = -\infty}^{\infty} x[k] y[k-n]
+\end{equation}
+
+La correlación cruzada de una señal con ella misma es llamada autocorrelación. Un ejemplo de autocorrelación de una señal contaminada con ruido de media la unidad se muestra en la \textit{Figura 5.1}.
+
+\begin{figure}[hbtp]
+ \centering
+ \includegraphics[width = 10cm]{FIGURAS/autocorrelacion.png}
+ \caption{Autocorrelación}
+ \end{figure}
+
+La correlación cruzada será máxima en el instante de llegada de la señal. Como en la \textit{Figura 5.1} se está computando la misma señal, el máximo de la correlación se sitúa en 0 muestras, ya que no existe retardo alguno.
+
+Para la correlación cruzada de dos señales con la diferencia de un intervalo de tiempo no conocido, el máximo de la correlación señalará el tiempo de llegada de una de las señales, es decir, el retardo que se busca para la sincronización de las señales.
+
 \section{Señales de sincronización}
-\section{Sincronización mediante ''auto-chirps''}
+Se necesita conocer el desfase entre señales de la forma más precisa posible. Para ello, se proponen varias señales ejemplo, con el fin de obtener un máximo de correlación coherente.
+
+La idea es introducir en la grabación creada por los dispositivos, una primera parte formada por señales de sincronización, con el fin únicamente de hallar el desfase entre señales y, posteriormente, realizar el procesado correspondiente a beamforming. Se proponen diferentes señales ejemplo para implementar la sincronización comentada.
+
+\subsubsection{Impulso}
+Dentro de las señales discretas más utilizadas se encuentra el impulso unitario. El cual es utilizado para evaluar todo tipo de canales mediante la respuesta impulsiva. Se define un conjunto de muestras nulas excepto en 0 que toma un valor máximo de 1.
+\[
+\delta(n)=\left\lbrace\begin{array}{c} 1~si~n = 0 \\ 0~resto \end{array}\right.\]
+
+Para el caso acústico y la transición que debe hacer la señal desde que el servidor manda reproducir la señal y esta se reproduce por el altavoz, el impulso unitario es demasiado ideal, por lo que se ha adaptado a un impulso desplazado a la derecha y con un total de 10 muestras que toman el valor máximo, ya que si se hace más ideal el impulso no es reproducido correctamente.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 10cm]{FIGURAS/impulso.png}
+\caption{Señal impulsiva}
+\end{figure}
+
+
+La señal creada se muestra en la Figura 5.2
+
+\subsubsection{Chirp}
+Un ''chirp'' es un tipo de señal con una variación determinada de la frecuencia instantánea. Un chirp hace un barrido entre dos frecuencias asignadas, de forma que la correlación cruzada entre dos señales ''chirp'' iguales, será máxima al detectar estas variaciones en frecuencia en los instantes de tiempo correspondientes al chirp original.
+
+Se ha creado un chirp el cual hace un barrido en frecuencia entre 5000 y 16000 Hz y una duración total de 0.1 segundos, la cual ha sido la duración mínima para su correcta reproducción y función requerida. Un ''zoom'' de la señal comentada se presenta en la Figura 5.3, donde se puede observar el cambio en la frecuencia instantánea.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 10cm]{FIGURAS/chiirp.png}
+\caption{Chirp creado}
+\end{figure}
+
+
+A parte de ser utilizado el chirp para sincronizar señales y obtener un valor de correlación óptimo, es altamente utilizado en comunicaciones ópticas. El método que se menciona es conocido como \textit{prechirping} y consiste en una modificación de las características del pulso antes de ser introducido en una fibra óptica. En la \textit{Figura 5.4} se aprecia un pulso gaussiano sin modificar y un pulso gaussiano con chirp.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/chirp.JPG}
+\caption{Prechirping}
+\end{figure}
+
+
+Esta compensación previa puede hacer que el pulso se comprima y alcanzar longitudes de enlace de la fibra mayores e incluso  transmisiones con mejor detección en el receptor, como justifica \textit{[X]}.
+\subsubsection{Tren de impulsos}
+Como última señal, se propone un tren de impulsos. Consta de la concatenación de varios impulsos seguidos. De este modo, se consigue que, al realizar la operación de correlación cruzada, tengan que coincidir cada impulso con su correspondiente mientras se realiza la convolución, siendo máxima la correlación en el instante en que todos los impulsos coincidan.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/tren_impulsos.png}
+\caption{Tren de impulsos}
+\end{figure}
+
+Analizadas las tres variantes de señal de sincronización propuestas, se procede a explicar dos métodos de sincronización distintos.
+
+Se ha creado un tren de un total de tres impulsos, siendo estos equidistantes y teniendo en cuenta un margen de muestras inicial y final para la correcta reproducción por el altavoz y captación por los móviles. La señal comentada es representada en la \textit{Figura 5.4}.
+
+
+
 \section{Sincronización mediante el servidor}
+
+El primer método de sincronización propuesto, es realizado mediante la ayuda externa del servidor. Se conoce que, las marcas temporales de los móviles no son muy fiables, ya que arrastran el retardo debido a los relojes, por lo que se llega a la idea de que el servidor emita una señal de sincronización cuando todos y cada uno de los móviles estén en estado activo de grabación.
+
+Cuando el servidor recibe la confirmación de cada dispositivo de haber comenzado a grabar, procede a la reproducción, por un altavoz monofónico, de una señal acústica la cual servirá de referencia para cada dispositivo. La idea es que la señal de sincronización comentada, sea grabada por todos los móviles y, acto seguido, sin detener la grabación, captar una segunda señal o señal principal. Esta última señal, es la que se debe obtener sin retardo alguno de red y la que se debe transmitir para realizar el proceso de beamforming.
+
+De forma ideal, se deberán sincronizar todas las  $N$ señales de forma perfecta con un retardo nulo. Esto se pretende conseguir realizando un análisis mediante correlación cruzada de la señal acústica de sincronización captada por primera vez por uno de los dispositivos y esta misma señal grabada por los demás dispositivos. De esta manera, se supone el tiempo inicial 0 en el instante en que uno de los dispositivos capta primero la señal de sincronización. Como se ha comentado en la sección anterior, el mayor pico resultante de la correlación cruzada, corresponderá en muestras, al retardo de la señal grabada respecto a la señal primera.
+
+\subsection{Análisis}
+Antes de hablar de retardos y modificaciones en las grabaciones, se debe elegir la señal de sincronización.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/altavoz-micro.JPG}
+\caption{Bloque altavoz-micrófono}
+\end{figure}
+
+
+Se realizaron diversas pruebas para cada una de las señales propuestas en la sección anterior. Hay que tener en cuenta que, al usar un altavoz externo para emitir la señal de sincronización, como en la \textit{Figura 5.7}, se pueden producir efectos no deseados, como modificaciones no controladas de la señal a la salida del altavoz. Este efecto se conoce como distorsión no lineal y puede producir error en las medidas. Haciendo referencia los estudios de \textit{[X]}, el error causado por distorsión no lineal aparece como pulsos aleatoriamente distribuidos pero espaciados una distancia similar a la del período de muestreo (\textit{Figura 5.8.a}). Este efecto no lineal se puede disminuir bajando el nivel de sonido del altavoz (\textit{Figura 5.8.b}), sin embargo, si se disminuye demasiado, el ruido de fondo llega a tener un impacto considerable en la señal de interés y se incrementa el error aleatorio (\textit{Figura 5.8.c}).
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 8cm]{FIGURAS/nonlinear.JPG}
+\caption{Efecto de la no-linealidad}
+\end{figure}
+
+Realizando pruebas de sincronización con la señal del tipo ''chirp'', no se llegaba a obtener una buena correlación. Con buena correlación se entiende como un máximo de correlación preciso y distinguible. Esta poca precisión desembocó en un retardo final inadmisible. Este resultado no tan bueno con la señal de sincronización chirp puede ser debido a los efectos no lineales producidos por el altavoz, ya que los chirps son muy utilizados para procesos de sincronización por los cambios en la frecuencia instantánea de la señal, los cuales son clave para correlar muestras. A pesar de esto, si no se capta bien estas modificaciones en frecuencia en el instante preciso, la correlación cruzada puede resultar errónea.
+
+Habiendo tomado la decisión de no utilizar el chirp, se probó con la señal impulso. Se obtuvieron mejores resultados.
+
+Por último, se experimentó la sincronización con el tren de impulsos, obteniendo la máxima precisión en el máximo de la correlación de las tres señales, por lo que se ha optado en este método por el uso del \textbf{tren de impulsos} como señal de sincronización acústica.
+
+\subsection{Procedimiento}
+
+Con el propósito de tomar de referencia el primer tiempo de llegada de la señal de sincronización, se debe determinar cuál es el dispositivo que capta primero esta señal. Con este dato, se fijará el instante cero en la grabación de este dispositivo y se buscará los retardos respecto a este instante.
+
+Para determinar la primera captación de la señal de sincronización, se emplea la correlación cruzada del tren de impulsos creado y del tren de impulsos captado en la grabación de cada uno de los dispositivos. Una vez conocida la grabación de referencia, se realiza de nuevo un análisis de correlación cruzada, entre el tren de impulsos de la grabación de referencia y el tren de impulsos de cada uno de los dispositivos. El máximo valor de las $N$ correlaciones cruzadas coincide con el retardo correspondiente en función del instante de referencia.
+
+
+\begin{figure}
+ \centering
+  \subfloat[]{
+   \label{autocorr}
+    \includegraphics[width=7cm]{FIGURAS/correlacion_misma_señal.png}}
+  \subfloat[]{
+   \label{correlaimpulsos}
+    \includegraphics[width=7cm]{FIGURAS/correlacion_tren.png}}
+ \caption{Correlaciones tren de impulsos}
+\end{figure}
+
+En la figura \ref{autocorr} se muestra la autocorrelación entre la señal tren de impulsos de la grabación de referencia tomada. Trivialmente, en este caso el retardo es cero exacto. Se pueden 4 máximos locales y un máximo absoluto en la traza de la correlación. Los máximos locales se corresponden a la superposición de los impulsos en el proceso del desplazamiento de la señal en la convolución con la señal invertida. Cuando se superponen todos y cada uno de los impulsos, las dos señales están perfectamente cuadradas y se produce el máximo absoluto, el cual muestra el retardo de una señal respecto a la otra.
+
+La correlación cruzada entre el tren de impulsos del dispositivo tomado como referencia temporal y el tren de impulsos grabado por otro dispositivo diferente se presenta en la figura \ref{correlaimpulsos}. Se observa que el máximo absoluto posee una cierta desviación respecto al 0 en el eje de abcisas. El valor de este máximo se corresponde con el retardo de la grabación de este smartphone.
+
+Conocido el retardo de cada grabación, se procede a eliminar las muestras correspondientes, acortando cada señal desde el principio. Debido a que la orden de parar la grabación no llega en el mismo instante para todos los móviles, las señales se deberán acortar también por el final, determinando el tamaño para todas las grabaciones como la longitud mínima de todas las señales una vez acortadas las muestras correspondientes al retardo inicial. Mediante este proceso de eliminación de muestras inferiores y superiores, se obtiene una matriz con todas las grabaciones sincronizadas con un mismo número de muestras.
+
+\begin{figure}
+ \centering
+  \subfloat[]{
+   \label{sincro_server}
+    \includegraphics[width=7cm]{FIGURAS/sincro_server.png}}
+  \subfloat[]{
+   \label{correla_sincroniz}
+    \includegraphics[width=7cm]{FIGURAS/correla_sincronizadas.png}}
+ \caption{Señales sincronizadas}
+\end{figure}
+
+
+
+En la figura \ref{sincro_server} las señales perfectamente sincronizadas. En el caso de la simulación, se ha realizado la sincronización con 3 dispositivos. Su comprobación se puede consultar en la figura \ref{correla_sincroniz} donde se muestra una correlación cruzada entre la grabación de un dispositivo y la grabación de otro dispositivo distinto. Anotar que, la señal principal se corresponde con un tren de impulsos de 15 impulsos en total, por eso la correlación cruzada de la figura \ref{correla_sincroniz} posee esos picos tan uniformemente separados.
+
+
+
+\section{Sincronización mediante ''auto-chirps''}
 \section{Análisis comparativo}
 
 
@@ -668,6 +843,8 @@ Aquí poner lo del 5G, massive MIMO etc Y ALGUNA COSA MÁS.
 \chapter{Conclusiones}
 
 \chapter{Bibliografía}
+
+
 
 \chapter{Apéndice}
 

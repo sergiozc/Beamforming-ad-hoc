@@ -3,18 +3,18 @@
 \contentsline {section}{\numberline {1.1}Procesamiento de señales multicanal}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Concepto de Beamforming}{5}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Tipos de Beamformers}{5}{subsection.1.2.1}%
-\contentsline {subsubsection}{Delay \& Sum}{6}{subsubsection*.6}%
-\contentsline {subsubsection}{MVDR}{7}{subsubsection*.7}%
-\contentsline {subsection}{\numberline {1.2.2}Superdirectivo}{8}{subsection.1.2.2}%
+\contentsline {subsubsection}{Delay \& Sum}{6}{subsubsection*.10}%
+\contentsline {subsubsection}{MVDR}{7}{subsubsection*.11}%
+\contentsline {subsubsection}{Superdirectivo}{8}{subsubsection*.12}%
 \contentsline {section}{\numberline {1.3}Impacto en la actualidad}{8}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Comunicaciones Inalámbricas}{8}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Procesamiento acústico}{9}{subsection.1.3.2}%
-\contentsline {subsubsection}{Diarización}{10}{subsubsection*.8}%
-\contentsline {subsubsection}{Localización de fuentes}{11}{subsubsection*.9}%
+\contentsline {subsection}{\numberline {1.3.2}Procesamiento acústico}{10}{subsection.1.3.2}%
+\contentsline {subsubsection}{Diarización}{10}{subsubsection*.16}%
+\contentsline {subsubsection}{Localización de fuentes}{11}{subsubsection*.18}%
 \contentsline {section}{\numberline {1.4}Justificación del proyecto}{12}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Distribución del proyecto}{12}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Requisitos de realización}{12}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Procedimiento}{12}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.2}Seguimiento del proyecto}{12}{subsection.1.5.2}%
 \contentsline {subsection}{\numberline {1.5.3}Entornos de trabajo}{12}{subsection.1.5.3}%
 \contentsline {chapter}{\numberline {2}Planteamiento del problema}{13}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Desarrollo del servidor externo}{15}{chapter.3}%
@@ -25,18 +25,23 @@
 \contentsline {subsection}{\numberline {3.2.1}Noción general y noción de \textit {socket}}{17}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Implementación del servidor}{19}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Comunicación}{21}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Funcionalidades}{29}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Sincronización}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Correlación cruzada}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Señales de sincronización}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Sincronización mediante ''auto-chirps''}{31}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Sincronización mediante el servidor}{31}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Análisis comparativo}{31}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Implementación del algoritmo de Beamforming}{33}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Análisis del modelo}{35}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Perspectiva de futuro}{37}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{39}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Bibliografía}{41}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Apéndice}{43}{chapter.11}%
+\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Funcionalidades}{30}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Sincronización}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Correlación cruzada}{34}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Señales de sincronización}{35}{section.5.2}%
+\contentsline {subsubsection}{Impulso}{35}{subsubsection*.31}%
+\contentsline {subsubsection}{Chirp}{36}{subsubsection*.33}%
+\contentsline {subsubsection}{Tren de impulsos}{38}{subsubsection*.36}%
+\contentsline {section}{\numberline {5.3}Sincronización mediante el servidor}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Análisis}{39}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Procedimiento}{41}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Sincronización mediante ''auto-chirps''}{43}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Análisis comparativo}{43}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Implementación del algoritmo de Beamforming}{45}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Análisis del modelo}{47}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Perspectiva de futuro}{49}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{51}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Bibliografía}{53}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Apéndice}{55}{chapter.11}%

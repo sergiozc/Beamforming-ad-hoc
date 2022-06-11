@@ -54,8 +54,11 @@ def excitacion(Fs, Tchirp):
     excit = np.sin(2 * np.pi * Fsw[0] * Nsamp * (np.exp(Inclog * n / Nsamp) - 1) / Inclog)
     
     excit = excit * np.iinfo(np.int16).max
-    #plt.figure(10)
-    #plt.plot(excit)
+    # plt.figure(15)
+    # plt.plot(excit)
+    # plt.title('Chirp')
+    # plt.xlabel('Muestras')
+    # plt.ylabel('Amplitud')
     
     file_name1 = 'chirp_creado'
     wavfile.write('chirp/' + file_name1 + '.wav', Fs, excit.astype('int16'))
@@ -136,10 +139,11 @@ RawToWav('Device1')
 RawToWav('Device2')
 
 plt.close('all')
+
+###############################################################################################################
             
 Ndevices = 3
 Fs = 44100
-#record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones
 record = np.zeros((700000, Ndevices))
 serverDelay = np.zeros(Ndevices)
 tam = np.arange(Ndevices) #Tamaño de cada grabación
@@ -156,10 +160,11 @@ tcest = np.zeros((Ndevices)) #Tiempos de comienzo
 delay_final = np.arange(Ndevices)
 mu = 0.001    # Factor de convergencia
 RelInc = 0.01 # Criterio de convergencia
-
 #Chirp original de 0.1s de duración    
 chirp = excitacion(Fs, 0.1)
 Lexc = len(chirp)
+
+################################################################################################################
 
 #Parámetros eje de tiempos absoluto
 #PRUEBA 1
@@ -232,6 +237,7 @@ for i in range(Ndevices):
 ##################Fin del primer bucle#####################################
 
 toaRef = np.argsort(toamed[:, 0]) #Hace referencia a las señales ordenadas por instante de comienzo
+print('Comienza el Device ' + str(toaRef[0]))
 
 
 #DIFERENCIA DE LOS TIEMPOS DE LLEGADA
@@ -249,7 +255,7 @@ for i in range (Ndevices):
 for i in range(1, Ndevices):
     tcest[i] = (toamed[i-1,i-1] - toamed[i,i-1] + toamed[i-1,i] - toamed[i,i]) / 2 + tcest[i-1]
     
-
+print(tcest)
 # %% DESCENSO EN GRADIENTE
 
 tf_est = tf_est + 10 * np.random.randn(Ndevices, Ndevices) / Fs
@@ -271,10 +277,10 @@ while RelInc > 0.0001:
     Func_ant = Func
     cadena = 'Niter=' + str(niter) + ' F=' + str(Func) + ' RelInc=' + str(RelInc)
     print(cadena)
-    
+
+print(tcest)
 #--------------------------------------------------------------------------------------------------------------
 
-#Ordenamos de menor a mayor las señales según su instante de comienzo (el primer elemento comienza antes)
 #Determinamos las muestras de comienzo de cada señal
 mcest = np.ceil(tcest * Fs)
 

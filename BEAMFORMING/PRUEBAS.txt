@@ -1,0 +1,11 @@
+Se va a probar con tres dispositivos.
+Barrido de 180º
+De 10 en 10 grados
+Una grabación total de 1.30s
+Se utiliza como señal de sincronización el tren de impulsos.
+La señal grabada es un seno de 2KHz muestreado cada 2 segundos.
+Separación entre móviles lambda/2
+
+RESULTADOS
+
+---------------------------------------------------------------------------------------------------

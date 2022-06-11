@@ -23,6 +23,9 @@ for i in range(10):
 
 plt.figure(1)
 plt.plot(impulso)
+plt.title('Impulso')
+plt.xlabel('Muestras')
+plt.ylabel('Amplitud')
 
 file_name1 = 'impulso'
 wavfile.write('impulso/' + file_name1 + '.wav', Fs, impulso.astype('int16'))

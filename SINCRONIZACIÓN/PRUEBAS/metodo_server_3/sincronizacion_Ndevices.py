@@ -147,12 +147,10 @@ def sincro(Ndevices):
         tren[:, i] = volatil[:lim_tren]
         
         rx_tren = scipy.signal.correlate(tren[:, i], tren_orig, mode = 'full', method='fft')
-        N = len(rx_tren)
         #Se calcula el pico de correlación central (máximo)
         ntoa = correlaPeaks(rx_tren, 5, Lexc)
         toa[i] = int(np.median(ntoa))
         N = len(rx_tren)
-        k = np.linspace(-(N/2) +1, (N/2)-1, N)
         
         # plt.figure(i+1)
         # plt.plot(volatil)
@@ -162,7 +160,7 @@ def sincro(Ndevices):
         
         # plt.figure(i+1)
         # plt.plot(volatil[:lim_tren])
-        # plt.title('Chirp')
+        # plt.title('Tren de impulsos')
         # plt.xlabel('Muestras')
         # plt.ylabel('Amplitud')
         
@@ -183,8 +181,11 @@ def sincro(Ndevices):
         rx_tren2 = scipy.signal.correlate(tren[:, i], tren[:,primera], mode = 'full', method='fft')
         N = len(rx_tren2)
         k = np.linspace(-(N/2) +1, (N/2)-1, N)
-        # plt.figure(i+1)
-        # plt.plot(k,rx_tren2)
+        plt.figure(i+1)
+        plt.title('Correlación cruzada tren de impulsos')
+        plt.xlabel('Muestras')
+        plt.ylabel('Correlación')
+        plt.plot(k,rx_tren2)
         
         toamed[i] = correlaMax(rx_tren2, len(rx_tren2))
         tam_postdelay[i] = tam[i] - toamed[i]
@@ -227,6 +228,8 @@ def sincro(Ndevices):
             
     print('Matriz de retardos finales:' )
     print(delay_matriz)
+    
+    return sincronizadas
 
 ##############################################################################################
 
@@ -235,5 +238,5 @@ plt.close('all')
 
 
 #sincro(2)
-sincro(3)
+sincronizadas = sincro(3)
 
