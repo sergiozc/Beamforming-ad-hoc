@@ -113,12 +113,12 @@ def sincro(Ndevices):
     
     'Función que dadas dos grabaciones, las sincroniza coherentemente'
     
-    RawToWav('Device0')
-    RawToWav('Device1')
-    RawToWav('Device2')
+    # RawToWav('Device0')
+    # RawToWav('Device1')
+    # RawToWav('Device2')
 
     
-    record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones
+    record = np.zeros((66150000, Ndevices)) #Matriz de las grabaciones
     Lexc = 10000 #Longitud en muestras aprox de un impulso
     tam = np.arange(Ndevices)
     tam_postdelay = np.arange(Ndevices) #Tamaño después de acortar con el delay inicial
@@ -152,11 +152,11 @@ def sincro(Ndevices):
         toa[i] = int(np.median(ntoa))
         N = len(rx_tren)
         
-        # plt.figure(i+1)
-        # plt.plot(volatil)
-        # plt.title('Señal inicial')
-        # plt.xlabel('Muestras')
-        # plt.ylabel('Amplitud')
+        plt.figure(i+5)
+        plt.plot(volatil)
+        plt.title('Señal inicial')
+        plt.xlabel('Muestras')
+        plt.ylabel('Amplitud')
         
         # plt.figure(i+1)
         # plt.plot(volatil[:lim_tren])

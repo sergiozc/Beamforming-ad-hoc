@@ -171,7 +171,7 @@ public class BeamServer {
         try
         {
             //Thread.sleep(12000);
-            Thread.sleep(90000);
+            Thread.sleep(190000);
         }catch(InterruptedException e){}
     }
     
@@ -195,8 +195,8 @@ public class BeamServer {
             
             String filename = "Device" + i + ".raw";
             System.out.println("File Opened " + (i + 1));
-            int buf = 6850500;
-            byte [] buffer = new byte[buf]; //Le damos un buffer de 70kB (para cada grabación)
+            int buf = 15050000;
+            byte [] buffer = new byte[buf];
             
             FileOutputStream fos = new FileOutputStream(filename); //Se crea el archivo con el nombre correspondiente. Se destruye cualquier archivo con el mismo nombre.
             BufferedInputStream bis = new BufferedInputStream(cliente[i].getInputStream()); //Almacena el stream de datos procedente del cliente (grabación).

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  11 JUN 2022 10:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  16 JUN 2022 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,7 +567,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (portada/portada.tex
 \centeroffset=\skip76
-<imagenes/logo_ugr.jpg, id=155, 329.73187pt x 112.16907pt>
+<imagenes/logo_ugr.jpg, id=183, 329.73187pt x 112.16907pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -583,7 +583,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=156, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=184, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -603,7 +603,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 26--40
 ] (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=181, 123.46124pt x 45.92157pt>
+<imagenes/logo.png, id=209, 123.46124pt x 45.92157pt>
 File: imagenes/logo.png Graphic file (type png)
 <use imagenes/logo.png>
 Package pdftex.def Info: imagenes/logo.png  used on input line 18.
@@ -709,44 +709,44 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.201 	\end{equation}
+l.202 	\end{equation}
                       [1
 
 
 ]
-<FIGURAS/directividad_apertura.JPG, id=292, 241.50224pt x 118.64325pt>
+<FIGURAS/directividad_apertura.JPG, id=331, 241.50224pt x 118.64325pt>
 File: FIGURAS/directividad_apertura.JPG Graphic file (type jpg)
 <use FIGURAS/directividad_apertura.JPG>
 Package pdftex.def Info: FIGURAS/directividad_apertura.JPG  used on input line 
-213.
+214.
 (pdftex.def)             Requested size: 227.62204pt x 111.82336pt.
-<FIGURAS/array_elementos.JPG, id=293, 157.7895pt x 230.66174pt>
+<FIGURAS/array_elementos.JPG, id=333, 157.7895pt x 230.66174pt>
 File: FIGURAS/array_elementos.JPG Graphic file (type jpg)
 <use FIGURAS/array_elementos.JPG>
-Package pdftex.def Info: FIGURAS/array_elementos.JPG  used on input line 222.
+Package pdftex.def Info: FIGURAS/array_elementos.JPG  used on input line 224.
 (pdftex.def)             Requested size: 142.26378pt x 207.97375pt.
-<FIGURAS/broadside.JPG, id=294, 357.13425pt x 192.11775pt>
+<FIGURAS/broadside.JPG, id=335, 357.13425pt x 192.11775pt>
 File: FIGURAS/broadside.JPG Graphic file (type jpg)
 <use FIGURAS/broadside.JPG>
-Package pdftex.def Info: FIGURAS/broadside.JPG  used on input line 231.
+Package pdftex.def Info: FIGURAS/broadside.JPG  used on input line 234.
 (pdftex.def)             Requested size: 341.43306pt x 183.67462pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.234 
+l.238 
        [2 <./FIGURAS/directividad_apertura.JPG>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.236 
+l.240 
        [3 <./FIGURAS/array_elementos.JPG> <./FIGURAS/broadside.JPG>]
-<FIGURAS/ganancia_broadside.jpg, id=310, 271.0125pt x 166.5495pt>
+<FIGURAS/ganancia_broadside.jpg, id=351, 271.0125pt x 166.5495pt>
 File: FIGURAS/ganancia_broadside.jpg Graphic file (type jpg)
 <use FIGURAS/ganancia_broadside.jpg>
-Package pdftex.def Info: FIGURAS/ganancia_broadside.jpg  used on input line 244
+Package pdftex.def Info: FIGURAS/ganancia_broadside.jpg  used on input line 248
 .
 (pdftex.def)             Requested size: 341.43306pt x 209.83315pt.
 
@@ -754,328 +754,424 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.254 	
+l.259 	
         [4 <./FIGURAS/ganancia_broadside.jpg>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.270 		\item C
+l.277 		\item C
                ampo de ruido incoherente: La correlación de las contribucio...
 [5]
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.299 		
+l.309 		
          [6]
+<FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png, id=375, 853.1875pt x 617.3
+0624pt>
+File: FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png Graphic file (type png
+)
+<use FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png>
+Package pdftex.def Info: FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png  us
+ed on input line 321.
+(pdftex.def)             Requested size: 284.52756pt x 205.86871pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.324 	
-        [7]
-<FIGURAS/sectorización.JPG, id=336, 375.20175pt x 238.491pt>
-File: FIGURAS/sectorización.JPG Graphic file (type jpg)
-<use FIGURAS/sectorización.JPG>
-Package pdftex.def Info: FIGURAS/sectorización.JPG  used on input line 342.
-(pdftex.def)             Requested size: 227.62204pt x 144.68596pt.
-
+l.331 		\subsubsection{MVDR}
+                             [7 <./FIGURAS/Delay-and-Sum-or-Classical-Beamformi
+ng.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.348 		
-         [8]
-<FIGURAS/sistema_MIMO.JPG, id=341, 556.479pt x 213.1965pt>
+l.359 		\subsection{Comunicaciones Inalámbricas}
+                                                  [8]
+<FIGURAS/sectorización.JPG, id=394, 375.20175pt x 238.491pt>
+File: FIGURAS/sectorización.JPG Graphic file (type jpg)
+<use FIGURAS/sectorización.JPG>
+Package pdftex.def Info: FIGURAS/sectorización.JPG  used on input line 363.
+(pdftex.def)             Requested size: 227.62204pt x 144.68596pt.
+<FIGURAS/sistema_MIMO.JPG, id=396, 556.479pt x 213.1965pt>
 File: FIGURAS/sistema_MIMO.JPG Graphic file (type jpg)
 <use FIGURAS/sistema_MIMO.JPG>
-Package pdftex.def Info: FIGURAS/sistema_MIMO.JPG  used on input line 353.
+Package pdftex.def Info: FIGURAS/sistema_MIMO.JPG  used on input line 374.
 (pdftex.def)             Requested size: 284.52756pt x 109.00853pt.
-<FIGURAS/beamformer_adaptativo.JPG, id=342, 433.01775pt x 228.25275pt>
+<FIGURAS/beamformer_adaptativo.JPG, id=398, 433.01775pt x 228.25275pt>
 File: FIGURAS/beamformer_adaptativo.JPG Graphic file (type jpg)
 <use FIGURAS/beamformer_adaptativo.JPG>
 Package pdftex.def Info: FIGURAS/beamformer_adaptativo.JPG  used on input line 
-360.
+382.
 (pdftex.def)             Requested size: 227.62204pt x 119.98424pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.366 			\subsubsection{Diarización}
-                                      [9 <./FIGURAS/sectorización.JPG> <./FIGU
-RAS/sistema_MIMO.JPG>]
-<FIGURAS/diarizacion.JPG, id=348, 975.04276pt x 340.27126pt>
-File: FIGURAS/diarizacion.JPG Graphic file (type jpg)
-<use FIGURAS/diarizacion.JPG>
-Package pdftex.def Info: FIGURAS/diarizacion.JPG  used on input line 372.
-(pdftex.def)             Requested size: 369.88582pt x 129.08115pt.
-
-Overfull \hbox (9.88582pt too wide) in paragraph at lines 372--373
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--379
-\OT1/cmr/m/n/10.95 cion.
- []
-
-
+l.386 		
+         [9 <./FIGURAS/sectorización.JPG>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.379 			\subsubsection{Localización de fuentes}
-                                                  [10 <./FIGURAS/beamformer_ada
-ptativo.JPG>]
-<FIGURAS/wind_tunnel.JPG, id=354, 471.56175pt x 168.02776pt>
-File: FIGURAS/wind_tunnel.JPG Graphic file (type jpg)
-<use FIGURAS/wind_tunnel.JPG>
-Package pdftex.def Info: FIGURAS/wind_tunnel.JPG  used on input line 388.
-(pdftex.def)             Requested size: 341.43306pt x 121.667pt.
+l.391 			
+          [10 <./FIGURAS/sistema_MIMO.JPG> <./FIGURAS/beamformer_adaptativo.JPG
+>]
+<FIGURAS/diarizacion.JPG, id=409, 975.04276pt x 340.27126pt>
+File: FIGURAS/diarizacion.JPG Graphic file (type jpg)
+<use FIGURAS/diarizacion.JPG>
+Package pdftex.def Info: FIGURAS/diarizacion.JPG  used on input line 395.
+(pdftex.def)             Requested size: 369.88582pt x 129.08115pt.
+
+Overfull \hbox (9.88582pt too wide) in paragraph at lines 395--396
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--403
+\OT1/cmr/m/n/10.95 cion.
+ []
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.393 				\item[-]
-                   Por último, mencionar la aplicación de beamforming en i...
-[11 <./FIGURAS/diarizacion.JPG>]
+l.405 			
+          [11 <./FIGURAS/diarizacion.JPG>]
+<FIGURAS/wind_tunnel.JPG, id=416, 471.56175pt x 168.02776pt>
+File: FIGURAS/wind_tunnel.JPG Graphic file (type jpg)
+<use FIGURAS/wind_tunnel.JPG>
+Package pdftex.def Info: FIGURAS/wind_tunnel.JPG  used on input line 412.
+(pdftex.def)             Requested size: 341.43306pt x 121.667pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.404 \chapter
-              {Planteamiento del problema} [12 <./FIGURAS/wind_tunnel.JPG>]
-Cap\'{\i }tulo 2.
-[13
+l.419 			\end{itemize}
+                       [12 <./FIGURAS/wind_tunnel.JPG>] [13] [14
 
-] [14
+]
+Cap\'{\i }tulo 2.
+[15] [16
 
 ]
 Cap\'{\i }tulo 3.
-[15] [16]
-<FIGURAS/cliente-servidor.JPG, id=381, 322.806pt x 193.32225pt>
+[17] [18]
+<FIGURAS/cliente-servidor.JPG, id=447, 322.806pt x 193.32225pt>
 File: FIGURAS/cliente-servidor.JPG Graphic file (type jpg)
 <use FIGURAS/cliente-servidor.JPG>
-Package pdftex.def Info: FIGURAS/cliente-servidor.JPG  used on input line 456.
+Package pdftex.def Info: FIGURAS/cliente-servidor.JPG  used on input line 480.
 (pdftex.def)             Requested size: 199.16928pt x 119.28038pt.
-<FIGURAS/Explica_Sockets.JPG, id=382, 426.393pt x 207.77625pt>
+ [19 <./FIGURAS/cliente-servidor.JPG>]
+<FIGURAS/Explica_Sockets.JPG, id=455, 426.393pt x 207.77625pt>
 File: FIGURAS/Explica_Sockets.JPG Graphic file (type jpg)
 <use FIGURAS/Explica_Sockets.JPG>
-Package pdftex.def Info: FIGURAS/Explica_Sockets.JPG  used on input line 465.
+Package pdftex.def Info: FIGURAS/Explica_Sockets.JPG  used on input line 490.
 (pdftex.def)             Requested size: 284.52756pt x 138.65135pt.
- [17 <./FIGURAS/cliente-servidor.JPG>] [18 <./FIGURAS/Explica_Sockets.JPG>] [19
-] [20] [21]
-<FIGURAS/trafico_connect.png, id=411, 696.35156pt x 240.14719pt>
+ [20 <./FIGURAS/Explica_Sockets.JPG>] [21] [22] [23]
+<FIGURAS/trafico_connect.png, id=479, 696.35156pt x 240.14719pt>
 File: FIGURAS/trafico_connect.png Graphic file (type png)
 <use FIGURAS/trafico_connect.png>
-Package pdftex.def Info: FIGURAS/trafico_connect.png  used on input line 548.
+Package pdftex.def Info: FIGURAS/trafico_connect.png  used on input line 576.
 (pdftex.def)             Requested size: 426.79134pt x 147.18578pt.
 
-Overfull \hbox (66.79134pt too wide) in paragraph at lines 548--549
+Overfull \hbox (66.79134pt too wide) in paragraph at lines 576--577
  [][] 
  []
 
-[22]
-<FIGURAS/TCP_flow.png, id=418, 280.04625pt x 306.14375pt>
+[24]
+<FIGURAS/TCP_flow.png, id=487, 280.04625pt x 306.14375pt>
 File: FIGURAS/TCP_flow.png Graphic file (type png)
 <use FIGURAS/TCP_flow.png>
-Package pdftex.def Info: FIGURAS/TCP_flow.png  used on input line 564.
+Package pdftex.def Info: FIGURAS/TCP_flow.png  used on input line 593.
 (pdftex.def)             Requested size: 227.62204pt x 248.84395pt.
-<FIGURAS/trafico_record.JPG, id=419, 430.60875pt x 36.73724pt>
+<FIGURAS/trafico_record.JPG, id=490, 430.60875pt x 36.73724pt>
 File: FIGURAS/trafico_record.JPG Graphic file (type jpg)
 <use FIGURAS/trafico_record.JPG>
-Package pdftex.def Info: FIGURAS/trafico_record.JPG  used on input line 577.
-(pdftex.def)             Requested size: 426.79134pt x 36.41257pt.
-
-Overfull \hbox (66.79134pt too wide) in paragraph at lines 577--578
- [][] 
- []
-
-[23 <./FIGURAS/trafico_connect.png>] [24 <./FIGURAS/TCP_flow.png (PNG copy)> <.
-/FIGURAS/trafico_record.JPG>]
-<FIGURAS/startready.JPG, id=434, 271.0125pt x 65.043pt>
+Package pdftex.def Info: FIGURAS/trafico_record.JPG  used on input line 607.
+(pdftex.def)             Requested size: 341.43306pt x 29.12971pt.
+ [25 <./FIGURAS/trafico_connect.png>] [26 <./FIGURAS/TCP_flow.png (PNG copy)> <
+./FIGURAS/trafico_record.JPG>]
+<FIGURAS/startready.JPG, id=506, 271.0125pt x 65.043pt>
 File: FIGURAS/startready.JPG Graphic file (type jpg)
 <use FIGURAS/startready.JPG>
-Package pdftex.def Info: FIGURAS/startready.JPG  used on input line 585.
+Package pdftex.def Info: FIGURAS/startready.JPG  used on input line 616.
 (pdftex.def)             Requested size: 227.62204pt x 54.63077pt.
-<FIGURAS/intercambio_grabacion.png, id=435, 755.82375pt x 441.90094pt>
+<FIGURAS/intercambio_grabacion.png, id=508, 755.82375pt x 441.90094pt>
 File: FIGURAS/intercambio_grabacion.png Graphic file (type png)
 <use FIGURAS/intercambio_grabacion.png>
 Package pdftex.def Info: FIGURAS/intercambio_grabacion.png  used on input line 
-595.
+627.
 (pdftex.def)             Requested size: 455.24408pt x 266.16078pt.
 
-Overfull \hbox (95.24408pt too wide) in paragraph at lines 595--596
+Overfull \hbox (95.24408pt too wide) in paragraph at lines 627--628
  [][] 
  []
 
-[25 <./FIGURAS/startready.JPG> <./FIGURAS/intercambio_grabacion.png>]
-<FIGURAS/uml.png, id=443, 226.8475pt x 858.20625pt>
+[27 <./FIGURAS/startready.JPG> <./FIGURAS/intercambio_grabacion.png>]
+<FIGURAS/uml.png, id=516, 226.8475pt x 858.20625pt>
 File: FIGURAS/uml.png Graphic file (type png)
 <use FIGURAS/uml.png>
-Package pdftex.def Info: FIGURAS/uml.png  used on input line 605.
+Package pdftex.def Info: FIGURAS/uml.png  used on input line 638.
 (pdftex.def)             Requested size: 142.26378pt x 538.21092pt.
- [26]
-[27 <./FIGURAS/uml.png (PNG copy)>] [28
+ [28]
+[29 <./FIGURAS/uml.png (PNG copy)>] [30
 
 ]
 Cap\'{\i }tulo 4.
-<FIGURAS/interfaz1.JPG, id=458, 244.5135pt x 392.667pt>
+<FIGURAS/interfaz1.JPG, id=531, 244.5135pt x 392.667pt>
 File: FIGURAS/interfaz1.JPG Graphic file (type jpg)
 <use FIGURAS/interfaz1.JPG>
-Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 628.
+Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 662.
 (pdftex.def)             Requested size: 142.26378pt x 228.472pt.
-<FIGURAS/interfaz2.JPG, id=459, 255.354pt x 411.33675pt>
+<FIGURAS/interfaz2.JPG, id=532, 255.354pt x 411.33675pt>
 File: FIGURAS/interfaz2.JPG Graphic file (type jpg)
 <use FIGURAS/interfaz2.JPG>
-Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 631.
+Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 665.
 (pdftex.def)             Requested size: 142.26378pt x 229.1733pt.
-[29] [30 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>] [31] [32
+[31] [32 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>] [33] [34
 
 ]
 Cap\'{\i }tulo 5.
-<FIGURAS/ejes_temporales.JPG, id=482, 452.892pt x 239.6955pt>
+<FIGURAS/ejes_temporales.JPG, id=557, 452.892pt x 239.6955pt>
 File: FIGURAS/ejes_temporales.JPG Graphic file (type jpg)
 <use FIGURAS/ejes_temporales.JPG>
-Package pdftex.def Info: FIGURAS/ejes_temporales.JPG  used on input line 673.
+Package pdftex.def Info: FIGURAS/ejes_temporales.JPG  used on input line 709.
 (pdftex.def)             Requested size: 341.43306pt x 180.71114pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-<FIGURAS/autocorrelacion.png, id=487, 462.528pt x 346.896pt>
+ [35]
+<FIGURAS/autocorrelacion.png, id=565, 462.528pt x 346.896pt>
 File: FIGURAS/autocorrelacion.png Graphic file (type png)
 <use FIGURAS/autocorrelacion.png>
-Package pdftex.def Info: FIGURAS/autocorrelacion.png  used on input line 694.
+Package pdftex.def Info: FIGURAS/autocorrelacion.png  used on input line 733.
 (pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
 
-[34 <./FIGURAS/ejes_temporales.JPG>] [35 <./FIGURAS/autocorrelacion.png>]
-<FIGURAS/impulso.png, id=501, 462.528pt x 346.896pt>
+[36 <./FIGURAS/ejes_temporales.JPG>] [37 <./FIGURAS/autocorrelacion.png>]
+<FIGURAS/impulso.png, id=580, 462.528pt x 346.896pt>
 File: FIGURAS/impulso.png Graphic file (type png)
 <use FIGURAS/impulso.png>
-Package pdftex.def Info: FIGURAS/impulso.png  used on input line 716.
+Package pdftex.def Info: FIGURAS/impulso.png  used on input line 756.
 (pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
-<FIGURAS/chiirp.png, id=502, 521.0667pt x 398.9304pt>
+<FIGURAS/chiirp.png, id=583, 521.0667pt x 398.9304pt>
 File: FIGURAS/chiirp.png Graphic file (type png)
 <use FIGURAS/chiirp.png>
-Package pdftex.def Info: FIGURAS/chiirp.png  used on input line 730.
+Package pdftex.def Info: FIGURAS/chiirp.png  used on input line 771.
 (pdftex.def)             Requested size: 284.52756pt x 217.83582pt.
-<FIGURAS/chirp.JPG, id=503, 346.896pt x 334.851pt>
+
+[38 <./FIGURAS/impulso.png>]
+<FIGURAS/chirp.JPG, id=593, 346.896pt x 334.851pt>
 File: FIGURAS/chirp.JPG Graphic file (type jpg)
 <use FIGURAS/chirp.JPG>
-Package pdftex.def Info: FIGURAS/chirp.JPG  used on input line 739.
+Package pdftex.def Info: FIGURAS/chirp.JPG  used on input line 781.
 (pdftex.def)             Requested size: 256.0748pt x 247.19316pt.
-
-[36 <./FIGURAS/impulso.png>] [37 <./FIGURAS/chiirp.png> <./FIGURAS/chirp.JPG>]
-<FIGURAS/tren_impulsos.png, id=519, 462.528pt x 346.896pt>
+<FIGURAS/tren_impulsos.png, id=594, 462.528pt x 346.896pt>
 File: FIGURAS/tren_impulsos.png Graphic file (type png)
 <use FIGURAS/tren_impulsos.png>
-Package pdftex.def Info: FIGURAS/tren_impulsos.png  used on input line 750.
+Package pdftex.def Info: FIGURAS/tren_impulsos.png  used on input line 794.
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
-
-[38 <./FIGURAS/tren_impulsos.png>]
-<FIGURAS/altavoz-micro.JPG, id=527, 278.2395pt x 105.996pt>
+ [39 <./FIGURAS/chiirp.png>] [40 <./FIGURAS/chirp.JPG> <./FIGURAS/tren_impulsos
+.png>]
+<FIGURAS/altavoz-micro.JPG, id=609, 278.2395pt x 105.996pt>
 File: FIGURAS/altavoz-micro.JPG Graphic file (type jpg)
 <use FIGURAS/altavoz-micro.JPG>
-Package pdftex.def Info: FIGURAS/altavoz-micro.JPG  used on input line 773.
+Package pdftex.def Info: FIGURAS/altavoz-micro.JPG  used on input line 818.
 (pdftex.def)             Requested size: 256.0748pt x 97.55792pt.
- [39 <./FIGURAS/altavoz-micro.JPG>]
-<FIGURAS/nonlinear.JPG, id=533, 295.70474pt x 414.348pt>
+ [41 <./FIGURAS/altavoz-micro.JPG>]
+<FIGURAS/nonlinear.JPG, id=619, 295.70474pt x 414.348pt>
 File: FIGURAS/nonlinear.JPG Graphic file (type jpg)
 <use FIGURAS/nonlinear.JPG>
-Package pdftex.def Info: FIGURAS/nonlinear.JPG  used on input line 782.
+Package pdftex.def Info: FIGURAS/nonlinear.JPG  used on input line 828.
 (pdftex.def)             Requested size: 227.62204pt x 318.94778pt.
-
-Underfull \vbox (badness 1231) has occurred while \output is active []
-
- [40 <./FIGURAS/nonlinear.JPG>]
-<FIGURAS/correlacion_misma_señal.png, id=539, 462.528pt x 346.896pt>
+ [42 <./FIGURAS/nonlinear.JPG>]
+<FIGURAS/correlacion_misma_señal.png, id=626, 462.528pt x 346.896pt>
 File: FIGURAS/correlacion_misma_señal.png Graphic file (type png)
 <use FIGURAS/correlacion_misma_señal.png>
 Package pdftex.def Info: FIGURAS/correlacion_misma_señal.png  used on input li
-ne 803.
+ne 851.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
-<FIGURAS/correlacion_tren.png, id=540, 462.528pt x 346.896pt>
+<FIGURAS/correlacion_tren.png, id=627, 462.528pt x 346.896pt>
 File: FIGURAS/correlacion_tren.png Graphic file (type png)
 <use FIGURAS/correlacion_tren.png>
-Package pdftex.def Info: FIGURAS/correlacion_tren.png  used on input line 806.
+Package pdftex.def Info: FIGURAS/correlacion_tren.png  used on input line 854.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
-Overfull \hbox (45.63855pt too wide) in paragraph at lines 803--807
+Overfull \hbox (45.63855pt too wide) in paragraph at lines 851--855
  [][][][] 
  []
 
-[41 <./FIGURAS/correlacion_misma_señal.png> <./FIGURAS/correlacion_tren.png>]
-<FIGURAS/sincro_server.png, id=552, 462.528pt x 346.896pt>
+[43]
+<FIGURAS/sincro_server.png, id=636, 462.528pt x 346.896pt>
 File: FIGURAS/sincro_server.png Graphic file (type png)
 <use FIGURAS/sincro_server.png>
-Package pdftex.def Info: FIGURAS/sincro_server.png  used on input line 820.
+Package pdftex.def Info: FIGURAS/sincro_server.png  used on input line 866.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
-<FIGURAS/correla_sincronizadas.png, id=553, 462.528pt x 346.896pt>
+<FIGURAS/correla_sincronizadas.png, id=637, 462.528pt x 346.896pt>
 File: FIGURAS/correla_sincronizadas.png Graphic file (type png)
 <use FIGURAS/correla_sincronizadas.png>
 Package pdftex.def Info: FIGURAS/correla_sincronizadas.png  used on input line 
-823.
+869.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
-Overfull \hbox (45.63855pt too wide) in paragraph at lines 820--824
+Overfull \hbox (45.63855pt too wide) in paragraph at lines 866--870
  [][][][] 
  []
 
+[44 <./FIGURAS/correlacion_misma_señal.png> <./FIGURAS/correlacion_tren.png> <
+./FIGURAS/sincro_server.png> <./FIGURAS/correla_sincronizadas.png>] [45]
+<FIGURAS/TOA.png, id=659, 462.528pt x 346.896pt>
+File: FIGURAS/TOA.png Graphic file (type png)
+<use FIGURAS/TOA.png>
+Package pdftex.def Info: FIGURAS/TOA.png  used on input line 913.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+
+
+LaTeX Warning: Reference `TOA' on page 46 undefined on input line 918.
+
+
+LaTeX Warning: Reference `TOA' on page 46 undefined on input line 918.
+
+[46 <./FIGURAS/TOA.png>] [47]
+<FIGURAS/sincro_montaje.jpg, id=672, 1204.5pt x 462.97969pt>
+File: FIGURAS/sincro_montaje.jpg Graphic file (type jpg)
+<use FIGURAS/sincro_montaje.jpg>
+Package pdftex.def Info: FIGURAS/sincro_montaje.jpg  used on input line 954.
+(pdftex.def)             Requested size: 312.9803pt x 120.30122pt.
+ [48 <./FIGURAS/sincro_montaje.jpg>] [49] [50]
+Cap\'{\i }tulo 6.
+<FIGURAS/montaje_DAS.png, id=698, 2643.8775pt x 1997.96437pt>
+File: FIGURAS/montaje_DAS.png Graphic file (type png)
+<use FIGURAS/montaje_DAS.png>
+Package pdftex.def Info: FIGURAS/montaje_DAS.png  used on input line 1008.
+(pdftex.def)             Requested size: 312.9803pt x 236.51381pt.
+[51
+
+]
+<FIGURAS/seno.png, id=705, 482.7636pt x 362.0727pt>
+File: FIGURAS/seno.png Graphic file (type png)
+<use FIGURAS/seno.png>
+Package pdftex.def Info: FIGURAS/seno.png  used on input line 1021.
+(pdftex.def)             Requested size: 256.0748pt x 192.05783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <./FIGURAS/sincro_server.png> <./FIGURAS/correla_sincronizadas.png>] [43] 
-[44
+ [52 <./FIGURAS/montaje_DAS.png>]
+Overfull \hbox (4.57462pt too wide) in paragraph at lines 1049--1050
+[]\OT1/cmr/m/n/10.95 Se co-lo-can to-dos los dis-po-si-ti-vos jun-tos, con una 
+dis-tan-cia en-tre microfo-
+ []
 
-]
-Cap\'{\i }tulo 6.
-[45] [46
+[53 <./FIGURAS/seno.png>]
+
+LaTeX Warning: Reference `dirBeam' on page 54 undefined on input line 1067.
+
+[54]
+<FIGURAS/señal_SUM.png, id=739, 462.528pt x 346.896pt>
+File: FIGURAS/señal_SUM.png Graphic file (type png)
+<use FIGURAS/señal_SUM.png>
+Package pdftex.def Info: FIGURAS/señal_SUM.png  used on input line 1084.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1093
+
+ []
+
+
+Overfull \hbox (12.97845pt too wide) in paragraph at lines 1094--1102
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1102
+
+ []
+
+<FIGURAS/directividad_SIM.png, id=741, 462.528pt x 346.896pt>
+File: FIGURAS/directividad_SIM.png Graphic file (type png)
+<use FIGURAS/directividad_SIM.png>
+Package pdftex.def Info: FIGURAS/directividad_SIM.png  used on input line 1110.
+
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+[55 <./FIGURAS/señal_SUM.png>]
+<FIGURAS/directividad_experimental.png, id=752, 462.528pt x 346.896pt>
+File: FIGURAS/directividad_experimental.png Graphic file (type png)
+<use FIGURAS/directividad_experimental.png>
+Package pdftex.def Info: FIGURAS/directividad_experimental.png  used on input l
+ine 1123.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+ [56 <./FIGURAS/directividad_SIM.png>] [57 <./FIGURAS/directividad_experimental
+.png>]
+<FIGURAS/directividad_MALA.png, id=768, 462.528pt x 346.896pt>
+File: FIGURAS/directividad_MALA.png Graphic file (type png)
+<use FIGURAS/directividad_MALA.png>
+Package pdftex.def Info: FIGURAS/directividad_MALA.png  used on input line 1164
+.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
+1.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
+1.
+
+Missing character: There is no � in font cmr10!
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
+1.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
+1.
+
+Missing character: There is no � in font cmr10!
+[58 <./FIGURAS/directividad_MALA.png>] [59] [60
 
 ]
 Cap\'{\i }tulo 7.
-[47] [48
+[61] [62
 
 ]
 Cap\'{\i }tulo 8.
-[49] [50
+[63] [64
 
 ]
 Cap\'{\i }tulo 9.
-[51] [52
+[65] [66
 
 ]
 Cap\'{\i }tulo 10.
-[53] [54
+[67] [68
 
-]
-Cap\'{\i }tulo 11.
-[55] [56
-
-] [57] (TFG.aux
+] [69] (TFG.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: D2F8DCDEF0304E0FD9635D59B3E54168;6627.
+(rerunfilecheck)             Checksum: 5FFAF76D853E32EEBCBE390AD8DDF4E7;8100.
  ) 
 Here is how much of TeX's memory you used:
- 14953 strings out of 478659
- 248204 string characters out of 2844972
- 559075 words of memory out of 3000000
- 32641 multiletter control sequences out of 15000+600000
+ 15126 strings out of 478659
+ 251338 string characters out of 2844972
+ 561290 words of memory out of 3000000
+ 32748 multiletter control sequences out of 15000+600000
  411514 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,13n,79p,978b,679s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,13n,79p,1021b,679s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Usuario\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 rm1095.pk><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type
@@ -1097,9 +1193,9 @@ C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmti10.pfb>
-Output written on TFG.pdf (75 pages, 2846922 bytes).
+Output written on TFG.pdf (87 pages, 11373040 bytes).
 PDF statistics:
- 744 PDF objects out of 1000 (max. 8388607)
- 169 named destinations out of 1000 (max. 500000)
- 475 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 949 PDF objects out of 1000 (max. 8388607)
+ 226 named destinations out of 1000 (max. 500000)
+ 576 words of extra memory for PDF output out of 10000 (max. 10000000)
 

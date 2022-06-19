@@ -189,13 +189,14 @@ En este capítulo se realizará un fundamento teórico del concepto de ''Array S
 	\section{Procesamiento de señales multicanal}
 	El procesamiento de señales multicanal, también conocido como ''Array Signal Processing'' se interpreta como un procesamiento de las señales en el espacio y en el tiempo.
 	
-	Conforme se va incrementando en frecuencia, las antenas necesitan unas dimensiones eléctricas mayores y se empiezan a alejar de las geometrías lineales. Para conformar la radiación y llegar a conseguir frentes de onda que puedan generar directividades elevadas y diagramas de radiación concretos, se presenta las llamadas 'Aperturas'. La respuesta procedente de una apertura es direccional, es decir, la señal recibida en la apertura depende de la dirección de llegada (DOA). El diagrama de radiación de una apertura lineal uniforme de longitud 'L' se muestra en la \textit{Figura 1.1}.
+	Conforme se va incrementando en frecuencia, las antenas necesitan unas dimensiones eléctricas mayores y se empiezan a alejar de las geometrías lineales. Para conformar la radiación y llegar a conseguir frentes de onda que puedan generar directividades elevadas y diagramas de radiación concretos, se presenta las llamadas 'Aperturas'. La respuesta procedente de una apertura es direccional, es decir, la señal recibida en la apertura depende de la dirección de llegada (DOA). El diagrama de radiación de una apertura lineal uniforme de longitud 'L' se muestra en la \textit{Figura \ref{dir_ap}}.
 	
 	El patrón de directividad correspondiente a una apertura muestreada en ciertas localizaciones a lo largo del eje x, suponiendo que todos los elementos del array son iguales e isotrópicos es el siguiente:
 	\begin{equation}
 	 D(f, \alpha) = \sum_{n = 0}^{N-1}w^{*}_{n}(f)e^{-2j \pi \alpha r_{n}}
+	 \label{ecDir}
 	\end{equation}
-	Donde $w^{*}_{n}(f)$ se corresponde con el peso o contribución de cada elemento de la apertura general, $r_{n}$ la posición de cada elemento y $\alpha$ el ángulo de radiación. Si todos los elementos del array radian de una forma uniforme, convirtiéndose la apertura general en una agrupación lineal uniforme, se simplifica la \textit{ecuación 1.1}, de la manera:
+	Donde $w^{*}_{n}(f)$ se corresponde con el peso o contribución de cada elemento de la apertura general, $r_{n}$ la posición de cada elemento y $\alpha$ el ángulo de radiación. Si todos los elementos del array radian de una forma uniforme, convirtiéndose la apertura general en una agrupación lineal uniforme, se simplifica la \textit{ecuación \ref{ecDir}}, de la manera:
 	\begin{equation}
 		 D(f, \alpha) =\frac{1}{N}\frac{sin(\pi \alpha_{x} N d)}{sin(\pi \alpha_{x} d)} e^{-2j \pi \alpha_{x} \frac{N-1}{2} d}
 	\end{equation}
@@ -206,35 +207,38 @@ Siendo N el número de elementos. Al calcular el módulo del patrón de directiv
 |D(f, u_x)| =\frac{1}{N}\frac{sin(\pi u_{x} N d / \lambda)}{sin(\pi u_{x} d / \lambda)}
 	\end{equation}
 	
-Donde $u_x$ se corresponde al vector unitario en una dirección determinada. Esta ecuación justifica el diagrama de radiación de la \textit{Figura 1.1}, con lo cual, se puede afirmar que un array lineal uniforme de N elementos, simula el comportamiento de una apertura lineal uniforme de longitud $L = Nd$
+Donde $u_x$ se corresponde al vector unitario en una dirección determinada. Esta ecuación justifica el diagrama de radiación de la \textit{Figura \ref{dir_ap}}, con lo cual, se puede afirmar que un array lineal uniforme de N elementos, simula el comportamiento de una apertura lineal uniforme de longitud $L = Nd$
 	
 	\begin{figure}[hbtp]
 	\centering
 	\includegraphics[width = 8cm]{FIGURAS/directividad_apertura.JPG}
 	\caption{Directividad apertura}
+	\label{dir_ap}
 	\end{figure}
 	
 	 Se puede apreciar que actúa como un filtro espacial (fenómeno clave para hacer beamforming), diferenciándose claramente el lóbulo principal de los demás, menos directivos.
 	 
-	 Un array de sensores es, básicamente, una apertura conformada por un número de aperturas lineales, simulando de esta manera el comportamiento de una apertura lineal de longitud la suma de las longitudes de los elementos del array más la separación entre ellos. En la Figura 1.2 se puede observar un array lineal uniforme orientado sobre el eje $z$. Variando la longitud del array con una longitud de onda fija, se pueden lograr diferentes patrones de directividad, como son el ''endfire'' (con el máximo de directividad en 0º y 180º) y el ''broadside'' (con el máximo de directividad en 90º)
+	 Un array de sensores es, básicamente, una apertura conformada por un número de aperturas lineales, simulando de esta manera el comportamiento de una apertura lineal de longitud la suma de las longitudes de los elementos del array más la separación entre ellos. En la \textit{Figura \ref{agrupacion}} se puede observar un array lineal uniforme orientado sobre el eje $z$. Variando la longitud del array con una longitud de onda fija, se pueden lograr diferentes patrones de directividad, como son el ''endfire'' (con el máximo de directividad en 0º y 180º) y el ''broadside'' (con el máximo de directividad en 90º)
 	 \begin{figure}[hbtp]
 	 \centering
 	 \includegraphics[width = 5cm]{FIGURAS/array_elementos.JPG}
 	 \caption{Agrupación de elementos}
+	 \label{agrupacion}
 	 \end{figure}
 	 
-A continuación, se ha hecho una pequeña simulación en el programa \textit{FEKO} para un array uniforme lineal de 6 elementos orientado en el eje z, así como la \textit{Figura 1.2}. Cada elemento se ha supuesto un dipolo infinitesimal y con una distancia entre elementos de $\lambda / 2$ para evitar máximos adicionales en el diagrama de radiación y que sea lo más ideal posible.
+A continuación, se ha hecho una pequeña simulación en el programa \textit{FEKO} para un array uniforme lineal de 6 elementos orientado en el eje z, así como la \textit{Figura \ref{agrupacion}}. Cada elemento se ha supuesto un dipolo infinitesimal y con una distancia entre elementos de $\lambda / 2$ para evitar máximos adicionales en el diagrama de radiación y que sea lo más ideal posible.
 
 Si fuese necesario obtener el máximo de radiación de forma perpendicular, lo que se ajusta a los requisitos conforma una agrupación de tipo ''broadside'' ya que, como se ha mencionado, el máximo de directividad se alcanza en $3 \pi / 2$ o en 90º. Mencionado esto, se procede a mostrar los resultados de la simulación a niveles de campo lejano:
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 12cm]{FIGURAS/broadside.JPG}
 \caption{Diagrama de radiación broadside}
+\label{diagrama180}
 \end{figure}
 
 Se aprecia que los máximos de radiación se encuentran en 270º y 90º. Cabe destacar que el ángulo en el que se ha hecho el barrido es $\theta$, ya que el array está orientado en el eje z y que el diagrama de la izquierda está expresado el campo en electrón-voltios y el campo de la derecha está expresado en dBV.
 
-Para finalizar la simulación, se adjunta también una representación 3D en la\textit{ Figura 1.4} de la ganancia, sabiendo que la ganancia de una antena está estrechamente relacionada con la directividad de la forma:
+Para finalizar la simulación, se adjunta también una representación 3D en la\textit{ Figura \ref{feko3d}} de la ganancia, sabiendo que la ganancia de una antena está estrechamente relacionada con la directividad de la forma:
 \begin{equation}
 G = D * \eta_{r}
 \end{equation}
@@ -243,6 +247,7 @@ Donde $\eta_{r}$ define las pérdidas entre potencia incidente y potencia radiad
 \centering
 \includegraphics[width = 12cm]{FIGURAS/ganancia_broadside.jpg}
 \caption{Ganancia en broadside}
+\label{feko3d}
 \end{figure}
 
 Se comprueba en este diagrama también el patrón de radiación perpendicular de la agrupación de dipolos infinitesimales desde el punto de vista de la ganancia.
@@ -258,10 +263,12 @@ Se comprueba en este diagrama también el patrón de radiación perpendicular de
 	Un ''beamformer'' se interpreta como un procesador, utilizado conjuntamente con una serie de sensores, para proporcionar una forma versátil de filtrado espacial. El objetivo es estimar la señal procedente de una dirección deseada, en un entorno ruidoso y en presencia de señales de interferencia. El ''beamformer'' actúa de forma similar a un filtro espacial, separando las señales que han sufrido una superposición en frecuencia, pero que se han originado en diferentes localizaciones espaciales. Para determinar el patrón de directividad deseado se hace uso de filtros o, siguiendo la nomenclatura de la sección de procesamiento de señales multicanal, pesos. Estos filtros o pesos se componen de una parte real y de una parte imaginaria.
 	\begin{equation}
 	w_{n}(f) = a_{n} e^{j\varphi_{n}(f)}
+	\label{pesos}
 	\end{equation}
-	La \textit{ecuación 1.5} se corresponde con un esquema típico de amplitud ($a_{n}$) y fase ($e^{j\varphi_{n}(f)}$). La amplitud determina la forma del patrón de directividad, mientras que la fase interviene en la orientación del lóbulo principal en un determinado ángulo.
+	La \textit{ecuación \ref{pesos}} se corresponde con un esquema típico de amplitud ($a_{n}$) y fase ($e^{j\varphi_{n}(f)}$). La amplitud determina la forma del patrón de directividad, mientras que la fase interviene en la orientación del lóbulo principal en un determinado ángulo.
 	
 	El caso que se planteará en este proyecto corresponde a un beamforming acústico. Dentro de este caso, existen dos ramas principales: una relacionada con la extracción de la señal y otra relacionada con la localización de las fuentes sonoras.
+	
 		\subsection{Tipos de Beamformers}
 		
 		Antes de entrar en detalle en los distintos modelos, cabe diferenciar tres tipos de campos de ruido existentes para los cuales sería más adecuado el uso de un tipo de beamformer u otro y el criterio que se va a seguir para evaluarlos:
@@ -275,23 +282,26 @@ Se comprueba en este diagrama también el patrón de radiación perpendicular de
 		
 		\begin{equation}
 		G(f) = \frac{SNR_{o}(f)}{SNR_{i}(f)}
+		\label{ganancia}
 		\end{equation}
 		
-El factor de directividad (\textit{ecuación 1.7}) se entiende como el cociente del patrón de directividad en la dirección deseada y el patrón de directividad de todas las direcciones en general.
+El factor de directividad (\textit{ecuación \ref{FD}}) se entiende como el cociente del patrón de directividad en la dirección deseada y el patrón de directividad de todas las direcciones en general.
 
 \begin{equation}
 F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}{4 \pi} \int_{0}^{2\pi}\int_{0}^{\pi}|D(f, \phi, \theta|^{2} sin(\theta) d\theta d\phi}
+\label{FD}
 \end{equation}
 		
 				Se va a explicar tres clases distintas de beamforming: Beamforming Delay \& Sum, Beamforming MVDR y Beamforming superdirectivo.
 		\subsubsection{Delay \& Sum}
 		Este primer beamformer es el más comúnmente utilizado en procesos de beamforming debido a simplicidad y a su robustez. El beamformer Delay \& Sum o \textit{DAS} ha sido utilizado en muchos estudios de localización de ruido en aeronáutica, como se verá posteriormente.
 		
-		En el beamformer DAS, los pesos son representados mediante \textbf{retardos}. Siguiendo la estructura de la \textit{ecuación 1.5} resultaría:
+		En el beamformer DAS, los pesos son representados mediante \textbf{retardos}. Siguiendo la estructura de la \textit{ecuación \ref{pesos}} resultaría:
 		\begin{equation}
 		w_{n}(f) = e^{j \omega t_{n}} / N
+		\label{pesosDAS}
 		\end{equation}
-		Con una contribución uniforme para cada elemento de $1/N$ y siendo $t_{n} = \varphi_{n}(f) / \omega$. Se desea modificar el patrón de directividad de la \textit{ecuación 1.1} hacia una dirección deseada $u_{s}$. Introduciendo el peso obtenido en la \textit{ecuación 1.8} operando con las exponenciales y sacando factor común, el patrón de directividad queda de la forma:
+		Con una contribución uniforme para cada elemento de $1/N$ y siendo $t_{n} = \varphi_{n}(f) / \omega$. Se desea modificar el patrón de directividad de la \textit{ecuación \ref{ecDir}} hacia una dirección deseada $u_{s}$. Introduciendo el peso obtenido en la \textit{ecuación \ref{pesosDAS}} operando con las exponenciales y sacando factor común, el patrón de directividad queda de la forma:
 \begin{equation}
 		D(f, u-u_{s}) = \frac{1}{N} \sum_{n = 0}^{N-1} e^{2\pi f j (\frac{u r_{n}}{c} - t_{n})}
 		\end{equation}		
@@ -301,11 +311,22 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 		\begin{equation}
 		\textbf{w}(f) = \frac{1}{N} (e^{j \omega t_{0}},...,e^{j \omega t_{N-1}})^{T} = \frac{1}{N} \textbf{d}(f,u_{s})
 		\end{equation}
+		\label{steering}
 		Siendo $\textbf{d}(f,u_{s})$ el llamado \textit{steering vector.}
 
-		Básicamente, el beamformer DAS hace la sumatoria de todas las versiones retardadas y de sus correspondientes pesos para cada elemento o micrófono, consiguiendo una superposición destructiva para aquellas señales que no lleguen en la dirección deseada y se conseguirá una superposición constructiva para las señales procedentes de la dirección deseada. Se logra de esta manera un realzamiento de la señal procedente de la fuente de interés, mientras que se suprime la contribución de otras fuentes desde una dirección diferente a la determinada. Además de atenuar las señales procedentes de direcciones distintas a la de interés, este beamformer tiene la capacidad de suprimir la contaminación producida por ruido desde la señal de interés.
+		Básicamente, el beamformer DAS hace la sumatoria de todas las versiones retardadas y de sus correspondientes pesos para cada elemento o micrófono, consiguiendo una superposición destructiva para aquellas señales que no lleguen en la dirección deseada y se conseguirá una superposición constructiva para las señales procedentes de la dirección deseada. El esquema básico de un beamformer delay \& sum se ejemplifica en la \textit{Figura \ref{DAS}}.
 		
-\textbf{		El beamformer DAS maximiza la \textit{ecuación 1.6} en un campo de ruido incoherente.} Por otra parte, aunque el beamformer DAS mantiene un buen comportamiento ante ruido blanco, el factor de directividad que posee no es muy alto.
+		\begin{figure}[hbtp]
+		\centering
+		\includegraphics[width = 10cm]{FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png}
+		\caption{Esquema beamformer DAS}
+		\label{DAS}
+		\end{figure}
+		
+		
+		 Se logra de esta manera un realzamiento de la señal procedente de la fuente de interés, mientras que se suprime la contribución de otras fuentes desde una dirección diferente a la determinada. Además de atenuar las señales procedentes de direcciones distintas a la de interés, este beamformer tiene la capacidad de suprimir la contaminación producida por ruido desde la señal de interés.
+		
+\textbf{		El beamformer DAS maximiza la \textit{ecuación \ref{ganancia}} en un campo de ruido incoherente.} Por otra parte, aunque el beamformer DAS mantiene un buen comportamiento ante ruido blanco, el factor de directividad que posee no es muy alto.
 		
 		\subsubsection{MVDR}
 		El principal objetivo del beamformer MVDR (\textit{Minimum Variance Distortionless Response}) es hacer mínima la contribución del ruido, como su nombre indica.
@@ -314,7 +335,7 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 		\begin{equation}
 		\textbf{X}(f) = S(f)\textbf{d}_{s}(f) + \textbf{V}(f)
 		\end{equation}
-	Se conoce que, la respuesta del array, apoyándose en la definición de patrón de directividad de la \textit{ecuación 1.1} es el siguiente:
+	Se conoce que, la respuesta del array, apoyándose en la definición de patrón de directividad de la \textit{ecuación \ref{ecDir}} es el siguiente:
 	\begin{equation}
 	Y(f) = D(f,u) S(f) = \textbf{w}^{H}(f) \textbf{X}(f) = \textbf{w}^{H}(f)(\textbf{d}_{s}(f) S(f) + \textbf{V}(f))
 	\end{equation}
@@ -326,12 +347,12 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 	
 	Teóricamente, el beamformer MVDR es capaz de mejorar siempre la SNR de una señal de interés captada por el sensor de referencia.
 	
-	\textbf{		El beamformer MVDR maximiza la \textit{ecuación 1.6} en un campo de ruido coherente.}
+	\textbf{		El beamformer MVDR maximiza la \textit{ecuación \ref{ganancia}} en un campo de ruido coherente.}
 	
 	\subsubsection{Superdirectivo}
 	Este tipo de beamformer es conocido por alcanzar un valor alto en el factor de directividad. Sin embargo, es extremadamente sensible ante patrones de ruido no correlados, como puede ser el ruido blanco y ante pequeños errores en los elementos del array. Frente a ruido blanco, el beamformer superdirectivo además de realzar la señal de interés, amplificaría también el ruido blanco. Se puede entender como un filtro lineal.
 	
-	\textbf{		El beamformer superdirectivo maximiza la \textit{ecuación 1.6} en un campo de ruido difuso.}
+	\textbf{		El beamformer superdirectivo maximiza la \textit{ecuación \ref{ganancia}} en un campo de ruido difuso.}
 	
 	\section{Impacto en la actualidad}
 	El procesamiento de señales multicanal tiene múltiples aplicaciones. Algunas de ellas son: radioastronomía, radar, sismología, tomografía, comunicaciones inalámbricas, sonar y tratamiento de audio. Se explicará brevemente la actuación de este tipo de procesamiento para las comunicaciones celulares y para un punto de vista acústico.
@@ -344,7 +365,7 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 		\end{figure}
 		
 	
-	Sin embargo, esta sectorización no fue suficiente para abarcar el creciente número de usuarios que solicitan recursos de frecuencia, por lo que, en la última generación estandarizada de comunicaciones móviles (4G), se emplearon técnicas ''MIMO'' y ''Smart Antennas. MIMO es un acrónimo que se refiere a ''Multiple Input Multiple Output'', por lo que se podrá utilizar una agrupación de antenas tanto en el emisor como en el receptor. Se puede entender mejor el concepto observando el canal del sistema correspondiente a la \textit{Figura 1.2}. En concreto, es un canal MIMO 4x4.
+	Sin embargo, esta sectorización no fue suficiente para abarcar el creciente número de usuarios que solicitan recursos de frecuencia, por lo que, en la última generación estandarizada de comunicaciones móviles (4G), se emplearon técnicas ''MIMO'' y ''Smart Antennas. MIMO es un acrónimo que se refiere a ''Multiple Input Multiple Output'', por lo que se podrá utilizar una agrupación de antenas tanto en el emisor como en el receptor. Se puede entender mejor el concepto observando el canal del sistema correspondiente a la \textit{Figura \ref{MIMO}}. En concreto, es un canal MIMO 4x4.
 		
 		Debido al uso de múltiples antenas, se pueden emplear las técnicas de multiplexado espacial y diversidad espacial. La primera de ellas consigue mejorar la ganancia mediante la transmisión de distintos flujos de información independientes a través de las múltiples antenas. Esto implica un aumento considerable de la tasa de bits respecto a los sistemas con una única antena. Con la diversidad espacial se incrementa la ganancia en codificación mediante la transmisión de secuencias redundantes por varias antenas.
 		
@@ -352,13 +373,15 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 		\centering
 		\includegraphics[width = 10cm]{FIGURAS/sistema_MIMO.JPG}
 		\caption{Sistema MIMO}
+		\label{MIMO}
 		\end{figure}
 
-		En referencia a la introducción de las llamadas ''Smart Antennas'', son capaces de adaptar el patrón del haz de radiación con el propósito de mejorar la calidad de la señal deseada y minimizar el impacto de la señal interferencia. Esta adaptación implica el uso de beamforming. El beamformer puede ser adaptativo, el cual dirige el haz principal hacia la señal de interés, o conmutado, el cual posee una serie de patrones de radiación fijos. Este fenómeto es levemente ilustrado en la \textit{Figura 1.3}.
+		En referencia a la introducción de las llamadas ''Smart Antennas'', son capaces de adaptar el patrón del haz de radiación con el propósito de mejorar la calidad de la señal deseada y minimizar el impacto de la señal interferencia. Esta adaptación implica el uso de beamforming. El beamformer puede ser adaptativo, el cual dirige el haz principal hacia la señal de interés, o conmutado, el cual posee una serie de patrones de radiación fijos. Este fenómeto es brevemente ilustrado en la \textit{Figura \ref{BEAM}}.
 		\begin{figure}[hbtp]
 		\centering
 		\includegraphics[width = 8cm]{FIGURAS/beamformer_adaptativo.JPG}
 		\caption{Beamforming en comunicaciones inalámbricas}
+		\label{BEAM}
 		\end{figure}
 		
 		\subsection{Procesamiento acústico}
@@ -371,9 +394,10 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 			\centering
 			\includegraphics[width = 13cm]{FIGURAS/diarizacion.JPG}
 			\caption{Decodificación de Viterbi}
+			\label{viterbi}
 			\end{figure}	
 			
-			En la \textit{Figura 1.4} se esquematiza el algoritmo de Viterbi para un ejemplo de dos locutores, dos fuentes de ruido y micrófonos distribuidos. En el primer paso (b) para cada canal individual, se obtiene los dos mejores caminos en función del tiempo. En el segundo paso (c) se seleccionan los retardos apropiados, considerando todas las posibles combinaciones de todos los canales. Se acaba eligiendo el mejor camino según los datos de distancias y correlación.\linebreak 
+			En la \textit{Figura \ref{viterbi}} se esquematiza el algoritmo de Viterbi para un ejemplo de dos locutores, dos fuentes de ruido y micrófonos distribuidos. En el primer paso (b) para cada canal individual, se obtiene los dos mejores caminos en función del tiempo. En el segundo paso (c) se seleccionan los retardos apropiados, considerando todas las posibles combinaciones de todos los canales. Se acaba eligiendo el mejor camino según los datos de distancias y correlación.\linebreak 
 			\textit{Nota: Las columnas de la representación trellis del algoritmo de Viterbi corresponden a la diferencia de tiempos de llegada obtenidos anteriormente.
 }
 			\subsubsection{Localización de fuentes}
@@ -387,13 +411,14 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 			\centering
 			\includegraphics[width = 12cm]{FIGURAS/wind_tunnel.JPG}
 			\caption{Configuración del array para un túnel de viento}
+			\label{tunel}
 			\end{figure}
 			
-			Las ondas de sonido radiadas por las fuentes aero-acústicas ubicadas en la superficie del modelo, sufren refracción y scattering debido a entorno del experimento, por lo que deberá existir un algoritmo para compensar este fenómeno. La técnica de beamforming juega un papel importante al estimar las repercusiones acústicas que sufre el modelo y evitar posibles averías o incluso conseguir una mejoría en el comportamiento del modelo. En la \textit{Figura 1.5} se muestra el experimento real (parte de la izquierda) y la disposición de los micrófonos (parte de la derecha).
+			Las ondas de sonido radiadas por las fuentes aero-acústicas ubicadas en la superficie del modelo, sufren refracción y scattering debido a entorno del experimento, por lo que deberá existir un algoritmo para compensar este fenómeno. La técnica de beamforming juega un papel importante al estimar las repercusiones acústicas que sufre el modelo y evitar posibles averías o incluso conseguir una mejoría en el comportamiento del modelo. En la \textit{Figura \ref{tunel}} se muestra el experimento real (parte de la izquierda) y la disposición de los micrófonos (parte de la derecha).
 				\item[-] Por último, mencionar la aplicación de beamforming en interiores. Micrófonos empotrados son normalmente utilizados en entornos de interios, así como cabinas de avión o interiores de automóviles. De esta manera, se consigue identificar la ubicación de las fuentes sonoras y actuar frente a estas.
 			\end{itemize}
 			
-	
+\chapter{Planteamiento del problema}
 	\section{Justificación del proyecto}
 	\section{Distribución del proyecto}
 		\subsection{Requisitos de realización}
@@ -401,7 +426,6 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 		Aquí va una lista de lo que he hecho: servidor, app y algoritmo.
 		\subsection{Entornos de trabajo}
 		Java, AndroidStudio, Python...
-\chapter{Planteamiento del problema}
 
 \chapter{Desarrollo del servidor externo}
 	Tal y como se ha comentado, para crear la comunicación con los móviles y manejar las distintas órdenes correspondientes al objetivo de grabar de forma coherente en cada dispositivo, es necesaria la incorporación de un servidor externo.
@@ -459,12 +483,15 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 				
 				 La distinción \textit{cliente-servidor} es importante porque el cliente necesita conocer la dirección IP y el puerto del servidor, pero no viceversa.
 				 
-				 En concepto de socket es abstracto. Se puede entender como un método el cual permite la comunicación de aplicaciones en una misma red, pudiendo enviar y recibir datos a través del socket. El protocolo TCP/IP permite transmitir flujos de datos y a través de un socket, una aplicación es capaz de alcanzar un puerto disponible de la red. En la Figura 3.2 se esquematiza la posición de los sockets en el entorno de comunicación.
+				 En concepto de socket es abstracto. Se puede entender como un método el cual permite la comunicación de aplicaciones en una misma red, pudiendo enviar y recibir datos a través del socket. El protocolo TCP/IP permite transmitir flujos de datos y a través de un socket, una aplicación es capaz de alcanzar un puerto disponible de la red. En la \textit{Figura \ref{sockets}} se esquematiza la posición de los sockets en el entorno de comunicación.
+				 
 				 \begin{figure}[hbtp]
 				 \centering
 				 \includegraphics[width = 10cm]{FIGURAS/Explica_Sockets.JPG}
 				 \caption{TCP sockets}
-				 \end{figure}	
+				 \end{figure}
+				 \label{sockets}	
+				 
 		El manejo de los sockets en Java lo podemos encontrar en su propia API. 
 		\begin{description}
 				 \item[Server Socket y Socket:] Se deben inicializar tanto los sockets correspondientes al cliente como los correspondientes al servidor. El socket del servidor o ''Server Socket''  hace referencia al puerto al que debe conectar el cliente para mantener la comunicación con el servidor. El socket perteneciente al cliente o ''Socket'' es el cual se le asigna al cliente por el servidor una vez el cliente haya enviado una request ó petición  mediante el Server Socket. El socket del cliente es de utilidad al propio servidor para manejar al cliente correspondiente y para inicializar este último se necesita además del número de puerto, la dirección IP del servidor.
@@ -502,6 +529,7 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 				 \begin{center}
 				 \textit{telnet[dominio ó dirección IP][puerto]}
 				 \end{center}
+				 
 				 Si se llega a entablar la conexión, aparecerá una sección de pantalla vacía indicando que el puerto se encuentra disponible y si la conexión no se establece, se emitirá un mensaje de error lo cual indica que el puerto al que se referencia no está disponible o que, simplemente el servidor no se mantiene en escucha en ese puerto específico.
 				 
 				 El servidor creado posee varias funciones, las cuales se enumeran y se explican a continuación:	 	 
@@ -541,17 +569,18 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 			
 			Se ha filtrado el tráfico de manera que solo se visualice el protocolo TCP en el puerto 5000 y en el puerto 5001, ya que se va a mostrar el flujo de un único dispositivo  para simplificar el intercambio de mensajes. Mencionado esto, se presenta la captura del tráfico correspondiente al punto de acceso inalámbrico. 
 			
-			El tráfico resultante únicamente del conexionado con el servidor es presentado en la \textit{Figura 3.3}.
+			El tráfico resultante únicamente del conexionado con el servidor es presentado en la \textit{Figura \ref{connect}}.
 			
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 15cm]{FIGURAS/trafico_connect.png}
 \caption{Tráfico ''connect''}
+\label{connect}
 \end{figure}
 
 Se puede apreciar la dirección IP de la máquina donde corre el servidor (192.168.019) y la dirección IP del smartphone (192.168.137.184). Además, se observa enmarcado en rojo dos envíos de paquetes interesantes, ya que es el momento en el cual el servidor le ha enviado ya el siguiente puerto de conexión fija y realiza de nuevo el dispositivo una \textit{request} al nuevo puerto (50001).
 
- Para entender mejor todos los envíos de paquetes, se ejemplifica en el diagrama UML de la \textit{Figura 3.4} el típico esquema de un flujo TCP. El protocolo TCP utiliza el llamado ''\textit{three-way handshake}'' con el propósito de establecer una conexión fiable. Este método de conexión se basa en el envío y recepción de señales de sincronización y señales de acuse y recibo, o también llamadas \textit{SYNC} y \textit{ACK}. Concretamente, se distribuyen en su envío de la manera:
+ Para entender mejor todos los envíos de paquetes, se ejemplifica en el diagrama UML de la \textit{Figura ref{tcp}} el típico esquema de un flujo TCP. El protocolo TCP utiliza el llamado ''\textit{three-way handshake}'' con el propósito de establecer una conexión fiable. Este método de conexión se basa en el envío y recepción de señales de sincronización y señales de acuse y recibo, o también llamadas \textit{SYNC} y \textit{ACK}. Concretamente, se distribuyen en su envío de la manera:
  \begin{enumerate}
  \item SYN
  \item SYN/ACK
@@ -563,47 +592,52 @@ Una vez se haya completado el envío y recepción de esos tres mensajes, se podr
 \centering
 \includegraphics[width = 8cm]{FIGURAS/TCP_flow.png}
 \caption{Conexión TCP}
+\label{tcp}
 \end{figure}
 
 
 Al recibir el servidor el segmento SYN, este último responde otro segmento SYN con su número de secuencia inicial y con un acuse y recibo (ACK). De esta manera, conociendo los números de secuencia de cada parte y con el ACK, ayuda a reconocer mensajes erróneos o perdidos. Cuando el cliente recibe el paquete SYN/ACK del servidor, sabe que se ha establecido exitosamente la conexión y devuelve un ACK al servidor para terminar.
 
-En cada fase del proceso, es posible que se produzca una pérdida de paquetes o que no lleguen al destino correctamente, por lo que existe un tiempo límite o \textit{timeout} con el cual se comprueba si se debe enviar de nuevo el segmento de sincronización. Todo este flujo de establecimiento de la conexión, lo podemos apreciar claramente en la \textit{Figura 3.3}. El proceso de conexionado, en este caso, se realiza dos veces (una vez al puerto común 5000 y otra vez al puerto fijo 5001).
+En cada fase del proceso, es posible que se produzca una pérdida de paquetes o que no lleguen al destino correctamente, por lo que existe un tiempo límite o \textit{timeout} con el cual se comprueba si se debe enviar de nuevo el segmento de sincronización. Todo este flujo de establecimiento de la conexión, lo podemos apreciar claramente en la \textit{Figura \ref{connect}}. El proceso de conexionado, en este caso, se realiza dos veces (una vez al puerto común 5000 y otra vez al puerto fijo 5001).
 
-Una vez hecho el conexionado, el cliente hace saber al servidor que está listo para grabar. Cuando todos los dispositivos le hayan dado la confirmación para empezar a grabar, el servidor enviará la orden para empezar. Este flujo lo podemos ver en la \textit{Figura 3.5}.
+Una vez hecho el conexionado, el cliente hace saber al servidor que está listo para grabar. Cuando todos los dispositivos le hayan dado la confirmación para empezar a grabar, el servidor enviará la orden para empezar. Este flujo lo podemos ver en la \textit{Figura \ref{record}}.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 15 cm]{FIGURAS/trafico_record.JPG}
+\includegraphics[width = 12 cm]{FIGURAS/trafico_record.JPG}
 \caption{Tráfico ''record''}
+\label{record}
 \end{figure}
 
-Si observamos el contenido del primer paquete y del último paquete del flujo presentado, se pueden apreciar los correspondientes mensajes de ''READY'' por parte del dispositivo y de ''START'' por parte del servidor en la \textit{Figura 3.6}. Los bytes anteriores a las palabras clave comentadas son correspondientes a la cabecera del paquete.
+Si observamos el contenido del primer paquete y del último paquete del flujo presentado, se pueden apreciar los correspondientes mensajes de ''READY'' por parte del dispositivo y de ''START'' por parte del servidor en la \textit{Figura \ref{mensajes}}. Los bytes anteriores a las palabras clave comentadas son correspondientes a la cabecera del paquete.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 8 cm]{FIGURAS/startready.JPG}
 \caption{Palabras clave comienzo}
+\label{mensajes}
 \end{figure}
 
 Una vez emitida la orden de grabar por el servidor, cada dispositivo envía un ''ACK'' adicional y empieza la grabación. En el período de tiempo de grabación no se intercambian paquetes, ya que el servidor se encuentra en reposo y los móviles se encuentran grabando.
 
-Cuando la grabación finaliza, llega el momento de intercambiar el archivo de datos brutos almacenado. Este proceso se puede apreciar en la \textit{Figura 3.7}.
+Cuando la grabación finaliza, llega el momento de intercambiar el archivo de datos brutos almacenado. Este proceso se puede apreciar en la \textit{Figura \ref{transf}}.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 16 cm]{FIGURAS/intercambio_grabacion.png}
 \caption{Transferencia archivo}
+\label{transf}
 \end{figure}
 
 En la que se puede observar que el envío se divide en tramas de 1460 bytes y que llegados una serie de paquetes, el servidor responde con un ACK referenciando al número de secuencia del paquete el cual se está confirmando su correcta llegada.	
 				
-			Con los datos proporcionados por el tráfico de red, se traza un diagrama UML en la \textit{Figura 3.8} para una mejor visualización de la comunicación entre el servidor y un cliente.
+			Con los datos proporcionados por el tráfico de red, se traza un diagrama UML en la \textit{Figura \ref{UML}} para una mejor visualización de la comunicación entre el servidor y un cliente.
 			
 	\begin{figure}[hbtp]
 			\centering
 			\includegraphics[width = 5cm]{FIGURAS/uml.png}
 			\caption{Tráfico completo.}
+			\label{UML}
 			\end{figure}
 					
 			
@@ -643,8 +677,8 @@ Tal y como se ha comentado anteriormente, para la comunicación entre el servido
 	
 	En total, se han creado 3 clases java en Android Studio:
 	\begin{itemize}
-	\item \textbf{MainActivity}: Es la clase principal. En ella se encuentra el diseño de la primera interfaz mostrada en la \textit{Figura 4.1}. Al pulsar el usuario el botón, se hará una llamada a la siguiente clase con su nueva interfaz.
-	\item \textbf{RecordClient}: Contiene el diseño de la segunda interfaz de la aplicación (\textit{Figura 4.2}). Esta clase es la encargada de mantener la conexión con el servidor dada una dirección IP específica y el puerto común, el cual se ha determinado como el puerto número 5000 en la sección del servidor. Realiza todo el proceso de doble conexión al servidor en segundo plano y, una vez conectado el dispositivo al servidor, se cargará la interfaz correspondiente a la acción de grabar.
+	\item \textbf{MainActivity}: Es la clase principal. En ella se encuentra el diseño de la primera interfaz mostrada en la \textit{Figura \ref{interfaz1}}. Al pulsar el usuario el botón, se hará una llamada a la siguiente clase con su nueva interfaz.
+	\item \textbf{RecordClient}: Contiene el diseño de la segunda interfaz de la aplicación (\textit{Figura \ref{interfaz2}}). Esta clase es la encargada de mantener la conexión con el servidor dada una dirección IP específica y el puerto común, el cual se ha determinado como el puerto número 5000 en la sección del servidor. Realiza todo el proceso de doble conexión al servidor en segundo plano y, una vez conectado el dispositivo al servidor, se cargará la interfaz correspondiente a la acción de grabar.
 	
 	Al pulsar el usuario el botón de ''RECORD'', se mandará el mensaje de ''READY'' al servidor y se esperará a la orden de empezar la grabación emitida por el servidor. La comunicación con el servidor desde la aplicación se realiza de manera similar que en el servidor: con el uso de \textit{Sockets} y flujos de datos \textit{DataInputStream} y \textit{DataOutputStream}. Cuando la aplicación recibe la orden de grabar por el servidor, se hace la llamada a la clase \textit{Recorder} y empieza la grabación en un nuevo hilo. En el hilo principal se procede al envío del ''ACK'' y de la marca de tiempo correspondiente al comienzo de la grabación por parte del dispositivo al servidor y se mantiene en espera hasta recibir la orden correspondiente a parar la grabación.
 	
@@ -663,6 +697,8 @@ Tal y como se ha comentado anteriormente, para la comunicación entre el servido
 	
 \chapter{Sincronización}
 
+
+
 Para el correcto funcionamiento del algoritmo de beamforming, es necesario que las señales de entrada en el beamformer únicamente posean el retardo debido al tiempo de propagación y las posiciones de los móviles. Es decir, se debe eliminar cualquier retardo producido por la red de servidor-app creada. La comunicación entre el servidor y la aplicación genera retardo de red. Este retardo será mayor a menor dependiendo del ancho de banda de la red disponible y del tráfico o utilización de la misma. Mediante las marcas de tiempo proporcionadas por el servidor, se midió el retardo de la red Wi-Fi local, obteniendo unos retardos desde 10 a 900 ms aproximadamente. Sin embargo, debido a la aleatoriedad de los retardos en la Wi-Fi local por los distintos paquetes en cola, se ha optado por realizar el experimento en un punto de acceso inalámbrico, ganando de esta manera un retardo más constante, de unos 100 ms aproximadamente.
 
 
@@ -672,34 +708,38 @@ Además, se debe mitigar el retardo producido por el manejo del servidor. Las ó
 \centering
 \includegraphics[width = 12cm]{FIGURAS/ejes_temporales.JPG}
 \caption{Retardos de red y reloj}
+\label{retardos}
 \end{figure}
 
 
-Los retardos mencionados se ilustran en la \textit{Figura 5.1}, donde se ha ejemplificado el retardo correspondiente a los relojes y el retardo correspondiente a la red, para dos dispositivos. También, en el tercer eje temporal de la figura, se muestra el resultado que se busca, es decir, un eje de tiempos absoluto, donde solo existe el retardo correspondiente al tiempo de propagación.
+Los retardos mencionados se ilustran en la \textit{Figura \ref{retardos}}, donde se ha ejemplificado el retardo correspondiente a los relojes y el retardo correspondiente a la red, para dos dispositivos. También, en el tercer eje temporal de la figura, se muestra el resultado que se busca, es decir, un eje de tiempos absoluto, donde solo existe el retardo correspondiente al tiempo de propagación.
 
 Conociendo el retardo que hay que eliminar, se logrará una serie de señales con un eje temporal absoluto y únicamente con el retardo físico producido por la propia transmisión de las señales desde el altavoz hasta los micrófonos de los dispositivos. El propósito de este capítulo es hallar de la forma más exacta posible este retardo comentado. Se propondrá dos alternativas de sincronización distintas.
 
+\section{Recursos empleados}
+Para el desarrollo de los métodos de sincronización, se va a hacer uso de información proporcionada por la correlación cruzada y el tratamiento de señales adecuadas para un buen sincronismo entre dispositivos.
 
-\section{Correlación cruzada}
+\subsection{Correlación cruzada}
 En procesado de señales, la correlación cruzada es de gran utilidad, ya que es una herramienta matemática que proporciona la relación entre dos señales, pudiendo llegar a medir el grado de similitud entre señales. Su procedimiento se basa en la convolución de una de las señales con la otra invertida.
 
 \begin{equation}
 R_{x,y}[k] = \sum_{k = -\infty}^{\infty} x[k] y[k-n]
 \end{equation}
 
-La correlación cruzada de una señal con ella misma es llamada autocorrelación. Un ejemplo de autocorrelación de una señal contaminada con ruido de media la unidad se muestra en la \textit{Figura 5.1}.
+La correlación cruzada de una señal con ella misma es llamada autocorrelación. Un ejemplo de autocorrelación de una señal contaminada con ruido de media la unidad se muestra en la \textit{Figura \ref{autoco}}.
 
 \begin{figure}[hbtp]
  \centering
  \includegraphics[width = 10cm]{FIGURAS/autocorrelacion.png}
  \caption{Autocorrelación}
+ \label{autoco}
  \end{figure}
 
-La correlación cruzada será máxima en el instante de llegada de la señal. Como en la \textit{Figura 5.1} se está computando la misma señal, el máximo de la correlación se sitúa en 0 muestras, ya que no existe retardo alguno.
+La correlación cruzada será máxima en el instante de llegada de la señal. Como en la \textit{Figura \ref{autoco}} se está computando la misma señal, el máximo de la correlación se sitúa en 0 muestras, ya que no existe retardo alguno.
 
 Para la correlación cruzada de dos señales con la diferencia de un intervalo de tiempo no conocido, el máximo de la correlación señalará el tiempo de llegada de una de las señales, es decir, el retardo que se busca para la sincronización de las señales.
 
-\section{Señales de sincronización}
+\subsection{Señales de sincronización}
 Se necesita conocer el desfase entre señales de la forma más precisa posible. Para ello, se proponen varias señales ejemplo, con el fin de obtener un máximo de correlación coherente.
 
 La idea es introducir en la grabación creada por los dispositivos, una primera parte formada por señales de sincronización, con el fin únicamente de hallar el desfase entre señales y, posteriormente, realizar el procesado correspondiente a beamforming. Se proponen diferentes señales ejemplo para implementar la sincronización comentada.
@@ -715,33 +755,37 @@ Para el caso acústico y la transición que debe hacer la señal desde que el se
 \centering
 \includegraphics[width = 10cm]{FIGURAS/impulso.png}
 \caption{Señal impulsiva}
+\label{impulso}
 \end{figure}
 
 
-La señal creada se muestra en la Figura 5.2
+La señal creada se muestra en la \textit{Figura \ref{impulso}}.
 
 \subsubsection{Chirp}
 Un ''chirp'' es un tipo de señal con una variación determinada de la frecuencia instantánea. Un chirp hace un barrido entre dos frecuencias asignadas, de forma que la correlación cruzada entre dos señales ''chirp'' iguales, será máxima al detectar estas variaciones en frecuencia en los instantes de tiempo correspondientes al chirp original.
 
-Se ha creado un chirp el cual hace un barrido en frecuencia entre 5000 y 16000 Hz y una duración total de 0.1 segundos, la cual ha sido la duración mínima para su correcta reproducción y función requerida. Un ''zoom'' de la señal comentada se presenta en la Figura 5.3, donde se puede observar el cambio en la frecuencia instantánea.
+Se ha creado un chirp el cual hace un barrido en frecuencia entre 5000 y 16000 Hz y una duración total de 0.1 segundos, la cual ha sido la duración mínima para su correcta reproducción y función requerida. Un ''zoom'' de la señal comentada se presenta en la \textit{Figura \ref{chirp}}, donde se puede observar el cambio en la frecuencia instantánea.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 10cm]{FIGURAS/chiirp.png}
 \caption{Chirp creado}
+\label{chirp}
 \end{figure}
 
 
-A parte de ser utilizado el chirp para sincronizar señales y obtener un valor de correlación óptimo, es altamente utilizado en comunicaciones ópticas. El método que se menciona es conocido como \textit{prechirping} y consiste en una modificación de las características del pulso antes de ser introducido en una fibra óptica. En la \textit{Figura 5.4} se aprecia un pulso gaussiano sin modificar y un pulso gaussiano con chirp.
+A parte de ser utilizado el chirp para sincronizar señales y obtener un valor de correlación óptimo, es altamente utilizado en comunicaciones ópticas. El método que se menciona es conocido como \textit{prechirping} y consiste en una modificación de las características del pulso antes de ser introducido en una fibra óptica. En la \textit{Figura \ref{prechirping}} se aprecia un pulso gaussiano sin modificar y un pulso gaussiano con chirp.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 9cm]{FIGURAS/chirp.JPG}
 \caption{Prechirping}
+\label{prechirping}
 \end{figure}
 
 
 Esta compensación previa puede hacer que el pulso se comprima y alcanzar longitudes de enlace de la fibra mayores e incluso  transmisiones con mejor detección en el receptor, como justifica \textit{[X]}.
+
 \subsubsection{Tren de impulsos}
 Como última señal, se propone un tren de impulsos. Consta de la concatenación de varios impulsos seguidos. De este modo, se consigue que, al realizar la operación de correlación cruzada, tengan que coincidir cada impulso con su correspondiente mientras se realiza la convolución, siendo máxima la correlación en el instante en que todos los impulsos coincidan.
 
@@ -749,11 +793,12 @@ Como última señal, se propone un tren de impulsos. Consta de la concatenación
 \centering
 \includegraphics[width = 9cm]{FIGURAS/tren_impulsos.png}
 \caption{Tren de impulsos}
+\label{tren}
 \end{figure}
 
 Analizadas las tres variantes de señal de sincronización propuestas, se procede a explicar dos métodos de sincronización distintos.
 
-Se ha creado un tren de un total de tres impulsos, siendo estos equidistantes y teniendo en cuenta un margen de muestras inicial y final para la correcta reproducción por el altavoz y captación por los móviles. La señal comentada es representada en la \textit{Figura 5.4}.
+Se ha creado un tren de un total de tres impulsos, siendo estos equidistantes y teniendo en cuenta un margen de muestras inicial y final para la correcta reproducción por el altavoz y captación por los móviles. La señal comentada es representada en la \textit{Figura \ref{tren}}.
 
 
 
@@ -772,15 +817,17 @@ Antes de hablar de retardos y modificaciones en las grabaciones, se debe elegir 
 \centering
 \includegraphics[width = 9cm]{FIGURAS/altavoz-micro.JPG}
 \caption{Bloque altavoz-micrófono}
+\label{entorno}
 \end{figure}
 
 
-Se realizaron diversas pruebas para cada una de las señales propuestas en la sección anterior. Hay que tener en cuenta que, al usar un altavoz externo para emitir la señal de sincronización, como en la \textit{Figura 5.7}, se pueden producir efectos no deseados, como modificaciones no controladas de la señal a la salida del altavoz. Este efecto se conoce como distorsión no lineal y puede producir error en las medidas. Haciendo referencia los estudios de \textit{[X]}, el error causado por distorsión no lineal aparece como pulsos aleatoriamente distribuidos pero espaciados una distancia similar a la del período de muestreo (\textit{Figura 5.8.a}). Este efecto no lineal se puede disminuir bajando el nivel de sonido del altavoz (\textit{Figura 5.8.b}), sin embargo, si se disminuye demasiado, el ruido de fondo llega a tener un impacto considerable en la señal de interés y se incrementa el error aleatorio (\textit{Figura 5.8.c}).
+Se realizaron diversas pruebas para cada una de las señales propuestas en la sección anterior. Hay que tener en cuenta que, al usar un altavoz externo para emitir la señal de sincronización, como en la \textit{Figura \ref{entorno}}, se pueden producir efectos no deseados, como modificaciones no controladas de la señal a la salida del altavoz. Este efecto se conoce como distorsión no lineal y puede producir error en las medidas. Haciendo referencia los estudios de \textit{[X]}, el error causado por distorsión no lineal aparece como pulsos aleatoriamente distribuidos pero espaciados una distancia similar a la del período de muestreo (\textit{Figura \ref{noLineal}.a}). Este efecto no lineal se puede disminuir bajando el nivel de sonido del altavoz (\textit{Figura \ref{noLineal}.b}), sin embargo, si se disminuye demasiado, el ruido de fondo llega a tener un impacto considerable en la señal de interés y se incrementa el error aleatorio (\textit{Figura \ref{noLineal}.c}).
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 8cm]{FIGURAS/nonlinear.JPG}
 \caption{Efecto de la no-linealidad}
+\label{noLineal}
 \end{figure}
 
 Realizando pruebas de sincronización con la señal del tipo ''chirp'', no se llegaba a obtener una buena correlación. Con buena correlación se entiende como un máximo de correlación preciso y distinguible. Esta poca precisión desembocó en un retardo final inadmisible. Este resultado no tan bueno con la señal de sincronización chirp puede ser debido a los efectos no lineales producidos por el altavoz, ya que los chirps son muy utilizados para procesos de sincronización por los cambios en la frecuencia instantánea de la señal, los cuales son clave para correlar muestras. A pesar de esto, si no se capta bien estas modificaciones en frecuencia en el instante preciso, la correlación cruzada puede resultar errónea.
@@ -795,6 +842,7 @@ Con el propósito de tomar de referencia el primer tiempo de llegada de la seña
 
 Para determinar la primera captación de la señal de sincronización, se emplea la correlación cruzada del tren de impulsos creado y del tren de impulsos captado en la grabación de cada uno de los dispositivos. Una vez conocida la grabación de referencia, se realiza de nuevo un análisis de correlación cruzada, entre el tren de impulsos de la grabación de referencia y el tren de impulsos de cada uno de los dispositivos. El máximo valor de las $N$ correlaciones cruzadas coincide con el retardo correspondiente en función del instante de referencia.
 
+En la \textit{Figura \ref{autocorr}} se muestra la autocorrelación entre la señal tren de impulsos de la grabación de referencia tomada. Trivialmente, en este caso el retardo es cero exacto. Se pueden 4 máximos locales y un máximo absoluto en la traza de la correlación. Los máximos locales se corresponden a la superposición de los impulsos en el proceso del desplazamiento de la señal en la convolución con la señal invertida. Cuando se superponen todos y cada uno de los impulsos, las dos señales están perfectamente cuadradas y se produce el máximo absoluto, el cual muestra el retardo de una señal respecto a la otra.
 
 \begin{figure}
  \centering
@@ -807,9 +855,7 @@ Para determinar la primera captación de la señal de sincronización, se emplea
  \caption{Correlaciones tren de impulsos}
 \end{figure}
 
-En la figura \ref{autocorr} se muestra la autocorrelación entre la señal tren de impulsos de la grabación de referencia tomada. Trivialmente, en este caso el retardo es cero exacto. Se pueden 4 máximos locales y un máximo absoluto en la traza de la correlación. Los máximos locales se corresponden a la superposición de los impulsos en el proceso del desplazamiento de la señal en la convolución con la señal invertida. Cuando se superponen todos y cada uno de los impulsos, las dos señales están perfectamente cuadradas y se produce el máximo absoluto, el cual muestra el retardo de una señal respecto a la otra.
-
-La correlación cruzada entre el tren de impulsos del dispositivo tomado como referencia temporal y el tren de impulsos grabado por otro dispositivo diferente se presenta en la figura \ref{correlaimpulsos}. Se observa que el máximo absoluto posee una cierta desviación respecto al 0 en el eje de abcisas. El valor de este máximo se corresponde con el retardo de la grabación de este smartphone.
+La correlación cruzada entre el tren de impulsos del dispositivo tomado como referencia temporal y el tren de impulsos grabado por otro dispositivo diferente se presenta en la \textit{Figura \ref{correlaimpulsos}}. Se observa que el máximo absoluto posee una cierta desviación respecto al 0 en el eje de abcisas. El valor de este máximo se corresponde con el retardo de la grabación de este smartphone.
 
 Conocido el retardo de cada grabación, se procede a eliminar las muestras correspondientes, acortando cada señal desde el principio. Debido a que la orden de parar la grabación no llega en el mismo instante para todos los móviles, las señales se deberán acortar también por el final, determinando el tamaño para todas las grabaciones como la longitud mínima de todas las señales una vez acortadas las muestras correspondientes al retardo inicial. Mediante este proceso de eliminación de muestras inferiores y superiores, se obtiene una matriz con todas las grabaciones sincronizadas con un mismo número de muestras.
 
@@ -826,17 +872,308 @@ Conocido el retardo de cada grabación, se procede a eliminar las muestras corre
 
 
 
-En la figura \ref{sincro_server} las señales perfectamente sincronizadas. En el caso de la simulación, se ha realizado la sincronización con 3 dispositivos. Su comprobación se puede consultar en la figura \ref{correla_sincroniz} donde se muestra una correlación cruzada entre la grabación de un dispositivo y la grabación de otro dispositivo distinto. Anotar que, la señal principal se corresponde con un tren de impulsos de 15 impulsos en total, por eso la correlación cruzada de la figura \ref{correla_sincroniz} posee esos picos tan uniformemente separados.
+En la \textit{Figura \ref{sincro_server}} las señales perfectamente sincronizadas. En el caso de la simulación, se ha realizado la sincronización con 3 dispositivos. Su comprobación se puede consultar en la \textit{Figura \ref{correla_sincroniz}} donde se muestra una correlación cruzada entre la grabación de un dispositivo y la grabación de otro dispositivo distinto. Anotar que, la señal principal se corresponde con un tren de impulsos de 15 impulsos en total, por eso la correlación cruzada de la \textit{Figura \ref{correla_sincroniz}} posee esos picos tan uniformemente separados.
 
 
 
 \section{Sincronización mediante ''auto-chirps''}
-\section{Análisis comparativo}
+
+\subsection{Fundamento}
 
 
-\chapter{Implementación del algoritmo de Beamforming}
+Una segunda alternativa de sincronismo es propuesta. Esta alternativa está basada en el estudio de [X]. En este artículo se defiende una vía de autolocalización de los smartphones mediante la reproducción de una señal ''chirp'' por cada uno de estos dispositivos. Teniendo en cuenta los tiempos de llegada de cada dispositivo, se realiza un descenso en gradiente obteniendo finalmente una estimación de los tiempos de comienzo y de las posiciones de cada uno de ellos.
 
-\chapter{Análisis del modelo}
+El método que se propone para lograr una sincronización entre dispositivos es análogo al estudiado en [X], con la diferencia de que en lugar de calcular las posiciones relativas de cada móvil, se estimará el tiempo de vuelo de la señal ''chirp'' en cada caso. De esta manera, se consigue una sincronización temporal, en vez de una sincronización espacial como se propone en [X].
+
+Se deben adaptar las ecuaciones expuestas en [X] para los tiempos de propagación, conociendo la siguiente definición de tiempo de vuelo.
+
+\begin{equation}
+t_{ki}^{flight} = \frac{\|s_{k} - m_{i} \|}{c}
+\end{equation}
+Correspondiéndose el numerador a la distancia euclídea entre el altavoz originario del chirp y el receptor.
+
+La función que se debe minimizar en este caso es la siguiente:
+
+\begin{equation}
+(\hat{T}_{flight}, \hat{T_{c}}) = argmin \sum_{k=1}^N \sum_{(i,j)} ((\hat{\tau}_{ij}^k - \tau_{ij}^k) / \sigma_{ij}^k) ^2
+\end{equation}
+
+Se basa en la estimación de la diferencia de los tiempos de llegada de cada dispositivo (TDOA) y el cálculo de su error cuadrático medio. La desviación típica de las medidas se representa como $\sigma_{ij}^k$, siendo esta constante. Una vez adaptada la función de ''coste'', los gradientes para el tiempo de propagación y para el tiempo de comienzo deberán ser los adecuados.
+
+\subsection{Procedimiento y conclusiones}
+A diferencia de la sincronización mediante el servidor, las señales de sincronización serán reproducidas por los propios móviles coordinadamente. Debido a esto, es de suma importancia la obtención de un eje temporal absoluto. Para ello, se extrae la marca temporal del servidor, la cual se considera absoluta, una vez empieza a grabar cada dispositivo. Modificaremos la longitud de cada una de las señales en función de las marcas temporales devueltas por el servidor, obteniendo finalmente un eje temporal absoluto.
+
+El chirp creado en este caso tiene una duración de 0.1 segundos y realiza un barrido en frecuencia desde 5000 hasta 16000 Hz.
+
+
+Cuando empieza la grabación para todos los dispositivos, se reproduce un chirp por el altavoz de cada dispositivo de forma ordenada. Este chirp es captado por todos los móviles incluido el que ha emitido la señal. Una vez concluida la reproducción de los $N$ chirps, se grabará la señal objeto de sincronización.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/TOA.png}
+\caption{Chirps y TOA}
+\end{figure}
+
+
+El la parte superior de la Figura \ref{TOA} se puede ver una porción de la señal grabada por uno de los dispositivos en la cual se capta los chirps de cada uno de los dispositivos. La parte inferior de la Figura \ref{TOA} se corresponde con la correlación cruzada entre la señal chirp originalmente creada y la grabación de los tres chirps. Los 3 máximos obtenidos se corresponden con los tiempos de llegada (TOA) de cada señal. 
+
+\subsubsection{Resultado}
+A pesar de la precisión que ha proporcionado la correlación cruzada de los chirps para el valor de los tiempos de llegada, se complicó el desarrollo del método.
+
+De manera general, se impuso que el tiempo de referencia de comienzo para el primer dispositivo sea 0. A partir de este valor, estimar los demás instantes de comienzo. En conclusión, el descenso de gradiente comentado se puede resolver como un sistema lineal de ecuaciones. Este sistema de ecuaciones proporciona una matriz de coeficientes la cual no es invertible, sino que se obtiene una matriz singular.
+
+El hecho de que la matriz de coeficientes del sistema sea singular, desemboca en que el orden de captación de los chirps esté prefijada, siendo el primer dispositivo el que capta el primer chirp, para así justificar la suposición del primer instante de comienzo. Sin embargo, en la práctica esto no es así, y los chirps no son captados en el orden ideal.
+
+\textbf{Como conclusión, no se ha podido continuar con el método en cuestión y se ha optado por la utilización del método de sincronización mediante el servidor}.
+
+
+\section{Aplicación del método de sincronización}
+
+Explicados los dos métodos propuestos y habiendo comprobado que, la sincronización mediante ''auto-chirps'' no ha sido posible de devolver resultados coherentes, se va a transportar la sincronización mediante el servidor al caso práctico.
+
+\subsection{Preparación del entorno adecuado}
+Es trivial que no cualquier lugar y/o entorno es conveniente para una sincronización acústica.
+
+ Lo primero que se debe determinar es la distancia mínima a la que se puede encontrar el altavoz conectado al servidor de los micrófonos. Es un factor importante, ya que, el propósito de mantener un sincronismo entre dispositivos es el de poder tratar después las señales resultantes para diarización, localización de fuentes o beamforming, por ejemplo. Estas aplicaciones no se pueden permitir un espacio excesivo, por el contrario, para la mayoría de los casos, el límite de suele encontrar en la longitud de una habitación convencional, lo cual puede rondar los 4 o 5 metros.
+
+La limitación del espacio, en este caso, se rige por un frente de onda plano, para que la onda acústica llegue de la misma forma a todos los receptores. Conociendo la ecuación de una onda plana:
+
+\begin{equation}
+x(t, \textbf{r}) = Ae^{j(wt - kr)}
+\end{equation}
+Donde $k$ se corresponde con el número de onda y $\textbf{r}$ el vector de posición. Si la distancia entre el array y el altavoz es lo suficientemente grande en relación a la distancia intermicrofónica, se considera zona de campo lejano y llega un frente de onda plano. La condición para que este fenómeno ocurra es la siguiente:
+\begin{equation}
+r > \frac{2 \Delta d ^ {2}}{\lambda}
+\end{equation}
+Dependiendo $\lambda$ de la frecuencia, tomada como 1kHz, y de la velocidad de propagación del sonido, tomada como 342 m/s. La distancia entre micrófonos se ha aproximado como 10 cm (móviles juntos). Con los datos comentados, resulta un límite de $r > 0.0585 m$, por lo que no habría problema en sincronizar móviles en un espacio relativamente pequeño.
+
+Para la correcta ejecución del método de sincronización, los móviles se mantendrán pegados con una distancia intermicrofónica mínima, y sobre un soporte preferiblemente aislante. Este soporte se ha colocado debido a la posibilidad de que se propaguen las ondas por el suelo, ayudando a la mejora de la precisión del sincronismo.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 11cm]{FIGURAS/sincro_montaje.jpg}
+\caption{Array micrófonos sincronización}
+\label{montaje_sincro}
+\end{figure}
+
+Para el correcto funcionamiento del método, es necesario que los micrófonos de los dispositivos estén direccionados correctamente y que, si algún dispositivo posee más de una entrada de audio, desactivarla desde los ajustes del teléfono y forzar una única entrada de audio cuando se emplee la grabadora. De esta forma, se tienen localizados los micrófonos y, por tanto, los elementos del array. En la \textit{Figura \ref{montaje_sincro}} se pueden identificar los micrófonos de cada móvil con un círculo rojo.
+
+\textit{Nota: Es recomendable desactivar el control de ganancia automático y la disminución de eco inteligente desde los ajustes del teléfono si los poseen, ya que pueden estar tratando los datos grabados en formato bruto modificando la señal e interviniendo en el proceso de sincronización.}
+
+Es de suma importancia que el entorno en el que se vaya a realizar la prueba de sincronismo, no sea un entorno excesivamente reverberante, ya que posibles reflexiones de la señal podrían dar errores en la captación de la señal acústica de sincronización.
+
+Con las pautas de separación y del entorno claras, se procederá a la realización del método. Los pasos son los siguientes:
+\begin{enumerate}
+\item Configurar la entrada monofónica de audio de cada dispositivo.
+\item Conectar los móviles al punto de acceso creado para evitar tráfico y esperas de red no deseadas.
+\item Colocación de los dispositivos de forma colindante en un soporte aislante.
+\item Colocación del altavoz orientado hacia los dispositivos en línea recta, a una distancia aproximadamente de 1 o 2 metros.
+\item Asegurarse de que la orientación de los micrófonos es la adecuada.
+\item Establecimiento de la conexión con el servidor
+\item Reproducción y captación de la señal tren de impulsos
+\item Reproducción de cualquiera señal para comprobar la correcta sincronización.
+\end{enumerate}
+
+Una vez completados los anteriores pasos, se guardan los tres ficheros de audio y, de forma offline, se realiza el tratamiento de las señales tal y como se ha explicado en la \textit{sección 5.2}.
+
+
+\subsection{Resultados y limitaciones}
+
+El método implementado, es válido para cualquier número de dispositivos, por lo que la portabilidad hacia otros arrays con más elementos es posible.
+
+El error en la precisión del método se establece en unas 4 o 5 muestras. Aunque, habitualmente, se produce el sincronismo con una \textbf{precisión de 0 o 1 muestra}, por lo que se puede afirmar que es un método casi exacto.
+
+A pesar de esta buena precisión y posibilidad de portabilidad, posee algunas limitaciones:
+
+\begin{itemize}
+\item El altavoz deberá ser monofónico, para evitar la superposición de señales y fallos en la captación coordinada de la señal de sincronización.
+\item La fuente sonora se deberá colocar en una posición fija, donde la distancia a los micrófonos de cada móvil sea la misma.
+\item La precisión en la sincronización depende del tipo de smartphone que se esté utilizando.
+\item Existencia de efectos no lineales producidos por el altavoz.
+\item La posición inicial de los móviles y la orientación de los micrófonos es esencial.
+\end{itemize}
+
+Nombrados los factores a tener en cuenta del método de sincronización mediante el servidor, se procede a introducirlo en el proceso de beamforming que se verá en la siguiente capítulo.
+
+\chapter{Implementación del Beamforming en un array lineal}
+ En este capítulo se explicará el experimento realizado comprobar el patrón de directividad del beamformer Delay \& Sum y el procedimiento realizado para la implementación de este. Por último se hará un resumen de los resultados.
+ 
+\section{Análisis experimental}
+Para obtener el patrón de directividad del beamformer, hace falta realizar un barrido en ángulos con un intervalo lo suficientemente pequeño para tener suficientes datos y realizar el trazo del patrón de directividad lo más exacto posible.
+
+Con el propósito de tomar las medidas comentadas, se ha hecho un montaje mediante el cual el array de smartphones se desplaza sobre el eje de una circunferencia, realizando el barrido de ángulos. Cada móvil se coloca encima de un soporte rectangular, en una posición determinada $d$, la cual depende de la longitud de onda $\lambda$ y la frecuencia de la señal $f$. Este soporte rectangular de 50 cm, se encuentra sobre una base de papel, entrelazados entre sí mediante una chincheta de soportes moldeables para permitir el giro de la pieza rectangular. El montaje se ilustra en la \textit{Figura \ref{montaje_DAS}}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 11cm]{FIGURAS/montaje_DAS.png}
+\caption{Montaje patrón directividad}
+\label{montaje_DAS}
+\end{figure}
+
+La orientación y la posición de los dispositivos viene dada por la localización de sus respectivos micrófonos activos. 
+
+Además, se han trazado líneas haciendo referencia al ángulo en el que se está midiendo y se ha perforado en la pieza rectangular un orificio el cual permite visualizar el ángulo de medición.
+
+La señal tratada es un seno de 2 kHz de frecuencia el cual se ha muestreado cada dos segundos. Es decir, 2 segundos las señal se encuentra en activo y otros dos segundos en silencio. Con esto se logra que, el tiempo que la señal esté activa sea captada completamente por el array de micrófonos y cuando la señal está ''en reposo'' se ejecuta el cambio de horientación en función de $\phi$. La señal comentada se muestra en la \textit{Figura \ref{seno}}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/seno.png}
+\caption{Seno 2kHz muestreado}
+\label{seno}
+\end{figure}
+
+Como es de esperar, antes de tratar la señal mediante beamforming, se necesita un sincronismo entre las señales. Se debe elminar el retardo de red y de los relojes, existiendo únicamente el retardo procedente al tiempo de propagación. Debido a esto, se debe ejecutar un método de sincronización de los anteriormente comentados antes de realizar el barrido en $\phi$. Una vez con las señales sincronizadas, se deberán colocar los móviles en sus respectivas posiciones del array, ya que para los algoritmos de sincronización, es necesario que la distancia intermicrofónica sea mínima. El procedimiento del cambio de posición se hace justo después del sincronismo y se ha utilizado material externo fijador, como cinta, para que durante el barrido, los móviles no sufran ningún desplazamiento imprevisto.
+
+\textit{Nota: El proceso de sincronismo y de colocación de los móviles se eliminará a la hora de la implementación del beamformer.}
+
+Respecto a la distancia entre micrófonos, está directamente relacionada con la longitud de onda la cual se calcula como:
+\begin{equation}
+\lambda = \frac{c}{f} = \frac{342 m/s}{2 kHz} = 17.1 cm
+\label{dist}
+\end{equation}
+
+Según el teorema de muestreo espacial, el límite de la distancia entre los elementos del array se encuentra en:
+\begin{equation}
+d \leq \frac{\lambda}{2}
+\label{muestreo}
+\end{equation}
+
+Por lo que, teniendo en cuenta el mínimo valor de distancia dado por \ref{muestreo} y la longitud de onda resultante (\ref{dist}, se ha elegido una distancia de 9 cm entre micrófonos y se ha realizado el barrido de ángulos con un paso de $\Delta\phi = 5 grados$.
+
+ En el caso expuesto, se realizó un barrido desde 270º hasta 90º. La fuente sonora o altavoz se ha colocado a una distancia de 1 metro y medio, en dirección \textbf{perpendicular} al array.
+ La distancia se ha elegido muy cercana al límite de muestreo espacial, ya que, para $d \leq \frac{\lambda}{2}$ los elementos del array lineal se encuentran en fase y los lóbulos laterales resultantes en la directividad se atenuarán, dando más protagonismo al lóbulo principal.
+
+\subsubsection{Resumen del experimento}
+\begin{enumerate}
+\item Se colocan todos los dispositivos juntos, con una distancia entre micrófonos mínima.
+\item Establecimiento de la conexión con el servidor y puesta a punto para la grabación
+\item Reproducción del tren de impulsos correspondiente al algoritmo de sincronización mediante el servidor.
+\item Colocación de los móviles en la posición determinada por la $d$ calculada con su debida sujeción al soporte rectangular giratorio.
+\item Reproducción del seno muestreado cada dos segundos a 2kHz.
+\item Modificación de la orientación del array lineal cuando la señal seno se encuentre en reposo.
+\item Pasadas las 36 medidas, se corta la grabación y se guardanlos archivos de audio para manipularlos. 
+\end{enumerate}
+
+
+\section{Algoritmo y representación}
+La \textit{ecuación \ref{ecDir}} se puede expresar de la siguiente manera:
+
+	\begin{equation}
+	 D(f, \phi) = \sum_{n = 0}^{N-1}w^{*}_{n}(f)e^{\frac{2j \pi f}{c} n d cos\phi}
+	 \label{DirBeam}
+	\end{equation}
+
+Conociendo la dirección deseada o \textit{target}, la cual es 90º, se calcularán los pesos correspondientes y para trazar el patrón directivo, solo resta conocer el barrido angular, la distancia y la frecuencia de la señal como afirma la ecuación \ref{dirBeam}.
+
+\subsubsection{RETARDO o \textit{DELAY}}
+Los retardos necesarios, se computarán de la forma:
+\begin{equation}
+t_{n} = n d cos\phi_{s} / c
+\end{equation}
+
+Como la dirección target es 90º, el retardo resultante es 0, y según la \textit{ecuación \ref{steering}}, el \textit{steering vector} estará compuesto únicamente con valores de $1/N$, siendo N el número de dispositivos, que en el caso experimental es 3.
+
+\subsubsection{\textit{SUM}}
+Una vez conocidos los pesos del beamformer, solo resta sumar las señales retardadas, para que se implemente la suma constructiva de la señal en la dirección deseada y la suma destructiva en las demás direcciones.
+
+En el experimento presentado, se trata simplemente de un promedio de las señales de entrada, debido a los valores del \textit{steering vector}. La señal salida del beamformer delay \& sum se muestra en la Figura \ref{sum}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/señal_SUM.png}
+\caption{Señal tras beamformer}
+\label{sum}
+\end{figure}
+
+Tal y como se ha comentado, la señal queda realzada en la parte de la dirección target. En este caso, al realizar el barrido desde 270º hasta 90º, la amplificación de la señal interviene en la parte final.
+
+Por último, se ha evaluado el ruido correspondiente al cambio de orientación en el montaje y el ruido de fondo. Para ello se ha seleccionado un mismo segmento de señal en reposo, para la señal de salida del beamformer y la señal de entrada a este. Se ha calculado la varianza del ruido en los dos casos:
+\linebreak
+
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Medida del ruido} & Antes del beamformer & Después del beamformer \\ 
+\hline 
+Varianza & 1161.773 & 209.204 \\ 
+\hline 
+\end{tabular} 
+\linebreak
+
+Reduciéndose la potencia del ruido en un $82\%$ aproximadamente. Esta conclusión confirma que, el beamformer DAS, además de direccionar y realzar la señal de interés, atenúa las contribuciones ruidosas (distorsionless).
+
+\subsubsection{DIRECTIVIDAD}
+Para la interpretación del trazo del patrón directivo, mediante la ecuación \ref{DirBeam}, se ha representado el patrón de directividad simulado para una distancia $d = 9 cm$ y una frecuencia de $f = 2kHz$ (la correspondiente a la señal seno). El resultado es el siguiente:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/directividad_SIM.png}
+\caption{Directividad simulada}
+\label{patronSIM}
+\end{figure}
+
+El máximo del lóbulo principal se encuentra en 90 grados, como era de esperar y los lóbulos laterales son relativamente pequeños en función al lóbulo principal. Se corresponde con una distribución del tipo \textit{broadside}, vista en la \textit{Figura \ref{diagrama180}}.
+
+Dada la idea de la forma aproximada que tendría que presentar el patrón experimental, se procede al cálculo de este. Con la señal a la salida del beamformer (\textit{Figura \ref{sum}}), se segmenta la señal para aislar las 36 partes activas del seno. Cada uno de estos segmentos se corresponde con la señal medida en un valor del ángulo $\phi$, por lo que se calcula los picos del segmento y se promedian. De este modo conseguimos un único valor de amplitud para poder realizar el trazo del patrón de directividad correctamente.
+
+Con las medidas de amplitud y con los ángulos del barrido, se presenta el patrón de directividad experimental.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/directividad_experimental.png}
+\caption{Directividad experimental}
+\end{figure}
+
+
+Se aprecia un claro máximo en la dirección de 90 grados, con una reducción considerable en su simétrico, en la dirección de 270 grados. Esto es debido a que los micrófonos de los smartphones se encontraban en modo monofónico, por lo que admiten una única entrada de audio, la cual es el micrófono con el que se ha orientado el array (para la dirección de 270º, el micrófono activo está apuntando hacia el lado contrario de la fuente sonora, reduciendo la potencia de la señal considerablemente).
+
+Con el fin de comprobar la fiabilidad del patrón de directividad resultante, se ha calculado el error cuadrático medio de la forma:
+
+\begin{equation}
+MSE = \frac{1}{N_{phi}}\sum_{\phi = 0}^{limBarrido} (D_{sim} - D_{exp})^2
+\end{equation}
+
+Siendo $D_{sim}$ la directividad teórica expuesta en la Figura \ref{patronSIM} y $D_{exp}$ la directividad experimental. Resulta un error cuadrático medio de \textbf{$0.08278$}.
+
+
+\section{Evaluación de los resultados}
+
+Los aspectos favorables del experimento según los resultados obtenidos son los siguientes:
+
+\begin{itemize}
+
+\item Se ha logrado medir la señal correctamente para cada ángulo del barrido realizado.
+
+\item El beamformer ha realzado la señal de interés correctamente, atenuando el ruido.
+
+\item La sincronización de los móviles para la prueba realizada ha sido lo suficientemente precisa para la correcta implementación del beamformer.
+
+\item Se ha conseguido un patrón de directividad experimental muy semejante al teórico, obteniendo un error cuadrático medio bastante razonable.
+
+\end{itemize}
+
+Sin embargo, existen múltiples factores a tener en cuenta, los cuales han limitado considerablemente el experimento. Tras numerosas pruebas examinando las causas de resultados incorrectos, se han determinado las siguientes restricciones:
+
+\begin{itemize}
+
+\item El método de sincronización implementado puede cometer errores de algunas muestras, siendo este error dependiente del tipo de smartphone en cuestión o de los efectos no lineales del altavoz.
+\item El procedimiento de beamforming es muy sensible a errores de sincronización, si todos los dispositivos no están perfectamente sincronizados de antemano puede dar errores y no actuar como se espera. En la \textit{Figura \ref{error_sincro}}, se puede apreciar una prueba realizada en la que los móviles no han estado perfectamente sincronizados.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/directividad_MALA.png}
+\caption{Fallo sincronismo}
+\label{error_sincro}
+\end{figure}
+
+No se produce la correcta amplificación de la señal deseada, sino que realiza una amplificación con una orientación errónea. Además, se produce una subdivisión en el lóbulo principal del factor de directividad, debido al fallos de sincronismo.
+
+\item Para el correcto funcionamiento del método de sincronismo del servidor, es necesario que todos los smartphones posean una única entrada de audio (modo monofónico). Esto limita mucho los máximos en la parte supuestamente simétrica del patrón de directividad. Al encontrarse el array en $\phi = 90º$ los micrófonos activos están orientados hacia la fuente sonora. Sin embargo, en la orientación de $\phi = 270º$ los micrófonos activos se encuentran en la parte opuesta, ampliando el recorrido de la señal hasta llegar a estos y disminuyendo consecuentemente su potencia de llegada.
+
+\item Aunque se hayan tomado las distancias de la forma más exacta posible y se hayan realizado las medidas con precaución, sigue siendo un experimento con un montaje hecho a mano y limitado por el error humano, por lo que las medidas de los ángulos dentro del barrido y las distancias entre micrófonos no son completamente exactas, lo que llevar hasta resultados ligeramente erróneos.
+
+\end{itemize}
+
 
 \chapter{Perspectiva de futuro}
 Aquí poner lo del 5G, massive MIMO etc Y ALGUNA COSA MÁS.

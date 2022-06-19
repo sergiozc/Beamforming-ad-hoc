@@ -43,14 +43,13 @@ def waiterSin(f, t, twait):
 
     file_name1 = 'seno2k'
     wavfile.write('seno/' + file_name1 + '.wav', Fs, s.astype('int16'))
-    print(len(s))
     
     pass
 
 tactivo = 2
 twait = 2
 barrido = 180
-intervalo_angulo = 10
+intervalo_angulo = 5
 
 t = (barrido / intervalo_angulo) * twait * tactivo
 

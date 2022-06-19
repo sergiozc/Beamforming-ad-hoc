@@ -118,11 +118,12 @@ def sincro(Ndevices):
     RawToWav('Device2')
 
     
-    record = np.zeros((661500, Ndevices)) #Matriz de las grabaciones
+    record = np.zeros((17938000, Ndevices)) #Matriz de las grabaciones
     Lexc = 10000 #Longitud en muestras aprox de un impulso
     tam = np.arange(Ndevices)
     tam_postdelay = np.arange(Ndevices) #Tamaño después de acortar con el delay inicial
     lim_tren = 44100 * 3 #Acortamos a 3 segundos para captar la señal de sincronización
+    #lim_tren = 200000
     toa = np.arange(Ndevices) #Tiempo de llegada (en muestras)
     toamed = np.arange(Ndevices) #Tiempo de llegada (en muestras)
     tren = np.zeros((lim_tren, Ndevices)) #Matriz donde guardamos el impulso de cada señal
@@ -138,6 +139,7 @@ def sincro(Ndevices):
     for i in range(Ndevices):
         #Guardamos en volatil el contenido de la grabación i
         Fs, volatil = wavfile.read('Device'+ str(i) + '.wav')
+        
         #Guardamos el número de muestras de la grabación i
         tam[i] = len(volatil)
         #Guardamos en cada columna de 'record' las grabaciones (hasta la fila correspondiente
@@ -213,9 +215,9 @@ def sincro(Ndevices):
         N = len(rx_sincro)
         k = np.linspace(-(N/2) +1, (N/2)-1, N)
     
-        plt.figure(z+5)
-        plt.plot(k, rx_sincro)
-        plt.title('Correlación cruzada señales ajustadas')
+        #plt.figure(z+5)
+        #plt.plot(k, rx_sincro)
+        #plt.title('Correlación cruzada señales ajustadas')
         
     #MATRIZ DE TODOS LOS RETARDOS FINALES
     delay_matriz = np.zeros((Ndevices, Ndevices))
