@@ -27,7 +27,6 @@ sincronizadas = sincro.sincro(Ndevices) #Cada columna es la grabación de un dis
 recorte = 1575138
 
 
-#%% RETARDO (delay)
 
 #90 grados
 phi = np.pi / 2
@@ -43,8 +42,9 @@ y = np.zeros(len(sincronizadas[recorte:, 1]))
 
 n = np.arange(Ndevices)
 
+#%% RETARDO (delay)
+
 retardo = (n * d * np.cos(phi)) / c
-#retardo = np.zeros(Ndevices) #Para target 90 grados
 
 #PESOS
 for i in range (Ndevices):

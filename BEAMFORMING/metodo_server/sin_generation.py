@@ -18,6 +18,10 @@ plt.close('all')
 
 def waiterSin(f, t, twait):
     
+    'Función que genera un seno a una frecuencia f, 
+    'con una duración de t segundos y muestreado
+    'cada twait segundos'
+    
     Fs = 44100
     nwait = twait * Fs
     Ts = 1 / Fs
@@ -30,11 +34,8 @@ def waiterSin(f, t, twait):
     
     for i in range(0, len(s), 2*nwait):
         for j in range(nwait):
-            s[i + j] = 0
-
+            s[i + j] = 0            
             
-            
-
     plt.figure(1)
     plt.plot(s)
     plt.title('Seno muestreado')

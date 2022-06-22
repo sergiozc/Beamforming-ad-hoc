@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  16 JUN 2022 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  22 JUN 2022 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -82,28 +82,40 @@ Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 ))
+(C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks21
+\SOUL@lasttoken=\toks22
+\SOUL@cmds=\toks23
+\SOUL@buffer=\toks24
+\SOUL@token=\toks25
+\SOUL@spaceskip=\skip49
+\SOUL@ttwidth=\dimen144
+\SOUL@uldp=\dimen145
+\SOUL@ulht=\dimen146
+)
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box52
-\beforetitleunit=\skip49
-\aftertitleunit=\skip50
-\ttl@plus=\dimen144
-\ttl@minus=\dimen145
-\ttl@toksa=\toks21
-\titlewidth=\dimen146
-\titlewidthlast=\dimen147
-\titlewidthfirst=\dimen148
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen147
+\ttl@minus=\dimen148
+\ttl@toksa=\toks26
+\titlewidth=\dimen149
+\titlewidthlast=\dimen150
+\titlewidthfirst=\dimen151
 ) (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen149
+\col@sep=\dimen152
 \ar@mcellbox=\box53
-\extrarowheight=\dimen150
-\NC@list=\toks22
-\extratabsurround=\skip51
-\backup@length=\skip52
+\extrarowheight=\dimen153
+\NC@list=\toks27
+\extratabsurround=\skip52
+\backup@length=\skip53
 \ar@cellbox=\box54
 ))
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.
@@ -113,35 +125,35 @@ nment
  (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count269
-\float@exts=\toks23
+\float@exts=\toks28
 \float@box=\box55
-\@float@everytoks=\toks24
+\@float@everytoks=\toks29
 \@floatcapt=\box56
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks25
+\@float@every@algorithm=\toks30
 \c@algorithm=\count270
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks26
-\verbatim@line=\toks27
+\every@verbatim=\toks31
+\verbatim@line=\toks32
 \verbatim@in@stream=\read3
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip53
-\f@nch@O@elh=\skip54
-\f@nch@O@erh=\skip55
-\f@nch@O@olh=\skip56
-\f@nch@O@orh=\skip57
-\f@nch@O@elf=\skip58
-\f@nch@O@erf=\skip59
-\f@nch@O@olf=\skip60
-\f@nch@O@orf=\skip61
+\f@nch@headwidth=\skip54
+\f@nch@O@elh=\skip55
+\f@nch@O@erh=\skip56
+\f@nch@O@olh=\skip57
+\f@nch@O@orh=\skip58
+\f@nch@O@elf=\skip59
+\f@nch@O@erf=\skip60
+\f@nch@O@olf=\skip61
+\f@nch@O@orf=\skip62
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -161,23 +173,23 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 ef
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen151
-\Gin@req@width=\dimen152
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks28
+\AP@output=\toks33
 \AP@partial=\box57
 \AP@footins=\box58
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip62
-\LTright=\skip63
-\LTpre=\skip64
-\LTpost=\skip65
+\LTleft=\skip63
+\LTright=\skip64
+\LTpre=\skip65
+\LTpost=\skip66
 \LTchunksize=\count271
-\LTcapwidth=\dimen153
+\LTcapwidth=\dimen156
 \LT@head=\box59
 \LT@firsthead=\box60
 \LT@foot=\box61
@@ -187,7 +199,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LT@rows=\count273
 \c@LT@tables=\count274
 \c@LT@chunks=\count275
-\LT@p@ftn=\toks29
+\LT@p@ftn=\toks34
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
@@ -236,7 +248,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen154
+\@linkdim=\dimen157
 \Hy@linkcounter=\count276
 \Hy@pagecounter=\count277
 
@@ -282,7 +294,7 @@ Package hyperref Info: Bookmarks ON on input line 4445.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen155
+\XeTeXLinkMargin=\dimen158
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -293,8 +305,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count280
-\Field@Width=\dimen156
-\Fld@charsize=\dimen157
+\Field@Width=\dimen159
+\Fld@charsize=\dimen160
 Package hyperref Info: Hyper figures OFF on input line 6076.
 Package hyperref Info: Link nesting OFF on input line 6081.
 Package hyperref Info: Hyper index ON on input line 6084.
@@ -338,19 +350,19 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip66
+\Hy@SectionHShift=\skip67
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 59.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 59.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 59.
 
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
@@ -364,13 +376,13 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
 )
-\everycr=\toks30
-\minrowclearance=\skip67
+\everycr=\toks35
+\minrowclearance=\skip68
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks31
-\footnotemargin=\dimen158
+\FN@temptoken=\toks36
+\footnotemargin=\dimen161
 \c@pp@next@reset=\count286
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
@@ -383,7 +395,7 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 ) (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/index\index.sty
 Package: index 2004/01/20 v4.2beta Improved index support (dmj)
 \@indexbox=\insert252
-\indexproofstyle=\toks32
+\indexproofstyle=\toks37
 
 
 LaTeX Warning: Command \markboth  has changed.
@@ -401,14 +413,14 @@ Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen159
-\captionmargin=\dimen160
-\caption@leftmargin=\dimen161
-\caption@rightmargin=\dimen162
-\caption@width=\dimen163
-\caption@indent=\dimen164
-\caption@parindent=\dimen165
-\caption@hangindent=\dimen166
+\caption@tempdima=\dimen162
+\captionmargin=\dimen163
+\caption@leftmargin=\dimen164
+\caption@rightmargin=\dimen165
+\caption@width=\dimen166
+\caption@indent=\dimen167
+\caption@parindent=\dimen168
+\caption@hangindent=\dimen169
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count287
@@ -422,18 +434,18 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
 \c@KVtest=\count289
-\sf@farskip=\skip68
-\sf@captopadj=\dimen167
-\sf@capskip=\skip69
-\sf@nearskip=\skip70
+\sf@farskip=\skip69
+\sf@captopadj=\dimen170
+\sf@capskip=\skip70
+\sf@nearskip=\skip71
 \c@subfigure=\count290
 \c@subfigure@save=\count291
 \c@lofdepth=\count292
 \c@subtable=\count293
 \c@subtable@save=\count294
 \c@lotdepth=\count295
-\sf@top=\skip71
-\sf@bottom=\skip72
+\sf@top=\skip72
+\sf@bottom=\skip73
 )
 \c@teorema=\count296
 \c@ejemplo=\count297
@@ -445,32 +457,32 @@ Package: pdfpages 2022/01/29 v0.5u Insert pages of external PDF documents (AM)
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count299
 \calc@Bcount=\count300
-\calc@Adimen=\dimen168
-\calc@Bdimen=\dimen169
-\calc@Askip=\skip73
-\calc@Bskip=\skip74
+\calc@Adimen=\dimen171
+\calc@Bdimen=\dimen172
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count301
-\calc@Cskip=\skip75
+\calc@Cskip=\skip76
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen170
-\ESO@tempdimb=\dimen171
+\ESO@tempdima=\dimen173
+\ESO@tempdimb=\dimen174
 )
-\AM@pagewidth=\dimen172
-\AM@pageheight=\dimen173
-\AM@fboxrule=\dimen174
+\AM@pagewidth=\dimen175
+\AM@pageheight=\dimen176
+\AM@fboxrule=\dimen177
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count302
 \AM@pagebox=\box64
-\AM@global@opts=\toks33
+\AM@global@opts=\toks38
 \AM@pagecnt=\count303
-\AM@toc@title=\toks34
+\AM@toc@title=\toks39
 \c@AM@survey=\count304
 \AM@templatesizebox=\box65
 )
@@ -485,42 +497,42 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `TFG.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
 \c@lstlisting=\count306
-LaTeX Info: Redefining \. on input line 176.
-LaTeX Info: Redefining \% on input line 176.
+LaTeX Info: Redefining \. on input line 177.
+LaTeX Info: Redefining \% on input line 177.
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count307
-\scratchdimen=\dimen175
+\scratchdimen=\dimen178
 \scratchbox=\box67
 \nofMPsegments=\count308
 \nofMParguments=\count309
-\everyMPshowfont=\toks35
+\everyMPshowfont=\toks40
 \MPscratchCnt=\count310
-\MPscratchDim=\dimen176
+\MPscratchDim=\dimen179
 \MPnumerator=\count311
 \makeMPintoPDFobject=\count312
-\everyMPtoPDFconversion=\toks36
+\everyMPtoPDFconversion=\toks41
 )
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -532,7 +544,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 .cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 176.
+Package hyperref Info: Link coloring OFF on input line 177.
 
 (C:\Users\Usuario\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -546,9 +558,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count313
 )
-LaTeX Info: Redefining \ref on input line 176.
-LaTeX Info: Redefining \pageref on input line 176.
-LaTeX Info: Redefining \nameref on input line 176.
+LaTeX Info: Redefining \ref on input line 177.
+LaTeX Info: Redefining \pageref on input line 177.
+LaTeX Info: Redefining \nameref on input line 177.
  (TFG.out) (TFG.out)
 \@outlinefile=\write3
 \openout3 = `TFG.out'.
@@ -566,8 +578,8 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (portada/portada.tex
-\centeroffset=\skip76
-<imagenes/logo_ugr.jpg, id=183, 329.73187pt x 112.16907pt>
+\centeroffset=\skip77
+<imagenes/logo_ugr.jpg, id=203, 329.73187pt x 112.16907pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -583,7 +595,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=184, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=204, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -603,16 +615,20 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 26--40
 ] (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=209, 123.46124pt x 45.92157pt>
-File: imagenes/logo.png Graphic file (type png)
-<use imagenes/logo.png>
-Package pdftex.def Info: imagenes/logo.png  used on input line 18.
-(pdftex.def)             Requested size: 123.46092pt x 45.92145pt.
+File: imagenes/etsiit_logo.png Graphic file (type png)
+<use imagenes/etsiit_logo.png>
+Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 18.
+(pdftex.def)             Requested size: 110.8137pt x 40.4711pt.
 
 Overfull \hbox (24.0pt too wide) in paragraph at lines 8--28
 | $[]$ 
  []
 
+<imagenes/tstc.png, id=229, 257.96375pt x 196.735pt>
+File: imagenes/tstc.png Graphic file (type png)
+<use imagenes/tstc.png>
+Package pdftex.def Info: imagenes/tstc.png  used on input line 37.
+(pdftex.def)             Requested size: 53.9978pt x 41.18047pt.
 
 Overfull \hbox (24.0pt too wide) in paragraph at lines 30--44
 | $[]$
@@ -624,7 +640,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.46 \end{titlepage}
-                     [1 <./imagenes/logo.png>])
+                     [1 <./imagenes/tstc.png>])
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -647,36 +663,48 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 \cleardoublepage
+l.34 \cleardoublepage
                       [3]
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 \cleardoublepage
+l.34 \cleardoublepage
                       [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
+Overfull \hbox (2.99408pt too wide) in paragraph at lines 48--50
+\OT1/cmr/bx/n/10.95 Keywords\OT1/cmr/m/n/10.95 : beam-for-ming, beam-for-mer, s
+yn-chro-ni-za-tion, syn-chro-nism, array,
+ []
+
+
+Overfull \hbox (1.5025pt too wide) in paragraph at lines 48--50
+\OT1/cmr/m/n/10.95 di-rec-ti-vity, chirp, im-pul-se, co-rre-la-tion, noi-se, de
+-lay, ser-ver, de-vi-ces, mi-cropho-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
 [5] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 [7] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
@@ -696,11 +724,11 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 184.
+(Font)              using `OT1/cmr/bx/n' instead on input line 185.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 184.
+(spanish)                faked small caps on input line 185.
 
 [2]
 Cap\'{\i }tulo 1.
@@ -709,44 +737,44 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.202 	\end{equation}
-                      [1
+l.201 	\begin{equation}
+                        [1
 
 
 ]
-<FIGURAS/directividad_apertura.JPG, id=331, 241.50224pt x 118.64325pt>
+<FIGURAS/directividad_apertura.JPG, id=357, 241.50224pt x 118.64325pt>
 File: FIGURAS/directividad_apertura.JPG Graphic file (type jpg)
 <use FIGURAS/directividad_apertura.JPG>
 Package pdftex.def Info: FIGURAS/directividad_apertura.JPG  used on input line 
-214.
+215.
 (pdftex.def)             Requested size: 227.62204pt x 111.82336pt.
-<FIGURAS/array_elementos.JPG, id=333, 157.7895pt x 230.66174pt>
+<FIGURAS/array_elementos.JPG, id=359, 157.7895pt x 230.66174pt>
 File: FIGURAS/array_elementos.JPG Graphic file (type jpg)
 <use FIGURAS/array_elementos.JPG>
-Package pdftex.def Info: FIGURAS/array_elementos.JPG  used on input line 224.
+Package pdftex.def Info: FIGURAS/array_elementos.JPG  used on input line 225.
 (pdftex.def)             Requested size: 142.26378pt x 207.97375pt.
-<FIGURAS/broadside.JPG, id=335, 357.13425pt x 192.11775pt>
+<FIGURAS/broadside.JPG, id=361, 357.13425pt x 192.11775pt>
 File: FIGURAS/broadside.JPG Graphic file (type jpg)
 <use FIGURAS/broadside.JPG>
-Package pdftex.def Info: FIGURAS/broadside.JPG  used on input line 234.
+Package pdftex.def Info: FIGURAS/broadside.JPG  used on input line 235.
 (pdftex.def)             Requested size: 341.43306pt x 183.67462pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.238 
+l.239 
        [2 <./FIGURAS/directividad_apertura.JPG>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.240 
+l.241 
        [3 <./FIGURAS/array_elementos.JPG> <./FIGURAS/broadside.JPG>]
-<FIGURAS/ganancia_broadside.jpg, id=351, 271.0125pt x 166.5495pt>
+<FIGURAS/ganancia_broadside.jpg, id=377, 271.0125pt x 166.5495pt>
 File: FIGURAS/ganancia_broadside.jpg Graphic file (type jpg)
 <use FIGURAS/ganancia_broadside.jpg>
-Package pdftex.def Info: FIGURAS/ganancia_broadside.jpg  used on input line 248
+Package pdftex.def Info: FIGURAS/ganancia_broadside.jpg  used on input line 249
 .
 (pdftex.def)             Requested size: 341.43306pt x 209.83315pt.
 
@@ -754,85 +782,85 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.259 	
+l.260 	
         [4 <./FIGURAS/ganancia_broadside.jpg>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.277 		\item C
+l.278 		\item C
                ampo de ruido incoherente: La correlación de las contribucio...
 [5]
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.309 		
+l.310 		
          [6]
-<FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png, id=375, 853.1875pt x 617.3
+<FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png, id=401, 853.1875pt x 617.3
 0624pt>
 File: FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png Graphic file (type png
 )
 <use FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png>
 Package pdftex.def Info: FIGURAS/Delay-and-Sum-or-Classical-Beamforming.png  us
-ed on input line 321.
+ed on input line 322.
 (pdftex.def)             Requested size: 284.52756pt x 205.86871pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.331 		\subsubsection{MVDR}
+l.332 		\subsubsection{MVDR}
                              [7 <./FIGURAS/Delay-and-Sum-or-Classical-Beamformi
 ng.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.359 		\subsection{Comunicaciones Inalámbricas}
+l.360 		\subsection{Comunicaciones Inalámbricas}
                                                   [8]
-<FIGURAS/sectorización.JPG, id=394, 375.20175pt x 238.491pt>
+<FIGURAS/sectorización.JPG, id=420, 375.20175pt x 238.491pt>
 File: FIGURAS/sectorización.JPG Graphic file (type jpg)
 <use FIGURAS/sectorización.JPG>
-Package pdftex.def Info: FIGURAS/sectorización.JPG  used on input line 363.
+Package pdftex.def Info: FIGURAS/sectorización.JPG  used on input line 364.
 (pdftex.def)             Requested size: 227.62204pt x 144.68596pt.
-<FIGURAS/sistema_MIMO.JPG, id=396, 556.479pt x 213.1965pt>
+<FIGURAS/sistema_MIMO.JPG, id=422, 556.479pt x 213.1965pt>
 File: FIGURAS/sistema_MIMO.JPG Graphic file (type jpg)
 <use FIGURAS/sistema_MIMO.JPG>
-Package pdftex.def Info: FIGURAS/sistema_MIMO.JPG  used on input line 374.
+Package pdftex.def Info: FIGURAS/sistema_MIMO.JPG  used on input line 375.
 (pdftex.def)             Requested size: 284.52756pt x 109.00853pt.
-<FIGURAS/beamformer_adaptativo.JPG, id=398, 433.01775pt x 228.25275pt>
+<FIGURAS/beamformer_adaptativo.JPG, id=424, 433.01775pt x 228.25275pt>
 File: FIGURAS/beamformer_adaptativo.JPG Graphic file (type jpg)
 <use FIGURAS/beamformer_adaptativo.JPG>
 Package pdftex.def Info: FIGURAS/beamformer_adaptativo.JPG  used on input line 
-382.
+383.
 (pdftex.def)             Requested size: 227.62204pt x 119.98424pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.386 		
+l.387 		
          [9 <./FIGURAS/sectorización.JPG>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.391 			
+l.392 			
           [10 <./FIGURAS/sistema_MIMO.JPG> <./FIGURAS/beamformer_adaptativo.JPG
 >]
-<FIGURAS/diarizacion.JPG, id=409, 975.04276pt x 340.27126pt>
+<FIGURAS/diarizacion.JPG, id=435, 975.04276pt x 340.27126pt>
 File: FIGURAS/diarizacion.JPG Graphic file (type jpg)
 <use FIGURAS/diarizacion.JPG>
-Package pdftex.def Info: FIGURAS/diarizacion.JPG  used on input line 395.
+Package pdftex.def Info: FIGURAS/diarizacion.JPG  used on input line 396.
 (pdftex.def)             Requested size: 369.88582pt x 129.08115pt.
 
-Overfull \hbox (9.88582pt too wide) in paragraph at lines 395--396
+Overfull \hbox (9.88582pt too wide) in paragraph at lines 396--397
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--403
+Underfull \hbox (badness 10000) in paragraph at lines 401--404
 \OT1/cmr/m/n/10.95 cion.
  []
 
@@ -841,317 +869,354 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.405 			
+l.406 			
           [11 <./FIGURAS/diarizacion.JPG>]
-<FIGURAS/wind_tunnel.JPG, id=416, 471.56175pt x 168.02776pt>
+<FIGURAS/wind_tunnel.JPG, id=442, 471.56175pt x 168.02776pt>
 File: FIGURAS/wind_tunnel.JPG Graphic file (type jpg)
 <use FIGURAS/wind_tunnel.JPG>
-Package pdftex.def Info: FIGURAS/wind_tunnel.JPG  used on input line 412.
+Package pdftex.def Info: FIGURAS/wind_tunnel.JPG  used on input line 413.
 (pdftex.def)             Requested size: 341.43306pt x 121.667pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.419 			\end{itemize}
+l.420 			\end{itemize}
                        [12 <./FIGURAS/wind_tunnel.JPG>] [13] [14
 
 ]
 Cap\'{\i }tulo 2.
-[15] [16
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+[16] [17] [18
 
 ]
 Cap\'{\i }tulo 3.
-[17] [18]
-<FIGURAS/cliente-servidor.JPG, id=447, 322.806pt x 193.32225pt>
+[19] [20]
+<FIGURAS/cliente-servidor.JPG, id=488, 322.806pt x 193.32225pt>
 File: FIGURAS/cliente-servidor.JPG Graphic file (type jpg)
 <use FIGURAS/cliente-servidor.JPG>
-Package pdftex.def Info: FIGURAS/cliente-servidor.JPG  used on input line 480.
+Package pdftex.def Info: FIGURAS/cliente-servidor.JPG  used on input line 528.
 (pdftex.def)             Requested size: 199.16928pt x 119.28038pt.
- [19 <./FIGURAS/cliente-servidor.JPG>]
-<FIGURAS/Explica_Sockets.JPG, id=455, 426.393pt x 207.77625pt>
+ [21 <./FIGURAS/cliente-servidor.JPG>]
+<FIGURAS/Explica_Sockets.JPG, id=495, 426.393pt x 207.77625pt>
 File: FIGURAS/Explica_Sockets.JPG Graphic file (type jpg)
 <use FIGURAS/Explica_Sockets.JPG>
-Package pdftex.def Info: FIGURAS/Explica_Sockets.JPG  used on input line 490.
+Package pdftex.def Info: FIGURAS/Explica_Sockets.JPG  used on input line 538.
 (pdftex.def)             Requested size: 284.52756pt x 138.65135pt.
- [20 <./FIGURAS/Explica_Sockets.JPG>] [21] [22] [23]
-<FIGURAS/trafico_connect.png, id=479, 696.35156pt x 240.14719pt>
+ [22 <./FIGURAS/Explica_Sockets.JPG>] [23] [24] [25]
+<FIGURAS/trafico_connect.png, id=520, 696.35156pt x 240.14719pt>
 File: FIGURAS/trafico_connect.png Graphic file (type png)
 <use FIGURAS/trafico_connect.png>
-Package pdftex.def Info: FIGURAS/trafico_connect.png  used on input line 576.
+Package pdftex.def Info: FIGURAS/trafico_connect.png  used on input line 624.
 (pdftex.def)             Requested size: 426.79134pt x 147.18578pt.
 
-Overfull \hbox (66.79134pt too wide) in paragraph at lines 576--577
+Overfull \hbox (66.79134pt too wide) in paragraph at lines 624--625
  [][] 
  []
 
-[24]
-<FIGURAS/TCP_flow.png, id=487, 280.04625pt x 306.14375pt>
+[26]
+<FIGURAS/TCP_flow.png, id=528, 280.04625pt x 306.14375pt>
 File: FIGURAS/TCP_flow.png Graphic file (type png)
 <use FIGURAS/TCP_flow.png>
-Package pdftex.def Info: FIGURAS/TCP_flow.png  used on input line 593.
+Package pdftex.def Info: FIGURAS/TCP_flow.png  used on input line 641.
 (pdftex.def)             Requested size: 227.62204pt x 248.84395pt.
-<FIGURAS/trafico_record.JPG, id=490, 430.60875pt x 36.73724pt>
+<FIGURAS/trafico_record.JPG, id=531, 430.60875pt x 36.73724pt>
 File: FIGURAS/trafico_record.JPG Graphic file (type jpg)
 <use FIGURAS/trafico_record.JPG>
-Package pdftex.def Info: FIGURAS/trafico_record.JPG  used on input line 607.
+Package pdftex.def Info: FIGURAS/trafico_record.JPG  used on input line 655.
 (pdftex.def)             Requested size: 341.43306pt x 29.12971pt.
- [25 <./FIGURAS/trafico_connect.png>] [26 <./FIGURAS/TCP_flow.png (PNG copy)> <
+ [27 <./FIGURAS/trafico_connect.png>] [28 <./FIGURAS/TCP_flow.png (PNG copy)> <
 ./FIGURAS/trafico_record.JPG>]
-<FIGURAS/startready.JPG, id=506, 271.0125pt x 65.043pt>
+<FIGURAS/startready.JPG, id=546, 271.0125pt x 65.043pt>
 File: FIGURAS/startready.JPG Graphic file (type jpg)
 <use FIGURAS/startready.JPG>
-Package pdftex.def Info: FIGURAS/startready.JPG  used on input line 616.
+Package pdftex.def Info: FIGURAS/startready.JPG  used on input line 664.
 (pdftex.def)             Requested size: 227.62204pt x 54.63077pt.
-<FIGURAS/intercambio_grabacion.png, id=508, 755.82375pt x 441.90094pt>
+<FIGURAS/intercambio_grabacion.png, id=548, 755.82375pt x 441.90094pt>
 File: FIGURAS/intercambio_grabacion.png Graphic file (type png)
 <use FIGURAS/intercambio_grabacion.png>
 Package pdftex.def Info: FIGURAS/intercambio_grabacion.png  used on input line 
-627.
+675.
 (pdftex.def)             Requested size: 455.24408pt x 266.16078pt.
 
-Overfull \hbox (95.24408pt too wide) in paragraph at lines 627--628
+Overfull \hbox (95.24408pt too wide) in paragraph at lines 675--676
  [][] 
  []
 
-[27 <./FIGURAS/startready.JPG> <./FIGURAS/intercambio_grabacion.png>]
-<FIGURAS/uml.png, id=516, 226.8475pt x 858.20625pt>
+[29 <./FIGURAS/startready.JPG> <./FIGURAS/intercambio_grabacion.png>]
+<FIGURAS/uml.png, id=556, 226.8475pt x 858.20625pt>
 File: FIGURAS/uml.png Graphic file (type png)
 <use FIGURAS/uml.png>
-Package pdftex.def Info: FIGURAS/uml.png  used on input line 638.
+Package pdftex.def Info: FIGURAS/uml.png  used on input line 686.
 (pdftex.def)             Requested size: 142.26378pt x 538.21092pt.
- [28]
-[29 <./FIGURAS/uml.png (PNG copy)>] [30
+ [30]
+[31 <./FIGURAS/uml.png (PNG copy)>] [32
 
 ]
 Cap\'{\i }tulo 4.
-<FIGURAS/interfaz1.JPG, id=531, 244.5135pt x 392.667pt>
+<FIGURAS/interfaz1.JPG, id=572, 244.5135pt x 392.667pt>
 File: FIGURAS/interfaz1.JPG Graphic file (type jpg)
 <use FIGURAS/interfaz1.JPG>
-Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 662.
+Package pdftex.def Info: FIGURAS/interfaz1.JPG  used on input line 710.
 (pdftex.def)             Requested size: 142.26378pt x 228.472pt.
-<FIGURAS/interfaz2.JPG, id=532, 255.354pt x 411.33675pt>
+<FIGURAS/interfaz2.JPG, id=573, 255.354pt x 411.33675pt>
 File: FIGURAS/interfaz2.JPG Graphic file (type jpg)
 <use FIGURAS/interfaz2.JPG>
-Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 665.
+Package pdftex.def Info: FIGURAS/interfaz2.JPG  used on input line 713.
 (pdftex.def)             Requested size: 142.26378pt x 229.1733pt.
-[31] [32 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>] [33] [34
+[33] [34 <./FIGURAS/interfaz1.JPG> <./FIGURAS/interfaz2.JPG>] [35] [36
 
 ]
 Cap\'{\i }tulo 5.
-<FIGURAS/ejes_temporales.JPG, id=557, 452.892pt x 239.6955pt>
+<FIGURAS/ejes_temporales.JPG, id=597, 452.892pt x 239.6955pt>
 File: FIGURAS/ejes_temporales.JPG Graphic file (type jpg)
 <use FIGURAS/ejes_temporales.JPG>
-Package pdftex.def Info: FIGURAS/ejes_temporales.JPG  used on input line 709.
+Package pdftex.def Info: FIGURAS/ejes_temporales.JPG  used on input line 757.
 (pdftex.def)             Requested size: 341.43306pt x 180.71114pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35]
-<FIGURAS/autocorrelacion.png, id=565, 462.528pt x 346.896pt>
+ [37]
+<FIGURAS/autocorrelacion.png, id=606, 462.528pt x 346.896pt>
 File: FIGURAS/autocorrelacion.png Graphic file (type png)
 <use FIGURAS/autocorrelacion.png>
-Package pdftex.def Info: FIGURAS/autocorrelacion.png  used on input line 733.
+Package pdftex.def Info: FIGURAS/autocorrelacion.png  used on input line 781.
 (pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
 
-[36 <./FIGURAS/ejes_temporales.JPG>] [37 <./FIGURAS/autocorrelacion.png>]
-<FIGURAS/impulso.png, id=580, 462.528pt x 346.896pt>
+[38 <./FIGURAS/ejes_temporales.JPG>] [39 <./FIGURAS/autocorrelacion.png>]
+<FIGURAS/impulso.png, id=620, 462.528pt x 346.896pt>
 File: FIGURAS/impulso.png Graphic file (type png)
 <use FIGURAS/impulso.png>
-Package pdftex.def Info: FIGURAS/impulso.png  used on input line 756.
+Package pdftex.def Info: FIGURAS/impulso.png  used on input line 804.
 (pdftex.def)             Requested size: 284.52756pt x 213.40593pt.
-<FIGURAS/chiirp.png, id=583, 521.0667pt x 398.9304pt>
+<FIGURAS/chiirp.png, id=623, 521.0667pt x 398.9304pt>
 File: FIGURAS/chiirp.png Graphic file (type png)
 <use FIGURAS/chiirp.png>
-Package pdftex.def Info: FIGURAS/chiirp.png  used on input line 771.
+Package pdftex.def Info: FIGURAS/chiirp.png  used on input line 819.
 (pdftex.def)             Requested size: 284.52756pt x 217.83582pt.
 
-[38 <./FIGURAS/impulso.png>]
-<FIGURAS/chirp.JPG, id=593, 346.896pt x 334.851pt>
+[40 <./FIGURAS/impulso.png>]
+<FIGURAS/chirp.JPG, id=633, 346.896pt x 334.851pt>
 File: FIGURAS/chirp.JPG Graphic file (type jpg)
 <use FIGURAS/chirp.JPG>
-Package pdftex.def Info: FIGURAS/chirp.JPG  used on input line 781.
+Package pdftex.def Info: FIGURAS/chirp.JPG  used on input line 829.
 (pdftex.def)             Requested size: 256.0748pt x 247.19316pt.
-<FIGURAS/tren_impulsos.png, id=594, 462.528pt x 346.896pt>
+<FIGURAS/tren_impulsos.png, id=634, 462.528pt x 346.896pt>
 File: FIGURAS/tren_impulsos.png Graphic file (type png)
 <use FIGURAS/tren_impulsos.png>
-Package pdftex.def Info: FIGURAS/tren_impulsos.png  used on input line 794.
+Package pdftex.def Info: FIGURAS/tren_impulsos.png  used on input line 842.
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
- [39 <./FIGURAS/chiirp.png>] [40 <./FIGURAS/chirp.JPG> <./FIGURAS/tren_impulsos
+ [41 <./FIGURAS/chiirp.png>] [42 <./FIGURAS/chirp.JPG> <./FIGURAS/tren_impulsos
 .png>]
-<FIGURAS/altavoz-micro.JPG, id=609, 278.2395pt x 105.996pt>
+<FIGURAS/altavoz-micro.JPG, id=649, 278.2395pt x 105.996pt>
 File: FIGURAS/altavoz-micro.JPG Graphic file (type jpg)
 <use FIGURAS/altavoz-micro.JPG>
-Package pdftex.def Info: FIGURAS/altavoz-micro.JPG  used on input line 818.
+Package pdftex.def Info: FIGURAS/altavoz-micro.JPG  used on input line 866.
 (pdftex.def)             Requested size: 256.0748pt x 97.55792pt.
- [41 <./FIGURAS/altavoz-micro.JPG>]
-<FIGURAS/nonlinear.JPG, id=619, 295.70474pt x 414.348pt>
+ [43 <./FIGURAS/altavoz-micro.JPG>]
+<FIGURAS/nonlinear.JPG, id=660, 295.70474pt x 414.348pt>
 File: FIGURAS/nonlinear.JPG Graphic file (type jpg)
 <use FIGURAS/nonlinear.JPG>
-Package pdftex.def Info: FIGURAS/nonlinear.JPG  used on input line 828.
+Package pdftex.def Info: FIGURAS/nonlinear.JPG  used on input line 876.
 (pdftex.def)             Requested size: 227.62204pt x 318.94778pt.
- [42 <./FIGURAS/nonlinear.JPG>]
-<FIGURAS/correlacion_misma_señal.png, id=626, 462.528pt x 346.896pt>
+ [44 <./FIGURAS/nonlinear.JPG>]
+<FIGURAS/correlacion_misma_señal.png, id=667, 462.528pt x 346.896pt>
 File: FIGURAS/correlacion_misma_señal.png Graphic file (type png)
 <use FIGURAS/correlacion_misma_señal.png>
 Package pdftex.def Info: FIGURAS/correlacion_misma_señal.png  used on input li
-ne 851.
+ne 899.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
-<FIGURAS/correlacion_tren.png, id=627, 462.528pt x 346.896pt>
+<FIGURAS/correlacion_tren.png, id=668, 462.528pt x 346.896pt>
 File: FIGURAS/correlacion_tren.png Graphic file (type png)
 <use FIGURAS/correlacion_tren.png>
-Package pdftex.def Info: FIGURAS/correlacion_tren.png  used on input line 854.
+Package pdftex.def Info: FIGURAS/correlacion_tren.png  used on input line 902.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
-Overfull \hbox (45.63855pt too wide) in paragraph at lines 851--855
+Overfull \hbox (45.63855pt too wide) in paragraph at lines 899--903
  [][][][] 
  []
 
-[43]
-<FIGURAS/sincro_server.png, id=636, 462.528pt x 346.896pt>
+[45]
+<FIGURAS/sincro_server.png, id=676, 462.528pt x 346.896pt>
 File: FIGURAS/sincro_server.png Graphic file (type png)
 <use FIGURAS/sincro_server.png>
-Package pdftex.def Info: FIGURAS/sincro_server.png  used on input line 866.
+Package pdftex.def Info: FIGURAS/sincro_server.png  used on input line 914.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
-<FIGURAS/correla_sincronizadas.png, id=637, 462.528pt x 346.896pt>
+<FIGURAS/correla_sincronizadas.png, id=677, 462.528pt x 346.896pt>
 File: FIGURAS/correla_sincronizadas.png Graphic file (type png)
 <use FIGURAS/correla_sincronizadas.png>
 Package pdftex.def Info: FIGURAS/correla_sincronizadas.png  used on input line 
-869.
+917.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
-Overfull \hbox (45.63855pt too wide) in paragraph at lines 866--870
+Overfull \hbox (45.63855pt too wide) in paragraph at lines 914--918
  [][][][] 
  []
 
-[44 <./FIGURAS/correlacion_misma_señal.png> <./FIGURAS/correlacion_tren.png> <
-./FIGURAS/sincro_server.png> <./FIGURAS/correla_sincronizadas.png>] [45]
-<FIGURAS/TOA.png, id=659, 462.528pt x 346.896pt>
+[46 <./FIGURAS/correlacion_misma_señal.png> <./FIGURAS/correlacion_tren.png> <
+./FIGURAS/sincro_server.png> <./FIGURAS/correla_sincronizadas.png>] [47]
+<FIGURAS/TOA.png, id=699, 462.528pt x 346.896pt>
 File: FIGURAS/TOA.png Graphic file (type png)
 <use FIGURAS/TOA.png>
-Package pdftex.def Info: FIGURAS/TOA.png  used on input line 913.
+Package pdftex.def Info: FIGURAS/TOA.png  used on input line 961.
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
 
 
-LaTeX Warning: Reference `TOA' on page 46 undefined on input line 918.
+LaTeX Warning: Reference `TOA' on page 48 undefined on input line 966.
 
 
-LaTeX Warning: Reference `TOA' on page 46 undefined on input line 918.
+LaTeX Warning: Reference `TOA' on page 48 undefined on input line 966.
 
-[46 <./FIGURAS/TOA.png>] [47]
-<FIGURAS/sincro_montaje.jpg, id=672, 1204.5pt x 462.97969pt>
+[48 <./FIGURAS/TOA.png>] [49]
+<FIGURAS/sincro_montaje.jpg, id=713, 1204.5pt x 462.97969pt>
 File: FIGURAS/sincro_montaje.jpg Graphic file (type jpg)
 <use FIGURAS/sincro_montaje.jpg>
-Package pdftex.def Info: FIGURAS/sincro_montaje.jpg  used on input line 954.
+Package pdftex.def Info: FIGURAS/sincro_montaje.jpg  used on input line 1002.
 (pdftex.def)             Requested size: 312.9803pt x 120.30122pt.
- [48 <./FIGURAS/sincro_montaje.jpg>] [49] [50]
+ [50 <./FIGURAS/sincro_montaje.jpg>] [51] [52]
 Cap\'{\i }tulo 6.
-<FIGURAS/montaje_DAS.png, id=698, 2643.8775pt x 1997.96437pt>
+<FIGURAS/montaje_DAS.png, id=738, 2643.8775pt x 1997.96437pt>
 File: FIGURAS/montaje_DAS.png Graphic file (type png)
 <use FIGURAS/montaje_DAS.png>
-Package pdftex.def Info: FIGURAS/montaje_DAS.png  used on input line 1008.
+Package pdftex.def Info: FIGURAS/montaje_DAS.png  used on input line 1056.
 (pdftex.def)             Requested size: 312.9803pt x 236.51381pt.
-[51
+[53
 
 ]
-<FIGURAS/seno.png, id=705, 482.7636pt x 362.0727pt>
+<FIGURAS/seno.png, id=745, 482.7636pt x 362.0727pt>
 File: FIGURAS/seno.png Graphic file (type png)
 <use FIGURAS/seno.png>
-Package pdftex.def Info: FIGURAS/seno.png  used on input line 1021.
+Package pdftex.def Info: FIGURAS/seno.png  used on input line 1069.
 (pdftex.def)             Requested size: 256.0748pt x 192.05783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52 <./FIGURAS/montaje_DAS.png>]
-Overfull \hbox (4.57462pt too wide) in paragraph at lines 1049--1050
+ [54 <./FIGURAS/montaje_DAS.png>]
+Overfull \hbox (4.57462pt too wide) in paragraph at lines 1097--1098
 []\OT1/cmr/m/n/10.95 Se co-lo-can to-dos los dis-po-si-ti-vos jun-tos, con una 
 dis-tan-cia en-tre microfo-
  []
 
-[53 <./FIGURAS/seno.png>]
+[55 <./FIGURAS/seno.png>]
 
-LaTeX Warning: Reference `dirBeam' on page 54 undefined on input line 1067.
+LaTeX Warning: Reference `dirBeam' on page 56 undefined on input line 1115.
 
-[54]
-<FIGURAS/señal_SUM.png, id=739, 462.528pt x 346.896pt>
+[56]
+<FIGURAS/señal_SUM.png, id=780, 462.528pt x 346.896pt>
 File: FIGURAS/señal_SUM.png Graphic file (type png)
 <use FIGURAS/señal_SUM.png>
-Package pdftex.def Info: FIGURAS/señal_SUM.png  used on input line 1084.
+Package pdftex.def Info: FIGURAS/señal_SUM.png  used on input line 1132.
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1091--1093
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1141
 
  []
 
 
-Overfull \hbox (12.97845pt too wide) in paragraph at lines 1094--1102
+Overfull \hbox (12.97845pt too wide) in paragraph at lines 1142--1150
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1094--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1150
 
  []
 
-<FIGURAS/directividad_SIM.png, id=741, 462.528pt x 346.896pt>
+<FIGURAS/directividad_SIM.png, id=782, 462.528pt x 346.896pt>
 File: FIGURAS/directividad_SIM.png Graphic file (type png)
 <use FIGURAS/directividad_SIM.png>
-Package pdftex.def Info: FIGURAS/directividad_SIM.png  used on input line 1110.
+Package pdftex.def Info: FIGURAS/directividad_SIM.png  used on input line 1158.
 
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
-[55 <./FIGURAS/señal_SUM.png>]
-<FIGURAS/directividad_experimental.png, id=752, 462.528pt x 346.896pt>
+[57 <./FIGURAS/señal_SUM.png>]
+<FIGURAS/directividad_experimental.png, id=792, 462.528pt x 346.896pt>
 File: FIGURAS/directividad_experimental.png Graphic file (type png)
 <use FIGURAS/directividad_experimental.png>
 Package pdftex.def Info: FIGURAS/directividad_experimental.png  used on input l
-ine 1123.
+ine 1171.
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
- [56 <./FIGURAS/directividad_SIM.png>] [57 <./FIGURAS/directividad_experimental
+ [58 <./FIGURAS/directividad_SIM.png>] [59 <./FIGURAS/directividad_experimental
 .png>]
-<FIGURAS/directividad_MALA.png, id=768, 462.528pt x 346.896pt>
+<FIGURAS/directividad_MALA.png, id=808, 462.528pt x 346.896pt>
 File: FIGURAS/directividad_MALA.png Graphic file (type png)
 <use FIGURAS/directividad_MALA.png>
-Package pdftex.def Info: FIGURAS/directividad_MALA.png  used on input line 1164
+Package pdftex.def Info: FIGURAS/directividad_MALA.png  used on input line 1212
 .
 (pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
 
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
-1.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 121
+9.
 
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
-1.
-
-Missing character: There is no � in font cmr10!
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
-1.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 117
-1.
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 121
+9.
 
 Missing character: There is no � in font cmr10!
-[58 <./FIGURAS/directividad_MALA.png>] [59] [60
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 121
+9.
+
+
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 121
+9.
+
+Missing character: There is no � in font cmr10!
+[60 <./FIGURAS/directividad_MALA.png>] [61] [62
 
 ]
 Cap\'{\i }tulo 7.
-[61] [62
-
-]
-Cap\'{\i }tulo 8.
 [63] [64
 
 ]
-Cap\'{\i }tulo 9.
+Cap\'{\i }tulo 8.
 [65] [66
 
 ]
-Cap\'{\i }tulo 10.
+Cap\'{\i }tulo 9.
 [67] [68
 
-] [69] (TFG.aux
+]
+Cap\'{\i }tulo 10.
+[69] [70
+
+]
+Cap\'{\i }tulo 11.
+<FIGURAS/creacion_impulsos_codigo.JPG, id=857, 335.45325pt x 283.0575pt>
+File: FIGURAS/creacion_impulsos_codigo.JPG Graphic file (type jpg)
+<use FIGURAS/creacion_impulsos_codigo.JPG>
+Package pdftex.def Info: FIGURAS/creacion_impulsos_codigo.JPG  used on input li
+ne 1242.
+(pdftex.def)             Requested size: 284.52756pt x 240.09467pt.
+<FIGURAS/correla_TREN.JPG, id=858, 525.76425pt x 200.54926pt>
+File: FIGURAS/correla_TREN.JPG Graphic file (type jpg)
+<use FIGURAS/correla_TREN.JPG>
+Package pdftex.def Info: FIGURAS/correla_TREN.JPG  used on input line 1250.
+(pdftex.def)             Requested size: 398.33858pt x 151.94469pt.
+
+Overfull \hbox (38.33858pt too wide) in paragraph at lines 1250--1251
+ [][] 
+ []
+
+[71 <./FIGURAS/creacion_impulsos_codigo.JPG>]
+<FIGURAS/DAS_codigo.JPG, id=864, 277.63725pt x 190.91325pt>
+File: FIGURAS/DAS_codigo.JPG Graphic file (type jpg)
+<use FIGURAS/DAS_codigo.JPG>
+Package pdftex.def Info: FIGURAS/DAS_codigo.JPG  used on input line 1258.
+(pdftex.def)             Requested size: 256.0748pt x 176.09093pt.
+<FIGURAS/seno_muestreado.JPG, id=865, 476.982pt x 420.97275pt>
+File: FIGURAS/seno_muestreado.JPG Graphic file (type jpg)
+<use FIGURAS/seno_muestreado.JPG>
+Package pdftex.def Info: FIGURAS/seno_muestreado.JPG  used on input line 1266.
+(pdftex.def)             Requested size: 312.9803pt x 276.23056pt.
+ [72 <./FIGURAS/correla_TREN.JPG> <./FIGURAS/DAS_codigo.JPG>] [73 <./FIGURAS/se
+no_muestreado.JPG>] [74
+
+] [75]
+(TFG.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1162,14 +1227,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 5FFAF76D853E32EEBCBE390AD8DDF4E7;8100.
+(rerunfilecheck)             Checksum: DD1A60D538D7ECFD6A50971D0676887D;8718.
  ) 
 Here is how much of TeX's memory you used:
- 15126 strings out of 478659
- 251338 string characters out of 2844972
- 561290 words of memory out of 3000000
- 32748 multiletter control sequences out of 15000+600000
- 411514 words of font info for 53 fonts, out of 8000000 for 9000
+ 15366 strings out of 478659
+ 255080 string characters out of 2844972
+ 564846 words of memory out of 3000000
+ 32958 multiletter control sequences out of 15000+600000
+ 411827 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,13n,79p,1021b,679s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Usuario\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
@@ -1193,9 +1258,9 @@ C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy6.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmti10.pfb>
-Output written on TFG.pdf (87 pages, 11373040 bytes).
+Output written on TFG.pdf (93 pages, 11594108 bytes).
 PDF statistics:
- 949 PDF objects out of 1000 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
- 576 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1018 PDF objects out of 1200 (max. 8388607)
+ 247 named destinations out of 1000 (max. 500000)
+ 636 words of extra memory for PDF output out of 10000 (max. 10000000)
 

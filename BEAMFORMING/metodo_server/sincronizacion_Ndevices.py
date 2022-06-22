@@ -45,6 +45,9 @@ def timeVector(signal, Fs):
 
 def tren_impulsos(Nimp, len_tren):
     
+    'Función que crea una señal acústica de sincronización'
+    'correspondiente a un tren de un número de impulsos dado'
+    
     Fs = 44100
     tren = np.zeros(len_tren)
     
@@ -67,11 +70,9 @@ def tren_impulsos(Nimp, len_tren):
 
 def correlaMax(rx, N):
     
-    'Función que devuelve el pico de la correlación de dos señales. Si tiene'
-    'decimales, redondea este máximo hacia arriba'
+    'Función que devuelve el pico de la correlación de dos señales.'
     
     peak = np.where(rx == max(rx))
-    # print(peak[0])
     delay = int(np.ceil(float(peak[0]) - N / 2.0))
     
     return delay
@@ -183,6 +184,7 @@ def sincro(Ndevices):
         rx_tren2 = scipy.signal.correlate(tren[:, i], tren[:,primera], mode = 'full', method='fft')
         N = len(rx_tren2)
         k = np.linspace(-(N/2) +1, (N/2)-1, N)
+        
         plt.figure(i+1)
         plt.title('Correlación cruzada tren de impulsos')
         plt.xlabel('Muestras')

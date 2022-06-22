@@ -12,48 +12,53 @@
 \contentsline {subsubsection}{Diarización}{10}{subsubsection*.17}%
 \contentsline {subsubsection}{Localización de fuentes}{11}{subsubsection*.19}%
 \contentsline {chapter}{\numberline {2}Planteamiento del problema}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Justificación del proyecto}{15}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Distribución del proyecto}{15}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Requisitos de realización}{15}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Seguimiento del proyecto}{15}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Entornos de trabajo}{15}{subsection.2.2.3}%
-\contentsline {chapter}{\numberline {3}Desarrollo del servidor externo}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Propósito principal}{17}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Requisitos funcionales}{17}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Requisitos no funcionales}{18}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Construcción del servidor}{19}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Noción general y noción de \textit {socket}}{19}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Implementación del servidor}{21}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Comunicación}{23}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{31}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Funcionalidades}{32}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Sincronización}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Recursos empleados}{36}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Correlación cruzada}{36}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Señales de sincronización}{37}{subsection.5.1.2}%
-\contentsline {subsubsection}{Impulso}{37}{subsubsection*.32}%
-\contentsline {subsubsection}{Chirp}{38}{subsubsection*.34}%
-\contentsline {subsubsection}{Tren de impulsos}{39}{subsubsection*.37}%
-\contentsline {section}{\numberline {5.2}Sincronización mediante el servidor}{41}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Análisis}{41}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Procedimiento}{43}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Sincronización mediante ''auto-chirps''}{45}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Fundamento}{45}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Procedimiento y conclusiones}{45}{subsection.5.3.2}%
-\contentsline {subsubsection}{Resultado}{46}{subsubsection*.44}%
-\contentsline {section}{\numberline {5.4}Aplicación del método de sincronización}{47}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Preparación del entorno adecuado}{47}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Resultados y limitaciones}{49}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Implementación del Beamforming en un array lineal}{51}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Análisis experimental}{51}{section.6.1}%
-\contentsline {subsubsection}{Resumen del experimento}{53}{subsubsection*.48}%
-\contentsline {section}{\numberline {6.2}Algoritmo y representación}{54}{section.6.2}%
-\contentsline {subsubsection}{RETARDO o \textit {DELAY}}{54}{subsubsection*.49}%
-\contentsline {subsubsection}{\textit {SUM}}{54}{subsubsection*.50}%
-\contentsline {subsubsection}{DIRECTIVIDAD}{55}{subsubsection*.52}%
-\contentsline {section}{\numberline {6.3}Evaluación de los resultados}{57}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Perspectiva de futuro}{61}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Conclusiones}{63}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Bibliografía}{65}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Apéndice}{67}{chapter.10}%
+\contentsline {section}{\numberline {2.1}Distribución del proyecto}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Requisitos de realización}{16}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Seguimiento del proyecto}{17}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Entornos de trabajo}{17}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Justificación del proyecto}{17}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Desarrollo del servidor externo}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Propósito principal}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Requisitos funcionales}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Requisitos no funcionales}{20}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Construcción del servidor}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Noción general y noción de \textit {socket}}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Implementación del servidor}{23}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Comunicación}{25}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Desarrollo de la aplicación }{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción a la aplicación}{33}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Funcionalidades}{34}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Sincronización}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Recursos empleados}{38}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Correlación cruzada}{38}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Señales de sincronización}{39}{subsection.5.1.2}%
+\contentsline {subsubsection}{Impulso}{39}{subsubsection*.32}%
+\contentsline {subsubsection}{Chirp}{40}{subsubsection*.34}%
+\contentsline {subsubsection}{Tren de impulsos}{41}{subsubsection*.37}%
+\contentsline {section}{\numberline {5.2}Sincronización mediante el servidor}{43}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Análisis}{43}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Procedimiento}{45}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Sincronización mediante ''auto-chirps''}{47}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Fundamento}{47}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Procedimiento y conclusiones}{47}{subsection.5.3.2}%
+\contentsline {subsubsection}{Resultado}{48}{subsubsection*.44}%
+\contentsline {section}{\numberline {5.4}Aplicación del método de sincronización}{49}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Preparación del entorno adecuado}{49}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Resultados y limitaciones}{51}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {6}Implementación del Beamforming en un array lineal}{53}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Análisis experimental}{53}{section.6.1}%
+\contentsline {subsubsection}{Resumen del experimento}{55}{subsubsection*.48}%
+\contentsline {section}{\numberline {6.2}Algoritmo y representación}{56}{section.6.2}%
+\contentsline {subsubsection}{RETARDO o \textit {DELAY}}{56}{subsubsection*.49}%
+\contentsline {subsubsection}{\textit {SUM}}{56}{subsubsection*.50}%
+\contentsline {subsubsection}{DIRECTIVIDAD}{57}{subsubsection*.52}%
+\contentsline {section}{\numberline {6.3}Evaluación de los resultados}{59}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Perspectiva de futuro}{63}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{65}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Presupuesto del trabajo}{67}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Bibliografía}{69}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Apéndice}{71}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Apéndice A}{71}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Apéndice B}{72}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Apéndice C}{72}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Apéndice D}{73}{section.11.4}%

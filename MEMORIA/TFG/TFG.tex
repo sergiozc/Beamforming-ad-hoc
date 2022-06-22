@@ -3,6 +3,7 @@
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage{soul}
 
 % \usepackage[style=list, number=none]{glossary} %
 \usepackage{titlesec}
@@ -185,7 +186,7 @@ pdfproducer = {pdflatex}
 \setlength{\parskip}{5pt}
 
 \chapter{Introducción}
-En este capítulo se realizará un fundamento teórico del concepto de ''Array Signal Processing'' y del método de ''Beamforming'', además de la utilidad en la realidad de estos términos. A parte, se argumentará la elección del proyecto en concreto y se explicará la distribución del mismo.
+En este capítulo se realizará un fundamento teórico del concepto de ''Array Signal Processing'' y del método de ''Beamforming'', lo cual servirá para la posterior comprensión y análisis de los resultados experimentales. Además, se contextualizará este fundamento, explicando brevemente el impacto en la actualidad de este tipo de técnicas.
 	\section{Procesamiento de señales multicanal}
 	El procesamiento de señales multicanal, también conocido como ''Array Signal Processing'' se interpreta como un procesamiento de las señales en el espacio y en el tiempo.
 	
@@ -419,13 +420,60 @@ F_{d}(f, \phi_{s}, \theta_{s}) = \frac{|D(f, \phi_{s}, \theta_{s}|^{2}}{\frac{1}
 			\end{itemize}
 			
 \chapter{Planteamiento del problema}
-	\section{Justificación del proyecto}
+
+Establecidas unas bases teóricas y la perspectiva práctica de las agrupaciones de antenas y beamforming, se dispone a plantear el problema en el que se ha trabajado.
+
+\textbf{El objetivo del proyecto es conseguir la implementación de un beamformer acústico mediante un array lineal de smartphones tipo Android.} Los móviles se colocarán en una posición determinada, siendo cada uno de ellos un elemento del array lineal, manteniéndose conectados entre ellos y con un servidor externo. El servidor externo emitirá órdenes para que los dispositivos empiecen a grabar o, por el contrario, terminen la grabación. Las grabaciónes obtenidas por los tres smartphones del array se corresponderán con las señales captadas por los elementos de una agrupación de micrófonos, las cuales se procesarán y llegarán como argumento al algoritmo de beamforming. Como última instancia, se comprobará el correcto funcionamiento del beamforming con las grabaciones obtenidas.
+
+
+ Para el correcto desarrollo y resolución del problema, se necesitará la implementación de un algoritmo de sincronización; para mantener un eje temporal común para todos los smartphones, una aplicación y un servidor; para una correcta comunicación y tratamiento del archivo de grabación, y 
 	\section{Distribución del proyecto}
+	En esta sección, se explicará el procedimiento seguido para la correcta realización del proyecto, así como los requisitos de realización y los entornos en los que se ha trabajado.
 		\subsection{Requisitos de realización}
+		Se van a enumerar los requisitos para la realización del proyecto actual. Se diferenciará tres niveles: software, hardware o elementos físicos y conocimientos.
+\vspace{0.5cm}	
+			
+\textbf{SOFTWARE	}
+\begin{itemize}
+	\item \underline{Aplicación Android}, instalada en cada uno de los smartphones, para una comunicación exitosa entre la agrupación de dispositivos y el servidor y para un correcto tratamiento de la grabación.
+	\item \underline{Servidor externo}, necesario para el control de los dispositivos a la hora de tomar mediciones.
+	\item \underline{Algoritmo de sincronización}, ya que es necesario mantener un sincronismo estricto entre las grabaciones para hacer beamforming.
+	\item \underline{Algoritmo de beamforming}, para el tratamiento de las señales acústicas según se desee.
+	\end{itemize}
+\vspace{0.5cm}
+		
+\textbf{HARDWARE Y ELEMENTOS FÍSICOS}	
+\begin{itemize}
+\item \underline{Ordenador}. Máquina en la cual va a estar activo el servidor y la cual ejecutará los diferentes programas, así como el método de sincronización y el beamformer.
+\item \underline{3 móviles} Android. Al menos 3 dispositivos compatibles con la aplicación creada y con las opciones de grabación en funcionamiento. 
+\item \underline{Altavoz monofónico}, a poder ser con conexión bluetooth.
+\item \underline{Materiales para el montaje experimental}, como cartón pluma, papel de dimensiones A2, ejes metálicos, cinta adhesiva.
+\end{itemize}
+\vspace{0.5cm}
+
+\textbf{CONOCIMIENTOS}
+		\begin{itemize}
+		\item \underline{Programación}. Conocimientos de programación en java y en python.
+		\item \underline{Procesamiento de señales}. Necesario para el método de beamforming y de sincronización.
+		\item \underline{Telemática}. Para el fundamento de la transmisión de datos entre los móviles y el servidor.
+		\end{itemize}
+		
+		
 		\subsection{Seguimiento del proyecto}
-		Aquí va una lista de lo que he hecho: servidor, app y algoritmo.
+A continuación, se muestra una partición cronológica del trabajo realizado:
+\begin{enumerate}
+\item Realización del servidor externo. Comprobando su funcionamiento mediante la conexión con otra máquina.
+\item Desarrollo de la aplicación. Teniendo en cuenta los requerimientos del proyecto, comprobando el correcto funcionamiento mediante el conexionado con el servidor.
+\item Implementación del algoritmo de sincronización. Realizando diversas pruebas con los tres dispositivos y modificando el código para su mejora en cada prueba.
+\item Algoritmo de bemforming. Programación del código correspondiente al beamformer y trazado del patrón de directividad.
+\item Medición de datos experimentales. Realización de numerosas pruebas mediante el montaje experimental orientado a trazar el patrón de directividad experimental del beamformer. 
+\item Documentación y justificación de los resultados. Tras suficientes datos obtenidos, se extraen las conclusiones del experimento. 
+\end{enumerate}
+
 		\subsection{Entornos de trabajo}
 		Java, AndroidStudio, Python...
+		
+	\section{Justificación del proyecto}
 
 \chapter{Desarrollo del servidor externo}
 	Tal y como se ha comentado, para crear la comunicación con los móviles y manejar las distintas órdenes correspondientes al objetivo de grabar de forma coherente en cada dispositivo, es necesaria la incorporación de un servidor externo.
@@ -1179,11 +1227,47 @@ No se produce la correcta amplificación de la señal deseada, sino que realiza 
 Aquí poner lo del 5G, massive MIMO etc Y ALGUNA COSA MÁS.
 \chapter{Conclusiones}
 
+\chapter{Presupuesto del trabajo}
+
 \chapter{Bibliografía}
 
 
 
 \chapter{Apéndice}
+Se presenta en este capítulo algunas funciones y procedimientos de utilidad programados en Python específicamente para este proyecto.
+\section{Apéndice A}
+La creación del tren de impulsos utilizado para fines de sincronización:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 10cm]{FIGURAS/creacion_impulsos_codigo.JPG}
+\caption{Código creación tren de impulsos}
+\end{figure}
+
+\section{Apéndice B}
+La correlación cruzada en el método de sincronización mediante el servidor entre la señal de sincronismo captada en el instante de referencia 0 y las demás señales captadas por los restantes dispositivos:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 14cm]{FIGURAS/correla_TREN.JPG}
+\caption{Código correlación cruzada tren de impulsos}
+\end{figure}
+
+\section{Apéndice C}
+Procedimiento seguido para implementar el beamformer \textit{Delay and Sum}. Cálculo del retardo y de los pesos y posterior suma de las señales:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 9cm]{FIGURAS/DAS_codigo.JPG}
+\caption{Código DAS}
+\end{figure}
+
+\section{Apéndice D}
+Señal creada para medir la calidad del beamformer. Consta de una señal sinusoidal a una frecuencia \textit{f}, con una duración total de \textit{t} y un tiempo en reposo de \textit{twait}.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 11cm]{FIGURAS/seno_muestreado.JPG}
+\caption{Señal seno creada}
+\end{figure}
+
+
 
 
 
