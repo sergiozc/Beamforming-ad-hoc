@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{soul}
+\usepackage{eurosym}
 
 % \usepackage[style=list, number=none]{glossary} %
 \usepackage{titlesec}
@@ -471,9 +472,16 @@ A continuación, se muestra una partición cronológica del trabajo realizado:
 \end{enumerate}
 
 		\subsection{Entornos de trabajo}
-		Java, AndroidStudio, Python...
+	Como se ha comentado, el servidor se ha programado en Java, específicamente en el entorno de NetBeans. La aplicación, como la gran mayoría de aplicaciones android, se ha desarrollado en AndroidStudio. El método de sincronización y el algoritmo de beamforming, se ha programado en Python, en concreto en el entorno de ''Spyder'', proporcionado por Anaconda.
 		
 	\section{Justificación del proyecto}
+	
+Se decidió el estudio del tema propuesto en el proyecto porque, en general, hace referencia a bastantes ámbitos dentro de las telecomunicaciones, como los conocimientos requeridos vistos en la sección anterior. Además, la investigación del tema elegido, ganó bastante atractivo al conocer todas las aplicaciones prácticas que pueden incorporar beamforming o sincronización acústica de señales. La perspectiva de futuro y la continua mejora en este campo, como se verá posteriormente, ha jugado un papel importante también en la elección del proyecto.
+
+La investigación realizada en este proyecto puede proporcionar un método válido de sincronismo entre dispositivos. Asimismo, se aportan bastantes factores reales a tener en cuenta para la realización de este tipo de experimentos,tanto para el proceso de beamforming como el método de sincronización. Puede ser de ayuda para perfeccionar cualquier procedimiento relacionado con el que se expone.
+
+Por último, antes empezar la investigación, se confirmó que el alumno poseía todos los recursos necesarios para la realización del proyecto en su totalidad. Teniendo en cuenta que no se dispone de materiales de alta precisión ni profesionales para la medición de pruebas experimentales.
+	
 
 \chapter{Desarrollo del servidor externo}
 	Tal y como se ha comentado, para crear la comunicación con los móviles y manejar las distintas órdenes correspondientes al objetivo de grabar de forma coherente en cada dispositivo, es necesaria la incorporación de un servidor externo.
@@ -977,7 +985,7 @@ El hecho de que la matriz de coeficientes del sistema sea singular, desemboca en
 
 \section{Aplicación del método de sincronización}
 
-Explicados los dos métodos propuestos y habiendo comprobado que, la sincronización mediante ''auto-chirps'' no ha sido posible de devolver resultados coherentes, se va a transportar la sincronización mediante el servidor al caso práctico.
+Explicados los dos métodos propuestos y habiendo comprobado que, la sincronización mediante ''auto-chirps'' no ha sido capaz de devolver resultados coherentes, se va a transportar la sincronización mediante el servidor al caso práctico.
 
 \subsection{Preparación del entorno adecuado}
 Es trivial que no cualquier lugar y/o entorno es conveniente para una sincronización acústica.
@@ -1040,6 +1048,8 @@ A pesar de esta buena precisión y posibilidad de portabilidad, posee algunas li
 \item Existencia de efectos no lineales producidos por el altavoz.
 \item La posición inicial de los móviles y la orientación de los micrófonos es esencial.
 \end{itemize}
+
+Cabe anotar que, para unos mejores resultados de sincronización y sobre todo, constantes, se debería componer el array lineal de un mismo tipo de smartphone similarmente configurados.
 
 Nombrados los factores a tener en cuenta del método de sincronización mediante el servidor, se procede a introducirlo en el proceso de beamforming que se verá en la siguiente capítulo.
 
@@ -1220,14 +1230,91 @@ No se produce la correcta amplificación de la señal deseada, sino que realiza 
 
 \item Aunque se hayan tomado las distancias de la forma más exacta posible y se hayan realizado las medidas con precaución, sigue siendo un experimento con un montaje hecho a mano y limitado por el error humano, por lo que las medidas de los ángulos dentro del barrido y las distancias entre micrófonos no son completamente exactas, lo que llevar hasta resultados ligeramente erróneos.
 
+De forma análoga al procedimiento de sincronismo, estas limitaciones serían menos notables si se emplean un mismo modelo de smartphone como cada elemento del array, consiguiendo de esta manera eliminar posibles diferencias de la captación del audio, colocación de los micrófonos y sincronismo. De este modo, los resultados del beamforming con su consecuente patrón de directividad seían más precisos.
 \end{itemize}
 
 
 \chapter{Perspectiva de futuro}
 Aquí poner lo del 5G, massive MIMO etc Y ALGUNA COSA MÁS.
+
+
 \chapter{Conclusiones}
+Como síntesis, se hace un balance del proyecto al completo.
+
+Se comenzó proporcionando algunas nociones básicas sobre procesamiento de señales multicanal y beamforming, con el propósito de llegar al máximo entendimiento de la parte principal del trabajo realizado. También se dio una visión más amplia y práctica de las posibles aplicaciones de las técnicas expuestas en el fundamento teórico para hacer ver que, en la actualidad, son notablemente utilizadas.
+
+Posteriormente, se presentó el problema y el tema en específico a desarrollar en el proyecto. Esto abarcó tanto la enunciación de los objetivos esperados como los materiales y entornos de trabajo necesarios. Una vez dado el fundamento teórico de interés y mencionado el problema a tratar, se procedió a la explicación de la parte principal del proyecto.
+
+ Se consiguió mantener una conexión bastante robusta entre los móviles y un servidor externo, mediante la ayuda de una aplicación android creada, pudiendo analizar de una forma desglosada el tráfico de red correspondiente. Tanto la aplicación como el servidor son herramientas bastante portables, ya que no se ha definido un número máximo de dispositivos por lo que, probablemente, la conexión sea útil para agrupaciones de smartphones con un número mayor de elementos del array. Sin embargo, existen algunos aspectos los cuales se pueden mejorar dependiendo del propósito del experimento. Por ejemplo, la adición de una transmisión de los datos del audio grabado por los móviles en \textit{streaming}, simplificando de esta manera el almacenamiento de estos ficheros.
+ 
+Con la aplicación y el servidor en correcto funcionamiento, se continuó con la implementación de un método de sincronización acústica. Al inicio del estudio, el objetivo era presentar dos métodos de sincronización distintos, realizando la respectiva comparación entre ellos. Debido a factores prácticos y experimentales, no fue posible llevar a cabo uno de los dos métodos con éxito, por lo que se acabó implementando un método basado en una excitación acústica inicial proporcionada por un servidor externo. Para este último método de sincronismo comentado, se realizaron numerosas pruebas, analizando cuál podría ser la señal óptima de sincronización acústica y la preparación del entorno exacta para una mayor precisión. Favorablemente, se obtuvo una precisión de sincronismo bastante buena, por lo que se determinó una opción totalmente válida para aplicaciones como beamforming o localización de fuentes sonoras. A pesar de los buenos resultados proporcionados, esta alternativa de sincronización es muy sensible ante factores cambiantes del entorno, que pueden ser sonidos inesperados, debidos a reflexiones y ruido, o efectos no lineales del altavoz emisor de la señal de excitación. Además, no todos los smartphones del mismo tipo llegan a sincronizarse de forma óptima con este método.Por estas razones, se determina que los resultados obtenidos por el método empleado no son del todo constantes.
+
+Por último, se implementó el algoritmo de un beamformer \textit{Delay and Sum} con el objetivo de trazar un patrón de directividad experimental y otro teórico, haciendo la correspondiente comparación entre ellos. Para el trazo del patrón de directividad experimental del beamformer, se hizo un montaje de forma que se lograse un barrido de al menos 180 grados de la agrupación de dispositivos en función de una fuente sonora fija. Los resultados experimentales primeramente, no fueron del todo coherentes, por lo que se mejoró la precisión del montaje y de la ejecución del experimento, obteniendo unos resultados bastante similares a los teóricos. La evaluación de este apartado es existosa ya que, a pesar del error humano y de la poca precisión del montaje, sumando la posible inexactitud del sincronismo entre señales, el patrón de directividad final es coherente al fundamento teórico, lo que indica el correcto funcionamiento del beamformer y del array de micrófonos. Como se ha comentado en anteriores secciones, una mejora de este proceso de beamforming sería que los elementos del array fuesen iguales, es decir, dispositivos del mismo modelo, aproximando de esta manera elementos isotrópicos. En general, para la concreta disponibilidad de material y de tiempo, se hace un balance altamente favorable tanto de los resultados como de las vías de investigación y desarrollo del experimento.
+
+
+
+
+
 
 \chapter{Presupuesto del trabajo}
+Se va a realizar una aproximación del coste total del proyecto. Para ello, se ha tenido en cuenta el tiempo invertido por los contribuyentes al trabajo y todo el material utilizado.
+\section{Inversión en capital humano}
+Para determinar cuantitativamente el dinero relacionado con los costes de personal, se han contabilizado las reuniones mantenidas y el tiempo invertido en buscar alternativas a diversos problemas propuestos. Se han mantenido un total de 6 tutorías, con un tiempo cada una de 1 hora, aproximadamente. El tiempo de planteamiento de algún problema por los tutores, se ha determinado en 30 minutos por cada adversidad propuesta. Para determinar el tiempo invertido por el alumno, teniendo en cuenta el sistema universitario español, un crédito ECTS equivale a 25 horas de trabajo por el estudiante, teniendo en cuenta que el trabajo fin de grado consta de 12 créditos ECTS.
+
+Adicionalmente, se ha diferenciado el coste de trabajo entre un ingeniero junior y un ingeniero senior.
+
+
+\begin{table}[htbp]
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Trabajador} &\textbf{\euro / hora} & \textbf{Tiempo} & \textbf{Cuantía} \\ 
+\hline 
+Ingeniero Senior & 60 & 9 horas & 540 \euro \\ 
+\hline 
+Ingeniero Senior & 60 & 9 horas & 540 \euro \\ 
+\hline 
+Ingeniero Junior & 30 & 300 horas & 9000 \euro \\ 
+\hline 
+	\end{tabular}
+\caption{Costes de personal}
+\end{center}
+\end{table}
+
+Obteniendo finalmente, una inversión total en capital humano de \textbf{10080 \euro}.
+
+
+\section{Inversión en material}
+El coste de materiales y hardware necesarios en el desarrollo del proyecto es el siguiente:
+
+\begin{table}[htbp]
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Tipo} &\textbf{Material} & \textbf{Precio} \\ 
+\hline 
+Smartphone & Huawei p30 pro & 500 \euro \\ 
+\hline 
+Smartphone & PocoPhone M3 Pro & 150 \euro \\ 
+\hline 
+Smartphone & Huawei P Smart Z & 220 \euro \\ 
+\hline 
+Ordenador & HP Pavilion 15 i7 & 969 \euro \\ 
+\hline 
+Montaje & Cartón Pluma & 20 \euro \\ 
+\hline 
+Montaje & Chinchetas & 2 \euro \\ 
+\hline 
+Altavoz & JBL go 3 & 40 \euro \\ 
+\hline
+	\end{tabular}
+\caption{Costes materiales}
+\end{center}
+\end{table}
+Obteniendo finalmente, una inversión total en material de \textbf{1901 \euro}.
+
+Anotar que el coste presentado en esta sección es relativo, ya que se podría haber desarrollado el proyecto con otros materiales. El precio depende de la disponibilidad en cada caso.
+
 
 \chapter{Bibliografía}
 

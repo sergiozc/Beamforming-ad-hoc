@@ -56,6 +56,8 @@
 \contentsline {chapter}{\numberline {7}Perspectiva de futuro}{63}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Conclusiones}{65}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Presupuesto del trabajo}{67}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Inversión en capital humano}{67}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Inversión en material}{68}{section.9.2}%
 \contentsline {chapter}{\numberline {10}Bibliografía}{69}{chapter.10}%
 \contentsline {chapter}{\numberline {11}Apéndice}{71}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Apéndice A}{71}{section.11.1}%
